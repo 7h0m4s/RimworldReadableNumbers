@@ -1,53 +1,36 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using RimworldReadableNumbers.Utility;
 using Verse;
 
 namespace RimworldReadableNumbers.Patches.String
 {
     public class StringConcatPatch
     {
-
-        // [HarmonyPrefix]
-        // [HarmonyPatch(nameof(SomeClass.MethodB))]
         public static void Postfix(ref string __result, object[] __args)
         {
-            //Log.Message($"Value:{__instance} Format:{__0}");
             if (__result == null
-                || __args.Length < 2
-                || __args[0] == null
-                || __args[1] == null
+                || __args == null
+                || __args.Length == 0
                 || Current.ProgramState != ProgramState.Playing
                 || Current.Game.CurrentMap == null
                 || __result.Length <= 3 // skip if result string is too short to need a separator
-                ) return;
-
-            object[] modifiedArgs = Utility.Processing.ProcessArguments(ref __args);
+               ) return;
             
-            // Rerun String.Format()
-            if (modifiedArgs != null)
+            if (Validation.IsAllowedResult(__result) == false) return;
+            
+            var processingResults = Utility.Processing.ProcessPatchArguments(ref __args);
+            if (processingResults.isSuccess)
             {
-                if (modifiedArgs[0] is IFormatProvider)
-                {
-                    IFormatProvider stringFormatFormat = (IFormatProvider)modifiedArgs[0];
-                    string stringFormatKey = (string)modifiedArgs[1];
-                    object[] stringFormatArg = new object[modifiedArgs.Length - 2];
-                    Array.Copy(modifiedArgs, 2, stringFormatArg, 0, stringFormatArg.Length);
-                    __result = ReverseStringFormatPatch.OriginalFormat(stringFormatFormat, stringFormatKey, stringFormatArg);
-                }
-                else
-                {
-                    string stringFormatKey = (string)modifiedArgs[0];
-                    object[] stringFormatArg = new object[modifiedArgs.Length - 1];
-                    Array.Copy(modifiedArgs, 1, stringFormatArg, 0, stringFormatArg.Length);
-                    __result = ReverseStringFormatPatch.OriginalFormat(stringFormatKey, stringFormatArg);
-                }
+                // Rerun ReversePatched String.Concat()
+                __result = ReverseStringConcatPatch.OriginalConcat(processingResults.modifiedObjects);
             }
-
-
-            var temp2 = string.Concat("a", "b");
-            //var temp = "MoneyFormat".Translate(1000000.ToString("F0"));
+            return;
         }
     }
-    
+
+
     //
     // [HarmonyPatch(typeof(GenText), nameof(GenText.ToStringMoney))]
     // public class Patch

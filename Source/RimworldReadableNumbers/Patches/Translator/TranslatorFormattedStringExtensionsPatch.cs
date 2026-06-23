@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using HarmonyLib;
+using RimworldReadableNumbers.Utility;
 using Verse;
 
 namespace RimworldReadableNumbers.Patches.Translator
@@ -19,15 +20,18 @@ namespace RimworldReadableNumbers.Patches.Translator
                 || __result.Length <= 3 // skip if result string is too short to need a separator
                ) return;
 
-            object[] modifiedArgs = Utility.Processing.ProcessArguments(ref __args);
-            
-            // Rerun TranslatorFormattedStringExtensions.Translate()
-            if (modifiedArgs != null)
+            if (Validation.IsAllowedResult(__result.RawText) == false) return;
+
+            var processingResults = Utility.Processing.ProcessPatchArguments(ref __args);
+            if (processingResults.isSuccess)
             {
-                string translateKey = (string)modifiedArgs[0];
-                NamedArgument[] translateArg = new NamedArgument[modifiedArgs.Length - 1];
-                Array.Copy(modifiedArgs, 1, translateArg, 0, translateArg.Length);
-                __result = ReverseTranslatorFormattedStringExtensionsPatch.OriginalTranslate(translateKey,translateArg);
+                // Rerun TranslatorFormattedStringExtensions.Translate()
+                string translateKey = (string)processingResults.modifiedObjects[0];
+                NamedArgument[] translateArg = new NamedArgument[processingResults.modifiedObjects.Length - 1];
+                Array.Copy(processingResults.modifiedObjects, 1, translateArg, 0, translateArg.Length);
+                __result = ReverseTranslatorFormattedStringExtensionsPatch.OriginalTranslate(translateKey,
+                    translateArg);
+                
             }
         }
     }

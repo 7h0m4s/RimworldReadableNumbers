@@ -26,19 +26,24 @@ namespace RimworldReadableNumbers.Patches.Translator
                 || __result.Length <= 3 // skip if result string is too short to need a separator
                ) return;
             
-            object[] modifiedArgs = Utility.Processing.ProcessArguments(ref __1);
-            if (modifiedArgs != null) return; // Return if no changes are required
-            string translated = Traverse.Create(typeof(Verse.Translator)).Field("translated").GetValue<string>(); 
-            string result = translated;
-            try
+            if (Validation.IsAllowedResult(__result) == false) return;
+
+            var processingResults = Utility.Processing.ProcessPatchArguments(ref __1);
+            if (processingResults.isSuccess)
             {
-                __result  = string.Format(translated, modifiedArgs);
+                string translated = Traverse.Create(typeof(Verse.Translator)).Field("translated").GetValue<string>();
+                string result = translated;
+                try
+                {
+                    __result = string.Format(translated, processingResults.modifiedObjects);
+                }
+                catch (Exception ex)
+                {
+                    Log.ErrorOnce(string.Concat("Exception translating '" + translated + "': ", ex?.ToString()),
+                        Gen.HashCombineInt(__0.GetHashCode(), 394878901));
+                }
             }
-            catch (Exception ex)
-            {
-                Log.ErrorOnce(string.Concat("Exception translating '" + translated + "': ", ex?.ToString()), Gen.HashCombineInt(__0.GetHashCode(), 394878901));
-            }
-            
+
         }
     }
 }

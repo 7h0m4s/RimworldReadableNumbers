@@ -9,14 +9,13 @@ namespace RimworldReadableNumbers.Patches.String
         #region Reverse Patches
 
         [HarmonyReversePatch]
-        [HarmonyPatch(typeof(string), "Concat", new Type[] { typeof(string[]) })]
-        public static string OriginalFormat(params string[] values)
+        [HarmonyPatch(typeof(string), "Concat", new Type[] { typeof(object[]) })]
+        public static string OriginalConcat(params object[] values)
         {
             // Harmony replaces this body with the original IL at runtime
             throw new NotImplementedException("Harmony reverse patch stub");
         }
-
-
+        
         #endregion Reverse Patches
     }
 }

@@ -1,16 +1,13 @@
 ﻿using System;
+using RimworldReadableNumbers.Utility;
 using Verse;
 
 namespace RimworldReadableNumbers.Patches.String
 {
     public class StringFormatPatch
     {
-
-        // [HarmonyPrefix]
-        // [HarmonyPatch(nameof(SomeClass.MethodB))]
         public static void Postfix(ref string __result, object[] __args)
         {
-            //Log.Message($"Value:{__instance} Format:{__0}");
             if (__result == null
                 || __args.Length < 2
                 || __args[0] == null
@@ -20,31 +17,35 @@ namespace RimworldReadableNumbers.Patches.String
                 || __result.Length <= 3 // skip if result string is too short to need a separator
                 ) return;
 
-            object[] modifiedArgs = Utility.Processing.ProcessArguments(ref __args);
+            if (Validation.IsAllowedFormatPattern(__args) == false) return;
+            if (Validation.IsAllowedResult(__result) == false) return;
             
-            // Rerun String.Format()
-            if (modifiedArgs != null)
+            var processingResults = Utility.Processing.ProcessPatchArguments(ref __args);
+            if (processingResults.isSuccess)
             {
-                if (modifiedArgs[0] is IFormatProvider)
+                if (processingResults.modifiedObjects[0] is IFormatProvider)
                 {
-                    IFormatProvider stringFormatFormat = (IFormatProvider)modifiedArgs[0];
-                    string stringFormatKey = (string)modifiedArgs[1];
-                    object[] stringFormatArg = new object[modifiedArgs.Length - 2];
-                    Array.Copy(modifiedArgs, 2, stringFormatArg, 0, stringFormatArg.Length);
+                    IFormatProvider stringFormatFormat = (IFormatProvider)processingResults.modifiedObjects[0];
+                    string stringFormatKey = (string)processingResults.modifiedObjects[1];
+                    object[] stringFormatArg = new object[processingResults.modifiedObjects.Length - 2];
+                    // Make a copy of the __args without the first 2 elements
+                    Array.Copy(processingResults.modifiedObjects, 2, stringFormatArg, 0, stringFormatArg.Length);
+                    
+                    // Rerun ReversePatched String.Format()
                     __result = ReverseStringFormatPatch.OriginalFormat(stringFormatFormat, stringFormatKey, stringFormatArg);
                 }
                 else
                 {
-                    string stringFormatKey = (string)modifiedArgs[0];
-                    object[] stringFormatArg = new object[modifiedArgs.Length - 1];
-                    Array.Copy(modifiedArgs, 1, stringFormatArg, 0, stringFormatArg.Length);
+                    string stringFormatKey = (string)processingResults.modifiedObjects[0];
+                    object[] stringFormatArg = new object[processingResults.modifiedObjects.Length - 1];
+                    // Make a copy of the __args without the first  element
+                    Array.Copy(processingResults.modifiedObjects, 1, stringFormatArg, 0, stringFormatArg.Length);
+                    
+                    // Rerun ReversePatched String.Format()
                     __result = ReverseStringFormatPatch.OriginalFormat(stringFormatKey, stringFormatArg);
                 }
             }
-
-
-            //var temp2 = string.Concat("a", "b");
-            //var temp = "MoneyFormat".Translate(1000000.ToString("F0"));
+            return;
         }
     }
     

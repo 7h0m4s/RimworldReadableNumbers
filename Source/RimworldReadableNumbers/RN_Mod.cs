@@ -33,7 +33,7 @@ namespace RimworldReadableNumbers
             
             listingStandard.ColumnWidth = inRect.width / 2;
             
-            listingStandard.CheckboxLabeled("ReadableNumbers_Option_Enable".Translate(), ref _rnSettings.enable);
+            listingStandard.CheckboxLabeled("ReadableNumbers_Option_Debug".Translate(), ref _rnSettings.debug);
             listingStandard.Gap(12);
             listingStandard.GapLine();
 

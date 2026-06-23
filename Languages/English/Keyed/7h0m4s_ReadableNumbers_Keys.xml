@@ -5,10 +5,12 @@
 	<ReadableNumbers_Option_Mod_Name>Readable Numbers</ReadableNumbers_Option_Mod_Name>
 	
 	
-	<ReadableNumbers_Option_Enable>Enable</ReadableNumbers_Option_Enable>
+	<ReadableNumbers_Option_Debug>Debug Mode</ReadableNumbers_Option_Debug>
 
 	<ReadableNumbers_SeparatorCharacter_Label>Select which character to use as the digit separator</ReadableNumbers_SeparatorCharacter_Label>
 	<ReadableNumbers_SeparatorCharacter_Comma>Comma 	(1,000,000.00)</ReadableNumbers_SeparatorCharacter_Comma>
 	<ReadableNumbers_SeparatorCharacter_Space>Space 	(1 000 000.00)</ReadableNumbers_SeparatorCharacter_Space>
 	<ReadableNumbers_SeparatorCharacter_None>None 	(1000000.00)</ReadableNumbers_SeparatorCharacter_None>
+	
+	<!--  Put flags to Enable/Disable each patch	-->
 </LanguageData>

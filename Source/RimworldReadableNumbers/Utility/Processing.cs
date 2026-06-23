@@ -1,60 +1,66 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Verse;
 
 namespace RimworldReadableNumbers.Utility
 {
     public static class Processing
     {
-        public static object[] ProcessArguments(ref object[] arguments)
+        public static (bool isSuccess, object[] modifiedObjects) ProcessPatchArguments(ref object[] arguments)
         {
+            if (arguments == null || arguments.Length > byte.MaxValue) return (false, null);
+            object[] modifiedObjects = new object[arguments.Length];
             bool hasModified = false;
-            var argumentCounter = -1; // start at -1 so we can increment Counter at the start of the loop
-            var modifiedArguments = new object[arguments.Length];
-            foreach (var argument in arguments)
+            for(byte i = 0; i < arguments.Length; i++)
             {
-                argumentCounter++;
-                modifiedArguments[argumentCounter] = argument;
-                string stringArg = null;
-                Type argType = null;
                 // Skip if argument is not a string or NamedArgument
-                if (argument is string == false && argument is NamedArgument == false) {continue;}
+                if (Validation.IsAllowedType(ref arguments[i]) == false) continue;
+
+                var formatNumberResult = Text.FormatNumber(ref arguments[i]);
+                if (formatNumberResult.isSuccess)
+                {
+                    hasModified = true;
+                    modifiedObjects[i] = formatNumberResult.formattedObject;
+                }
+                else
+                {
+                    modifiedObjects[i] = arguments[i];
+                }
                 
-                // Skip if is NamedArgument but doesn't contain a string
-                else if(argument is NamedArgument && ((NamedArgument)argument).arg is string == false) {continue;}
-                else if (argument is string)
-                {
-                    argType = typeof(string);
-                    stringArg = argument as string;
-                }
-                else if (argument is NamedArgument)
-                {
-                    argType = typeof(NamedArgument);
-                    stringArg = (string)((NamedArgument)argument).arg;
-                }
-
-                if (stringArg == null) continue; // Here for redundancy
-                if (!Validation.IsValidNumberToConvert(stringArg)) continue;
-
-                 if(Utility.Text.FormatNumber(ref stringArg))
-                 {
-                     if (argType == typeof(string))
-                     {
-                         modifiedArguments[argumentCounter] = stringArg;
-                     }
-                     else if (argType == typeof(NamedArgument))
-                     {
-                         var modifiedArgument = (NamedArgument)modifiedArguments[argumentCounter];
-                         modifiedArgument.arg = stringArg;
-                         modifiedArguments[argumentCounter] = modifiedArgument;
-                     }
-                     else
-                     {
-                         continue;
-                     }
-                     hasModified = true;
-                 }
             }
-            return hasModified ? modifiedArguments : null;
+            return (hasModified, modifiedObjects);
         }
+
+        public static (bool isSuccess, IEnumerable<object> modifiedObjects) ProcessPatchArguments(ref IEnumerable<object> arguments)
+        {
+            if (arguments == null) return (false, null);
+            arguments = arguments.ToArray();
+            List<object> modifiedObjects = arguments.ToList();
+            if (!arguments.Any() || arguments.Count() > byte.MaxValue) return (false, null);
+            var firstArgument = arguments.First();
+            if (Validation.IsAllowedType(ref firstArgument) == false) return (false, null);
+            
+            bool hasModified = false;
+            for(byte i = 0; i < arguments.Count(); i++)
+            {
+                var arg = arguments.ElementAt(i);
+                // Skip if argument is not a string or NamedArgument
+                if (Validation.IsAllowedType(ref arg) == false) continue;
+
+                var formatNumberResult = Text.FormatNumber(ref arg);
+                if (formatNumberResult.isSuccess)
+                {
+                    hasModified = true;
+                    modifiedObjects[i] = formatNumberResult.formattedObject;
+                }
+                else
+                {
+                    modifiedObjects[i] = arguments.ElementAt(i);
+                }
+            }
+            return (hasModified, modifiedObjects);
+        }
+
     }
 }
