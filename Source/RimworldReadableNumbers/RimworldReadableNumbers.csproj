@@ -54,13 +54,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Patches\String\ReverseStringConcatPatch.cs" />
-    <Compile Include="Patches\String\ReverseStringFormatPatch.cs" />
-    <Compile Include="Patches\String\StringConcatPatch.cs" />
-    <Compile Include="Patches\String\StringFormatPatch.cs" />
-    <Compile Include="Patches\Translator\ReverseTranslatorFormattedStringExtensionsPatch.cs" />
-    <Compile Include="Patches\Translator\TranslatorFormattedStringExtensionsPatch.cs" />
-    <Compile Include="Patches\Translator\TranslatorPatch.cs" />
     <Compile Include="Patches\Widgets\Widgets.cs" />
     <Compile Include="RN_Mod.cs" />
     <Compile Include="RN_Patcher.cs" />

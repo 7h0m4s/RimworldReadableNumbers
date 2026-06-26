@@ -5,8 +5,6 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using RimworldReadableNumbers.Patches.String;
-using RimworldReadableNumbers.Patches.Translator;
 using UnityEngine;
 using Verse;
 
@@ -20,76 +18,9 @@ namespace RimworldReadableNumbers
             Harmony harmony = new Harmony("7h0m4s.RimworldReadableNumbers");
             Assembly executingAssembly = Assembly.GetExecutingAssembly();
             
-            //StringFormatPatch.Postfix() -> string.Format()
-            // PatchDeclaredMethods(harmony, 
-            //     typeof(StringFormatPatch), 
-            //     nameof(StringFormatPatch.Postfix), 
-            //     typeof(string), 
-            //     "Format");
-            
-            //StringConcatPatch.Postfix() -> string.Concat()
-            // PatchDeclaredMethods(harmony, 
-            //     typeof(StringConcatPatch), 
-            //     nameof(StringConcatPatch.Postfix), 
-            //     typeof(string), 
-            //     "Concat");
-            
-            //TranslatorFormattedStringExtensionsPatch.Postfix() -> TranslatorFormattedStringExtensions.Translate()
-            // PatchDeclaredMethods(harmony, 
-            //     typeof(TranslatorFormattedStringExtensionsPatch), 
-            //     nameof(TranslatorFormattedStringExtensionsPatch.Postfix), 
-            //     typeof(TranslatorFormattedStringExtensions), 
-            //     "Translate");
-            
             //all other [HarmonyPatch] Attributes
             harmony.PatchAll(executingAssembly);
         }
-
-        // Apply a postfix patch method  to all declarations of a target method
-        private static void PatchDeclaredMethods(Harmony harmony, Type patchMethodType, string patchMethodName, Type targetMethodDType, string targetMethodName)
-        {
-            MethodInfo postfix = AccessTools.Method(patchMethodType, patchMethodName);
-            var methods = AccessTools.GetDeclaredMethods(targetMethodDType)
-                .Where(m => m.Name == targetMethodName);
-            foreach (var method in methods)
-            {
-                if (method.ContainsGenericParameters) continue;
-                if (patchMethodType == typeof(StringConcatPatch) && method.GetParameters().Length == 4 &&
-                    method.GetParameters().All(p => p.ParameterType == typeof(object)))
-                {
-                    continue;
-                }
-
-                harmony.Patch(method,
-                    postfix: new HarmonyMethod(postfix));
-                // if (!method.IsGenericMethod)
-                // {
-                //     // String.Concat(object,object,object,object) does not allow patching for some reason
-                //     // if (patchMethodType == typeof(StringConcatPatch) && method.GetParameters().Length == 4 &&
-                //     //     method.GetParameters().All(p => p.ParameterType == typeof(object)))
-                //     // {
-                //     //     continue;
-                //     // }
-                //     try
-                //     {
-                //         harmony.Patch(method,
-                //             postfix: new HarmonyMethod(postfix));
-                //     }
-                //     catch (Exception e)
-                //     {
-                //         Log.Warning($@"Failed to patch:{method.ToString()} due to {e}");
-                //     }
-                // }
-                // else
-                // {
-                //     if (patchMethodType == typeof(StringConcatPatch))
-                //     {
-                //         // TODO figure out how to do generic patch properly
-                //         // harmony.Patch(method.MakeGenericMethod(typeof(IEnumerable<object>)),
-                //         //     postfix: new HarmonyMethod(postfix));
-                //     }
-                // }
-            }
-        }
+        
     }
 }

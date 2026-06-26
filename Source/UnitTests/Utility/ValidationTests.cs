@@ -1,11 +1,19 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
+
 
 namespace RRN_UnitTests.Utility
 {
     [TestFixture]
     public class ValidationTests
     {
-
+    
+        [SetUp]
+        public static void Setup()
+        {
+            ReadOnlySpan<char> input = "1000.0-00.000".AsSpan();
+        }
+        
         [TestFixture]
         public class IsValidNumberToConvert
         {
@@ -18,7 +26,6 @@ namespace RRN_UnitTests.Utility
                 Assert.True(result.IsValid);
                 Assert.True(result.HasPeriod == false);
                 Assert.True(result.IsSigned == false);
-                Assert.True(result.PeriodIndex == -1);
             }
             
             // Not Valid

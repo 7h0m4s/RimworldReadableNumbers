@@ -3,14 +3,18 @@ using NUnit.Framework;
 using HarmonyLib;
 using UnityEngine;
 using System.Buffers;
-
 namespace RRN_UnitTests.Utility
 {
 
 
     [TestFixture]
-    public class Processing
+    public class ProcessingTests
     {
+        [SetUp]
+        public static void Setup()
+        {
+            ReadOnlySpan<char> input = "1000.0-00.000".AsSpan();
+        }
 
         [TestFixture]
         public class ProcessStringReference
@@ -34,9 +38,12 @@ namespace RRN_UnitTests.Utility
             [Test]
             public void ShouldReturnSuccessfully()
             {
-                var ( tokens, hasAnyNumbers )= RimworldReadableNumbers.Utility.Processing.TokeniseString("abc1000.1000.1000999xyz");
+                var originalString = "abc999tpg1000.1000.1000999xyz".ToCharArray();
+                bool hasAnyNumbers = false;
+                var tokens= RimworldReadableNumbers.Utility.Processing.TokeniseString(originalString, ref hasAnyNumbers);
                 TestContext.WriteLine($"Has Any Numbers:{hasAnyNumbers}");
-                TestContext.WriteLine($"Result:\n{String.Join("\n", tokens)}");
+                TestContext.WriteLine($"Original String:\n{originalString}");
+                TestContext.WriteLine($"Result:\n{String.Join("\n", tokens.ToString())}");
             }
         }
     }

@@ -7,17 +7,61 @@ namespace RimworldReadableNumbers.Utility
 {
     public static class Text
     {
+        // TODO create alternate FormatNumberWithTryParse that loops through string in reverse and builds a new string with separators. Then compare performance.
+        
+         /// <summary>
+        ///  The utility to convert solid numbers to seperated numbers
+        ///  1000000 -> 1,000,000
+        /// </summary>
+        /// <returns>ReadOnlySpan char</returns>
+        public static ReadOnlySpan<char> FormatNumberWithStringManipulation(ref ReadOnlySpan<char> originalValue, ref bool isSuccess)
+        {
+            ValidationResult validationResult = Validation.IsValidNumberToConvert(ref originalValue);
+            if (validationResult.IsValid == false)
+            {
+                isSuccess = false;
+                return null;
+            };
+            short resultValueLength = (short)(originalValue.Length + (originalValue.Length / 3));
+            Span<char> resultValue = new char[resultValueLength];
+            bool isPastPeriod = !validationResult.HasPeriod;
+            short countSinceLastSeparator = 0;
+            short resutCharCount = 0;
+            for (short i = (short)originalValue.Length;  i-- > 0;) // Reverse Loop
+            {
+                var currentChar = originalValue[i];
+                if (currentChar == '.') isPastPeriod = true;
+
+                if (isPastPeriod)
+                {
+                    countSinceLastSeparator++;
+                }
+                
+                resultValue[resultValue.Length - resutCharCount - 1] = currentChar;
+                resutCharCount++;
+
+                if (countSinceLastSeparator == 3 && i != 0) // Add commas only if there are more numbers ahead
+                {
+                    resultValue[resultValue.Length - resutCharCount - 1] = ',';
+                    resutCharCount++;
+                    countSinceLastSeparator = 0;
+                }
+            }
+            isSuccess = true;
+            return resultValue.Slice(resultValueLength - resutCharCount);
+        }
+        
         /// <summary>
         ///  The utility to convert solid numbers to seperated numbers
         ///  1000000 -> 1,000,000
         /// </summary>
         /// <returns>Boolean</returns>
-        public static (bool isSuccess, string formattedNumber) FormatNumber(ref string strValue)
+        public static (bool isSuccess, string formattedNumber) FormatNumberWithTryParse(ref string strValue)
         {
             ValidationResult validationResult = Validation.IsValidNumberToConvert(ref strValue);
             if (validationResult.IsValid == false) return (false, null);
             var stringArgLength = strValue.Length;
-            sbyte periodIndex = validationResult.PeriodIndex;
+            short periodIndex = validationResult.PeriodIndex;
             if (validationResult.HasPeriod)
             {
                 // Choose best TryParse based on rough number of digits in string
@@ -75,76 +119,6 @@ namespace RimworldReadableNumbers.Utility
                 }
             }
             return (false, null);
-        }
-        
-        /// <inheritdoc cref="FormatNumber(ref string)"/>>
-        public static (bool isSuccess, NamedArgument formattedNumber) FormatNumber(ref NamedArgument namedArgument)
-        {
-            if(namedArgument.arg is string namedArgumentString == false) return (false, new NamedArgument());
-            var formatNumberResult = FormatNumber(ref namedArgumentString);
-            namedArgument.arg = formatNumberResult.formattedNumber;
-            return (formatNumberResult.isSuccess, namedArgument);
-        }
-
-        /// <inheritdoc cref="FormatNumber(ref string)"/>>
-        public static (bool isSuccess, object formattedObject) FormatNumber(ref object objectRef)
-        {
-            if (objectRef == null) return (false, null);
-            switch (objectRef)
-            {
-                case string stringRef:
-                    return FormatNumber(ref stringRef);
-                case NamedArgument namedArgumentRef:
-                    return FormatNumber(ref namedArgumentRef);
-                case string[] stringArrayRef:
-                    string[] modifiedStringArray = new string[stringArrayRef.Length];
-                    bool isStringArrayRefModified = false;
-                    for(int i = 0; i < stringArrayRef.Length; i++)
-                    {
-                        var formatNumberResult = FormatNumber(ref stringArrayRef[i]);
-                        if (formatNumberResult.isSuccess)
-                        {
-                            isStringArrayRefModified = true;
-                            modifiedStringArray[i] = formatNumberResult.formattedNumber;
-                        }
-                    }
-                    return (isStringArrayRefModified, modifiedStringArray);
-                case object[] objectArrayRef:
-                    bool isObjectArrayRefModified = false;
-                    object[] modifiedObjectArray = new object[objectArrayRef.Length];
-                    for(int i = 0; i < objectArrayRef.Length; i++)
-                    {
-                        var formatNumberResult = FormatNumber(ref objectArrayRef[i]);
-                        if (formatNumberResult.isSuccess)
-                        {
-                            isObjectArrayRefModified = true;
-                            modifiedObjectArray[i] = formatNumberResult.formattedObject;;
-                        }
-                    }
-                    return (isObjectArrayRefModified, modifiedObjectArray);
-                case IEnumerable<object> tEnumerableRef:
-                    bool isEnumerableRefModified = false;
-                    List<object> modifiedEnumerable = tEnumerableRef.ToList();
-                    for(int i = 0; i < tEnumerableRef.Count(); i++)
-                    {
-                        var item = tEnumerableRef.ElementAt(i);
-                        var formatNumberResult = FormatNumber(ref item);
-                        if (formatNumberResult.isSuccess)
-                        {
-                            isEnumerableRefModified = true;
-                            modifiedEnumerable[i] = formatNumberResult.formattedObject;;
-                        }
-                    }
-                    return (isEnumerableRefModified,  modifiedEnumerable);
-                case TaggedString a:
-                    string rawText = a.RawText;
-                    return FormatNumber(ref rawText);
-                case object a:
-                    return (false, null);
-                default:
-                    return (false, null);
-            }
-            
         }
     }
 }
