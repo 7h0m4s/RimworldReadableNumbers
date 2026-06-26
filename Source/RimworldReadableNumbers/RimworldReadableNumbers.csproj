@@ -32,7 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>..\..\..\..\..\workshop\content\294100\2009463077\1.6\Assemblies\0Harmony.dll</HintPath>
+      <HintPath>..\..\..\..\..\workshop\content\294100\2009463077\Current\Assemblies\0Harmony.dll</HintPath>
       <Private>false</Private>
       <CopyLocal>false</CopyLocal>
     </Reference>
@@ -61,6 +61,7 @@
     <Compile Include="Patches\Translator\ReverseTranslatorFormattedStringExtensionsPatch.cs" />
     <Compile Include="Patches\Translator\TranslatorFormattedStringExtensionsPatch.cs" />
     <Compile Include="Patches\Translator\TranslatorPatch.cs" />
+    <Compile Include="Patches\Widgets\Widgets.cs" />
     <Compile Include="RN_Mod.cs" />
     <Compile Include="RN_Patcher.cs" />
     <Compile Include="RN_Setting.cs" />

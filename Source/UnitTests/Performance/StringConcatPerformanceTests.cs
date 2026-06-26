@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using NUnit.Framework;
 using RimworldReadableNumbers.Patches.String;
-
+using System.Buffers;
 
 namespace RRN_UnitTests.Performance
 {

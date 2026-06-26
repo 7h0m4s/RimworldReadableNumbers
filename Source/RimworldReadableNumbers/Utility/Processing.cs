@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Buffers;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using Verse;
 
 namespace RimworldReadableNumbers.Utility
@@ -32,34 +34,59 @@ namespace RimworldReadableNumbers.Utility
             return (hasModified, modifiedObjects);
         }
 
-        public static (bool isSuccess, IEnumerable<object> modifiedObjects) ProcessPatchArguments(ref IEnumerable<object> arguments)
+        public static void ProcessStringReference(ref string label)
         {
-            if (arguments == null) return (false, null);
-            arguments = arguments.ToArray();
-            List<object> modifiedObjects = arguments.ToList();
-            if (!arguments.Any() || arguments.Count() > byte.MaxValue) return (false, null);
-            var firstArgument = arguments.First();
-            if (Validation.IsAllowedType(ref firstArgument) == false) return (false, null);
-            
-            bool hasModified = false;
-            for(byte i = 0; i < arguments.Count(); i++)
-            {
-                var arg = arguments.ElementAt(i);
-                // Skip if argument is not a string or NamedArgument
-                if (Validation.IsAllowedType(ref arg) == false) continue;
+            if (label == null
+                || label.Length <= 3 // skip if result string is too short to need a separator
+                //|| Current.ProgramState != ProgramState.Playing
+                //|| Current.Game.CurrentMap == null
+               ) return;
 
-                var formatNumberResult = Text.FormatNumber(ref arg);
-                if (formatNumberResult.isSuccess)
+            (string[] tokens, bool hasAnyNumbers) = Utility.Processing.TokeniseString(label);
+            if (!hasAnyNumbers) return;
+            
+            StringBuilder stringBuilder = new StringBuilder();
+            for (int i = 0; i < tokens.Length; i++)
+            {
+                if (tokens[i] == null) break;
+                if (Utility.Validation.IsValidNumberToConvert(ref tokens[i]).IsValid)
                 {
-                    hasModified = true;
-                    modifiedObjects[i] = formatNumberResult.formattedObject;
-                }
-                else
+                    Utility.Text.FormatNumber(ref tokens[i]);
+                };
+                stringBuilder.Append(tokens[i]);
+            }
+            label = stringBuilder.ToString();
+        }
+
+        public static (string[] Tokens, bool hasAnyNumbers) TokeniseString(string originalString)
+        {
+            // TODO implement ObjectPool<StringBuilder> 
+            // ArrayPool<T> for return value?
+            //string[] tokens = ArrayPool<string>.Shared.Rent(originalString.Length);
+            string[] tokens = new string[originalString.Length];
+            var sb = new StringBuilder(originalString.Length);
+            var charArray = originalString.ToCharArray();
+            int tokenCount = 0;
+            bool hasAnyNumbers = false;
+            for(int i = 0; i < originalString.Length; i++)
+            {
+                char currentChar = charArray[i];
+                sb.Append(currentChar);
+                if (i == originalString.Length - 1  // End of the original string
+                    || (!Char.IsNumber(currentChar) && currentChar != '.' && Char.IsNumber(charArray[i + 1]) && charArray[i + 1] != '.') // Is start of number
+                    || (Char.IsNumber(currentChar) && currentChar != '.' && !Char.IsNumber(charArray[i + 1]) && charArray[i + 1] != '.') // Is end of number
+                    )
                 {
-                    modifiedObjects[i] = arguments.ElementAt(i);
+                    if(Char.IsNumber(currentChar) && hasAnyNumbers == false) hasAnyNumbers = true;
+                    string token = sb.ToString();
+                    tokens[tokenCount] = token;
+                    tokenCount += 1;
+                    sb.Clear();
                 }
             }
-            return (hasModified, modifiedObjects);
+            
+            
+            return (tokens, hasAnyNumbers);
         }
 
     }

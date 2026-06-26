@@ -5,7 +5,7 @@ VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RimworldReadableNumbers", "RimworldReadableNumbers.csproj", "{E4783E1E-2D01-45FA-8C76-71D48FED85FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RRN_UnitTests", "RRN_UnitTests\RRN_UnitTests.csproj", "{4118541D-2986-47EC-A217-1C14A7D64444}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "..\UnitTests\UnitTests.csproj", "{473E95E0-105D-4C6A-92CA-80C6BACAC21C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,12 +17,14 @@ Global
 		{E4783E1E-2D01-45FA-8C76-71D48FED85FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4783E1E-2D01-45FA-8C76-71D48FED85FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4783E1E-2D01-45FA-8C76-71D48FED85FA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4118541D-2986-47EC-A217-1C14A7D64444}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4118541D-2986-47EC-A217-1C14A7D64444}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4118541D-2986-47EC-A217-1C14A7D64444}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4118541D-2986-47EC-A217-1C14A7D64444}.Release|Any CPU.Build.0 = Release|Any CPU
+		{473E95E0-105D-4C6A-92CA-80C6BACAC21C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{473E95E0-105D-4C6A-92CA-80C6BACAC21C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{473E95E0-105D-4C6A-92CA-80C6BACAC21C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{473E95E0-105D-4C6A-92CA-80C6BACAC21C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
 EndGlobal

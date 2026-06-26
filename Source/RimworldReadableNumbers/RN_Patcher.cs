@@ -21,25 +21,25 @@ namespace RimworldReadableNumbers
             Assembly executingAssembly = Assembly.GetExecutingAssembly();
             
             //StringFormatPatch.Postfix() -> string.Format()
-            PatchDeclaredMethods(harmony, 
-                typeof(StringFormatPatch), 
-                nameof(StringFormatPatch.Postfix), 
-                typeof(string), 
-                "Format");
+            // PatchDeclaredMethods(harmony, 
+            //     typeof(StringFormatPatch), 
+            //     nameof(StringFormatPatch.Postfix), 
+            //     typeof(string), 
+            //     "Format");
             
             //StringConcatPatch.Postfix() -> string.Concat()
-            PatchDeclaredMethods(harmony, 
-                typeof(StringConcatPatch), 
-                nameof(StringConcatPatch.Postfix), 
-                typeof(string), 
-                "Concat");
+            // PatchDeclaredMethods(harmony, 
+            //     typeof(StringConcatPatch), 
+            //     nameof(StringConcatPatch.Postfix), 
+            //     typeof(string), 
+            //     "Concat");
             
             //TranslatorFormattedStringExtensionsPatch.Postfix() -> TranslatorFormattedStringExtensions.Translate()
-            PatchDeclaredMethods(harmony, 
-                typeof(TranslatorFormattedStringExtensionsPatch), 
-                nameof(TranslatorFormattedStringExtensionsPatch.Postfix), 
-                typeof(TranslatorFormattedStringExtensions), 
-                "Translate");
+            // PatchDeclaredMethods(harmony, 
+            //     typeof(TranslatorFormattedStringExtensionsPatch), 
+            //     nameof(TranslatorFormattedStringExtensionsPatch.Postfix), 
+            //     typeof(TranslatorFormattedStringExtensions), 
+            //     "Translate");
             
             //all other [HarmonyPatch] Attributes
             harmony.PatchAll(executingAssembly);
