@@ -23,8 +23,8 @@ namespace RimworldReadableNumbers
         private static string blacklistTextboxBuffer;
         private char blacklistSeparator = '|';
 
-        private static char _digitSeparator = '?';
-        private static char _decimalSeparator = '?';
+        private static char _digitSeparator = ',';
+        private static char _decimalSeparator = '.';
         private static Vector2 scrollPosition = Vector2.zero;
 
         public static char DigitSeparator
@@ -61,7 +61,9 @@ namespace RimworldReadableNumbers
             NumberFormat = SettingDefaults.NumberFormat;
             Blacklist = SettingDefaults.Blacklist;
             Enable = SettingDefaults.Enable;
-
+            _digitSeparator = ',';
+            _decimalSeparator = '.';
+            
             blacklistTextboxBuffer = "";
         }
 
@@ -189,9 +191,7 @@ namespace RimworldReadableNumbers
             listingStandard.Gap(Text.LineHeight);
             listingStandard.GapLine();
             listingStandard.Gap(Text.LineHeight);
-
-            var listingStandardHeight = (Text.LineHeight * 20) + (Blacklist.Length * (Text.LineHeight));
-            ;
+            
             listingStandard.Label("ReadableNumbers_Blacklist_Label".Translate());
             listingStandard.Label("ReadableNumbers_Blacklist_Desc".Translate());
             listingStandard.Gap(Text.LineHeight);
