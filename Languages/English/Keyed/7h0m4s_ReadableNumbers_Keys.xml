@@ -6,6 +6,7 @@
 	
 	
 	<ReadableNumbers_Option_Enable>Enable Readable Numbers</ReadableNumbers_Option_Enable>
+	<ReadableNumbers_Option_RestoreDefault>Restore Default</ReadableNumbers_Option_RestoreDefault>
 	<ReadableNumbers_Option_Debug>Debug Mode</ReadableNumbers_Option_Debug>
 
 	<ReadableNumbers_SeparatorCharacter_Label>Select Number Format:</ReadableNumbers_SeparatorCharacter_Label>
