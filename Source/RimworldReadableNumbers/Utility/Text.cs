@@ -24,13 +24,15 @@ namespace RimworldReadableNumbers.Utility
             };
             short resultValueLength = (short)(originalValue.Length + (originalValue.Length / 3));
             Span<char> resultValue = new char[resultValueLength];
-            bool isPastPeriod = !validationResult.HasPeriod;
+            bool isPastPeriod = !validationResult.HasDecimalPlace;
+            char digitSeparator = RN_Setting.DigitSeparator;
+            char decimalSeparator = RN_Setting.DecimalSeparator;
             short countSinceLastSeparator = 0;
             short resutCharCount = 0;
             for (short i = (short)originalValue.Length;  i-- > 0;) // Reverse Loop
             {
                 var currentChar = originalValue[i];
-                if (currentChar == '.') isPastPeriod = true;
+                if (currentChar == decimalSeparator) isPastPeriod = true;
 
                 if (isPastPeriod)
                 {
@@ -42,7 +44,7 @@ namespace RimworldReadableNumbers.Utility
 
                 if (countSinceLastSeparator == 3 && i != 0) // Add commas only if there are more numbers ahead
                 {
-                    resultValue[resultValue.Length - resutCharCount - 1] = ',';
+                    resultValue[resultValue.Length - resutCharCount - 1] = digitSeparator;
                     resutCharCount++;
                     countSinceLastSeparator = 0;
                 }
@@ -61,8 +63,8 @@ namespace RimworldReadableNumbers.Utility
             ValidationResult validationResult = Validation.IsValidNumberToConvert(ref strValue);
             if (validationResult.IsValid == false) return (false, null);
             var stringArgLength = strValue.Length;
-            short periodIndex = validationResult.PeriodIndex;
-            if (validationResult.HasPeriod)
+            short periodIndex = validationResult.DecimalPlaceIndex;
+            if (validationResult.HasDecimalPlace)
             {
                 // Choose best TryParse based on rough number of digits in string
                 // we are not checking for - character for simplicity

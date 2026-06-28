@@ -15,6 +15,7 @@ namespace RimworldReadableNumbers.Utility
             if (labelSpan == null
                 || labelSpan.Length <= 3 // skip if result string is too short to need a separator
                 || labelSpan.Length > short.MaxValue // skip if string is too big
+                || !RN_Setting.Enable
                 //|| Current.ProgramState != ProgramState.Playing
                 //|| Current.Game.CurrentMap == null
                ) return;
@@ -64,16 +65,17 @@ namespace RimworldReadableNumbers.Utility
             StringBuilder sb = new StringBuilder(originalString.Length - 1);
             ReadOnlySpan<char> charArray = originalString;
             short tokenCount = 0;
+            char decimalSeparator = RN_Setting.DecimalSeparator;
             hasAnyNumbers = false;
             for(short i = 0; i < originalString.Length; i++)
             {
-                char previousChar = i == 0 ? ' ' :charArray[i - 1];
+                char previousChar = i == 0 ? 'A' :charArray[i - 1];
                 char currentChar = charArray[i];
-                char nextChar = i == originalString.Length - 1 ? ' ' :charArray[i + 1];
+                char nextChar = i == originalString.Length - 1 ? 'A' :charArray[i + 1];
                 bool isPreviousCharDigit = Char.IsNumber(previousChar);
                 bool isCurrentCharDigit = Char.IsNumber(currentChar);
                 bool isNextCharDigit = Char.IsNumber(nextChar);
-                if (isPreviousCharDigit && isNextCharDigit && currentChar == ',')
+                if (isPreviousCharDigit && isNextCharDigit && currentChar == ',') // Doesn't need DigitSeparator setting
                 {
                     // Skip if comma already exists between 2 numbers "0,0"
                     // to avoid formatting World Debug ID and Coordinates
@@ -83,8 +85,8 @@ namespace RimworldReadableNumbers.Utility
                 }
                 sb.Append(currentChar);
                 if (i == originalString.Length - 1  // End of the original string
-                    || (!isCurrentCharDigit && currentChar != '.' && isNextCharDigit && nextChar != '.') // Is start of number
-                    || (isCurrentCharDigit && currentChar != '.' && !isNextCharDigit && nextChar != '.') // Is end of number
+                    || (!isCurrentCharDigit && currentChar != decimalSeparator && isNextCharDigit && nextChar != decimalSeparator) // Is start of number
+                    || (isCurrentCharDigit && currentChar != decimalSeparator && !isNextCharDigit && nextChar != decimalSeparator) // Is end of number
                    )
                 {
                     if(Char.IsNumber(currentChar) && hasAnyNumbers == false) hasAnyNumbers = true;

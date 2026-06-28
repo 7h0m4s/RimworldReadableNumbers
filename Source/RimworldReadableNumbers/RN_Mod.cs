@@ -18,38 +18,21 @@ namespace RimworldReadableNumbers
             _rnSettings = base.GetSettings<RN_Setting>();
         }
         
-        public enum DigitSeparator
+        /// <summary>
+        /// Naming Convention: [DigitSeperator][DecimalSeperator]
+        /// </summary>
+        public enum NumberFormat
         {
-            Comma,
-            Period,
-            Space,
+            CommaPeriod,
+            PeriodComma,
+            SpacePeriod,
+            SpaceComma,
             None
         }
 
         public override void DoSettingsWindowContents(Rect inRect)
         {
-            Listing_Standard listingStandard = new Listing_Standard();
-            listingStandard.Begin(inRect);
-            
-            listingStandard.ColumnWidth = inRect.width / 2;
-            
-            listingStandard.CheckboxLabeled("ReadableNumbers_Option_Debug".Translate(), ref _rnSettings.debug);
-            listingStandard.Gap(12);
-            listingStandard.GapLine();
-
-            var separatorSectionHeight = Text.LineHeight * (Enum.GetNames(typeof(DigitSeparator)).Length + 2) ;
-            var separatorSection = listingStandard.BeginSection(separatorSectionHeight);
-            separatorSection.Label("ReadableNumbers_SeparatorCharacter_Label".Translate());
-            if (separatorSection.RadioButton("ReadableNumbers_SeparatorCharacter_Comma".Translate(), _rnSettings.digitSeparator == DigitSeparator.Comma, 10f ))
-                _rnSettings.digitSeparator = DigitSeparator.Comma;
-            if (separatorSection.RadioButton("ReadableNumbers_SeparatorCharacter_Space".Translate(), _rnSettings.digitSeparator == DigitSeparator.Space, 10f))
-                _rnSettings.digitSeparator = DigitSeparator.Space;
-            if (separatorSection.RadioButton("ReadableNumbers_SeparatorCharacter_None".Translate(), _rnSettings.digitSeparator == DigitSeparator.None, 10f))
-                _rnSettings.digitSeparator = DigitSeparator.None;
-            listingStandard.EndSection(separatorSection);
-            
-            
-            listingStandard.End();
+            RN_Setting.DoSettingsWindowContents(inRect);
             base.DoSettingsWindowContents(inRect);
         }
 

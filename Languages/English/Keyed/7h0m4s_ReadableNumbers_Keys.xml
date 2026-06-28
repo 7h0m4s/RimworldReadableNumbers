@@ -5,12 +5,21 @@
 	<ReadableNumbers_Option_Mod_Name>Readable Numbers</ReadableNumbers_Option_Mod_Name>
 	
 	
+	<ReadableNumbers_Option_Enable>Enable Readable Numbers</ReadableNumbers_Option_Enable>
 	<ReadableNumbers_Option_Debug>Debug Mode</ReadableNumbers_Option_Debug>
 
-	<ReadableNumbers_SeparatorCharacter_Label>Select which character to use as the digit separator</ReadableNumbers_SeparatorCharacter_Label>
-	<ReadableNumbers_SeparatorCharacter_Comma>Comma 	(1,000,000.00)</ReadableNumbers_SeparatorCharacter_Comma>
-	<ReadableNumbers_SeparatorCharacter_Space>Space 	(1 000 000.00)</ReadableNumbers_SeparatorCharacter_Space>
+	<ReadableNumbers_SeparatorCharacter_Label>Select Number Format:</ReadableNumbers_SeparatorCharacter_Label>
+	<ReadableNumbers_SeparatorCharacter_Comma_Period>Comma separator with Period decimal 	(1,000,000.00)</ReadableNumbers_SeparatorCharacter_Comma_Period>
+	<ReadableNumbers_SeparatorCharacter_Period_Comma>Period separator with Comma decimal 	(1.000.000,00)</ReadableNumbers_SeparatorCharacter_Period_Comma>
+	<ReadableNumbers_SeparatorCharacter_Space_Period>Space separator with Period decimal 	(1 000 000.00)</ReadableNumbers_SeparatorCharacter_Space_Period>
+	<ReadableNumbers_SeparatorCharacter_Space_Comma>Space separator with Comma decimal 	(1 000 000,00)</ReadableNumbers_SeparatorCharacter_Space_Comma>
 	<ReadableNumbers_SeparatorCharacter_None>None 	(1000000.00)</ReadableNumbers_SeparatorCharacter_None>
+
+	<ReadableNumbers_Blacklist_Label>Blacklisted Text:</ReadableNumbers_Blacklist_Label>
+	<ReadableNumbers_Blacklist_Desc>In game text containing any of these strings of characters will be left in its original state</ReadableNumbers_Blacklist_Desc>
+	<ReadableNumbers_Blacklist_TextField>Add pattern here:</ReadableNumbers_Blacklist_TextField>
+	<ReadableNumbers_Blacklist_Add>Add</ReadableNumbers_Blacklist_Add>
+	
 	
 	<!--  Put flags to Enable/Disable each patch	-->
 </LanguageData>

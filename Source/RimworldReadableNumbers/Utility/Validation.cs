@@ -7,22 +7,19 @@ namespace RimworldReadableNumbers.Utility
         public readonly struct ValidationResult
         {
             public bool IsValid { get; }
-            public bool IsSigned { get; }
-            public bool HasPeriod { get; }
-            public short PeriodIndex{  get; }
-            public ValidationResult(bool isValid, bool isSigned,  bool hasPeriod, short periodIndex)
+            public bool HasDecimalPlace { get; }
+            public short DecimalPlaceIndex{  get; }
+            public ValidationResult(bool isValid,  bool hasDecimalPlace, short decimalPlaceIndex)
             {
                 this.IsValid = isValid;
-                this.IsSigned = isSigned;
-                this.HasPeriod = hasPeriod;
-                this.PeriodIndex = periodIndex;
+                this.HasDecimalPlace = hasDecimalPlace;
+                this.DecimalPlaceIndex = decimalPlaceIndex;
             }
             public ValidationResult(bool isValid)
             {
                 this.IsValid = isValid;
-                this.IsSigned = false;
-                this.HasPeriod = false;
-                this.PeriodIndex = 0;
+                this.HasDecimalPlace = false;
+                this.DecimalPlaceIndex = 0;
             }
         }
         public static class Validation
@@ -114,38 +111,34 @@ namespace RimworldReadableNumbers.Utility
                 if (value == null) return new ValidationResult(false);
                 if (value.Length > short.MaxValue) return new ValidationResult(false);
                 short index = 0;
+                char decimalSeparator = RN_Setting.DecimalSeparator;
                 var digitsWithoutPeriod = 0;
-                short periodIndex = 0;
-                var isSigned = false;
-                var hasPeriod = false;
+                short decimalPlaceIndex = 0;
+                var hasDecimalPlace = false;
                 for (short i = 0; i < value.Length; i++)
                 {
                     char c = value[i];
-                    if (!char.IsDigit(c) && c != '.' && c != '-' && c != '+') return new ValidationResult(false);
+                    if (!char.IsDigit(c) && c != decimalSeparator) return new ValidationResult(false);
 
-                    if (c == '.')
+                    if (c == decimalSeparator)
                     {
-                        if (hasPeriod) return new ValidationResult(false); // more than one period in string
-                        hasPeriod = true;
-                        periodIndex = index;
+                        if (hasDecimalPlace) return new ValidationResult(false); // more than one period in string
+                        hasDecimalPlace = true;
+                        decimalPlaceIndex = index;
                     }
 
-                    if (index == 0 && (c == '-' || c == '+'))
-                    {
-                        isSigned = true;
-                    }
                     else
                     {
-                        if (hasPeriod == false && c != '.') digitsWithoutPeriod++;
+                        if (hasDecimalPlace == false && c != decimalSeparator) digitsWithoutPeriod++;
                     }
 
-                    if (hasPeriod && digitsWithoutPeriod <= 3) return new ValidationResult(false);
+                    if (hasDecimalPlace && digitsWithoutPeriod <= 3) return new ValidationResult(false);
                     index++;
                 }
 
-                if (value.Length - (isSigned? 1 : 0) - (hasPeriod? value.Length - periodIndex - 1 : 0) <= 3 )
+                if (value.Length - (hasDecimalPlace? value.Length - decimalPlaceIndex - 1 : 0) <= 3 )
                     return new ValidationResult(false); // Too few digits (<3) before period to require processing
-                return new ValidationResult(true, isSigned, hasPeriod, periodIndex);
+                return new ValidationResult(true, hasDecimalPlace, decimalPlaceIndex);
             }
 
             public static ValidationResult IsValidNumberToConvert(ref string value)
