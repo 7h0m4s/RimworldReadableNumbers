@@ -6,6 +6,8 @@ namespace RimworldReadableNumbers.Utility
 {
     public static class Processing
     {
+        private static StringBuilder _processStringBuilder = new StringBuilder(short.MaxValue);
+        private static StringBuilder _tokenStringBuilder = new StringBuilder(short.MaxValue);
         
         public static void ProcessStringReference(ref string label)
         {
@@ -32,7 +34,8 @@ namespace RimworldReadableNumbers.Utility
             
             // Set StringBuilder buffer to be large enough to hold resulting string if max
             // digit separators are used
-            StringBuilder stringBuilder = new StringBuilder(labelSpan.Length + (labelSpan.Length / 3));
+            StringBuilder stringBuilder = _processStringBuilder;
+            stringBuilder.Clear();
             bool hasAnySuccessfulFormats = false;
             
             // Process each token and reconstruct original string
@@ -62,7 +65,7 @@ namespace RimworldReadableNumbers.Utility
             // ArrayPool<T> for return value?
             //string[] tokens = ArrayPool<string>.Shared.Rent(originalString.Length);
             Span<char[]> tokens = new char[originalString.Length- 1][].AsSpan();
-            StringBuilder sb = new StringBuilder(originalString.Length - 1);
+            StringBuilder sb = _tokenStringBuilder;
             ReadOnlySpan<char> charArray = originalString;
             short tokenCount = 0;
             char decimalSeparator = RN_Setting.DecimalSeparator;
