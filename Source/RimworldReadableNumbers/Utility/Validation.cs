@@ -106,7 +106,7 @@ namespace RimworldReadableNumbers.Utility
                 return false;
             }
             
-            public static ValidationResult IsValidNumberToConvert(ref ReadOnlySpan<char> value)
+            public static ValidationResult IsValidNumberToConvert(ref Span<char> value)
             {
                 if (value == null) return new ValidationResult(false);
                 if (value.Length > short.MaxValue) return new ValidationResult(false);
@@ -141,11 +141,6 @@ namespace RimworldReadableNumbers.Utility
                 return new ValidationResult(true, hasDecimalPlace, decimalPlaceIndex);
             }
 
-            public static ValidationResult IsValidNumberToConvert(ref string value)
-            {
-                ReadOnlySpan<char> valueAsSpan = value.AsSpan();
-                return IsValidNumberToConvert(ref valueAsSpan);
-            }
 
           
         }

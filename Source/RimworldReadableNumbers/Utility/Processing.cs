@@ -1,6 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading;
+using UnityEngine;
+using UnityEngine.UI;
+using Verse;
 
 namespace RimworldReadableNumbers.Utility
 {
@@ -12,10 +17,14 @@ namespace RimworldReadableNumbers.Utility
         private static bool[] _tokenHasNumberArray = new bool[short.MaxValue];
         private static short _tokenCount = 0;
         private static bool _hasAnyNumbers = false;
-        private static Memory<char> resultSpan =  new Memory<char>(new char[short.MaxValue]);
+        private static Memory<char> _resultMemory =  new Memory<char>(new char[short.MaxValue]);
+        private static int _resultLength = 0;
+        private static Dictionary<string,string> _resultCache = new Dictionary<string,string>();
         
         public static void ProcessStringReference(ref string label)
         {
+            
+            float currentTime = Time.time;
             ReadOnlySpan<char> labelSpan = label.AsSpan();
             // TODO Test all functions with   [MethodImpl(MethodImplOptions.AggressiveInlining)]
             // only use the attribute if we can prove it performs better
@@ -27,46 +36,44 @@ namespace RimworldReadableNumbers.Utility
                 //|| Current.Game.CurrentMap == null
                ) return;
             
-            // Convert to  ReadOnlySpan<char> for performance
-            
-             //if (!Validation.HasEnoughDigitsForFormatting_Short(ref labelSpan)) return;
-             if (!Validation.HasEnoughDigitsForFormatting_Short_Unrolled(ref labelSpan)) return;
-            
-            
-             _hasAnyNumbers = false;
-            Utility.Processing.TokeniseString(labelSpan);
-            if (!_hasAnyNumbers) return;
-            
-            // Set StringBuilder buffer to be large enough to hold resulting string if max
-            // digit separators are used
-            StringBuilder stringBuilder = _processStringBuilder;
-            stringBuilder.Clear();
-            bool hasAnySuccessfulFormats = false;
-            
-            // Process each token and reconstruct original string
-            for (short i = 0; i < _tokenCount; i++)
+            if (TryResultCache(ref label)) return;
+            if (!Validation.HasEnoughDigitsForFormatting_Short_Unrolled(ref labelSpan))
             {
-                ReadOnlySpan<char> currentToken = _tokens[i];
-                bool tokenHasNumberItem = _tokenHasNumberArray[i];
-                if (currentToken == null) break;
-                if (tokenHasNumberItem == false)
-                {
-                    stringBuilder.Append(currentToken);
-                    continue;
-                }
-                bool isSuccess = false;
-                ReadOnlySpan<char> formattedNumber = Utility.Text.FormatNumberWithStringManipulation(ref currentToken, ref isSuccess);
-                if (isSuccess)
-                {
-                    stringBuilder.Append(formattedNumber);
-                    hasAnySuccessfulFormats =  true;
-                }
-                else
-                {
-                    stringBuilder.Append(currentToken);
-                }
+                TryAddToResultCache(ref label, null);
+                return;
             }
-            if(hasAnySuccessfulFormats) label = stringBuilder.ToString();
+             
+             
+            
+            _hasAnyNumbers = false;
+            Utility.Processing.TokeniseString(labelSpan);
+            if (!_hasAnyNumbers)
+            {
+                TryAddToResultCache(ref label, null);
+                return;
+            }
+
+            ConstructLabelResult(ref label);
+
+        }
+
+        private static bool TryResultCache(ref string label)
+        {
+            var successfullyGotResultValue = _resultCache.TryGetValue(label, out string resultValue);
+            if (successfullyGotResultValue == true)
+            {
+                if (resultValue == null) return true; // Cached as no formatting needed
+                label = resultValue;
+                return true;
+            };
+            return false;
+        }        
+        private static bool TryAddToResultCache(ref string label, string resultValue)
+        {
+            // TODO set configurable cache clear threshold and/or timed cache clear 
+            if(_resultCache.Count % 100 == 0) Log.Message($"Readable Numbers: Cache count of {_resultCache.Count}");
+            if (_resultCache.Count > 10000) _resultCache.Clear();
+            return _resultCache.TryAdd(label, resultValue);
         }
         
         public static void TokeniseString(ReadOnlySpan<char> originalString)
@@ -80,6 +87,7 @@ namespace RimworldReadableNumbers.Utility
             _tokenCount = 0;
             char decimalSeparator = RN_Setting.DecimalSeparator;
             _hasAnyNumbers = false;
+            bool isCurrentTokenContainingNumber = false;
             for(short i = 0; i < originalString.Length; i++)
             {
                 char previousChar = i == 0 ? 'A' :charArray[i - 1];
@@ -88,7 +96,6 @@ namespace RimworldReadableNumbers.Utility
                 bool isPreviousCharDigit = Char.IsNumber(previousChar);
                 bool isCurrentCharDigit = Char.IsNumber(currentChar);
                 bool isNextCharDigit = Char.IsNumber(nextChar);
-                bool isCurrentTokenContainingNumber = false;
                 // if (isPreviousCharDigit && isNextCharDigit && currentChar == ',') // Doesn't need DigitSeparator setting
                 // {
                 //     // Skip if comma already exists between 2 numbers "0,0"
@@ -120,6 +127,50 @@ namespace RimworldReadableNumbers.Utility
             return;
         }
 
+
+        public static void ConstructLabelResult(ref string label)
+        {
+            bool hasAnySuccessfulFormats = false;
+            _resultLength = 0;
+            var resultSpan = _resultMemory.Span;
+            // Process each token and reconstruct original string
+            for (int i = 0; i < _tokenCount; i++)
+            {
+                Span<char> currentToken = _tokens[i];
+                bool tokenHasNumberItem = _tokenHasNumberArray[i];
+                if (currentToken == null) break;
+                if (tokenHasNumberItem == false)
+                {
+                    currentToken.CopyTo(resultSpan.Slice(_resultLength, currentToken.Length));
+                    _resultLength += currentToken.Length;
+                    continue;
+                }
+                bool isSuccess = false;
+                ReadOnlySpan<char> formattedNumber = Utility.Text.FormatNumberWithStringManipulation(ref currentToken, ref isSuccess);
+                if (isSuccess)
+                {
+                    formattedNumber.CopyTo(resultSpan.Slice(_resultLength, formattedNumber.Length));
+                    _resultLength += formattedNumber.Length;
+                    hasAnySuccessfulFormats =  true;
+                }
+                else
+                {
+                    currentToken.CopyTo(resultSpan.Slice(_resultLength, currentToken.Length));
+                    _resultLength += currentToken.Length;
+                }
+            }
+
+            if (hasAnySuccessfulFormats)
+            {
+                string resultValue = _resultMemory.Slice(0,_resultLength).ToString();
+                TryAddToResultCache(ref label, resultValue);
+                label = resultValue;
+            }
+            else
+            {
+                TryAddToResultCache(ref label, label);
+            }
+        }
       
 
     }

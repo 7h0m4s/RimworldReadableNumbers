@@ -55,7 +55,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Patches\Widgets\Widgets.cs" />
+    <Compile Include="Patches\DateReadout\DateReadoutPatch.cs" />
+    <Compile Include="Patches\Widgets\WidgetsPatch.cs" />
+    <Compile Include="Patches\Widgets\WidgetsReversePatch.cs" />
     <Compile Include="RN_Mod.cs" />
     <Compile Include="RN_Patcher.cs" />
     <Compile Include="RN_Setting.cs" />

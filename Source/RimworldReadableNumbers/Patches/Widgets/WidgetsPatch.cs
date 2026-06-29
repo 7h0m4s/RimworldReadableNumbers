@@ -9,7 +9,7 @@ namespace RimworldReadableNumbers.Patches.Widgets
 {
     
     [HarmonyPatch]
-    public class Widgets
+    public class WidgetsPatch
     {
         // public static void Label(float x, ref float curY, float width, string text, TipSignal tip = default(TipSignal))
         [HarmonyPatch(typeof(Verse.Widgets), "Label", new Type[] { typeof(Rect), typeof(string) })]
@@ -21,7 +21,7 @@ namespace RimworldReadableNumbers.Patches.Widgets
         }
         
         
-        // [HarmonyPatch(typeof(Verse.Widgets), "Label", new Type[] { typeof(Rect), typeof(GUIContent) })]
+        // [HarmonyPatch(typeof(Verse.WidgetsPatch), "Label", new Type[] { typeof(Rect), typeof(GUIContent) })]
         // public static bool  Prefix(Rect rect, ref GUIContent content)
         // {
         //     string temp = content.text;
