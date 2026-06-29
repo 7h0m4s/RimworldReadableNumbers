@@ -8,6 +8,11 @@ namespace RimworldReadableNumbers.Utility
     {
         private static StringBuilder _processStringBuilder = new StringBuilder(short.MaxValue);
         private static StringBuilder _tokenStringBuilder = new StringBuilder(short.MaxValue);
+        private static char[][] _tokens  = new char[short.MaxValue][];
+        private static bool[] _tokenHasNumberArray = new bool[short.MaxValue];
+        private static short _tokenCount = 0;
+        private static bool _hasAnyNumbers = false;
+        private static Memory<char> resultSpan =  new Memory<char>(new char[short.MaxValue]);
         
         public static void ProcessStringReference(ref string label)
         {
@@ -28,9 +33,9 @@ namespace RimworldReadableNumbers.Utility
              if (!Validation.HasEnoughDigitsForFormatting_Short_Unrolled(ref labelSpan)) return;
             
             
-            bool hasAnyNumbers = false;
-            ReadOnlySpan<char[]> tokens= Utility.Processing.TokeniseString(labelSpan, ref hasAnyNumbers);
-            if (!hasAnyNumbers) return;
+             _hasAnyNumbers = false;
+            Utility.Processing.TokeniseString(labelSpan);
+            if (!_hasAnyNumbers) return;
             
             // Set StringBuilder buffer to be large enough to hold resulting string if max
             // digit separators are used
@@ -39,10 +44,16 @@ namespace RimworldReadableNumbers.Utility
             bool hasAnySuccessfulFormats = false;
             
             // Process each token and reconstruct original string
-            for (short i = 0; i < tokens.Length; i++)
+            for (short i = 0; i < _tokenCount; i++)
             {
-                ReadOnlySpan<char> currentToken = tokens[i];
-                if (currentToken== null) break;
+                ReadOnlySpan<char> currentToken = _tokens[i];
+                bool tokenHasNumberItem = _tokenHasNumberArray[i];
+                if (currentToken == null) break;
+                if (tokenHasNumberItem == false)
+                {
+                    stringBuilder.Append(currentToken);
+                    continue;
+                }
                 bool isSuccess = false;
                 ReadOnlySpan<char> formattedNumber = Utility.Text.FormatNumberWithStringManipulation(ref currentToken, ref isSuccess);
                 if (isSuccess)
@@ -52,24 +63,23 @@ namespace RimworldReadableNumbers.Utility
                 }
                 else
                 {
-                    stringBuilder.Append(tokens[i]);
+                    stringBuilder.Append(currentToken);
                 }
-                
             }
             if(hasAnySuccessfulFormats) label = stringBuilder.ToString();
         }
         
-        public static ReadOnlySpan<char[]> TokeniseString(ReadOnlySpan<char> originalString, ref bool hasAnyNumbers)
+        public static void TokeniseString(ReadOnlySpan<char> originalString)
         {
             // TODO implement ObjectPool<StringBuilder> 
             // ArrayPool<T> for return value?
             //string[] tokens = ArrayPool<string>.Shared.Rent(originalString.Length);
-            Span<char[]> tokens = new char[originalString.Length- 1][].AsSpan();
+            
             StringBuilder sb = _tokenStringBuilder;
             ReadOnlySpan<char> charArray = originalString;
-            short tokenCount = 0;
+            _tokenCount = 0;
             char decimalSeparator = RN_Setting.DecimalSeparator;
-            hasAnyNumbers = false;
+            _hasAnyNumbers = false;
             for(short i = 0; i < originalString.Length; i++)
             {
                 char previousChar = i == 0 ? 'A' :charArray[i - 1];
@@ -78,29 +88,36 @@ namespace RimworldReadableNumbers.Utility
                 bool isPreviousCharDigit = Char.IsNumber(previousChar);
                 bool isCurrentCharDigit = Char.IsNumber(currentChar);
                 bool isNextCharDigit = Char.IsNumber(nextChar);
-                if (isPreviousCharDigit && isNextCharDigit && currentChar == ',') // Doesn't need DigitSeparator setting
-                {
-                    // Skip if comma already exists between 2 numbers "0,0"
-                    // to avoid formatting World Debug ID and Coordinates
-                    // e.g. "(123,456)"
-                    hasAnyNumbers = false;
-                    return null;
-                }
+                bool isCurrentTokenContainingNumber = false;
+                // if (isPreviousCharDigit && isNextCharDigit && currentChar == ',') // Doesn't need DigitSeparator setting
+                // {
+                //     // Skip if comma already exists between 2 numbers "0,0"
+                //     // to avoid formatting World Debug ID and Coordinates
+                //     // e.g. "(123,456)"
+                //     hasAnyNumbers = false;
+                //     return null;
+                // }
                 sb.Append(currentChar);
+                if(isCurrentCharDigit) isCurrentTokenContainingNumber = true;
                 if (i == originalString.Length - 1  // End of the original string
                     || (!isCurrentCharDigit && currentChar != decimalSeparator && isNextCharDigit && nextChar != decimalSeparator) // Is start of number
                     || (isCurrentCharDigit && currentChar != decimalSeparator && !isNextCharDigit && nextChar != decimalSeparator) // Is end of number
                    )
                 {
-                    if(Char.IsNumber(currentChar) && hasAnyNumbers == false) hasAnyNumbers = true;
-                    string token = sb.ToString();
-                    tokens[tokenCount] = sb.ToString().ToCharArray();
-                    tokenCount += 1;
+                    if (isCurrentCharDigit)
+                    {
+                        if (_hasAnyNumbers == false) _hasAnyNumbers = true;
+                        
+                    }
+                    _tokens[_tokenCount] = sb.ToString().ToCharArray();
+                    _tokenHasNumberArray[_tokenCount] = isCurrentTokenContainingNumber;
+                    
+                    _tokenCount += 1;
                     sb.Clear();
+                    isCurrentTokenContainingNumber = false;
                 } 
             }
-            
-            return tokens;
+            return;
         }
 
       
