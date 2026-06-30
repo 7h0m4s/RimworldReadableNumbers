@@ -21,19 +21,16 @@ namespace RimworldReadableNumbers.Utility
         private static int _resultLength = 0;
         private static Dictionary<string,string> _resultCache = new Dictionary<string,string>();
         
-        public static void ProcessStringReference(ref string label)
+        public static void ProcessLabel(ref string label)
         {
-            
             float currentTime = Time.time;
             ReadOnlySpan<char> labelSpan = label.AsSpan();
-            // TODO Test all functions with   [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            // only use the attribute if we can prove it performs better
             if (labelSpan == null
                 || labelSpan.Length <= 3 // skip if result string is too short to need a separator
                 || labelSpan.Length > short.MaxValue // skip if string is too big
                 || !RN_Setting.Enable
-                //|| Current.ProgramState != ProgramState.Playing
-                //|| Current.Game.CurrentMap == null
+                || Current.ProgramState != ProgramState.Playing
+                || Current.Game.CurrentMap == null
                ) return;
             
             if (TryResultCache(ref label)) return;
@@ -42,8 +39,6 @@ namespace RimworldReadableNumbers.Utility
                 TryAddToResultCache(ref label, null);
                 return;
             }
-             
-             
             
             _hasAnyNumbers = false;
             Utility.Processing.TokeniseString(labelSpan);

@@ -16,7 +16,7 @@ namespace RimworldReadableNumbers.Patches.Widgets
         public static bool  Prefix(Rect rect, ref string label)
         {
             
-            Utility.Processing.ProcessStringReference(ref label);
+            Utility.Processing.ProcessLabel(ref label);
             return true;
         }
         
@@ -25,7 +25,7 @@ namespace RimworldReadableNumbers.Patches.Widgets
         // public static bool  Prefix(Rect rect, ref GUIContent content)
         // {
         //     string temp = content.text;
-        //     Utility.Processing.ProcessStringReference(ref temp);
+        //     Utility.Processing.ProcessLabel(ref temp);
         //     content.text = temp;
         //     return true;
         // }
