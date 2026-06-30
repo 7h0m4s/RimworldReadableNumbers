@@ -111,7 +111,7 @@ namespace RimworldReadableNumbers.Utility
                 if (value == null) return new ValidationResult(false);
                 if (value.Length > short.MaxValue) return new ValidationResult(false);
                 short index = 0;
-                char decimalSeparator = RN_Setting.DecimalSeparator;
+                char decimalSeparator = RnSetting.DecimalSeparator;
                 var digitsWithoutPeriod = 0;
                 short decimalPlaceIndex = 0;
                 var hasDecimalPlace = false;

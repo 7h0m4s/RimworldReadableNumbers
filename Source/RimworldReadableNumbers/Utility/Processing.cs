@@ -28,7 +28,7 @@ namespace RimworldReadableNumbers.Utility
             if (labelSpan == null
                 || labelSpan.Length <= 3 // skip if result string is too short to need a separator
                 || labelSpan.Length > short.MaxValue // skip if string is too big
-                || !RN_Setting.Enable
+                || !RnSetting.Enable
                 || Current.ProgramState != ProgramState.Playing
                 || Current.Game.CurrentMap == null
                ) return;
@@ -80,7 +80,7 @@ namespace RimworldReadableNumbers.Utility
             StringBuilder sb = _tokenStringBuilder;
             ReadOnlySpan<char> charArray = originalString;
             _tokenCount = 0;
-            char decimalSeparator = RN_Setting.DecimalSeparator;
+            char decimalSeparator = RnSetting.DecimalSeparator;
             _hasAnyNumbers = false;
             bool isCurrentTokenContainingNumber = false;
             for(short i = 0; i < originalString.Length; i++)

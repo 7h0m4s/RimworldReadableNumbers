@@ -58,9 +58,9 @@
     <Compile Include="Patches\DateReadout\DateReadoutPatch.cs" />
     <Compile Include="Patches\Widgets\WidgetsPatch.cs" />
     <Compile Include="Patches\Widgets\WidgetsReversePatch.cs" />
-    <Compile Include="RN_Mod.cs" />
-    <Compile Include="RN_Patcher.cs" />
-    <Compile Include="RN_Setting.cs" />
+    <Compile Include="RnMod.cs" />
+    <Compile Include="RnPatcher.cs" />
+    <Compile Include="RnSetting.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\Processing.cs" />
     <Compile Include="Utility\Text.cs" />

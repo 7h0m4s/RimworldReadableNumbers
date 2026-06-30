@@ -25,8 +25,8 @@ namespace RimworldReadableNumbers.Utility
             short resultValueLength = (short)(originalValue.Length + (originalValue.Length / 3));
             Span<char> resultValue = new char[resultValueLength];
             bool isPastPeriod = !validationResult.HasDecimalPlace;
-            char digitSeparator = RN_Setting.DigitSeparator;
-            char decimalSeparator = RN_Setting.DecimalSeparator;
+            char digitSeparator = RnSetting.DigitSeparator;
+            char decimalSeparator = RnSetting.DecimalSeparator;
             short countSinceLastSeparator = 0;
             short resutCharCount = 0;
             for (short i = (short)originalValue.Length;  i-- > 0;) // Reverse Loop

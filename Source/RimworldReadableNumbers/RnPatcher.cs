@@ -11,9 +11,9 @@ using Verse;
 namespace RimworldReadableNumbers
 {
     [StaticConstructorOnStartup]
-    public class RN_Patcher
+    public class RnPatcher
     {
-        static RN_Patcher()
+        static RnPatcher()
         {
             Harmony harmony = new Harmony("7h0m4s.RimworldReadableNumbers");
             Assembly executingAssembly = Assembly.GetExecutingAssembly();

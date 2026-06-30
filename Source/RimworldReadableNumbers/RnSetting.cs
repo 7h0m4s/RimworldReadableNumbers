@@ -13,11 +13,11 @@ using Verse;
 
 namespace RimworldReadableNumbers
 {
-    internal class RN_Setting : ModSettings
+    internal class RnSetting : ModSettings
     {
         public static bool Enable = true;
         public static bool Debug = false;
-        public static RN_Mod.NumberFormat NumberFormat = RN_Mod.NumberFormat.CommaPeriod;
+        public static RnMod.NumberFormat NumberFormat = RnMod.NumberFormat.CommaPeriod;
         public static BlacklistPattern[] Blacklist = Array.Empty<BlacklistPattern>();
 
         private static string blacklistTextboxBuffer;
@@ -39,19 +39,18 @@ namespace RimworldReadableNumbers
             set { _decimalSeparator = value; }
         }
 
-        [Serializable]
         public struct BlacklistPattern
         {
             public string pattern;
             public bool isSetForRemoval;
         }
 
-        public static class SettingDefaults
+        private static class SettingDefaults
         {
-            public static bool Enable = true;
-            public static bool Debug = false;
-            public static RN_Mod.NumberFormat NumberFormat = RN_Mod.NumberFormat.CommaPeriod;
-            public static BlacklistPattern[] Blacklist = Array.Empty<BlacklistPattern>();
+            public static readonly bool Enable = true;
+            public static readonly bool Debug = false;
+            public static readonly RnMod.NumberFormat NumberFormat = RnMod.NumberFormat.CommaPeriod;
+            public static readonly BlacklistPattern[] Blacklist = Array.Empty<BlacklistPattern>();
         }
 
         private static void ResetToDefault()
@@ -83,14 +82,14 @@ namespace RimworldReadableNumbers
 
             switch (NumberFormat)
             {
-                case RN_Mod.NumberFormat.CommaPeriod:
+                case RnMod.NumberFormat.CommaPeriod:
                     _digitSeparator = ',';
                     break;
-                case RN_Mod.NumberFormat.PeriodComma:
+                case RnMod.NumberFormat.PeriodComma:
                     _digitSeparator = '.';
                     break;
-                case RN_Mod.NumberFormat.SpaceComma:
-                case RN_Mod.NumberFormat.SpacePeriod:
+                case RnMod.NumberFormat.SpaceComma:
+                case RnMod.NumberFormat.SpacePeriod:
                     _digitSeparator = ' ';
                     break;
                 default:
@@ -100,12 +99,12 @@ namespace RimworldReadableNumbers
 
             switch (NumberFormat)
             {
-                case RN_Mod.NumberFormat.PeriodComma:
-                case RN_Mod.NumberFormat.SpaceComma:
+                case RnMod.NumberFormat.PeriodComma:
+                case RnMod.NumberFormat.SpaceComma:
                     _decimalSeparator = ',';
                     break;
-                case RN_Mod.NumberFormat.CommaPeriod:
-                case RN_Mod.NumberFormat.SpacePeriod:
+                case RnMod.NumberFormat.CommaPeriod:
+                case RnMod.NumberFormat.SpacePeriod:
                     _decimalSeparator = '.';
                     break;
                 default:
@@ -138,7 +137,7 @@ namespace RimworldReadableNumbers
             listingStandard.maxOneColumn = true;
             listingStandard.ColumnWidth = (inRect.width / 4) * 3;
 
-            listingStandard.CheckboxLabeled("ReadableNumbers_Option_Enable".Translate(), ref RN_Setting.Enable);
+            listingStandard.CheckboxLabeled("ReadableNumbers_Option_Enable".Translate(), ref RnSetting.Enable);
 
             listingStandard.Gap(Text.LineHeight);
 
@@ -151,39 +150,39 @@ namespace RimworldReadableNumbers
             listingStandard.GapLine();
             listingStandard.Gap(Text.LineHeight);
 
-            var separatorSectionHeight = Text.LineHeight * (Enum.GetNames(typeof(RN_Mod.NumberFormat)).Length + 2);
+            var separatorSectionHeight = Text.LineHeight * (Enum.GetNames(typeof(RnMod.NumberFormat)).Length + 2);
             var separatorSection = listingStandard.BeginSection(separatorSectionHeight);
             separatorSection.Label("ReadableNumbers_SeparatorCharacter_Label".Translate());
             if (separatorSection.RadioButton("ReadableNumbers_SeparatorCharacter_Comma_Period".Translate(),
-                    RN_Setting.NumberFormat == RN_Mod.NumberFormat.CommaPeriod, 10f))
+                    RnSetting.NumberFormat == RnMod.NumberFormat.CommaPeriod, 10f))
             {
-                RN_Setting.NumberFormat = RN_Mod.NumberFormat.CommaPeriod;
-                RN_Setting.DigitSeparator = ',';
-                RN_Setting.DecimalSeparator = '.';
+                RnSetting.NumberFormat = RnMod.NumberFormat.CommaPeriod;
+                RnSetting.DigitSeparator = ',';
+                RnSetting.DecimalSeparator = '.';
             }
 
             if (separatorSection.RadioButton("ReadableNumbers_SeparatorCharacter_Period_Comma".Translate(),
-                    RN_Setting.NumberFormat == RN_Mod.NumberFormat.PeriodComma, 10f))
+                    RnSetting.NumberFormat == RnMod.NumberFormat.PeriodComma, 10f))
             {
-                RN_Setting.NumberFormat = RN_Mod.NumberFormat.PeriodComma;
-                RN_Setting.DigitSeparator = '.';
-                RN_Setting.DecimalSeparator = ',';
+                RnSetting.NumberFormat = RnMod.NumberFormat.PeriodComma;
+                RnSetting.DigitSeparator = '.';
+                RnSetting.DecimalSeparator = ',';
             }
 
             if (separatorSection.RadioButton("ReadableNumbers_SeparatorCharacter_Space_Period".Translate(),
-                    RN_Setting.NumberFormat == RN_Mod.NumberFormat.SpacePeriod, 10f))
+                    RnSetting.NumberFormat == RnMod.NumberFormat.SpacePeriod, 10f))
             {
-                RN_Setting.NumberFormat = RN_Mod.NumberFormat.SpacePeriod;
-                RN_Setting.DigitSeparator = ' ';
-                RN_Setting.DecimalSeparator = '.';
+                RnSetting.NumberFormat = RnMod.NumberFormat.SpacePeriod;
+                RnSetting.DigitSeparator = ' ';
+                RnSetting.DecimalSeparator = '.';
             }
 
             if (separatorSection.RadioButton("ReadableNumbers_SeparatorCharacter_Space_Comma".Translate(),
-                    RN_Setting.NumberFormat == RN_Mod.NumberFormat.SpaceComma, 10f))
+                    RnSetting.NumberFormat == RnMod.NumberFormat.SpaceComma, 10f))
             {
-                RN_Setting.NumberFormat = RN_Mod.NumberFormat.SpaceComma;
-                RN_Setting.DigitSeparator = ' ';
-                RN_Setting.DecimalSeparator = ',';
+                RnSetting.NumberFormat = RnMod.NumberFormat.SpaceComma;
+                RnSetting.DigitSeparator = ' ';
+                RnSetting.DecimalSeparator = ',';
             }
 
             listingStandard.EndSection(separatorSection);

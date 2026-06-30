@@ -9,13 +9,13 @@ using Verse;
 namespace RimworldReadableNumbers
 {
     [StaticConstructorOnStartup]
-    public class RN_Mod : Mod
+    public class RnMod : Mod
     {
-        private readonly RN_Setting _rnSettings;
-        public RN_Mod(ModContentPack content)
+        private readonly RnSetting _rnSettings;
+        public RnMod(ModContentPack content)
             : base(content)
         {
-            _rnSettings = base.GetSettings<RN_Setting>();
+            _rnSettings = base.GetSettings<RnSetting>();
         }
         
         /// <summary>
@@ -32,7 +32,7 @@ namespace RimworldReadableNumbers
 
         public override void DoSettingsWindowContents(Rect inRect)
         {
-            RN_Setting.DoSettingsWindowContents(inRect);
+            RnSetting.DoSettingsWindowContents(inRect);
             base.DoSettingsWindowContents(inRect);
         }
 
