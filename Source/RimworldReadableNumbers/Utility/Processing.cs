@@ -34,7 +34,7 @@ namespace RimworldReadableNumbers.Utility
                ) return;
             
             if (TryResultCache(ref label)) return;
-            if (!Validation.HasEnoughDigitsForFormatting_Short_Unrolled(ref labelSpan))
+            if (!Validation.HasEnoughDigits_And_Not_BlackListed(ref labelSpan))
             {
                 TryAddToResultCache(ref label, null);
                 return;
@@ -69,6 +69,11 @@ namespace RimworldReadableNumbers.Utility
             if(_resultCache.Count % 100 == 0) Log.Message($"Readable Numbers: Cache count of {_resultCache.Count}");
             if (_resultCache.Count > 10000) _resultCache.Clear();
             return _resultCache.TryAdd(label, resultValue);
+        }      
+        public static void ClearResultCache()
+        {
+            _resultCache.Clear();
+            return;
         }
         
         public static void TokeniseString(ReadOnlySpan<char> originalString)
@@ -80,7 +85,7 @@ namespace RimworldReadableNumbers.Utility
             StringBuilder sb = _tokenStringBuilder;
             ReadOnlySpan<char> charArray = originalString;
             _tokenCount = 0;
-            char decimalSeparator = RnSetting.DecimalSeparator;
+            char decimalSeparator = '.'; //RnSetting.DecimalSeparator;
             _hasAnyNumbers = false;
             bool isCurrentTokenContainingNumber = false;
             for(short i = 0; i < originalString.Length; i++)

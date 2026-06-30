@@ -24,15 +24,52 @@ namespace RimworldReadableNumbers.Utility
         }
         public static class Validation
         {
-            public static bool HasEnoughDigitsForFormatting_Short(ref ReadOnlySpan<char> label)
+            public static bool HasEnoughDigits_And_Not_BlackListed(ref ReadOnlySpan<char> label)
             {
+                var blacklist = RnSetting.Blacklist;
+                bool isEnoughDigits = false;
+                
                 short numDigitsInSequence = 0;
                 for (short i = 0; i < label.Length; i++)
                 {
-                    if (char.IsDigit(label[i]))
+                    char currentChar = label[i];
+                    
+                    // Check if the label is on the blacklist
+                    if (blacklist.Length > 0)
+                    {
+                        for (short j = 0; j < blacklist.Length; j++)
+                        {
+                            var blacklistItem = blacklist[j];
+                            if (i == 0) blacklistItem.SearchIndex = 0;
+
+                            // skip if pattern is too big to match anymore
+                            if (blacklistItem.Pattern.Length > label.Length
+                                ||blacklistItem.Pattern.Length - blacklistItem.SearchIndex > label.Length - i
+                                || blacklistItem.SearchIndex > blacklistItem.Pattern.Length - 1) continue;
+                            
+
+                            char currentPatternChar = blacklistItem.Pattern[blacklistItem.SearchIndex];
+                            if (currentPatternChar == currentChar)
+                            {
+                                
+                                if (blacklistItem.Pattern.Length - 1 == blacklistItem.SearchIndex)
+                                {
+                                    // if a whole pattern has been matched then return failure
+                                    return false;
+                                }
+                                blacklistItem.SearchIndex += 1;
+                            }
+                            else
+                            {
+                                blacklistItem.SearchIndex = 0;
+                            }
+                        }
+                    }
+                    
+                    if (char.IsDigit(currentChar))
                     {
                         numDigitsInSequence++;
-                        if(numDigitsInSequence >= 4) return true;
+                        if(numDigitsInSequence >= 4) isEnoughDigits = true;
                     }
                     else
                     {
@@ -40,70 +77,7 @@ namespace RimworldReadableNumbers.Utility
                     }
                 }
 
-                return false;
-            }
-            public static bool HasEnoughDigitsForFormatting_Short_Unrolled(ref ReadOnlySpan<char> label)
-            {
-                short numDigitsInSequence = 0;
-                short i = 0;
-                for ( ;i < label.Length - 4; i+=4)
-                {
-                    if (char.IsDigit(label[i + 0]))
-                    {
-                        numDigitsInSequence++;
-                        if(numDigitsInSequence >= 4) return true;
-                    }
-                    else
-                    {
-                        numDigitsInSequence = 0;
-                    }
-                    
-                    if (char.IsDigit(label[i + 1]))
-                    {
-                        numDigitsInSequence++;
-                        if(numDigitsInSequence >= 4) return true;
-                    }
-                    else
-                    {
-                        numDigitsInSequence = 0;
-                    }
-                    
-                    if (char.IsDigit(label[i + 2]))
-                    {
-                        numDigitsInSequence++;
-                        if(numDigitsInSequence >= 4) return true;
-                    }
-                    else
-                    {
-                        numDigitsInSequence = 0;
-                    }
-                    
-                    if (char.IsDigit(label[i + 3]))
-                    {
-                        numDigitsInSequence++;
-                        if(numDigitsInSequence >= 4) return true;
-                    }
-                    else
-                    {
-                        numDigitsInSequence = 0;
-                    }
-                }
-                
-                // Continues with remaining 
-                for (;i < label.Length; i++)
-                {
-                    if (char.IsDigit(label[i]))
-                    {
-                        numDigitsInSequence++;
-                        if(numDigitsInSequence >= 4) return true;
-                    }
-                    else
-                    {
-                        numDigitsInSequence = 0;
-                    }
-                }
-
-                return false;
+                return isEnoughDigits;
             }
             
             public static ValidationResult IsValidNumberToConvert(ref Span<char> value)
@@ -111,7 +85,7 @@ namespace RimworldReadableNumbers.Utility
                 if (value == null) return new ValidationResult(false);
                 if (value.Length > short.MaxValue) return new ValidationResult(false);
                 short index = 0;
-                char decimalSeparator = RnSetting.DecimalSeparator;
+                char decimalSeparator = '.'; //RnSetting.DecimalSeparator;
                 var digitsWithoutPeriod = 0;
                 short decimalPlaceIndex = 0;
                 var hasDecimalPlace = false;

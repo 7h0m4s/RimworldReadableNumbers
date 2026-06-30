@@ -8,8 +8,10 @@ using System.Xml;
 using System.Xml.Serialization;
 using HarmonyLib;
 using JetBrains.Annotations;
+using RimworldReadableNumbers.Utility;
 using UnityEngine;
 using Verse;
+using Text = Verse.Text;
 
 namespace RimworldReadableNumbers
 {
@@ -39,10 +41,11 @@ namespace RimworldReadableNumbers
             set { _decimalSeparator = value; }
         }
 
-        public struct BlacklistPattern
+        public class BlacklistPattern
         {
-            public string pattern;
-            public bool isSetForRemoval;
+            public string Pattern;
+            public int SearchIndex;
+            public bool IsSetForRemoval;
         }
 
         private static class SettingDefaults
@@ -75,7 +78,7 @@ namespace RimworldReadableNumbers
             string blackListSerialized = string.Join(
                 blacklistSeparator.ToString(),
                 Blacklist.Select(a =>
-                        a.pattern
+                        a.Pattern
                             .Replace(blacklistSeparator.ToString(), "\\" + blacklistSeparator))
                     .ToList());
             Scribe_Values.Look(ref blackListSerialized, "blacklist", "", false);
@@ -117,9 +120,11 @@ namespace RimworldReadableNumbers
                 .Where(a => a != "")
                 .Select(a => new BlacklistPattern()
                 {
-                    pattern = a.Replace("\\" + blacklistSeparator, blacklistSeparator.ToString()),
-                    isSetForRemoval = false
+                    Pattern = a.Replace("\\" + blacklistSeparator, blacklistSeparator.ToString()),
+                    IsSetForRemoval = false
                 }).ToArray();
+
+            Processing.ClearResultCache();
 
             base.ExposeData();
         }
@@ -202,11 +207,12 @@ namespace RimworldReadableNumbers
             listingStandard.Gap(Text.LineHeight);
             if (addButtonPressed)
             {
-                if (Blacklist.All(a => a.pattern != blacklistTextboxBuffer))
+                if (Blacklist.All(a => a.Pattern != blacklistTextboxBuffer))
                 {
                     Array.Resize(ref Blacklist, Blacklist.Length + 1);
                     Blacklist[Blacklist.Length - 1] = new BlacklistPattern
-                        { pattern = blacklistTextboxBuffer, isSetForRemoval = false };
+                        { Pattern = blacklistTextboxBuffer, IsSetForRemoval = false };
+                    Processing.ClearResultCache();
                 }
 
                 blacklistTextboxBuffer = string.Empty;
@@ -217,10 +223,16 @@ namespace RimworldReadableNumbers
             {
                 Blacklist = Array.Empty<BlacklistPattern>();
             }
-            Blacklist = Blacklist?.Where(a => a.isSetForRemoval == false).ToArray();
+
+            if (Blacklist.Any(a => a.IsSetForRemoval))
+            {
+                Blacklist = Blacklist.Where(a => a.IsSetForRemoval == false).ToArray();
+                Processing.ClearResultCache();
+            }
+
             for (int i = 0; i < Blacklist.Length; i++)
             {
-                listingStandard.CheckboxLabeled($"{Blacklist[i].pattern}", ref Blacklist[i].isSetForRemoval);
+                listingStandard.CheckboxLabeled($"{Blacklist[i].Pattern}", ref Blacklist[i].IsSetForRemoval);
             }
 
 

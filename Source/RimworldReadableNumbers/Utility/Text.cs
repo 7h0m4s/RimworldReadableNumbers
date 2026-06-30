@@ -32,11 +32,13 @@ namespace RimworldReadableNumbers.Utility
             for (short i = (short)originalValue.Length;  i-- > 0;) // Reverse Loop
             {
                 var currentChar = originalValue[i];
-                if (currentChar == decimalSeparator) isPastPeriod = true;
-
-                if (isPastPeriod)
+                if (currentChar == '.') {isPastPeriod = true;}
+                else
                 {
-                    countSinceLastSeparator++;
+                    if (isPastPeriod)
+                    {
+                        countSinceLastSeparator++;
+                    }
                 }
                 
                 resultValue[resultValue.Length - resutCharCount - 1] = currentChar;
