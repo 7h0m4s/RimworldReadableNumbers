@@ -20,11 +20,7 @@ namespace RimworldReadableNumbers.Patches.DateReadout
             public static IEnumerable<CodeInstruction> Transpiler(
                 IEnumerable<CodeInstruction> instructions, ILGenerator ilGenerator)
             {
-                MethodInfo methodToFind = AccessTools.Method(typeof(Verse.Widgets), nameof(Verse.Widgets.Label), new Type[] { typeof(Rect),  typeof(string) });
-                MethodInfo methodToCall = AccessTools.Method(typeof(Widgets.WidgetsReversePatch), nameof(Widgets.WidgetsReversePatch.OriginalLabel), new Type[] { typeof(Rect),  typeof(string) });
-                
-                // Find every occurrence of methodToFind and replace with methodToCall
-                return instructions.MethodReplacer(methodToFind, methodToCall).ToList();
+                return Utility.Patching.TranspileReversePatchWidgetLabel(instructions);
             }
         }
     }
