@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Patches\DateReadout\DateReadoutPatch.cs" />
+    <Compile Include="Patches\GenMapUI\GenMapUIPatch.cs" />
     <Compile Include="Patches\Widgets\WidgetsPatch.cs" />
     <Compile Include="Patches\Widgets\WidgetsReversePatch.cs" />
     <Compile Include="RnMod.cs" />
