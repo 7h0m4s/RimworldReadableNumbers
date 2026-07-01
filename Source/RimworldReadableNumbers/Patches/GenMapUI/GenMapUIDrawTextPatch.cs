@@ -12,7 +12,7 @@ namespace RimworldReadableNumbers.Patches.GenMapUI
     public static class GenMapUIDrawTextPatch
     {
         [HarmonyPrefix]
-        public static bool Prefix(Vector2 screenPos, ref string text, Color textColor)
+        public static bool Prefix(Vector2 worldPos, ref string text, Color textColor)
         {
             Utility.Processing.ProcessLabel(ref text);
             return true;

@@ -20,15 +20,14 @@ namespace RimworldReadableNumbers.Patches.Widgets
             return true;
         }
         
-        
-        // [HarmonyPatch(typeof(Verse.WidgetsPatch), "Label", new Type[] { typeof(Rect), typeof(GUIContent) })]
-        // public static bool  Prefix(Rect rect, ref GUIContent content)
-        // {
-        //     string temp = content.text;
-        //     Utility.Processing.ProcessLabel(ref temp);
-        //     content.text = temp;
-        //     return true;
-        // }
+
+        [HarmonyPatch(typeof(Verse.Widgets), "Label", new Type[] { typeof(Rect), typeof(GUIContent) })]
+        public static bool  Prefix(Rect rect, ref GUIContent content)
+        {
+            string contentText = content.text;
+            Utility.Processing.ProcessLabel(ref contentText);
+            return true;
+        }
         
 
     }
