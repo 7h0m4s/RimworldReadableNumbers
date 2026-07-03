@@ -1,18 +1,15 @@
 ﻿using System;
-using System.Runtime.CompilerServices;
-using System.Text;
 using HarmonyLib;
 using UnityEngine;
-using Verse;
 
-namespace RimworldReadableNumbers.Patches.Widgets
+namespace RimworldReadableNumbers.Patches.Verse.Widgets
 {
     
     [HarmonyPatch]
     public class WidgetsPatch
     {
         // public static void Label(float x, ref float curY, float width, string text, TipSignal tip = default(TipSignal))
-        [HarmonyPatch(typeof(Verse.Widgets), "Label", new Type[] { typeof(Rect), typeof(string) })]
+        [HarmonyPatch(typeof(global::Verse.Widgets), "Label", new Type[] { typeof(Rect), typeof(string) })]
         public static bool  Prefix(Rect rect, ref string label)
         {
             
@@ -21,7 +18,7 @@ namespace RimworldReadableNumbers.Patches.Widgets
         }
         
 
-        [HarmonyPatch(typeof(Verse.Widgets), "Label", new Type[] { typeof(Rect), typeof(GUIContent) })]
+        [HarmonyPatch(typeof(global::Verse.Widgets), "Label", new Type[] { typeof(Rect), typeof(GUIContent) })]
         public static bool  Prefix(Rect rect, ref GUIContent content)
         {
             string contentText = content.text;

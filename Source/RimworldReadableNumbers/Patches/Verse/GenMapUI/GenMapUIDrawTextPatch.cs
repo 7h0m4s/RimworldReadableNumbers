@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Reflection.Emit;
 using HarmonyLib;
 using UnityEngine;
 
-namespace RimworldReadableNumbers.Patches.GenMapUI
+namespace RimworldReadableNumbers.Patches.Verse.GenMapUI
 {
-    [HarmonyPatch(typeof(Verse.GenMapUI), nameof(Verse.GenMapUI.DrawText),new Type[] { typeof(Vector2), typeof(string), typeof(Color) })]
+    [HarmonyPatch(typeof(global::Verse.GenMapUI), nameof(global::Verse.GenMapUI.DrawText),new Type[] { typeof(Vector2), typeof(string), typeof(Color) })]
     public static class GenMapUIDrawTextPatch
     {
         [HarmonyPrefix]

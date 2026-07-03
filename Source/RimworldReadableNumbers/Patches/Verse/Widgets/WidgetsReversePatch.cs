@@ -1,15 +1,14 @@
 ﻿using System;
 using HarmonyLib;
 using UnityEngine;
-using Verse;
 
-namespace RimworldReadableNumbers.Patches.Widgets
+namespace RimworldReadableNumbers.Patches.Verse.Widgets
 {
     [HarmonyPatch]
     public class WidgetsReversePatch
     {
         [HarmonyReversePatch]
-        [HarmonyPatch(typeof(Verse.Widgets), "Label", new Type[] { typeof(Rect),  typeof(GUIContent) })]
+        [HarmonyPatch(typeof(global::Verse.Widgets), "Label", new Type[] { typeof(Rect),  typeof(GUIContent) })]
         public static void OriginalLabel(Rect rect, GUIContent content)
         {
             // Harmony replaces this body with the original IL at runtime
@@ -17,7 +16,7 @@ namespace RimworldReadableNumbers.Patches.Widgets
         }
         
         [HarmonyReversePatch]
-        [HarmonyPatch(typeof(Verse.Widgets), "Label", new Type[] { typeof(Rect),  typeof(string) })]
+        [HarmonyPatch(typeof(global::Verse.Widgets), "Label", new Type[] { typeof(Rect),  typeof(string) })]
         public static void OriginalLabel(Rect rect, string label)
         {
             // Harmony replaces this body with the original IL at runtime

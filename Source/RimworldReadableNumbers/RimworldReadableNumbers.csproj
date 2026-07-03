@@ -55,12 +55,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Patches\DateReadout\DateReadoutPatch.cs" />
-    <Compile Include="Patches\GenMapUI\GenMapUIDrawPawnLabelPatch.cs" />
-    <Compile Include="Patches\GenMapUI\GenMapUIDrawTextPatch.cs" />
-    <Compile Include="Patches\GenMapUI\GenMapUIDrawThingLabelPatch.cs" />
-    <Compile Include="Patches\Widgets\WidgetsPatch.cs" />
-    <Compile Include="Patches\Widgets\WidgetsReversePatch.cs" />
+    <Compile Include="Patches\DubsPerformanceAnalyzer\DubsPerformanceAnalyzerPatch.cs" />
+    <Compile Include="Patches\Rimworld\DateReadout\DateReadoutPatch.cs" />
+    <Compile Include="Patches\Verse\GenMapUI\GenMapUIDrawPawnLabelPatch.cs" />
+    <Compile Include="Patches\Verse\GenMapUI\GenMapUIDrawTextPatch.cs" />
+    <Compile Include="Patches\Verse\GenMapUI\GenMapUIDrawThingLabelPatch.cs" />
+    <Compile Include="Patches\Verse\Widgets\WidgetsPatch.cs" />
+    <Compile Include="Patches\Verse\Widgets\WidgetsReversePatch.cs" />
     <Compile Include="RnMod.cs" />
     <Compile Include="RnPatcher.cs" />
     <Compile Include="RnSetting.cs" />

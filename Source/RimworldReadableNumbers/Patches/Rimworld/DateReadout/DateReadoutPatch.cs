@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
+﻿using System.Collections.Generic;
 using System.Reflection.Emit;
 using HarmonyLib;
-using UnityEngine;
-using Verse;
 
-namespace RimworldReadableNumbers.Patches.DateReadout
+namespace RimworldReadableNumbers.Patches.Rimworld.DateReadout
 {
     [HarmonyPatch]
     public static class DateReadoutPatch
