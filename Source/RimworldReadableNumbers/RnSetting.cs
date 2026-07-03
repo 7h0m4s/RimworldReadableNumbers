@@ -25,10 +25,10 @@ namespace RimworldReadableNumbers
         public static bool CacheEnable = SettingDefaults.CacheEnable;
         public static int CacheMaxCapacity = SettingDefaults.CacheMaxCapacity;
         
-        private static string cacheMaxCapacityTextboxBuffer;
+        private static string _cacheMaxCapacityTextboxBuffer = SettingDefaults.CacheMaxCapacity.ToString();
         
-        private static string blacklistTextboxBuffer;
-        private char blacklistSeparator = '|';
+        private static string _blacklistTextboxBuffer;
+        private readonly char _blacklistSeparator = '|';
 
         private static char _digitSeparator = ',';
         private static char _decimalSeparator = '.';
@@ -75,8 +75,8 @@ namespace RimworldReadableNumbers
             _digitSeparator = ',';
             _decimalSeparator = '.';
             
-            cacheMaxCapacityTextboxBuffer = "";
-            blacklistTextboxBuffer = SettingDefaults.CacheMaxCapacity.ToString();
+            _cacheMaxCapacityTextboxBuffer = SettingDefaults.CacheMaxCapacity.ToString();
+            _blacklistTextboxBuffer = "";
         }
 
         public override void ExposeData()
@@ -89,10 +89,10 @@ namespace RimworldReadableNumbers
             Scribe_Values.Look(ref CacheMaxCapacity, "cachemaxcapacity", SettingDefaults.CacheMaxCapacity, false);
 
             string blackListSerialized = string.Join(
-                blacklistSeparator.ToString(),
+                _blacklistSeparator.ToString(),
                 Blacklist.Select(a =>
                         a.Pattern
-                            .Replace(blacklistSeparator.ToString(), "\\" + blacklistSeparator))
+                            .Replace(_blacklistSeparator.ToString(), "\\" + _blacklistSeparator))
                     .ToList());
             Scribe_Values.Look(ref blackListSerialized, "blacklist", "", false);
 
@@ -129,11 +129,11 @@ namespace RimworldReadableNumbers
             }
 
             Blacklist = blackListSerialized
-                .Split(blacklistSeparator)
+                .Split(_blacklistSeparator)
                 .Where(a => a != "")
                 .Select(a => new BlacklistPattern()
                 {
-                    Pattern = a.Replace("\\" + blacklistSeparator, blacklistSeparator.ToString()),
+                    Pattern = a.Replace("\\" + _blacklistSeparator, _blacklistSeparator.ToString()),
                     IsSetForRemoval = false
                 }).ToArray();
 
@@ -226,7 +226,7 @@ namespace RimworldReadableNumbers
             listingStandard.Gap(Text.LineHeight);
             listingStandard.Label("ReadableNumbers_Cache_MaxCapacity_Label".Translate());
             Rect cacheMaxCapacityRect = listingStandard.GetRect(Text.LineHeight);
-            Widgets.TextFieldNumeric(cacheMaxCapacityRect, ref RnSetting.CacheMaxCapacity, ref cacheMaxCapacityTextboxBuffer,100, 1000000);
+            Widgets.TextFieldNumeric(cacheMaxCapacityRect, ref RnSetting.CacheMaxCapacity, ref _cacheMaxCapacityTextboxBuffer,100, 1000000);
             
             #endregion Cache
             
@@ -242,20 +242,20 @@ namespace RimworldReadableNumbers
             listingStandard.Gap(Text.LineHeight);
             
             Rect textFieldRect = listingStandard.GetRect(Text.LineHeight);
-            blacklistTextboxBuffer = Widgets.TextField(textFieldRect, blacklistTextboxBuffer);
+            _blacklistTextboxBuffer = Widgets.TextField(textFieldRect, _blacklistTextboxBuffer);
             bool addButtonPressed = listingStandard.ButtonText("ReadableNumbers_Blacklist_Add".Translate(), "", 1f);
             listingStandard.Gap(Text.LineHeight);
             if (addButtonPressed)
             {
-                if (Blacklist.All(a => a.Pattern != blacklistTextboxBuffer))
+                if (Blacklist.All(a => a.Pattern != _blacklistTextboxBuffer))
                 {
                     Array.Resize(ref Blacklist, Blacklist.Length + 1);
                     Blacklist[Blacklist.Length - 1] = new BlacklistPattern
-                        { Pattern = blacklistTextboxBuffer, IsSetForRemoval = false };
+                        { Pattern = _blacklistTextboxBuffer, IsSetForRemoval = false };
                     Processing.ClearResultCache();
                 }
 
-                blacklistTextboxBuffer = string.Empty;
+                _blacklistTextboxBuffer = string.Empty;
             }
 
 
