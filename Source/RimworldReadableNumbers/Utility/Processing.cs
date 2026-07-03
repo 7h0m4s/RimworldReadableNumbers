@@ -54,6 +54,7 @@ namespace RimworldReadableNumbers.Utility
 
         private static bool TryResultCache(ref string label)
         {
+            if(RnSetting.CacheEnable == false) return false;
             var successfullyGotResultValue = _resultCache.TryGetValue(label, out string resultValue);
             if (successfullyGotResultValue == true)
             {
@@ -65,9 +66,9 @@ namespace RimworldReadableNumbers.Utility
         }        
         private static bool TryAddToResultCache(ref string label, string resultValue)
         {
-            // TODO set configurable cache clear threshold and/or timed cache clear 
-            if(_resultCache.Count % 100 == 0) Log.Message($"Readable Numbers: Cache count of {_resultCache.Count}");
-            if (_resultCache.Count > 10000) _resultCache.Clear();
+            if(RnSetting.CacheEnable == false) return false;
+            if(RnSetting.Debug && _resultCache.Count % 1000 == 0) Log.Message($"Readable Numbers: Cache capacity at {_resultCache.Count} of {RnSetting.CacheMaxCapacity}");
+            if (_resultCache.Count > RnSetting.CacheMaxCapacity) _resultCache.Clear();
             return _resultCache.TryAdd(label, resultValue);
         }      
         public static void ClearResultCache()

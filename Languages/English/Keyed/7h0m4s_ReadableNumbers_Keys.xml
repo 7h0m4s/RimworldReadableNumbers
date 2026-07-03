@@ -16,6 +16,12 @@
 	<ReadableNumbers_SeparatorCharacter_Space_Comma>Space separator with Comma decimal 	(1 000 000,00)</ReadableNumbers_SeparatorCharacter_Space_Comma>
 	<ReadableNumbers_SeparatorCharacter_None>None 	(1000000.00)</ReadableNumbers_SeparatorCharacter_None>
 
+
+	<ReadableNumbers_Cache_Label>Cache:</ReadableNumbers_Cache_Label>
+	<ReadableNumbers_Cache_Desc>Used to improve performance by storing the formatted versions of previously encountered text\nThe cache is cleared whenever it reaches the set capacity, to prevent memory useage or delay looking up previous text</ReadableNumbers_Cache_Desc>
+	<ReadableNumbers_Cache_Enable>Enable Cache</ReadableNumbers_Cache_Enable>
+	<ReadableNumbers_Cache_MaxCapacity_Label>Cache Max Capacity (100 - 1,000,000)</ReadableNumbers_Cache_MaxCapacity_Label>
+
 	<ReadableNumbers_Blacklist_Label>Blacklisted Text:</ReadableNumbers_Blacklist_Label>
 	<ReadableNumbers_Blacklist_Desc>In game text containing any of these strings of characters will be left in its original state</ReadableNumbers_Blacklist_Desc>
 	<ReadableNumbers_Blacklist_TextField>Add pattern here:</ReadableNumbers_Blacklist_TextField>

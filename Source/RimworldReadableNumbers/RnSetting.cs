@@ -17,11 +17,16 @@ namespace RimworldReadableNumbers
 {
     internal class RnSetting : ModSettings
     {
-        public static bool Enable = true;
-        public static bool Debug = false;
-        public static RnMod.NumberFormat NumberFormat = RnMod.NumberFormat.CommaPeriod;
-        public static BlacklistPattern[] Blacklist = Array.Empty<BlacklistPattern>();
-
+        public static bool Enable = SettingDefaults.Enable;
+        public static bool Debug = SettingDefaults.Debug;
+        public static RnMod.NumberFormat NumberFormat = SettingDefaults.NumberFormat;
+        public static BlacklistPattern[] Blacklist = SettingDefaults.Blacklist;
+        
+        public static bool CacheEnable = SettingDefaults.CacheEnable;
+        public static int CacheMaxCapacity = SettingDefaults.CacheMaxCapacity;
+        
+        private static string cacheMaxCapacityTextboxBuffer;
+        
         private static string blacklistTextboxBuffer;
         private char blacklistSeparator = '|';
 
@@ -53,6 +58,8 @@ namespace RimworldReadableNumbers
             public static readonly bool Enable = true;
             public static readonly bool Debug = false;
             public static readonly RnMod.NumberFormat NumberFormat = RnMod.NumberFormat.CommaPeriod;
+            public static readonly bool CacheEnable = true;
+            public static readonly int CacheMaxCapacity = 25000;
             public static readonly BlacklistPattern[] Blacklist = Array.Empty<BlacklistPattern>();
         }
 
@@ -61,12 +68,15 @@ namespace RimworldReadableNumbers
             Enable = SettingDefaults.Enable;
             Debug = SettingDefaults.Debug;
             NumberFormat = SettingDefaults.NumberFormat;
+            CacheEnable = SettingDefaults.CacheEnable;
+            CacheMaxCapacity = SettingDefaults.CacheMaxCapacity;
             Blacklist = SettingDefaults.Blacklist;
             Enable = SettingDefaults.Enable;
             _digitSeparator = ',';
             _decimalSeparator = '.';
             
-            blacklistTextboxBuffer = "";
+            cacheMaxCapacityTextboxBuffer = "";
+            blacklistTextboxBuffer = SettingDefaults.CacheMaxCapacity.ToString();
         }
 
         public override void ExposeData()
@@ -74,6 +84,9 @@ namespace RimworldReadableNumbers
             Scribe_Values.Look(ref Enable, "enable", SettingDefaults.Enable, false);
             Scribe_Values.Look(ref Debug, "debugmode", SettingDefaults.Debug, false);
             Scribe_Values.Look(ref NumberFormat, "numberformat", SettingDefaults.NumberFormat, false);
+            
+            Scribe_Values.Look(ref CacheEnable, "cacheenable", SettingDefaults.CacheEnable, false);
+            Scribe_Values.Look(ref CacheMaxCapacity, "cachemaxcapacity", SettingDefaults.CacheMaxCapacity, false);
 
             string blackListSerialized = string.Join(
                 blacklistSeparator.ToString(),
@@ -131,9 +144,8 @@ namespace RimworldReadableNumbers
 
         public static void DoSettingsWindowContents(Rect inRect)
         {
-            // inRect.yMin += 10f;
-            // inRect.yMax -= 10f;
-            inRect.yMax = (30 * (Text.LineHeight)) + (Blacklist.Length * (Text.LineHeight) * 2);
+            // Data Setup
+            inRect.yMax = (45 * (Text.LineHeight)) + (Blacklist.Length * (Text.LineHeight) * 2);
             var patternScrollRect = new Rect(0f, 0f, inRect.width - 16f, inRect.height * 1.5f);
             Widgets.BeginScrollView(inRect, ref scrollPosition, patternScrollRect, true);
 
@@ -142,19 +154,27 @@ namespace RimworldReadableNumbers
             listingStandard.maxOneColumn = true;
             listingStandard.ColumnWidth = (inRect.width / 4) * 3;
 
+            #region Misc Settings
+            
+            // Basic Options Section: Enable, Debug, Restore Defaults
             listingStandard.CheckboxLabeled("ReadableNumbers_Option_Enable".Translate(), ref RnSetting.Enable);
+            listingStandard.CheckboxLabeled("ReadableNumbers_Option_Debug".Translate(), ref RnSetting.Debug);
 
             listingStandard.Gap(Text.LineHeight);
 
             bool resetButtonPressed =
                 listingStandard.ButtonText("ReadableNumbers_Option_RestoreDefault".Translate(), "", 0.4f);
             if (resetButtonPressed) ResetToDefault();
-
-            //listingStandard.CheckboxLabeled("ReadableNumbers_Option_Debug".Translate(), ef RN_Setting.debug);
+            
+            #endregion Misc Settings
+            
             listingStandard.Gap(Text.LineHeight);
             listingStandard.GapLine();
             listingStandard.Gap(Text.LineHeight);
-
+            
+            #region Separator Selection
+            
+            // Separator Selector Options:
             var separatorSectionHeight = Text.LineHeight * (Enum.GetNames(typeof(RnMod.NumberFormat)).Length + 2);
             var separatorSection = listingStandard.BeginSection(separatorSectionHeight);
             separatorSection.Label("ReadableNumbers_SeparatorCharacter_Label".Translate());
@@ -191,17 +211,37 @@ namespace RimworldReadableNumbers
             }
 
             listingStandard.EndSection(separatorSection);
+            
+            #endregion Separator Selection
 
             listingStandard.Gap(Text.LineHeight);
             listingStandard.GapLine();
             listingStandard.Gap(Text.LineHeight);
             
+            #region Cache
+            
+            // Cache Options:
+            listingStandard.CheckboxLabeled("ReadableNumbers_Cache_Enable".Translate(), ref RnSetting.CacheEnable);
+            listingStandard.Label("ReadableNumbers_Cache_Desc".Translate());
+            listingStandard.Gap(Text.LineHeight);
+            listingStandard.Label("ReadableNumbers_Cache_MaxCapacity_Label".Translate());
+            Rect cacheMaxCapacityRect = listingStandard.GetRect(Text.LineHeight);
+            Widgets.TextFieldNumeric(cacheMaxCapacityRect, ref RnSetting.CacheMaxCapacity, ref cacheMaxCapacityTextboxBuffer,100, 1000000);
+            
+            #endregion Cache
+            
+            listingStandard.Gap(Text.LineHeight);
+            listingStandard.GapLine();
+            listingStandard.Gap(Text.LineHeight);
+            
+            #region Blacklist
+            
+            // Blacklist Options:
             listingStandard.Label("ReadableNumbers_Blacklist_Label".Translate());
             listingStandard.Label("ReadableNumbers_Blacklist_Desc".Translate());
             listingStandard.Gap(Text.LineHeight);
             
             Rect textFieldRect = listingStandard.GetRect(Text.LineHeight);
-            
             blacklistTextboxBuffer = Widgets.TextField(textFieldRect, blacklistTextboxBuffer);
             bool addButtonPressed = listingStandard.ButtonText("ReadableNumbers_Blacklist_Add".Translate(), "", 1f);
             listingStandard.Gap(Text.LineHeight);
@@ -234,7 +274,8 @@ namespace RimworldReadableNumbers
             {
                 listingStandard.CheckboxLabeled($"{Blacklist[i].Pattern}", ref Blacklist[i].IsSetForRemoval);
             }
-
+            
+            #endregion Blacklist
 
             listingStandard.End();
             Widgets.EndScrollView();
