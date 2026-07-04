@@ -17,7 +17,8 @@ namespace RimworldReadableNumbers.Utility
         private static bool _hasAnyNumbers = false;
         private static Memory<char> _resultMemory =  new Memory<char>(new char[short.MaxValue]);
         private static int _resultLength = 0;
-        private static Dictionary<string,string> _resultCache = new Dictionary<string,string>();
+        private static Dictionary<string,string> _resultCache = new Dictionary<string,string>(new Dictionary<string,string>(RnSetting.CacheMaxCapacity),StringComparer.Ordinal);
+        
         
         private static readonly char[] _colourTagPrefix = "<color=".ToCharArray();
         private static short _colourTagIndex = 0;
@@ -62,12 +63,11 @@ namespace RimworldReadableNumbers.Utility
 
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static bool TryResultCache(ref string label)
         {
-            // TODO Test if skipping override of Label when "label.Length != resultValue.Length" is better performance
             if(RnSetting.CacheEnable == false) return false;
-            var successfullyGotResultValue = _resultCache.TryGetValue(label, out string resultValue);
-            if (successfullyGotResultValue == true)
+            if (_resultCache.TryGetValue(label, out string resultValue))
             {
                 if (resultValue == null) return true; // Cached as no formatting needed
                 label = resultValue;
@@ -75,6 +75,8 @@ namespace RimworldReadableNumbers.Utility
             };
             return false;
         }        
+        
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static bool TryAddToResultCache(ref string label, string resultValue)
         {
             if(RnSetting.CacheEnable == false) return false;
@@ -82,10 +84,10 @@ namespace RimworldReadableNumbers.Utility
             if (_resultCache.Count > RnSetting.CacheMaxCapacity) _resultCache.Clear();
             return _resultCache.TryAdd(label, resultValue);
         }      
-        public static void ClearResultCache()
+        
+        public static void ClearResultCache(bool forceNewCache = false)
         {
-            _resultCache.Clear();
-            return;
+            _resultCache = new Dictionary<string, string>(new Dictionary<string, string>(RnSetting.CacheMaxCapacity), StringComparer.Ordinal);
         }
         
         public static void TokeniseString(ReadOnlySpan<char> stringReadOnlySpan)

@@ -10,7 +10,7 @@ namespace RimworldReadableNumbers.Utility
         // TODO create alternate FormatNumberWithTryParse that loops through string in reverse and builds a new string with separators. Then compare performance.
         
          /// <summary>
-        ///  The utility to convert solid numbers to seperated numbers
+        ///  The utility to convert solid numbers to separated numbers
         ///  1000000 -> 1,000,000
         /// </summary>
         /// <returns>ReadOnlySpan char</returns>
