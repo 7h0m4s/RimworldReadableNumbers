@@ -12,7 +12,6 @@ namespace RimworldReadableNumbers.Utility
     public static class Processing
     {
         private static Token[] _tokens  = new Token[short.MaxValue];
-        private static bool[] _tokenHasNumberArray = new bool[short.MaxValue];
         private static short _tokenCount = 0;
         private static short _tokenLength = 0;
         private static bool _hasAnyNumbers = false;
@@ -26,8 +25,9 @@ namespace RimworldReadableNumbers.Utility
 
         private struct Token
         {
-            public short tokenStartIndex;
-            public short tokenLength;
+            public short StartIndex;
+            public short Length;
+            public bool HasNumber;
         }
         
         
@@ -141,10 +141,9 @@ namespace RimworldReadableNumbers.Utility
                     }
                     
                     // Store current Token
-                    _tokens[_tokenCount].tokenStartIndex = (short)(i - _tokenLength + 1); // Calculate start index
-                    _tokens[_tokenCount].tokenLength = _tokenLength;
-                    
-                    _tokenHasNumberArray[_tokenCount] = isCurrentTokenContainingNumber && !_isColourTag; // ColourTags don't count as numbers
+                    _tokens[_tokenCount].StartIndex = (short)(i - _tokenLength + 1); // Calculate start index
+                    _tokens[_tokenCount].Length = _tokenLength;
+                    _tokens[_tokenCount].HasNumber = isCurrentTokenContainingNumber && !_isColourTag; // ColourTags don't count as numbers
                     
                     // Reset values
                     _tokenCount += 1;
@@ -167,14 +166,14 @@ namespace RimworldReadableNumbers.Utility
             {
                 // Slice the current token from original Label's span
                 Token currentToken = _tokens[i];
-                ReadOnlySpan<char> currentTokenSlice = labelSpan.Slice(currentToken.tokenStartIndex, currentToken.tokenLength);
-                bool tokenHasNumberItem = _tokenHasNumberArray[i];
+                ReadOnlySpan<char> currentTokenSlice = labelSpan.Slice(currentToken.StartIndex, currentToken.Length);
+                bool tokenHasNumberItem = currentToken.HasNumber;
                 
                 // Token isn't a number so doesn't need to be formatted
                 if (tokenHasNumberItem == false)
                 {
-                    currentTokenSlice.CopyTo(resultSpan.Slice(_resultLength, currentToken.tokenLength));
-                    _resultLength += currentToken.tokenLength;
+                    currentTokenSlice.CopyTo(resultSpan.Slice(_resultLength, currentToken.Length));
+                    _resultLength += currentToken.Length;
                     continue;
                 }
                 
@@ -190,8 +189,8 @@ namespace RimworldReadableNumbers.Utility
                 else
                 {
                     // Format failed - fallback to copying original label's span
-                    currentTokenSlice.CopyTo(resultSpan.Slice(_resultLength, currentToken.tokenLength));
-                    _resultLength += currentToken.tokenLength;
+                    currentTokenSlice.CopyTo(resultSpan.Slice(_resultLength, currentToken.Length));
+                    _resultLength += currentToken.Length;
                 }
             }
 
