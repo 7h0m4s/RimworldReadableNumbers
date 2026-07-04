@@ -21,6 +21,11 @@ namespace RimworldReadableNumbers.Utility
         private static int _resultLength = 0;
         private static Dictionary<string,string> _resultCache = new Dictionary<string,string>();
         
+        private static readonly char[] _colourTagPrefix = "<color=".ToCharArray();
+        private static short _colourTagIndex = 0;
+        private static bool _isColourTag = false;
+        
+        
         public static void ProcessLabel(ref string label)
         {
             float currentTime = Time.time;
@@ -79,15 +84,17 @@ namespace RimworldReadableNumbers.Utility
         
         public static void TokeniseString(ReadOnlySpan<char> originalString)
         {
-            // TODO implement ObjectPool<StringBuilder> 
-            // ArrayPool<T> for return value?
-            //string[] tokens = ArrayPool<string>.Shared.Rent(originalString.Length);
-            
             StringBuilder sb = _tokenStringBuilder;
             ReadOnlySpan<char> charArray = originalString;
             _tokenCount = 0;
-            char decimalSeparator = '.'; //RnSetting.DecimalSeparator;
+            char decimalSeparator = '.'; 
             _hasAnyNumbers = false;
+            
+            ReadOnlySpan<char> colourTagPrefix = _colourTagPrefix.AsSpan();
+            _colourTagIndex = 0;
+            _isColourTag = false;
+            
+            
             bool isCurrentTokenContainingNumber = false;
             for(short i = 0; i < originalString.Length; i++)
             {
@@ -97,19 +104,29 @@ namespace RimworldReadableNumbers.Utility
                 bool isPreviousCharDigit = Char.IsNumber(previousChar);
                 bool isCurrentCharDigit = Char.IsNumber(currentChar);
                 bool isNextCharDigit = Char.IsNumber(nextChar);
-                // if (isPreviousCharDigit && isNextCharDigit && currentChar == ',') // Doesn't need DigitSeparator setting
-                // {
-                //     // Skip if comma already exists between 2 numbers "0,0"
-                //     // to avoid formatting World Debug ID and Coordinates
-                //     // e.g. "(123,456)"
-                //     hasAnyNumbers = false;
-                //     return null;
-                // }
+
                 sb.Append(currentChar);
                 if(isCurrentCharDigit) isCurrentTokenContainingNumber = true;
+                
+                //ColourTag Detection <color=#808080FF>
+                if (!_isColourTag && colourTagPrefix[_colourTagIndex] == currentChar)
+                {
+                    if (_colourTagIndex == colourTagPrefix.Length - 1)
+                    {
+                        _isColourTag = true;
+                    }
+                    _colourTagIndex++;
+                }
+                else
+                {
+                    _colourTagIndex = 0;
+                }
+                
+                
                 if (i == originalString.Length - 1  // End of the original string
-                    || (!isCurrentCharDigit && currentChar != decimalSeparator && isNextCharDigit && nextChar != decimalSeparator) // Is start of number
-                    || (isCurrentCharDigit && currentChar != decimalSeparator && !isNextCharDigit && nextChar != decimalSeparator) // Is end of number
+                    || (!isCurrentCharDigit && currentChar != decimalSeparator && isNextCharDigit && nextChar != decimalSeparator && !_isColourTag) // Is start of number and not ColourTag
+                    || (isCurrentCharDigit && currentChar != decimalSeparator && !isNextCharDigit && nextChar != decimalSeparator && !_isColourTag) // Is end of number not ColourTag
+                    || (_isColourTag && currentChar == '>') // Is end of ColourTag
                    )
                 {
                     if (isCurrentCharDigit)
@@ -118,9 +135,10 @@ namespace RimworldReadableNumbers.Utility
                         
                     }
                     _tokens[_tokenCount] = sb.ToString().ToCharArray();
-                    _tokenHasNumberArray[_tokenCount] = isCurrentTokenContainingNumber;
+                    _tokenHasNumberArray[_tokenCount] = isCurrentTokenContainingNumber && !_isColourTag; // ColourTags don't count as numbers
                     
                     _tokenCount += 1;
+                    _isColourTag = false;
                     sb.Clear();
                     isCurrentTokenContainingNumber = false;
                 } 
