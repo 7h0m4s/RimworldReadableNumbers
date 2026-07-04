@@ -57,6 +57,8 @@
   <ItemGroup>
     <Compile Include="Patches\DubsPerformanceAnalyzer\DubsPerformanceAnalyzerPatch.cs" />
     <Compile Include="Patches\Rimworld\DateReadout\DateReadoutPatch.cs" />
+    <Compile Include="Patches\Rimworld\DialogFileList\DialogFileListDoWindowContentsPatch.cs" />
+    <Compile Include="Patches\Rimworld\DialogFileList\DialogFileListDrawDateAndVersionPatch.cs" />
     <Compile Include="Patches\Verse\GenMapUI\GenMapUIDrawPawnLabelPatch.cs" />
     <Compile Include="Patches\Verse\GenMapUI\GenMapUIDrawTextPatch.cs" />
     <Compile Include="Patches\Verse\GenMapUI\GenMapUIDrawThingLabelPatch.cs" />

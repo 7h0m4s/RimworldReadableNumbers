@@ -20,9 +20,5 @@ namespace RimworldReadableNumbers.Patches.Verse.GenMapUI
         {
             return Utility.Patching.TranspileReversePatchWidgetLabel(instructions);
         }
-
     }
-    
-    // TODO add DrawPawnLabel patch
-    // TODO add DrawText patch !!!!!!
 }
