@@ -14,7 +14,7 @@ namespace RimworldReadableNumbers.Utility
         ///  1000000 -> 1,000,000
         /// </summary>
         /// <returns>ReadOnlySpan char</returns>
-        public static ReadOnlySpan<char> FormatNumberWithStringManipulation(ref Span<char> originalValue, ref bool isSuccess)
+        public static ReadOnlySpan<char> FormatNumberWithStringManipulation(ref ReadOnlySpan<char> originalValue, ref bool isSuccess)
         {
             ValidationResult validationResult = Validation.IsValidNumberToConvert(ref originalValue);
             if (validationResult.IsValid == false)
