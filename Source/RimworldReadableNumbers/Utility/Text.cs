@@ -7,9 +7,10 @@ namespace RimworldReadableNumbers.Utility
 {
     public static class Text
     {
+        private static Memory<char> _resultMemory =  new Memory<char>(new char[short.MaxValue]);
         // TODO create alternate FormatNumberWithTryParse that loops through string in reverse and builds a new string with separators. Then compare performance.
         
-         /// <summary>
+        /// <summary>
         ///  The utility to convert solid numbers to separated numbers
         ///  1000000 -> 1,000,000
         /// </summary>
@@ -22,8 +23,8 @@ namespace RimworldReadableNumbers.Utility
                 isSuccess = false;
                 return null;
             };
-            short resultValueLength = (short)(originalValue.Length + (originalValue.Length / 3));
-            Span<char> resultValue = new char[resultValueLength];
+
+            Span<char> resultValue = _resultMemory.Span;
             bool isPastPeriod = !validationResult.HasDecimalPlace;
             char digitSeparator = RnSetting.DigitSeparator;
             char decimalSeparator = RnSetting.DecimalSeparator;
@@ -52,9 +53,7 @@ namespace RimworldReadableNumbers.Utility
                 }
             }
             isSuccess = true;
-            return resultValue.Slice(resultValueLength - resutCharCount);
+            return resultValue.Slice(short.MaxValue - resutCharCount);
         }
-        
-        
     }
 }
