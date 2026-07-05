@@ -17,7 +17,7 @@ namespace RimworldReadableNumbers.Utility
         private static bool _hasAnyNumbers = false;
         private static Memory<char> _resultMemory =  new Memory<char>(new char[short.MaxValue]);
         private static int _resultLength = 0;
-        private static Dictionary<string,string> _resultCache = new Dictionary<string,string>(new Dictionary<string,string>(RnSetting.CacheMaxCapacity),StringComparer.Ordinal);
+        private static Dictionary<string,string> _resultCache = InitialiseResultCache();
         
         
         private static readonly char[] _colourTagPrefix = "<color=".ToCharArray();
@@ -87,7 +87,12 @@ namespace RimworldReadableNumbers.Utility
         
         public static void ClearResultCache(bool forceNewCache = false)
         {
-            _resultCache = new Dictionary<string, string>(new Dictionary<string, string>(RnSetting.CacheMaxCapacity), StringComparer.Ordinal);
+            _resultCache = InitialiseResultCache();
+        }
+
+        private static Dictionary<string,string> InitialiseResultCache()
+        {
+            return new Dictionary<string, string>(new Dictionary<string, string>(RnSetting.CacheMaxCapacity), StringComparer.Ordinal);
         }
         
         public static void TokeniseString(ReadOnlySpan<char> stringReadOnlySpan)
