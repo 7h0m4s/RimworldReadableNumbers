@@ -108,9 +108,9 @@ namespace RimworldReadableNumbers.Utility
                 //char previousChar = i == 0 ? 'A' :charArray[i - 1];
                 char currentChar = stringReadOnlySpan[i];
                 char nextChar = i == stringReadOnlySpan.Length - 1 ? 'A' :stringReadOnlySpan[i + 1];
-                //bool isPreviousCharDigit = Char.IsNumber(previousChar);
-                bool isCurrentCharDigit = Char.IsNumber(currentChar);
-                bool isNextCharDigit = Char.IsNumber(nextChar);
+                //bool isPreviousCharDigit = char.IsNumber(previousChar);
+                bool isCurrentCharDigit = char.IsNumber(currentChar);
+                bool isNextCharDigit = char.IsNumber(nextChar);
                 
                 _tokenLength++;
                 if(isCurrentCharDigit) isCurrentTokenContainingNumber = true;

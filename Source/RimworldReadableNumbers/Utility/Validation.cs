@@ -66,7 +66,7 @@ namespace RimworldReadableNumbers.Utility
                         }
                     }
                     
-                    if (char.IsDigit(currentChar))
+                    if (char.IsNumber(currentChar))
                     {
                         numDigitsInSequence++;
                         if(numDigitsInSequence >= 4) isEnoughDigits = true;
@@ -92,7 +92,7 @@ namespace RimworldReadableNumbers.Utility
                 for (short i = 0; i < value.Length; i++)
                 {
                     char c = value[i];
-                    if (!char.IsDigit(c) && c != decimalSeparator) return new ValidationResult(false);
+                    if (!char.IsNumber(c) && c != decimalSeparator) return new ValidationResult(false);
 
                     if (c == decimalSeparator)
                     {
