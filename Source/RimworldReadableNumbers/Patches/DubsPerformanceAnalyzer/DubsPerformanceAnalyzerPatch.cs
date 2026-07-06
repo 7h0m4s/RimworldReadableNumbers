@@ -148,23 +148,30 @@ namespace RimworldReadableNumbers.Patches.DubsPerformanceAnalyzer
                 
             }
         }
+        
+        
+        // [HarmonyTranspiler]
+        // public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+        // {
+        //     return Utility.Patching.TranspileToOverride_With_AllReversePatches(instructions);
+        // }
+        
 
-        [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+        [HarmonyPrefix]
+        public static bool Prefix()
         {
-           return Utility.Patching.TranspileReversePatchWidgetLabel(instructions);
+            
+            RimworldReadableNumbers.Utility.Patching.SkipReadableNumberFormatting = true;
+            return true;
+            
         }
         
-        // [HarmonyCleanup]
-        // static Exception Clearnup(MethodBase original)
-        // {
-        //     return null; // suppresses all exceptions
-        // }
-        //
-        // [HarmonyFinalizer]
-        // static Exception Finalizer(MethodBase original)
-        // {
-        //     return null; // suppresses all exceptions
-        // }
+        [HarmonyPostfix]
+        public static void Postfix()
+        {
+            
+            RimworldReadableNumbers.Utility.Patching.SkipReadableNumberFormatting = false;
+        }
+
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using HarmonyLib;
-using RimworldReadableNumbers.Patches.Verse.Widgets;
+using RimworldReadableNumbers.Patches.Unity.Gui;
 using UnityEngine;
 using Verse;
 
@@ -11,13 +11,13 @@ namespace RimworldReadableNumbers.Utility
 {
     public static class Patching
     {
-        public static IEnumerable<CodeInstruction> TranspileReversePatchWidgetLabel(IEnumerable<CodeInstruction> instructions)
+        [ThreadStatic]
+        private static bool _skipReadableNumberFormatting = false;
+
+        public static bool SkipReadableNumberFormatting
         {
-            MethodInfo methodToFind = AccessTools.Method(typeof(Verse.Widgets), nameof(Verse.Widgets.Label), new Type[] { typeof(Rect), typeof(string) });
-            MethodInfo methodToCall = AccessTools.Method(typeof(WidgetsReversePatch), nameof(WidgetsReversePatch.OriginalLabel), new Type[] { typeof(Rect), typeof(string) });
-        
-            // Find every occurrence of methodToFind and replace with methodToCall
-            return instructions.MethodReplacer(methodToFind, methodToCall).ToList();
+            get => _skipReadableNumberFormatting;
+            set => _skipReadableNumberFormatting = value;
         }
     }
 }

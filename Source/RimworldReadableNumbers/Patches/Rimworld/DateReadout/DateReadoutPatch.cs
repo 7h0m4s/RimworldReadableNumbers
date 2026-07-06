@@ -1,22 +1,25 @@
 ﻿using System.Collections.Generic;
 using System.Reflection.Emit;
 using HarmonyLib;
+using Verse;
 
 namespace RimworldReadableNumbers.Patches.Rimworld.DateReadout
 {
-    [HarmonyPatch]
+    [HarmonyPatch(typeof(RimWorld.DateReadout), // Target type
+        nameof(RimWorld.DateReadout.DateOnGUI))] //Target method, can be written as a plain string if private
     public static class DateReadoutPatch
     {
-        [HarmonyPatch(typeof(RimWorld.DateReadout), // Target type
-            nameof(RimWorld.DateReadout.DateOnGUI))] //Target method, can be written as a plain string if private
-        public static class MyPatch
+        [HarmonyPrefix]
+        public static bool Prefix()
         {
-            [HarmonyTranspiler]
-            public static IEnumerable<CodeInstruction> Transpiler(
-                IEnumerable<CodeInstruction> instructions, ILGenerator ilGenerator)
-            {
-                return Utility.Patching.TranspileReversePatchWidgetLabel(instructions);
-            }
+            Utility.Patching.SkipReadableNumberFormatting = true;
+            return true;
+        }
+
+        [HarmonyPostfix]
+        public static void Postfix()
+        {
+            Utility.Patching.SkipReadableNumberFormatting = false;
         }
     }
 }

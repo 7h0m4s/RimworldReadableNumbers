@@ -57,13 +57,14 @@
   <ItemGroup>
     <Compile Include="Patches\DubsPerformanceAnalyzer\DubsPerformanceAnalyzerPatch.cs" />
     <Compile Include="Patches\Rimworld\DateReadout\DateReadoutPatch.cs" />
+    <Compile Include="Patches\Rimworld\DevGui\DevGuiLabelPatch.cs" />
     <Compile Include="Patches\Rimworld\DialogFileList\DialogFileListDoWindowContentsPatch.cs" />
     <Compile Include="Patches\Rimworld\DialogFileList\DialogFileListDrawDateAndVersionPatch.cs" />
+    <Compile Include="Patches\Unity\Gui\GuiLabelPatch.cs" />
     <Compile Include="Patches\Verse\GenMapUI\GenMapUIDrawPawnLabelPatch.cs" />
     <Compile Include="Patches\Verse\GenMapUI\GenMapUIDrawTextPatch.cs" />
     <Compile Include="Patches\Verse\GenMapUI\GenMapUIDrawThingLabelPatch.cs" />
-    <Compile Include="Patches\Verse\Widgets\WidgetsPatch.cs" />
-    <Compile Include="Patches\Verse\Widgets\WidgetsReversePatch.cs" />
+    <Compile Include="Patches\Verse\GenMapUI\GenMapUIGetPawnLabelPatch.cs" />
     <Compile Include="RnMod.cs" />
     <Compile Include="RnPatcher.cs" />
     <Compile Include="RnSetting.cs" />
@@ -72,6 +73,12 @@
     <Compile Include="Utility\Processing.cs" />
     <Compile Include="Utility\Text.cs" />
     <Compile Include="Utility\Validation.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ReferencePathWithRefAssemblies Update="C:\Users\Thomas\.nuget\packages\lib.harmony\2.3.6\lib\net472\0Harmony.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Patches\Verse\Widgets\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
