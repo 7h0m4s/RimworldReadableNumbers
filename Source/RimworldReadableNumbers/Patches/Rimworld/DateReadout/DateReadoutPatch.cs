@@ -12,14 +12,14 @@ namespace RimworldReadableNumbers.Patches.Rimworld.DateReadout
         [HarmonyPrefix]
         public static bool Prefix()
         {
-            Utility.Patching.SkipReadableNumberFormatting = true;
+            Utility.Patching.DisableReadableNumberFormatting = true;
             return true;
         }
 
         [HarmonyPostfix]
         public static void Postfix()
         {
-            Utility.Patching.SkipReadableNumberFormatting = false;
+            Utility.Patching.DisableReadableNumberFormatting = false;
         }
     }
 }

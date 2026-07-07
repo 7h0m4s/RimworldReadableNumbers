@@ -28,10 +28,14 @@ namespace RimworldReadableNumbers.Patches.Unity.Gui
         [HarmonyPatch(typeof(UnityEngine.GUI), nameof(UnityEngine.GUI.Label), new Type[] { typeof(Rect), typeof(GUIContent) })]
         public static bool Prefix(Rect position, GUIContent content)
         {
-            if (Utility.Patching.SkipReadableNumberFormatting) return true;
+            if (Utility.Patching.DisableReadableNumberFormatting) return true;
+            if (Utility.Patching.IsAlreadyReadableNumberFormatted)
+            {
+                Utility.Patching.IsAlreadyReadableNumberFormatted = false;
+                return true;
+            }
             string contentText = content.text;
             Utility.Processing.ProcessLabel(ref contentText);
-            content.text = contentText;
             return true;
         }
         
@@ -46,10 +50,14 @@ namespace RimworldReadableNumbers.Patches.Unity.Gui
         [HarmonyPatch(typeof(UnityEngine.GUI), nameof(UnityEngine.GUI.Label), new Type[] { typeof(Rect), typeof(GUIContent), typeof(GUIStyle) })]
         public static bool Prefix(Rect position, GUIContent content, GUIStyle style)
         {
-            if (Utility.Patching.SkipReadableNumberFormatting) return true;
+            if (Utility.Patching.DisableReadableNumberFormatting) return true;
+            if (Utility.Patching.IsAlreadyReadableNumberFormatted)
+            {
+                Utility.Patching.IsAlreadyReadableNumberFormatted = false;
+                return true;
+            }
             string contentText = content.text;
             Utility.Processing.ProcessLabel(ref contentText);
-            content.text = contentText;
             return true;
         }
     }

@@ -161,7 +161,7 @@ namespace RimworldReadableNumbers.Patches.DubsPerformanceAnalyzer
         public static bool Prefix()
         {
             
-            RimworldReadableNumbers.Utility.Patching.SkipReadableNumberFormatting = true;
+            RimworldReadableNumbers.Utility.Patching.DisableReadableNumberFormatting = true;
             return true;
             
         }
@@ -170,7 +170,7 @@ namespace RimworldReadableNumbers.Patches.DubsPerformanceAnalyzer
         public static void Postfix()
         {
             
-            RimworldReadableNumbers.Utility.Patching.SkipReadableNumberFormatting = false;
+            RimworldReadableNumbers.Utility.Patching.DisableReadableNumberFormatting = false;
         }
 
     }

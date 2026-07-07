@@ -41,7 +41,7 @@ namespace RimworldReadableNumbers.Utility
                 || labelSpan.Length <= 3 // skip if result string is too short to need a separator
                 || labelSpan.Length > short.MaxValue - 1 // skip if string is too big
                 || !RnSetting.Enable
-                || Patching.SkipReadableNumberFormatting // skip if formatting has already been done earlier
+                || Patching.DisableReadableNumberFormatting // skip if formatting has already been done earlier
                 // || Current.ProgramState != ProgramState.Playing
                 // || Current.Game.CurrentMap == null
                ) return;

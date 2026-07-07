@@ -12,14 +12,14 @@ namespace RimworldReadableNumbers.Patches.Verse.GenMapUI
         public static bool Prefix(Vector2 worldPos, ref string text, Color textColor)
         {
             Utility.Processing.ProcessLabel(ref text);
-            Utility.Patching.SkipReadableNumberFormatting = true;
+            Utility.Patching.DisableReadableNumberFormatting = true;
             return true;
         }
 
         [HarmonyPostfix]
         public static void Postfix()
         {
-            Utility.Patching.SkipReadableNumberFormatting = false;
+            Utility.Patching.DisableReadableNumberFormatting = false;
         }
     }
 }

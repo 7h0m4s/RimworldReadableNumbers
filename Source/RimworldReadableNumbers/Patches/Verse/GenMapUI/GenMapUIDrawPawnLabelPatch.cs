@@ -20,14 +20,14 @@ namespace RimworldReadableNumbers.Patches.Verse.GenMapUI
             bool alwaysDrawBg = true,
             bool alignCenter = true)
         {
-            Utility.Patching.SkipReadableNumberFormatting = true;
+            
             return true;
         }
 
         [HarmonyPostfix]
         public static void Postfix()
         {
-            Utility.Patching.SkipReadableNumberFormatting = false;
+            
         }
     
     }
