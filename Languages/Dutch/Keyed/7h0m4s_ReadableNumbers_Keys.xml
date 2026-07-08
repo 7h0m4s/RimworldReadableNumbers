@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+<ReadableNumbers_Option_Mod_Name>Leesbare getallen</ReadableNumbers_Option_Mod_Name>
+
+<ReadableNumbers_Option_Enable>Leesbare getallen inschakelen</ReadableNumbers_Option_Enable>
+
+<ReadableNumbers_Option_RestoreDefault>Standaardinstellingen herstellen</ReadableNumbers_Option_RestoreDefault>
+
+<ReadableNumbers_Option_Debug>Foutopsporingsmodus</ReadableNumbers_Option_Debug>
+
+<ReadableNumbers_SeparatorCharacter_Label>Getalindeling selecteren:</ReadableNumbers_SeparatorCharacter_Label>
+
+<ReadableNumbers_SeparatorCharacter_Comma_Period>Komma als scheidingsteken met punt als decimaal (1.000.000,00)</ReadableNumbers_SeparatorCharacter_Comma_Period>
+
+<ReadableNumbers_SeparatorCharacter_Period_Comma>Puntscheidingsteken met komma decimaal (1.000.000,00)</ReadableNumbers_SeparatorCharacter_Period_Comma>
+
+<ReadableNumbers_SeparatorCharacter_Space_Period>Spatiescheidingsteken met punt decimaal (1 000 000.00)</ReadableNumbers_SeparatorCharacter_Space_Period>
+
+<ReadableNumbers_SeparatorCharacter_Space_Comma>Spatiescheidingsteken met komma decimaal (1 000 000,00)</ReadableNumbers_SeparatorCharacter_Space_Comma>
+<ReadableNumbers_SeparatorCharacter_None>Geen (1000000.00)</ReadableNumbers_SeparatorCharacter_None>
+
+<ReadableNumbers_Cache_Label>Cache:</ReadableNumbers_Cache_Label>
+
+<ReadableNumbers_Cache_Desc>Wordt gebruikt om de prestaties te verbeteren door de geformatteerde versies van eerder gevonden tekst op te slaan. De cache wordt gewist zodra de ingestelde capaciteit is bereikt, om geheugengebruik of vertraging bij het opzoeken van eerdere tekst te voorkomen.</ReadableNumbers_Cache_Desc>
+
+<ReadableNumbers_Cache_Enable>Cache inschakelen</ReadableNumbers_Cache_Enable>
+
+<ReadableNumbers_Cache_MaxCapacity_Label>Maximale cachecapaciteit (100 - 1.000.000)</ReadableNumbers_Cache_MaxCapacity_Label>
+
+<ReadableNumbers_Blacklist_Label>Geblokkeerde tekst:</ReadableNumbers_Blacklist_Label>
+
+<ReadableNumbers_Blacklist_Desc>Tekst in het spel die een van deze tekenreeksen bevat, blijft in de oorspronkelijke staat.</ReadableNumbers_Blacklist_Desc>
+
+<ReadableNumbers_Blacklist_TextField>Voeg hier een patroon toe:</ReadableNumbers_Blacklist_TextField>
+
+<ReadableNumbers_Blacklist_Add>Toevoegen</ReadableNumbers_Blacklist_Add>
+
+<!-- Plaats vlaggen om elke patch in/uit te schakelen -->
+</LanguageData>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+<ReadableNumbers_Option_Mod_Name>Numere lizibile</ReadableNumbers_Option_Mod_Name>
+
+<ReadableNumbers_Option_Enable>Activează numerele lizibile</ReadableNumbers_Option_Enable>
+<ReadableNumbers_Option_RestoreDefault>Restaurează valorile implicite</ReadableNumbers_Option_RestoreDefault>
+<ReadableNumbers_Option_Debug>Mod de depanare</ReadableNumbers_Option_Debug>
+
+<ReadableNumbers_SeparatorCharacter_Label>Selectați formatul numărului:</ReadableNumbers_SeparatorCharacter_Label>
+<ReadableNumbers_SeparatorCharacter_Comma_Period>Separator virgulă cu punct zecimal (1,000,000.00)</ReadableNumbers_SeparatorCharacter_Comma_Period>
+<ReadableNumbers_SeparatorCharacter_Period_Comma>Separator punct cu virgulă zecimală (1.000.000,00)</ReadableNumbers_SeparatorCharacter_Period_Comma>
+<ReadableNumbers_SeparatorCharacter_Space_Period>Separator spațiu cu punct zecimală (1 000 000.00)</ReadableNumbers_SeparatorCharacter_Space_Period>
+<ReadableNumbers_SeparatorCharacter_Space_Comma>Separator spațiu cu virgulă zecimală (1 000 000,00)</ReadableNumbers_SeparatorCharacter_Space_Comma>
+<ReadableNumbers_SeparatorCharacter_None>Niciunul (1000000.00)</ReadableNumbers_SeparatorCharacter_None>
+
+<ReadableNumbers_Cache_Label>Memorie cache:</ReadableNumbers_Cache_Label>
+<ReadableNumbers_Cache_Desc>Utilizat pentru a îmbunătăți performanța prin stocarea versiunilor formatate ale textului întâlnit anterior\nMemoria cache este golită ori de câte ori atinge capacitatea setată, pentru a preveni utilizarea memoriei sau întârzierea căutării textului anterior</ReadableNumbers_Cache_Desc>
+<ReadableNumbers_Cache_Enable>Activează memoria cache</ReadableNumbers_Cache_Enable>
+<ReadableNumbers_Cache_MaxCapacity_Label>Capacitate maximă memorie cache (100 - 1.000.000)</ReadableNumbers_Cache_MaxCapacity_Label>
+
+<ReadableNumbers_Blacklist_Label>Text inclus pe lista neagră:</ReadableNumbers_Blacklist_Label>
+<ReadableNumbers_Blacklist_Desc>În joc, textul care conține oricare dintre aceste șiruri de caractere va fi lăsat în original stare</ReadableNumbers_Blacklist_Desc>
+<ReadableNumbers_Blacklist_TextField>Adăugați modelul aici:</ReadableNumbers_Blacklist_TextField>
+<ReadableNumbers_Blacklist_Add>Adăugați</ReadableNumbers_Blacklist_Add>
+
+<!-- Puneți steaguri pentru a activa/dezactiva fiecare patch -->
+</LanguageData>

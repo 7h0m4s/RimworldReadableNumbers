@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+<ReadableNumbers_Option_Mod_Name>Lesbare tall</ReadableNumbers_Option_Mod_Name>
+
+<ReadableNumbers_Option_Enable>Aktiver lesbare tall</ReadableNumbers_Option_Enable>
+<ReadableNumbers_Option_RestoreDefault>Gjenopprett standard</ReadableNumbers_Option_RestoreDefault>
+<ReadableNumbers_Option_Debug>Feilsøkingsmodus</ReadableNumbers_Option_Debug>
+
+<ReadableNumbers_SeparatorCharacter_Label>Velg tallformat:</ReadableNumbers_SeparatorCharacter_Label>
+<ReadableNumbers_SeparatorCharacter_Comma_Period>Kommaseparator med punktum som desimal (1,000,000.00)</ReadableNumbers_SeparatorCharacter_Comma_Period>
+<ReadableNumbers_SeparatorCharacter_Period_Comma>Punktumseparator med komma desimal (1.000.000,00)</ReadableNumbers_SeparatorCharacter_Period_Comma>
+<ReadableNumbers_SeparatorCharacter_Space_Period>Mellomromseparator med punktum desimal (1 000 000.00)</ReadableNumbers_SeparatorCharacter_Space_Period>
+<ReadableNumbers_SeparatorCharacter_Space_Comma>Mellomromseparator med komma desimal (1 000 000,00)</ReadableNumbers_SeparatorCharacter_Space_Comma>
+<ReadableNumbers_SeparatorCharacter_None>Ingen (1000000.00)</ReadableNumbers_SeparatorCharacter_None>
+
+<ReadableNumbers_Cache_Label>Cache:</ReadableNumbers_Cache_Label>
+<ReadableNumbers_Cache_Desc>Brukes til å forbedre ytelsen ved å lagre formaterte versjoner av tidligere funnet tekst.\nCachen tømmes når den når den angitte kapasiteten, for å forhindre minnebruk eller forsinke oppslag av tidligere tekst.</ReadableNumbers_Cache_Desc>
+<ReadableNumbers_Cache_Enable>Aktiver cache</ReadableNumbers_Cache_Enable>
+<ReadableNumbers_Cache_MaxCapacity_Label>Maksimal cachekapasitet (100 - 1 000 000)</ReadableNumbers_Cache_MaxCapacity_Label>
+
+<ReadableNumbers_Blacklist_Label>Svartelistet tekst:</ReadableNumbers_Blacklist_Label>
+<ReadableNumbers_Blacklist_Desc>Tekst i spillet som inneholder noen av disse tegnstrengene vil bli stående i sin opprinnelige tilstand</ReadableNumbers_Blacklist_Desc>
+<ReadableNumbers_Blacklist_TextField>Legg til mønster her:</ReadableNumbers_Blacklist_TextField>
+<ReadableNumbers_Blacklist_Add>Legg til</ReadableNumbers_Blacklist_Add>
+
+<!-- Sett flagg for å aktivere/deaktivere hver patch -->
+</LanguageData>

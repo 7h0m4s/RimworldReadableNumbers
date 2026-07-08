@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+<ReadableNumbers_Option_Mod_Name>Liczby czytelne</ReadableNumbers_Option_Mod_Name>
+
+<ReadableNumbers_Option_Enable>Włącz liczby czytelne</ReadableNumbers_Option_Enable>
+<ReadableNumbers_Option_RestoreDefault>Przywróć domyślne</ReadableNumbers_Option_RestoreDefault>
+<ReadableNumbers_Option_Debug>Tryb debugowania</ReadableNumbers_Option_Debug>
+
+<ReadableNumbers_SeparatorCharacter_Label>Wybierz format liczb:</ReadableNumbers_SeparatorCharacter_Label>
+<ReadableNumbers_SeparatorCharacter_Comma_Period>Przecinek jako separator dziesiętny z kropką (1,000,000.00)</ReadableNumbers_SeparatorCharacter_Comma_Period>
+<ReadableNumbers_SeparatorCharacter_Period_Comma>Przecinek jako separator dziesiętny z przecinkiem (1.000.000,00)</ReadableNumbers_SeparatorCharacter_Period_Comma>
+<ReadableNumbers_SeparatorCharacter_Space_Period>Przecinek jako separator dziesiętny z kropką (1 000 000.00)</ReadableNumbers_SeparatorCharacter_Space_Period>
+<ReadableNumbers_SeparatorCharacter_Space_Comma>Przecinek jako separator dziesiętny dziesiętny (1 000 000,00)</ReadableNumbers_SeparatorCharacter_Space_Comma>
+<ReadableNumbers_SeparatorCharacter_None>Brak (1000000.00)</ReadableNumbers_SeparatorCharacter_None>
+
+<ReadableNumbers_Cache_Label>Pamięć podręczna:</ReadableNumbers_Cache_Label>
+<ReadableNumbers_Cache_Desc>Używane w celu poprawy wydajności poprzez przechowywanie sformatowanych wersji wcześniej napotkanego tekstu. Pamięć podręczna jest czyszczona po osiągnięciu ustawionej pojemności, aby zapobiec zużyciu pamięci lub opóźnieniom w wyszukiwaniu poprzedniego tekstu.</ReadableNumbers_Cache_Desc>
+<ReadableNumbers_Cache_Enable>Włącz pamięć podręczną</ReadableNumbers_Cache_Enable>
+<ReadableNumbers_Cache_MaxCapacity_Label>Maksymalna pojemność pamięci podręcznej (100–1 000 000)</ReadableNumbers_Cache_MaxCapacity_Label>
+
+<ReadableNumbers_Blacklist_Label>Tekst na czarnej liście:</ReadableNumbers_Blacklist_Label>
+<ReadableNumbers_Blacklist_Desc>Tekst w grze zawierający którykolwiek z tych ciągów znaków zostanie pozostawiony w oryginalnym stanie</ReadableNumbers_Blacklist_Desc>
+<ReadableNumbers_Blacklist_TextField>Dodaj tutaj wzór:</ReadableNumbers_Blacklist_TextField>
+<ReadableNumbers_Blacklist_Add>Dodaj</ReadableNumbers_Blacklist_Add>
+
+<!-- Ustaw flagi, aby włączyć/wyłączyć każdą poprawkę -->
+</LanguageData>

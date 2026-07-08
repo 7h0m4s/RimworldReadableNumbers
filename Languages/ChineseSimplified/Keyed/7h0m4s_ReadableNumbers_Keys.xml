@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<LanguageData>
+
+<ReadableNumbers_Option_Mod_Name>可读数字</ReadableNumbers_Option_Mod_Name>
+
+<ReadableNumbers_Option_Enable>启用可读数字</ReadableNumbers_Option_Enable>
+
+<ReadableNumbers_Option_RestoreDefault>恢复默认值</ReadableNumbers_Option_RestoreDefault>
+
+<ReadableNumbers_Option_Debug>调试模式</ReadableNumbers_Option_Debug>
+
+<ReadableNumbers_SeparatorCharacter_Label>选择数字格式：</ReadableNumbers_SeparatorCharacter_Label>
+
+<ReadableNumbers_SeparatorCharacter_Comma_Period>带句点的逗号分隔符（小数点后加句点） (1,000,000.00)</ReadableNumbers_SeparatorCharacter_Comma_Period>
+<ReadableNumbers_SeparatorCharacter_Period_Comma>句点分隔符，带逗号小数点 (1.000.000,00)</ReadableNumbers_SeparatorCharacter_Period_Comma>
+
+<ReadableNumbers_SeparatorCharacter_Space_Period>空格分隔符，带句点小数点 (1 000 000.00)</ReadableNumbers_SeparatorCharacter_Space_Period>
+
+<ReadableNumbers_SeparatorCharacter_Space_Comma>空格分隔符，带逗号小数点 (1 000 000,00)</ReadableNumbers_SeparatorCharacter_Space_Comma>
+
+<ReadableNumbers_SeparatorCharacter_None>无(1000000.00)</ReadableNumbers_SeparatorCharacter_None>
+
+<ReadableNumbers_Cache_Label>缓存：</ReadableNumbers_Cache_Label>
+
+<ReadableNumbers_Cache_Desc>用于存储先前遇到的文本的格式化版本，以提高性能。当缓存达到设定的容量时，缓存将被清除，以防止内存占用过高或延迟查找先前文本。</ReadableNumbers_Cache_Desc>
+
+<ReadableNumbers_Cache_Enable>启用缓存</ReadableNumbers_Cache_Enable>
+
+<ReadableNumbers_Cache_MaxCapacity_Label>缓存最大容量 (100 - 1,000,000)</ReadableNumbers_Cache_MaxCapacity_Label>
+
+<ReadableNumbers_Blacklist_Label>黑名单文本：</ReadableNumbers_Blacklist_Label>
+
+<ReadableNumbers_Blacklist_Desc>游戏文本中包含以下任何字符串的内容将保持其原始状态</ReadableNumbers_Blacklist_Desc>
+
+<ReadableNumbers_Blacklist_TextField>在此处添加模式：</ReadableNumbers_Blacklist_TextField>
+
+<ReadableNumbers_Blacklist_Add>添加</ReadableNumbers_Blacklist_Add>
+
+<!-- 为每个补丁添加启用/禁用标志 -->
+
+</LanguageData>

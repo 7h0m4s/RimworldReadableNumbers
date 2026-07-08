@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+<ReadableNumbers_Option_Mod_Name>Loetavad numbrid</ReadableNumbers_Option_Mod_Name>
+
+<ReadableNumbers_Option_Enable>Luba loetavad numbrid</ReadableNumbers_Option_Enable>
+<ReadableNumbers_Option_RestoreDefault>Taasta vaikesäte</ReadableNumbers_Option_RestoreDefault>
+<ReadableNumbers_Option_Debug>Silumisrežiim</ReadableNumbers_Option_Debug>
+
+<ReadableNumbers_SeparatorCharacter_Label>Vali numbrivorming:</ReadableNumbers_SeparatorCharacter_Label>
+<ReadableNumbers_SeparatorCharacter_Comma_Period>Koma eraldaja punktiga kümnendmurruga (1,000,000.00)</ReadableNumbers_SeparatorCharacter_Comma_Period>
+<ReadableNumbers_SeparatorCharacter_Period_Comma>Punktide eraldaja komaga (1.000.000,00)</ReadableNumbers_SeparatorCharacter_Period_Comma>
+<ReadableNumbers_SeparatorCharacter_Space_Period>Tühiku eraldaja komaga (1 000 000.00)</ReadableNumbers_SeparatorCharacter_Space_Period>
+<ReadableNumbers_SeparatorCharacter_Space_Comma>Tühiku eraldaja komaga (1 000 000,00)</ReadableNumbers_SeparatorCharacter_Space_Comma>
+<ReadableNumbers_SeparatorCharacter_None>Puudub (1000000,00)</ReadableNumbers_SeparatorCharacter_None>
+
+<ReadableNumbers_Cache_Label>Vahemälu:</ReadableNumbers_Cache_Label>
+<ReadableNumbers_Cache_Desc>Kasutatakse jõudluse parandamiseks, salvestades eelnevalt kohatud teksti vormindatud versioone\nVahemälu tühjendatakse alati, kui see saavutab seatud mahutavuse, et vältida mälu kasutamist või eelmise teksti otsimise viivitust</ReadableNumbers_Cache_Desc>
+<ReadableNumbers_Cache_Enable>Luba vahemälu</ReadableNumbers_Cache_Enable>
+<ReadableNumbers_Cache_MaxCapacity_Label>Vahemälu maksimaalne maht (100 - 1 000 000)</ReadableNumbers_Cache_MaxCapacity_Label>
+
+<ReadableNumbers_Blacklist_Label>Musta nimekirja kantud tekst:</ReadableNumbers_Blacklist_Label>
+<ReadableNumbers_Blacklist_Desc>Mängus jäetakse tekst, mis sisaldab mõnda neist tähemärkidest, algsele kujule olek</ReadableNumbers_Blacklist_Desc>
+<ReadableNumbers_Blacklist_TextField>Lisa siia muster:</ReadableNumbers_Blacklist_TextField>
+<ReadableNumbers_Blacklist_Add>Lisa</ReadableNumbers_Blacklist_Add>
+
+<!-- Lisa lipud iga paiga lubamiseks/keelamiseks -->
+</LanguageData>

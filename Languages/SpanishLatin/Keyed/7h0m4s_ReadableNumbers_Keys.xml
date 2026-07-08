@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+<ReadableNumbers_Option_Mod_Name>Numeri Legibiles</ReadableNumbers_Option_Mod_Name>
+
+<ReadableNumbers_Option_Enable>Numeros Legibiles Activare</ReadableNumbers_Option_Enable>
+<ReadableNumbers_Option_RestoreDefault>Status Default Restituere</ReadableNumbers_Option_RestoreDefault>
+<ReadableNumbers_Option_Debug>Modus Debug</ReadableNumbers_Option_Debug>
+
+<ReadableNumbers_SeparatorCharacter_Label>Formam Numeri Elige:</ReadableNumbers_SeparatorCharacter_Label>
+<ReadableNumbers_SeparatorCharacter_Comma_Period>Separator Commatum cum Periodo decimali (1,000,000.00)</ReadableNumbers_SeparatorCharacter_Comma_Period>
+<ReadableNumbers_SeparatorCharacter_Period_Comma>Separator punctorum cum decimali commate (1.000.000,00)</ReadableNumbers_SeparatorCharacter_Period_Comma>
+<ReadableNumbers_SeparatorCharacter_Space_Period>Separator spatiorum cum decimali punctorum (1 000 000.00)</ReadableNumbers_SeparatorCharacter_Space_Period>
+<ReadableNumbers_SeparatorCharacter_Space_Comma>Separator spatiorum cum decimali commate (1 000 000,00)</ReadableNumbers_SeparatorCharacter_Space_Comma>
+<ReadableNumbers_SeparatorCharacter_None>Nullus (1000000.00)</ReadableNumbers_SeparatorCharacter_None>
+
+<ReadableNumbers_Cache_Label>Repositorium:</ReadableNumbers_Cache_Label>
+<ReadableNumbers_Cache_Desc>Adhibetur ad efficientiam emendandam per conservationem versionum formatarum textus antea inventi\nRepositorium purgatur quotiescumque capacitatem statutam attingit, ne memoria utatur aut textus prioris inquisitio differatur</ReadableNumbers_Cache_Desc>
+<ReadableNumbers_Cache_Enable>Permittere Repositorium</ReadableNumbers_Cache_Enable>
+<ReadableNumbers_Cache_MaxCapacity_Label>Capacitas Maxima Repositorii (100 - 1,000,000)</ReadableNumbers_Cache_MaxCapacity_Label>
+
+<ReadableNumbers_Blacklist_Label>Textus in Lista Nigra:</ReadableNumbers_Blacklist_Label>
+<ReadableNumbers_Blacklist_Desc>In ludo textus qui has series characterum continet in originali suo relinquetur. status</ReadableNumbers_Blacklist_Desc>
+<ReadableNumbers_Blacklist_TextField>Exemplar hic adde:</ReadableNumbers_Blacklist_TextField>
+<ReadableNumbers_Blacklist_Add>Adde</ReadableNumbers_Blacklist_Add>
+
+<!-- Vexilla pone ad singulas partes activandas/inactivandas -->
+</LanguageData>

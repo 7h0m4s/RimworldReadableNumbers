@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+<ReadableNumbers_Option_Mod_Name>Olvasható számok</ReadableNumbers_Option_Mod_Name>
+
+<ReadableNumbers_Option_Enable>Olvasható számok engedélyezése</ReadableNumbers_Option_Enable>
+<ReadableNumbers_Option_RestoreDefault>Alapértelmezett visszaállítása</ReadableNumbers_Option_RestoreDefault>
+<ReadableNumbers_Option_Debug>Hibakeresési mód</ReadableNumbers_Option_Debug>
+
+<ReadableNumbers_SeparatorCharacter_Label>Számformátum kiválasztása:</ReadableNumbers_SeparatorCharacter_Label>
+<ReadableNumbers_SeparatorCharacter_Comma_Period>Vesszővel elválasztva, ponttal elválasztva, tizedes törttel (1,000,000.00)</ReadableNumbers_SeparatorCharacter_Comma_Period>
+<ReadableNumbers_SeparatorCharacter_Period_Comma>Pont elválasztó vesszővel és tizedes törttel (1.000.000,00)</ReadableNumbers_SeparatorCharacter_Period_Comma>
+<ReadableNumbers_SeparatorCharacter_Space_Period>Szóköz elválasztó vesszővel és tizedes törttel (1 000 000.00)</ReadableNumbers_SeparatorCharacter_Space_Period>
+<ReadableNumbers_SeparatorCharacter_Space_Comma>Szóköz elválasztó vesszővel és tizedes törttel (1 000 000,00)</ReadableNumbers_SeparatorCharacter_Space_Comma>
+<ReadableNumbers_SeparatorCharacter_None>Nincs (1000000,00)</ReadableNumbers_SeparatorCharacter_None>
+
+<ReadableNumbers_Cache_Label>Gyorsítótár:</ReadableNumbers_Cache_Label>
+<ReadableNumbers_Cache_Desc>A teljesítmény javítására szolgál azáltal, hogy tárolja a korábban talált szövegek formázott verzióit.\nA gyorsítótár ürül, amikor eléri a beállított kapacitást, hogy megakadályozza a memóriahasználatot vagy a korábbi szövegek keresésének késleltetését.</ReadableNumbers_Cache_Desc>
+<ReadableNumbers_Cache_Enable>Gyorsítótár engedélyezése</ReadableNumbers_Cache_Enable>
+<ReadableNumbers_Cache_MaxCapacity_Label>Gyorsítótár maximális kapacitása (100 - 1 000 000)</ReadableNumbers_Cache_MaxCapacity_Label>
+
+<ReadableNumbers_Blacklist_Label>Feketelistás szöveg:</ReadableNumbers_Blacklist_Label>
+<ReadableNumbers_Blacklist_Desc>A játékban a fenti karakterláncok bármelyikét tartalmazó szövegek eredeti állapotukban maradnak. állapot</ReadableNumbers_Blacklist_Desc>
+<ReadableNumbers_Blacklist_TextField>Minta hozzáadása itt:</ReadableNumbers_Blacklist_TextField>
+<ReadableNumbers_Blacklist_Add>Hozzáadás</ReadableNumbers_Blacklist_Add>
+
+<!-- Jelzők elhelyezése az egyes javítások engedélyezéséhez/letiltásához -->
+</LanguageData>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+<ReadableNumbers_Option_Mod_Name>Numeri leggibili</ReadableNumbers_Option_Mod_Name>
+
+<ReadableNumbers_Option_Enable>Abilita numeri leggibili</ReadableNumbers_Option_Enable>
+
+<ReadableNumbers_Option_RestoreDefault>Ripristina impostazioni predefinite</ReadableNumbers_Option_RestoreDefault>
+
+<ReadableNumbers_Option_Debug>Modalità debug</ReadableNumbers_Option_Debug>
+
+<ReadableNumbers_SeparatorCharacter_Label>Seleziona formato numerico:</ReadableNumbers_SeparatorCharacter_Label>
+
+<ReadableNumbers_SeparatorCharacter_Comma_Period>Separatore virgola con punto decimale (1.000.000,00)</ReadableNumbers_SeparatorCharacter_Comma_Period>
+<ReadableNumbers_SeparatorCharacter_Period_Comma>Separatore punto con virgola decimale (1.000.000,00)</ReadableNumbers_SeparatorCharacter_Period_Comma>
+<ReadableNumbers_SeparatorCharacter_Space_Period>Separatore spazio con punto decimale (1 000 000.00)</ReadableNumbers_SeparatorCharacter_Space_Period>
+
+<ReadableNumbers_SeparatorCharacter_Space_Comma>Separatore spazio con virgola decimale (1 000 000,00)</ReadableNumbers_SeparatorCharacter_Space_Comma>
+
+<ReadableNumbers_SeparatorCharacter_None>Nessuno (1.000.000,00)</ReadableNumbers_SeparatorCharacter_None>
+
+<ReadableNumbers_Cache_Label>Cache:</ReadableNumbers_Cache_Label>
+
+<ReadableNumbers_Cache_Desc>Utilizzata per migliorare le prestazioni memorizzando le versioni formattate del testo incontrato in precedenza. La cache viene svuotata quando raggiunge la capacità impostata, per evitare un eccessivo utilizzo della memoria o ritardi nella ricerca del testo precedente.</ReadableNumbers_Cache_Desc>
+
+<ReadableNumbers_Cache_Enable>Abilita cache</ReadableNumbers_Cache_Enable>
+
+<ReadableNumbers_Cache_MaxCapacity_Label>Capacità massima della cache (100 - 1.000.000)</ReadableNumbers_Cache_MaxCapacity_Label>
+
+
+<ReadableNumbers_Blacklist_Label>Testo nella lista nera:</ReadableNumbers_Blacklist_Label>
+
+<ReadableNumbers_Blacklist_Desc>Il testo di gioco contenente una qualsiasi di queste stringhe di caratteri verrà lasciato nel suo stato originale</ReadableNumbers_Blacklist_Desc>
+
+<ReadableNumbers_Blacklist_TextField>Aggiungi qui il pattern:</ReadableNumbers_Blacklist_TextField>
+
+<ReadableNumbers_Blacklist_Add>Aggiungi</ReadableNumbers_Blacklist_Add>
+
+<!-- Inserisci i flag per abilitare/disabilitare ogni patch -->
+</LanguageData>

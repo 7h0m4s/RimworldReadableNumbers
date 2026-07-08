@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+<ReadableNumbers_Option_Mod_Name>Čitelná čísla</ReadableNumbers_Option_Mod_Name>
+
+<ReadableNumbers_Option_Enable>Povolit čitelná čísla</ReadableNumbers_Option_Enable>
+<ReadableNumbers_Option_RestoreDefault>Obnovit výchozí nastavení</ReadableNumbers_Option_RestoreDefault>
+<ReadableNumbers_Option_Debug>Režim ladění</ReadableNumbers_Option_Debug>
+
+<ReadableNumbers_SeparatorCharacter_Label>Vyberte formát čísla:</ReadableNumbers_SeparatorCharacter_Label>
+<ReadableNumbers_SeparatorCharacter_Comma_Period>Oddělovač čárkou s tečkou v desetinném řádu (1,000,000.00)</ReadableNumbers_SeparatorCharacter_Comma_Period>
+<ReadableNumbers_SeparatorCharacter_Period_Comma>Oddělovač teček s desetinnou čárkou (1.000.000,00)</ReadableNumbers_SeparatorCharacter_Period_Comma>
+<ReadableNumbers_SeparatorCharacter_Space_Period>Oddělovač mezer s desetinnou tečkou (1 000 000.00)</ReadableNumbers_SeparatorCharacter_Space_Period>
+<ReadableNumbers_SeparatorCharacter_Space_Comma>Oddělovač mezer s desetinnou čárkou (1 000 000,00)</ReadableNumbers_SeparatorCharacter_Space_Comma>
+<ReadableNumbers_SeparatorCharacter_None>Žádné (1000000,00)</ReadableNumbers_SeparatorCharacter_None>
+
+<ReadableNumbers_Cache_Label>Mezipaměť:</ReadableNumbers_Cache_Label>
+<ReadableNumbers_Cache_Desc>Používá se ke zlepšení výkonu ukládáním formátovaných verzí dříve nalezeného textu.\nMezipaměť se vymaže vždy, když dosáhne nastavené kapacity, aby se zabránilo využití paměti nebo zpoždění vyhledávání předchozího textu.</ReadableNumbers_Cache_Desc>
+<ReadableNumbers_Cache_Enable>Povolit mezipaměť</ReadableNumbers_Cache_Enable>
+<ReadableNumbers_Cache_MaxCapacity_Label>Maximální kapacita mezipaměti (100 - 1 000 000)</ReadableNumbers_Cache_MaxCapacity_Label>
+
+<ReadableNumbers_Blacklist_Label>Text na černé listině:</ReadableNumbers_Blacklist_Label>
+<ReadableNumbers_Blacklist_Desc>Text ve hře obsahující kterýkoli z těchto řetězců znaků zůstane v původním stavu</ReadableNumbers_Blacklist_Desc>
+<ReadableNumbers_Blacklist_TextField>Sem přidejte vzor:</ReadableNumbers_Blacklist_TextField>
+<ReadableNumbers_Blacklist_Add>Přidat</ReadableNumbers_Blacklist_Add>
+
+<!-- Vložte příznaky pro povolení/zakázání každé záplaty -->
+</LanguageData>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+<ReadableNumbers_Option_Mod_Name>Läsbara tal</ReadableNumbers_Option_Mod_Name>
+
+<ReadableNumbers_Option_Enable>Aktivera läsbara tal</ReadableNumbers_Option_Enable>
+<ReadableNumbers_Option_RestoreDefault>Återställ standard</ReadableNumbers_Option_RestoreDefault>
+<ReadableNumbers_Option_Debug>Felsökningsläge</ReadableNumbers_Option_Debug>
+
+<ReadableNumbers_SeparatorCharacter_Label>Välj talformat:</ReadableNumbers_SeparatorCharacter_Label>
+<ReadableNumbers_SeparatorCharacter_Comma_Period>Kommaavgränsare med punkt decimal (1,000,000.00)</ReadableNumbers_SeparatorCharacter_Comma_Period>
+<ReadableNumbers_SeparatorCharacter_Period_Comma>Punktavgränsare med kommadecimal (1.000.000,00)</ReadableNumbers_SeparatorCharacter_Period_Comma>
+<ReadableNumbers_SeparatorCharacter_Space_Period>Blankstegavgränsare med punktdecimal (1 000 000.00)</ReadableNumbers_SeparatorCharacter_Space_Period>
+<ReadableNumbers_SeparatorCharacter_Space_Comma>Blankstegavgränsare med kommadecimal (1 000 000,00)</ReadableNumbers_SeparatorCharacter_Space_Comma>
+<ReadableNumbers_SeparatorCharacter_None>Ingen (1000000.00)</ReadableNumbers_SeparatorCharacter_None>
+
+<ReadableNumbers_Cache_Label>Cache:</ReadableNumbers_Cache_Label>
+<ReadableNumbers_Cache_Desc>Används för att förbättra prestanda genom att lagra formaterade versioner av tidigare påträffad text.\nCachen rensas när den når den inställda kapaciteten för att förhindra minnesanvändning eller fördröjning av uppslagning av tidigare text.</ReadableNumbers_Cache_Desc>
+<ReadableNumbers_Cache_Enable>Aktivera cache</ReadableNumbers_Cache_Enable>
+<ReadableNumbers_Cache_MaxCapacity_Label>Maxkapacitet för cache (100 - 1 000 000)</ReadableNumbers_Cache_MaxCapacity_Label>
+
+<ReadableNumbers_Blacklist_Label>Svartlistad text:</ReadableNumbers_Blacklist_Label>
+<ReadableNumbers_Blacklist_Desc>Text i spelet som innehåller någon av dessa teckensträngar kommer att lämnas i sitt ursprungliga tillstånd</ReadableNumbers_Blacklist_Desc>
+<ReadableNumbers_Blacklist_TextField>Lägg till mönster här:</ReadableNumbers_Blacklist_TextField>
+<ReadableNumbers_Blacklist_Add>Lägg till</ReadableNumbers_Blacklist_Add>
+
+<!-- Sätt flaggor för att aktivera/inaktivera varje patch -->
+</LanguageData>

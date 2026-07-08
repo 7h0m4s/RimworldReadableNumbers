@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+<ReadableNumbers_Option_Mod_Name>Читабельні числа</ReadableNumbers_Option_Mod_Name>
+
+<ReadableNumbers_Option_Enable>Увімкнути читабельні числа</ReadableNumbers_Option_Enable>
+<ReadableNumbers_Option_RestoreDefault>Відновити значення за замовчуванням</ReadableNumbers_Option_RestoreDefault>
+<ReadableNumbers_Option_Debug>Режим налагодження</ReadableNumbers_Option_Debug>
+
+<ReadableNumbers_SeparatorCharacter_Label>Виберіть формат числа:</ReadableNumbers_SeparatorCharacter_Label>
+<ReadableNumbers_SeparatorCharacter_Comma_Period>Роздільник комами з десятковою крапкою (1,000,000.00)</ReadableNumbers_SeparatorCharacter_Comma_Period>
+<ReadableNumbers_SeparatorCharacter_Period_Comma>Роздільник крапок з десятковою комою (1.000.000,00)</ReadableNumbers_SeparatorCharacter_Period_Comma>
+<ReadableNumbers_SeparatorCharacter_Space_Period>Роздільник пробілів з десятковою комою (1 000 000.00)</ReadableNumbers_SeparatorCharacter_Space_Period>
+<ReadableNumbers_SeparatorCharacter_Space_Comma>Роздільник пробілів з десятковою комою (1 000 000,00)</ReadableNumbers_SeparatorCharacter_Space_Comma>
+<ReadableNumbers_SeparatorCharacter_None>Немає (1000000.00)</ReadableNumbers_SeparatorCharacter_None>
+
+<ReadableNumbers_Cache_Label>Кеш:</ReadableNumbers_Cache_Label>
+<ReadableNumbers_Cache_Desc>Використовується для покращення продуктивності шляхом зберігання відформатованих версій раніше знайденого тексту.\nКеш очищається щоразу, коли він досягає встановленої ємності, щоб запобігти використанню пам'яті або затримці пошуку попереднього тексту.</ReadableNumbers_Cache_Desc>
+<ReadableNumbers_Cache_Enable>Увімкнути кеш</ReadableNumbers_Cache_Enable>
+<ReadableNumbers_Cache_MaxCapacity_Label>Максимальна ємність кешу (100 - 1 000 000)</ReadableNumbers_Cache_MaxCapacity_Label>
+
+<ReadableNumbers_Blacklist_Label>Текст у чорному списку:</ReadableNumbers_Blacklist_Label>
+<ReadableNumbers_Blacklist_Desc>Внутрішньоігровий текст що містять будь-який із цих рядків символів, залишаться у своєму початковому стані</ReadableNumbers_Blacklist_Desc>
+<ReadableNumbers_Blacklist_TextField>Додати шаблон тут:</ReadableNumbers_Blacklist_TextField>
+<ReadableNumbers_Blacklist_Add>Додати</ReadableNumbers_Blacklist_Add>
+
+<!-- Встановіть прапорці для ввімкнення/вимкнення кожного патча -->
+</LanguageData>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+<ReadableNumbers_Option_Mod_Name>Luettavat numerot</ReadableNumbers_Option_Mod_Name>
+
+<ReadableNumbers_Option_Enable>Ota luettavat numerot käyttöön</ReadableNumbers_Option_Enable>
+<ReadableNumbers_Option_RestoreDefault>Palauta oletusarvot</ReadableNumbers_Option_RestoreDefault>
+<ReadableNumbers_Option_Debug>Virheenkorjaustila</ReadableNumbers_Option_Debug>
+
+<ReadableNumbers_SeparatorCharacter_Label>Valitse numeromuoto:</ReadableNumbers_SeparatorCharacter_Label>
+<ReadableNumbers_SeparatorCharacter_Comma_Period>Pilkkuerotin pisteellä ja desimaalilukuna (1,000,000.00)</ReadableNumbers_SeparatorCharacter_Comma_Period>
+<ReadableNumbers_SeparatorCharacter_Period_Comma>Piste-erotin pilkulla (1.000.000,00)</ReadableNumbers_SeparatorCharacter_Period_Comma>
+<ReadableNumbers_SeparatorCharacter_Space_Period>Välilyöntierotin pisteellä (1 000 000.00)</ReadableNumbers_SeparatorCharacter_Space_Period>
+<ReadableNumbers_SeparatorCharacter_Space_Comma>Välilyöntierotin pilkulla (1 000 000,00)</ReadableNumbers_SeparatorCharacter_Space_Comma>
+<ReadableNumbers_SeparatorCharacter_None>Ei mitään (1000000,00)</ReadableNumbers_SeparatorCharacter_None>
+
+<ReadableNumbers_Cache_Label>Välimuisti:</ReadableNumbers_Cache_Label>
+<ReadableNumbers_Cache_Desc>Käytetään suorituskyvyn parantamiseen tallentamalla aiemmin havaitun tekstin muotoillut versiot\nVälimuisti tyhjennetään aina, kun se saavuttaa asetetun kapasiteetin, jotta muistin käyttö tai aiemman tekstin hakeminen ei viivästy.</ReadableNumbers_Cache_Desc>
+<ReadableNumbers_Cache_Enable>Ota välimuisti käyttöön</ReadableNumbers_Cache_Enable>
+<ReadableNumbers_Cache_MaxCapacity_Label>Välimuistin maksimikapasiteetti (100 - 1 000 000)</ReadableNumbers_Cache_MaxCapacity_Label>
+
+<ReadableNumbers_Blacklist_Label>Mustalle listalle asetettu teksti:</ReadableNumbers_Blacklist_Label>
+<ReadableNumbers_Blacklist_Desc>Pelissä teksti, joka sisältää jonkin näistä merkkijonoista, jätetään alkuperäiseen muotoonsa. tila</ReadableNumbers_Blacklist_Desc>
+<ReadableNumbers_Blacklist_TextField>Lisää kuvio tähän:</ReadableNumbers_Blacklist_TextField>
+<ReadableNumbers_Blacklist_Add>Lisää</ReadableNumbers_Blacklist_Add>
+
+<!-- Aseta liput kunkin korjauspäivityksen käyttöönottoon/poistamiseen käytöstä -->
+</LanguageData>

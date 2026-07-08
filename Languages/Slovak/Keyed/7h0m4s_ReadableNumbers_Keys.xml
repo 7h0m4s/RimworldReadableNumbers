@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+<ReadableNumbers_Option_Mod_Name>Čitateľné čísla</ReadableNumbers_Option_Mod_Name>
+
+<ReadableNumbers_Option_Enable>Povoliť čitateľné čísla</ReadableNumbers_Option_Enable>
+<ReadableNumbers_Option_RestoreDefault>Obnoviť predvolené</ReadableNumbers_Option_RestoreDefault>
+<ReadableNumbers_Option_Debug>Režim ladenia</ReadableNumbers_Option_Debug>
+
+<ReadableNumbers_SeparatorCharacter_Label>Vyberte formát čísla:</ReadableNumbers_SeparatorCharacter_Label>
+<ReadableNumbers_SeparatorCharacter_Comma_Period>Oddeľovač čiarkou s bodkou v desatinnom súčte (1,000,000.00)</ReadableNumbers_SeparatorCharacter_Comma_Period>
+<ReadableNumbers_SeparatorCharacter_Period_Comma>Oddeľovač bodky s desatinnou čiarkou (1.000.000,00)</ReadableNumbers_SeparatorCharacter_Period_Comma>
+<ReadableNumbers_SeparatorCharacter_Space_Period>Oddeľovač medzier s desatinnou bodkou (1 000 000.00)</ReadableNumbers_SeparatorCharacter_Space_Period>
+<ReadableNumbers_SeparatorCharacter_Space_Comma>Oddeľovač medzier s desatinnou čiarkou (1 000 000,00)</ReadableNumbers_SeparatorCharacter_Space_Comma>
+<ReadableNumbers_SeparatorCharacter_None>Žiadne (1000000,00)</ReadableNumbers_SeparatorCharacter_None>
+
+<ReadableNumbers_Cache_Label>Vyrovnávacia pamäť:</ReadableNumbers_Cache_Label>
+<ReadableNumbers_Cache_Desc>Používa sa na zlepšenie výkonu uložením formátovaných verzií predtým nájdeného textu.\nVyrovnávacia pamäť sa vymaže vždy, keď dosiahne nastavenú kapacitu, aby sa zabránilo využitiu pamäte alebo oneskoreniu vyhľadávania predchádzajúceho textu.</ReadableNumbers_Cache_Desc>
+<ReadableNumbers_Cache_Enable>Povoliť vyrovnávaciu pamäť</ReadableNumbers_Cache_Enable>
+<ReadableNumbers_Cache_MaxCapacity_Label>Maximálna kapacita vyrovnávacej pamäte (100 – 1 000 000)</ReadableNumbers_Cache_MaxCapacity_Label>
+
+<ReadableNumbers_Blacklist_Label>Text na čiernej listine:</ReadableNumbers_Blacklist_Label>
+<ReadableNumbers_Blacklist_Desc>Text v hre obsahujúce ktorýkoľvek z týchto reťazcov znakov zostanú v pôvodnom stave</ReadableNumbers_Blacklist_Desc>
+<ReadableNumbers_Blacklist_TextField>Pridajte sem vzor:</ReadableNumbers_Blacklist_TextField>
+<ReadableNumbers_Blacklist_Add>Pridať</ReadableNumbers_Blacklist_Add>
+
+<!-- Pridajte príznaky na povolenie/zakázanie každej záplaty -->
+</LanguageData>

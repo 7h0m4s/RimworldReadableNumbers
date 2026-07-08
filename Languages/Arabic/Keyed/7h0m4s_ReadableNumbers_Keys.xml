@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+<ReadableNumbers_Option_Mod_Name>أرقام قابلة للقراءة</ReadableNumbers_Option_Mod_Name>
+
+<ReadableNumbers_Option_Enable>تفعيل الأرقام القابلة للقراءة</ReadableNumbers_Option_Enable>
+
+<ReadableNumbers_Option_RestoreDefault>استعادة الإعدادات الافتراضية</ReadableNumbers_Option_RestoreDefault>
+
+<ReadableNumbers_Option_Debug>وضع التصحيح</ReadableNumbers_Option_Debug>
+
+<ReadableNumbers_SeparatorCharacter_Label>تحديد تنسيق الرقم:</ReadableNumbers_SeparatorCharacter_Label>
+
+<ReadableNumbers_SeparatorCharacter_Comma_Period>فاصلة عشرية مع نقطة (1,000,000.00)</ReadableNumbers_SeparatorCharacter_Comma_Period>
+
+<ReadableNumbers_SeparatorCharacter_Period_Comma>فاصلة عشرية (1.000.000,00)</ReadableNumbers_SeparatorCharacter_Period_Comma>
+
+<ReadableNumbers_SeparatorCharacter_Space_Period>فاصلة عشرية (1 000 000.00)</ReadableNumbers_SeparatorCharacter_Space_Period>
+
+<ReadableNumbers_SeparatorCharacter_Space_Comma>فاصلة عشرية (1 000 000,00)</ReadableNumbers_SeparatorCharacter_Space_Comma>
+
+<ReadableNumbers_SeparatorCharacter_None>لا شيء (1000000.00)</ReadableNumbers_SeparatorCharacter_None>
+
+<ReadableNumbers_Cache_Label>ذاكرة التخزين المؤقت:</ReadableNumbers_Cache_Label>
+
+<ReadableNumbers_Cache_Desc>تُستخدم لتحسين الأداء عن طريق تخزين النسخ المنسقة من النصوص التي تمت معالجتها سابقًا.\nيتم مسح ذاكرة التخزين المؤقت عند وصولها إلى السعة المحددة، وذلك لمنع استهلاك الذاكرة أو تأخير البحث عن النصوص السابقة.</ReadableNumbers_Cache_Desc>
+
+<ReadableNumbers_Cache_Enable>تفعيل ذاكرة التخزين المؤقت.</ReadableNumbers_Cache_Enable>
+
+<ReadableNumbers_Cache_MaxCapacity_Label>الحد الأقصى لسعة ذاكرة التخزين المؤقت (100 - 1,000,000)</ReadableNumbers_Cache_MaxCapacity_Label>
+
+<ReadableNumbers_Blacklist_Label>النص المحظور:</ReadableNumbers_Blacklist_Label>
+
+<ReadableNumbers_Blacklist_Desc>سيُترك النص داخل اللعبة الذي يحتوي على أي من هذه السلاسل من الأحرف في حالته الأصلية</ReadableNumbers_Blacklist_Desc>
+
+<ReadableNumbers_Blacklist_TextField>أضف النمط هنا:</ReadableNumbers_Blacklist_TextField>
+
+<ReadableNumbers_Blacklist_Add>أضف</ReadableNumbers_Blacklist_Add>
+
+<!-- ضع علامات لتفعيل/تعطيل كل تحديث -->
+</LanguageData>

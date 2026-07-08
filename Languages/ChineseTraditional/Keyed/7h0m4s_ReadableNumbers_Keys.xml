@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<LanguageData>
+
+<ReadableNumbers_Option_Mod_Name>可讀數字</ReadableNumbers_Option_Mod_Name>
+
+<ReadableNumbers_Option_Enable>啟用可讀數字</ReadableNumbers_Option_Enable>
+
+<ReadableNumbers_Option_RestoreDefault>恢復預設值</ReadableNumbers_Option_RestoreDefault>
+
+<ReadableNumbers_Option_Debug>偵錯模式</ReadableNumbers_Option_Debug>
+
+<ReadableNumbers_SeparatorCharacter_Label>選擇數位格式：</ReadableNumbers_SeparatorCharacter_Label>
+
+<ReadableNumbers_SeparatorCharacter_Comma_Period>帶句點的逗號分隔符號（小數點後加句點） (1,000,000.00)</ReadableNumbers_SeparatorCharacter_Comma_Period>
+
+<ReadableNumbers_SeparatorCharacter_Period_Comma> 帶數字符號， (1.000.000,00)</ReadableNumbers_SeparatorCharacter_Period_Comma>
+
+<ReadableNumbers_SeparatorCharacter_Space_Period>空格分隔符，帶句點小數點 (1 000 000.00)</ReadableNumbers_SeparatorCharacter_Space_Period>
+
+<ReadableNumbers_SeparatorCharacter_Space_Comma>空格分隔符，帶逗號小數點 (1 000 000,00)</ReadableNumbers_SeparatorCharacter_Space_Comma>
+
+<ReadableNumbers_SeparatorCharacter_None>無(1000000.00)</ReadableNumbers_SeparatorCharacter_None>
+
+<ReadableNumbers_Cache_Label>快取：</ReadableNumbers_Cache_Label>
+
+<ReadableNumbers_Cache_Desc>用於儲存先前遇到的文字的格式化版本，以提高效能。當快取達到設定的容量時，快取將被清除，以防止記憶體佔用過高或延遲查找先前文字。 </ReadableNumbers_Cache_Desc>
+
+<ReadableNumbers_Cache_Enable>啟用快取</ReadableNumbers_Cache_Enable>
+
+<ReadableNumbers_Cache_MaxCapacity_Label>快取最大容量 (100 - 1,000,000)</ReadableNumbers_Cache_MaxCapacity_Label>
+
+<ReadableNumbers_Blacklist_Label>黑名單文字：</ReadableNumbers_Blacklist_Label>
+
+<ReadableNumbers_Blacklist_Desc>遊戲文字中包含以下任何字串的內容將保持其原始狀態</ReadableNumbers_Blacklist_Desc>
+
+<ReadableNumbers_Blacklist_TextField>在此處新增模式：</ReadableNumbers_Blacklist_TextField>
+
+<ReadableNumbers_Blacklist_Add>新增</ReadableNumbers_Blacklist_Add>
+
+<!-- 為每個補丁新增啟用/停用標誌 -->
+
+</LanguageData>

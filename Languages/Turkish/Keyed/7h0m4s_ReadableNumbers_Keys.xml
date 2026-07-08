@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+<ReadableNumbers_Option_Mod_Name>Okunabilir Sayılar</ReadableNumbers_Option_Mod_Name>
+
+<ReadableNumbers_Option_Enable>Okunabilir Sayıları Etkinleştir</ReadableNumbers_Option_Enable>
+
+<ReadableNumbers_Option_RestoreDefault>Varsayılanı Geri Yükle</ReadableNumbers_Option_RestoreDefault>
+
+<ReadableNumbers_Option_Debug>Hata Ayıklama Modu</ReadableNumbers_Option_Debug>
+
+<ReadableNumbers_SeparatorCharacter_Label>Sayı Biçimini Seçin:</ReadableNumbers_SeparatorCharacter_Label>
+
+<ReadableNumbers_SeparatorCharacter_Comma_Period>Ondalık sayıda nokta ile virgül ayırıcı (1,000,000.00)</ReadableNumbers_SeparatorCharacter_Comma_Period>
+<ReadableNumbers_SeparatorCharacter_Period_Comma>Virgüllü ondalık ayırıcı (1.000.000,00)</ReadableNumbers_SeparatorCharacter_Period_Comma>
+<ReadableNumbers_SeparatorCharacter_Space_Period>Noktalı ondalık ayırıcı (1 000 000.00)</ReadableNumbers_SeparatorCharacter_Space_Period>
+<ReadableNumbers_SeparatorCharacter_Space_Comma>Virgüllü ondalık ayırıcı (1 000 000,00)</ReadableNumbers_SeparatorCharacter_Space_Comma>
+
+<ReadableNumbers_SeparatorCharacter_None>Yok (1000000.00)</ReadableNumbers_SeparatorCharacter_None>
+
+<ReadableNumbers_Cache_Label>Önbellek:</ReadableNumbers_Cache_Label>
+
+<ReadableNumbers_Cache_Desc>Önceden karşılaşılan metnin biçimlendirilmiş sürümlerini depolayarak performansı artırmak için kullanılır.\nÖnbellek, bellek kullanımını önlemek veya önceki metni aramayı geciktirmemek için belirlenen kapasiteye ulaştığında temizlenir.</ReadableNumbers_Cache_Desc>
+
+<ReadableNumbers_Cache_Enable>Önbelleği Etkinleştir</ReadableNumbers_Cache_Enable>
+<ReadableNumbers_Cache_MaxCapacity_Label>Önbellek Maksimum Kapasitesi (100 - 1.000.000)</ReadableNumbers_Cache_MaxCapacity_Label>
+
+<ReadableNumbers_Blacklist_Label>Kara Listeye Alınan Metin:</ReadableNumbers_Blacklist_Label>
+
+<ReadableNumbers_Blacklist_Desc>Oyun içi metinde bu karakter dizilerinden herhangi birini içeren metinler orijinal hallerinde bırakılacaktır</ReadableNumbers_Blacklist_Desc>
+
+<ReadableNumbers_Blacklist_TextField>Desen ekle:</ReadableNumbers_Blacklist_TextField>
+
+<ReadableNumbers_Blacklist_Add>Ekle</ReadableNumbers_Blacklist_Add>
+
+<!-- Her yamayı Etkinleştirmek/Devre Dışı Bırakmak için bayraklar ekleyin -->
+</LanguageData>

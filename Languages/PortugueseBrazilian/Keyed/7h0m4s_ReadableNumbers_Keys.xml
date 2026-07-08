@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+<ReadableNumbers_Option_Mod_Name>Números Legíveis</ReadableNumbers_Option_Mod_Name>
+
+<ReadableNumbers_Option_Enable>Habilitar Números Legíveis</ReadableNumbers_Option_Enable>
+<ReadableNumbers_Option_RestoreDefault>Restaurar Padrão</ReadableNumbers_Option_RestoreDefault>
+<ReadableNumbers_Option_Debug>Modo de Depuração</ReadableNumbers_Option_Debug>
+
+<ReadableNumbers_SeparatorCharacter_Label>Selecione o Formato do Número:</ReadableNumbers_SeparatorCharacter_Label>
+<ReadableNumbers_SeparatorCharacter_Comma_Period>Separador decimal por vírgula com ponto (1,000,000.00)</ReadableNumbers_SeparatorCharacter_Comma_Period>
+<ReadableNumbers_SeparatorCharacter_Period_Comma>Separador decimal com vírgula (1.000.000,00)</ReadableNumbers_SeparatorCharacter_Period_Comma>
+<ReadableNumbers_SeparatorCharacter_Space_Period>Separador decimal com espaço e ponto (1 000 000.00)</ReadableNumbers_SeparatorCharacter_Space_Period>
+<ReadableNumbers_SeparatorCharacter_Space_Comma>Separador decimal com espaço e vírgula (1 000 000,00)</ReadableNumbers_SeparatorCharacter_Space_Comma>
+<ReadableNumbers_SeparatorCharacter_None>Nenhum (1.000.000,00)</ReadableNumbers_SeparatorCharacter_None>
+
+<ReadableNumbers_Cache_Label>Cache:</ReadableNumbers_Cache_Label>
+<ReadableNumbers_Cache_Desc>Usado para melhorar o desempenho, armazenando as versões formatadas de textos encontrados anteriormente. O cache é limpo sempre que atinge a capacidade definida, para evitar o uso de memória ou atrasos na busca de textos anteriores.</ReadableNumbers_Cache_Desc>
+
+<ReadableNumbers_Cache_Enable>Habilitar Cache</ReadableNumbers_Cache_Enable>
+<ReadableNumbers_Cache_MaxCapacity_Label>Capacidade Máxima do Cache (100 - 1.000.000)</ReadableNumbers_Cache_MaxCapacity_Label>
+
+<ReadableNumbers_Blacklist_Label>Texto na lista negra:</ReadableNumbers_Blacklist_Label>
+<ReadableNumbers_Blacklist_Desc>Textos no jogo que contenham qualquer uma dessas sequências de caracteres permanecerão em seu estado original.</ReadableNumbers_Blacklist_Desc>
+<ReadableNumbers_Blacklist_TextField>Adicione o padrão aqui:</ReadableNumbers_Blacklist_TextField>
+<ReadableNumbers_Blacklist_Add>Adicionar</ReadableNumbers_Blacklist_Add>
+
+<!-- Adicione flags para habilitar/desabilitar cada patch -->
+</LanguageData>
