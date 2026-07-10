@@ -45,7 +45,7 @@
 
 	[h2][F.A.Q.][/h2]
 	[b]Q.[/b] [b]Will this affect performance?[/b]
-	[b]A.[/b] Performance impact in most cases should be negligible and unnoticeable. All processed text in game is cached for fast retrieval. Even without the cache, a lot of effort has been put in to optimising the formatting process to take as few CPU operations as possible and to quickly skip over any text that doesn't have enough sequential digits to need processing.
+	[b]A.[/b] There should be no noticable impact on performance. All processed text in game is cached for fast retrieval. Even without the cache, a lot of effort has been put in to optimising the formatting process to take as few CPU operations as possible and to quickly skip over any text that doesn't have enough sequential digits to need processing.
 
 	[b]Q.[/b] [b]The mod is formatting a number I don't want it to! How can I fix this? In this case my pawn's name has lots of digits. [/b]
 	[b]A.[/b] There is a blacklist available in the mod settings. Add all or part of the text that is incorrectly being modified. Then Readable Numbers will avoid formatting any text in game that contains those specific characters. WARNING: An exceptionally long blacklist might cause performance impact.
