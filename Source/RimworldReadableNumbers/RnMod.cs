@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 using Verse;
 
 namespace RimworldReadableNumbers
@@ -12,12 +7,13 @@ namespace RimworldReadableNumbers
     public class RnMod : Mod
     {
         private readonly RnSetting _rnSettings;
+
         public RnMod(ModContentPack content)
             : base(content)
         {
             _rnSettings = base.GetSettings<RnSetting>();
         }
-        
+
         /// <summary>
         /// Naming Convention: [DigitSeperator][DecimalSeperator]
         /// </summary>

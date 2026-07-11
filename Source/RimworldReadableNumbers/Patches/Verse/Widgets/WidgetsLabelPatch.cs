@@ -4,11 +4,9 @@ using UnityEngine;
 
 namespace RimworldReadableNumbers.Patches.Verse.Widgets
 {
-    
     [HarmonyPatch]
     public class WidgetsPatch
     {
-        
         [HarmonyPatch(typeof(global::Verse.Widgets), "Label", new Type[] { typeof(Rect), typeof(string) })]
         public static bool  Prefix(Rect rect, ref string label)
         {
@@ -22,19 +20,5 @@ namespace RimworldReadableNumbers.Patches.Verse.Widgets
             Utility.Patching.IsAlreadyReadableNumberFormatted = true;
             return true;
         }
-        
-        //
-        // [HarmonyPatch(typeof(global::Verse.Widgets), "Label", new Type[] { typeof(Rect), typeof(GUIContent) })]
-        // public static bool  Prefix(Rect rect, ref GUIContent content)
-        // {
-        //     string contentText = content.text;
-        //     Utility.Processing.ProcessLabel(ref contentText);
-        //     return true;
-        // }
-        
-        
-
-        
-
     }
 }

@@ -65,7 +65,6 @@
     <Compile Include="Patches\Verse\GenMapUI\GenMapUIDrawTextPatch.cs" />
     <Compile Include="Patches\Verse\GenMapUI\GenMapUIDrawThingLabelPatch.cs" />
     <Compile Include="Patches\Verse\GenMapUI\GenMapUIGetPawnLabelPatch.cs" />
-    <Compile Include="Patches\Verse\Widgets\WidgetsLabelCacheHeightPatch.cs" />
     <Compile Include="Patches\Verse\Widgets\WidgetsLabelPatch.cs" />
     <Compile Include="RnMod.cs" />
     <Compile Include="RnPatcher.cs" />

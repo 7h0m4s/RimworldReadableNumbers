@@ -7,6 +7,36 @@ namespace RimworldReadableNumbers.Patches.Unity.Gui
     [HarmonyPatch]
     public class GuiLabelPatch
     {
+        [HarmonyPatch(typeof(UnityEngine.GUI), nameof(UnityEngine.GUI.Label), new Type[] { typeof(Rect), typeof(GUIContent) })]
+        public static bool Prefix(Rect position, GUIContent content)
+        {
+            if (Utility.Patching.DisableReadableNumberFormatting) return true;
+            if (Utility.Patching.IsAlreadyReadableNumberFormatted)
+            {
+                Utility.Patching.IsAlreadyReadableNumberFormatted = false;
+                return true;
+            }
+            string contentText = content.text;
+            Utility.Processing.ProcessLabel(ref contentText);
+            return true;
+        }
+        
+        [HarmonyPatch(typeof(UnityEngine.GUI), nameof(UnityEngine.GUI.Label), new Type[] { typeof(Rect), typeof(GUIContent), typeof(GUIStyle) })]
+        public static bool Prefix(Rect position, GUIContent content, GUIStyle style)
+        {
+            if (Utility.Patching.DisableReadableNumberFormatting) return true;
+            if (Utility.Patching.IsAlreadyReadableNumberFormatted)
+            {
+                Utility.Patching.IsAlreadyReadableNumberFormatted = false;
+                return true;
+            }
+            string contentText = content.text;
+            Utility.Processing.ProcessLabel(ref contentText);
+            return true;
+        }
+        
+        #region Redundant Label Patches
+        // Overrides of GUI.Label below all transitively call one of the overloads above, so are not needed.
         
         // [HarmonyPatch(typeof(UnityEngine.GUI), "DoLabel",new Type[] { typeof(Rect), typeof(GUIContent), typeof(GUIStyle) })]
         // public static bool Prefix(Rect position, GUIContent content, GUIStyle style)
@@ -25,19 +55,6 @@ namespace RimworldReadableNumbers.Patches.Unity.Gui
         //     return true;
         // }
         
-        [HarmonyPatch(typeof(UnityEngine.GUI), nameof(UnityEngine.GUI.Label), new Type[] { typeof(Rect), typeof(GUIContent) })]
-        public static bool Prefix(Rect position, GUIContent content)
-        {
-            if (Utility.Patching.DisableReadableNumberFormatting) return true;
-            if (Utility.Patching.IsAlreadyReadableNumberFormatted)
-            {
-                Utility.Patching.IsAlreadyReadableNumberFormatted = false;
-                return true;
-            }
-            string contentText = content.text;
-            Utility.Processing.ProcessLabel(ref contentText);
-            return true;
-        }
         
         // Redirects to (Rect position, GUIContent content, GUIStyle style)
         // [HarmonyPatch(typeof(UnityEngine.GUI), nameof(UnityEngine.GUI.Label), new Type[] { typeof(Rect), typeof(string), typeof(GUIStyle) })]
@@ -47,18 +64,8 @@ namespace RimworldReadableNumbers.Patches.Unity.Gui
         //     return true;
         // }
         
-        [HarmonyPatch(typeof(UnityEngine.GUI), nameof(UnityEngine.GUI.Label), new Type[] { typeof(Rect), typeof(GUIContent), typeof(GUIStyle) })]
-        public static bool Prefix(Rect position, GUIContent content, GUIStyle style)
-        {
-            if (Utility.Patching.DisableReadableNumberFormatting) return true;
-            if (Utility.Patching.IsAlreadyReadableNumberFormatted)
-            {
-                Utility.Patching.IsAlreadyReadableNumberFormatted = false;
-                return true;
-            }
-            string contentText = content.text;
-            Utility.Processing.ProcessLabel(ref contentText);
-            return true;
-        }
+        #endregion Redundant Label Patches
+        
+        
     }
 }

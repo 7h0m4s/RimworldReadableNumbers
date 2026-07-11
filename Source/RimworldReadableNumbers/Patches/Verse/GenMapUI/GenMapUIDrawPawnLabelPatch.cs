@@ -6,7 +6,19 @@ using Verse;
 
 namespace RimworldReadableNumbers.Patches.Verse.GenMapUI
 {
-    [HarmonyPatch(typeof(global::Verse.GenMapUI), nameof(global::Verse.GenMapUI.DrawPawnLabel),new Type[] { typeof(Pawn), typeof(Rect), typeof(float), typeof(float), typeof(Dictionary<string, string>), typeof(GameFont), typeof(bool), typeof(bool) })]
+    [HarmonyPatch(typeof(global::Verse.GenMapUI),
+        nameof(global::Verse.GenMapUI.DrawPawnLabel),
+        new Type[]
+        {
+            typeof(Pawn),
+            typeof(Rect),
+            typeof(float),
+            typeof(float),
+            typeof(Dictionary<string, string>),
+            typeof(GameFont),
+            typeof(bool),
+            typeof(bool)
+        })]
     public static class GenMapUIDrawPawnLabelPatch
     {
 

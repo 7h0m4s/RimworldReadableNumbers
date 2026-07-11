@@ -32,8 +32,6 @@ namespace RimworldReadableNumbers.Utility
         }
         
         
-        
-        
         public static void ProcessLabel(ref string label)
         {
             ReadOnlySpan<char> labelSpan = label.AsSpan();
@@ -46,21 +44,29 @@ namespace RimworldReadableNumbers.Utility
                 // || Current.Game.CurrentMap == null
                ) return;
             
+            // 1. Try to get result from cache
             if (TryResultCache(ref label)) return;
-            if (!Validation.HasEnoughDigits_And_Not_BlackListed(ref labelSpan))
+            
+            // 2. Try to quickly prove that the string is not valid for formatting
+            // e.g. not enough sequential numbers
+            if (!Validation.HasEnoughDigitsAndNotBlackListed(ref labelSpan))
             {
                 TryAddToResultCache(ref label, null);
                 return;
             }
             
+            // 3. Split the string up into tokens of sequential digits and sequential non-digits
             _hasAnyNumbers = false;
             Utility.Processing.TokeniseString(labelSpan);
+            
+            // 4. Abort formatting and save result to cache if no valid Number tokens were found
             if (!_hasAnyNumbers)
             {
                 TryAddToResultCache(ref label, null);
                 return;
             }
 
+            // 5. Perform formatting process and update original label
             CompileLabelResult(ref label, ref labelSpan);
 
         }

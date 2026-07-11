@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Verse;
+
 
 namespace RimworldReadableNumbers.Utility
 {
     public static class Text
     {
         private static Memory<char> _resultMemory =  new Memory<char>(new char[short.MaxValue]);
-        // TODO create alternate FormatNumberWithTryParse that loops through string in reverse and builds a new string with separators. Then compare performance.
+
         
         /// <summary>
         ///  The utility to convert solid numbers to separated numbers
@@ -17,7 +15,7 @@ namespace RimworldReadableNumbers.Utility
         /// <returns>ReadOnlySpan char</returns>
         public static ReadOnlySpan<char> FormatNumberWithStringManipulation(ref ReadOnlySpan<char> originalValue, ref bool isSuccess)
         {
-            ValidationResult validationResult = Validation.IsValidNumberToConvert(ref originalValue);
+            ValidationResult validationResult = Validation.IsValidNumberToFormat(ref originalValue);
             if (validationResult.IsValid == false)
             {
                 isSuccess = false;

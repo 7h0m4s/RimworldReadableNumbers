@@ -23,6 +23,3 @@ namespace RimworldReadableNumbers.Patches.Rimworld.DateReadout
         }
     }
 }
-
-
-
