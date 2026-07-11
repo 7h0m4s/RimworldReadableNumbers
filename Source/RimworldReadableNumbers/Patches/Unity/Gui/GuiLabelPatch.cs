@@ -18,6 +18,7 @@ namespace RimworldReadableNumbers.Patches.Unity.Gui
             }
             string contentText = content.text;
             Utility.Processing.ProcessLabel(ref contentText);
+            content.text = contentText;
             return true;
         }
         
@@ -32,6 +33,7 @@ namespace RimworldReadableNumbers.Patches.Unity.Gui
             }
             string contentText = content.text;
             Utility.Processing.ProcessLabel(ref contentText);
+            content.text = contentText;
             return true;
         }
         
