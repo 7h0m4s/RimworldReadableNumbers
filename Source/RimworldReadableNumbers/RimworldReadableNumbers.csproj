@@ -60,6 +60,7 @@
     <Compile Include="Patches\Rimworld\DevGui\DevGuiLabelPatch.cs" />
     <Compile Include="Patches\Rimworld\DialogFileList\DialogFileListDoWindowContentsPatch.cs" />
     <Compile Include="Patches\Rimworld\DialogFileList\DialogFileListDrawDateAndVersionPatch.cs" />
+    <Compile Include="Patches\Rimworld\DialogModSettings\DialogModSettingsDoWindowContentsPatch.cs" />
     <Compile Include="Patches\Unity\Gui\GuiLabelPatch.cs" />
     <Compile Include="Patches\Verse\GenMapUI\GenMapUIDrawPawnLabelPatch.cs" />
     <Compile Include="Patches\Verse\GenMapUI\GenMapUIDrawTextPatch.cs" />

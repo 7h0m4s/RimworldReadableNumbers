@@ -31,6 +31,9 @@ namespace RimworldReadableNumbers.Utility
             bool isEnoughDigits = false;
 
             short numDigitsInSequence = 0;
+            bool hasDecimalPlace = false;
+            char lastChar='A';
+            char secondLastChar ='A';
             for (short i = 0; i < label.Length; i++)
             {
                 char currentChar = label[i];
@@ -71,14 +74,25 @@ namespace RimworldReadableNumbers.Utility
                 {
                     numDigitsInSequence++;
                     if (numDigitsInSequence >= 4) isEnoughDigits = true;
+                    if (lastChar == '.' && char.IsNumber(secondLastChar))
+                    {
+                        hasDecimalPlace = true;
+                    }
                 }
                 else
                 {
                     numDigitsInSequence = 0;
                 }
+                secondLastChar = lastChar;
+                lastChar = currentChar;
             }
 
-            return isEnoughDigits;
+            // Return true only if there is a number >1000
+            // or
+            // RnSetting.FormatAllNumbers is true
+            //      and RnSetting.DecimalSeparator is not a period
+            //      and there is a number with a decimal value e.g. "1.2" 
+            return isEnoughDigits || (RnSetting.FormatAllNumbers && RnSetting.DecimalSeparator != '.' && hasDecimalPlace);
         }
 
         public static ValidationResult IsValidNumberToFormat(ref ReadOnlySpan<char> value)
@@ -110,13 +124,24 @@ namespace RimworldReadableNumbers.Utility
                     if (hasDecimalPlace == false && c != decimalSeparator) digitsWithoutPeriod++;
                 }
 
-                if (hasDecimalPlace && digitsWithoutPeriod <= 3) return new ValidationResult(false);
+                if (hasDecimalPlace && digitsWithoutPeriod <= ((RnSetting.FormatAllNumbers && RnSetting.DecimalSeparator != '.' && decimalPlaceIndex < value.Length - 1) ? 0 : 3))
+                {
+                    return new ValidationResult(false);
+                }
                 index++;
             }
 
-            if (value.Length - (hasDecimalPlace ? value.Length - decimalPlaceIndex - 1 : 0) <= 3)
-                return new ValidationResult(false); // Too few digits (< 3) before period to require processing
-            return new ValidationResult(true, hasDecimalPlace, decimalPlaceIndex);
+            // Skip if value is > 1000
+            // Except if FormatAllNumbers == true and there is a valid decimal e.g. "0.0"
+            if (value.Length - (hasDecimalPlace ? value.Length - decimalPlaceIndex - 1 : 0) <=
+                ((RnSetting.FormatAllNumbers && RnSetting.DecimalSeparator != '.' && hasDecimalPlace && decimalPlaceIndex < value.Length - 1) ? 0 : 3))
+            {
+                return new ValidationResult(false); // Too few digits before period to require processing
+            }
+            else
+            {
+                return new ValidationResult(true, hasDecimalPlace, decimalPlaceIndex);
+            }
         }
     }
 }

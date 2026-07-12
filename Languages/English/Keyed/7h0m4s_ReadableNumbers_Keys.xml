@@ -8,12 +8,20 @@
 	<ReadableNumbers_Option_Enable>Enable Readable Numbers</ReadableNumbers_Option_Enable>
 	<ReadableNumbers_Option_RestoreDefault>Restore Default</ReadableNumbers_Option_RestoreDefault>
 	<ReadableNumbers_Option_Debug>Debug Mode</ReadableNumbers_Option_Debug>
+	<ReadableNumbers_Option_FormatAllNumbers>Format Numbers Less Than 1000</ReadableNumbers_Option_FormatAllNumbers>
 
 	<ReadableNumbers_SeparatorCharacter_Label>Select Number Format:</ReadableNumbers_SeparatorCharacter_Label>
-	<ReadableNumbers_SeparatorCharacter_Comma_Period>Comma separator with Period decimal 	(1,000,000.00)</ReadableNumbers_SeparatorCharacter_Comma_Period>
-	<ReadableNumbers_SeparatorCharacter_Period_Comma>Period separator with Comma decimal 	(1.000.000,00)</ReadableNumbers_SeparatorCharacter_Period_Comma>
-	<ReadableNumbers_SeparatorCharacter_Space_Period>Space separator with Period decimal 	(1 000 000.00)</ReadableNumbers_SeparatorCharacter_Space_Period>
-	<ReadableNumbers_SeparatorCharacter_Space_Comma>Space separator with Comma decimal 	(1 000 000,00)</ReadableNumbers_SeparatorCharacter_Space_Comma>
+	<ReadableNumbers_SeparatorCharacter_Comma_Period>Comma separator 		| Period decimal 	(1,000,000.00)</ReadableNumbers_SeparatorCharacter_Comma_Period>
+	<ReadableNumbers_SeparatorCharacter_Period_Comma>Period separator 		| Comma decimal 	(1.000.000,00)</ReadableNumbers_SeparatorCharacter_Period_Comma>
+	<ReadableNumbers_SeparatorCharacter_Space_Period>Space separator 		| Period decimal 	(1 000 000.00)</ReadableNumbers_SeparatorCharacter_Space_Period>
+	<ReadableNumbers_SeparatorCharacter_Space_Comma>Space separator 		| Comma decimal 	(1 000 000,00)</ReadableNumbers_SeparatorCharacter_Space_Comma>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Period>Apostrophe separator 	| Period decimal 	(1'000'000.00)</ReadableNumbers_SeparatorCharacter_Apostrophe_Period>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>Apostrophe separator 	| Comma decimal 	(1'000'000,00)</ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>
+	<ReadableNumbers_SeparatorCharacter_Custom>Custom</ReadableNumbers_SeparatorCharacter_Custom>
+	<ReadableNumbers_SeparatorCharacter_Custom_Separator>Custom Separator:</ReadableNumbers_SeparatorCharacter_Custom_Separator>
+	<ReadableNumbers_SeparatorCharacter_Custom_Decimal>Custom Decimal:</ReadableNumbers_SeparatorCharacter_Custom_Decimal>
+	
+	
 	<ReadableNumbers_SeparatorCharacter_None>None 	(1000000.00)</ReadableNumbers_SeparatorCharacter_None>
 
 

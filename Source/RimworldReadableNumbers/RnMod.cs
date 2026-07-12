@@ -17,13 +17,15 @@ namespace RimworldReadableNumbers
         /// <summary>
         /// Naming Convention: [DigitSeperator][DecimalSeperator]
         /// </summary>
-        public enum NumberFormat
+        public enum SeparatorAndDecimalFormat
         {
             CommaPeriod,
             PeriodComma,
             SpacePeriod,
             SpaceComma,
-            None
+            ApostrophePeriod,
+            ApostropheComma,
+            Custom,
         }
 
         public override void DoSettingsWindowContents(Rect inRect)

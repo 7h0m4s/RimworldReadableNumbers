@@ -26,12 +26,22 @@ namespace RimworldReadableNumbers.Utility
             bool isPastPeriod = !validationResult.HasDecimalPlace;
             char digitSeparator = RnSetting.DigitSeparator;
             char decimalSeparator = RnSetting.DecimalSeparator;
+            bool replaceDecimalCharacter = decimalSeparator != '.';
             short countSinceLastSeparator = 0;
             short resutCharCount = 0;
             for (short i = (short)originalValue.Length;  i-- > 0;) // Reverse Loop
             {
                 var currentChar = originalValue[i];
-                if (currentChar == '.') {isPastPeriod = true;}
+                if (currentChar == '.')
+                {
+                    isPastPeriod = true;
+                    
+                    // Update the Decimal Separator only if we need to.
+                    if (replaceDecimalCharacter)
+                    {
+                        currentChar = decimalSeparator;
+                    }
+                }
                 else
                 {
                     if (isPastPeriod)

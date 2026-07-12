@@ -36,7 +36,7 @@ namespace RimworldReadableNumbers.Utility
         {
             ReadOnlySpan<char> labelSpan = label.AsSpan();
             if (labelSpan == null
-                || labelSpan.Length <= 3 // skip if result string is too short to need a separator
+                || labelSpan.Length <= 2 // skip if result string is too short to need a separator
                 || labelSpan.Length > short.MaxValue - 1 // skip if string is too big
                 || !RnSetting.Enable
                 || Patching.DisableReadableNumberFormatting // skip if formatting has already been done earlier
