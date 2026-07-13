@@ -5,31 +5,38 @@
 	<ReadableNumbers_Option_Mod_Name>Readable Numbers</ReadableNumbers_Option_Mod_Name>
 	
 	
+	<ReadableNumbers_Option_Heading>General Settings</ReadableNumbers_Option_Heading>
 	<ReadableNumbers_Option_Enable>Enable Readable Numbers</ReadableNumbers_Option_Enable>
 	<ReadableNumbers_Option_RestoreDefault>Restore Default</ReadableNumbers_Option_RestoreDefault>
 	<ReadableNumbers_Option_Debug>Debug Mode</ReadableNumbers_Option_Debug>
 	<ReadableNumbers_Option_FormatAllNumbers>Format Numbers Less Than 1000</ReadableNumbers_Option_FormatAllNumbers>
 
-	<ReadableNumbers_SeparatorCharacter_Label>Select Number Format:</ReadableNumbers_SeparatorCharacter_Label>
-	<ReadableNumbers_SeparatorCharacter_Comma_Period>Comma separator 		| Period decimal 	(1,000,000.00)</ReadableNumbers_SeparatorCharacter_Comma_Period>
-	<ReadableNumbers_SeparatorCharacter_Period_Comma>Period separator 		| Comma decimal 	(1.000.000,00)</ReadableNumbers_SeparatorCharacter_Period_Comma>
-	<ReadableNumbers_SeparatorCharacter_Space_Period>Space separator 		| Period decimal 	(1 000 000.00)</ReadableNumbers_SeparatorCharacter_Space_Period>
-	<ReadableNumbers_SeparatorCharacter_Space_Comma>Space separator 		| Comma decimal 	(1 000 000,00)</ReadableNumbers_SeparatorCharacter_Space_Comma>
-	<ReadableNumbers_SeparatorCharacter_Apostrophe_Period>Apostrophe separator 	| Period decimal 	(1'000'000.00)</ReadableNumbers_SeparatorCharacter_Apostrophe_Period>
-	<ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>Apostrophe separator 	| Comma decimal 	(1'000'000,00)</ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>
-	<ReadableNumbers_SeparatorCharacter_Custom>Custom</ReadableNumbers_SeparatorCharacter_Custom>
+	<ReadableNumbers_SeparatorCharacter_Heading>Separators And Decimals</ReadableNumbers_SeparatorCharacter_Heading>
+	<ReadableNumbers_SeparatorCharacter_Label>Select Desired Format Format:</ReadableNumbers_SeparatorCharacter_Label>
+	<ReadableNumbers_SeparatorCharacter_Comma_Period>Comma separator 		| Period decimal</ReadableNumbers_SeparatorCharacter_Comma_Period>
+	<ReadableNumbers_SeparatorCharacter_Period_Comma>Period separator 		| Comma decimal</ReadableNumbers_SeparatorCharacter_Period_Comma>
+	<ReadableNumbers_SeparatorCharacter_Space_Period>Space separator 		| Period decimal</ReadableNumbers_SeparatorCharacter_Space_Period>
+	<ReadableNumbers_SeparatorCharacter_Space_Comma>Space separator 		| Comma decimal</ReadableNumbers_SeparatorCharacter_Space_Comma>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Period>Apostrophe separator 	| Period decimal</ReadableNumbers_SeparatorCharacter_Apostrophe_Period>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>Apostrophe separator 	| Comma decimal</ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>
+	<ReadableNumbers_SeparatorCharacter_Custom>Custom separator 		| Custom decimal</ReadableNumbers_SeparatorCharacter_Custom>
+	<ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>Warning: Using custom separators and decimals may cause visual bugs. Use at own risk.</ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>
 	<ReadableNumbers_SeparatorCharacter_Custom_Separator>Custom Separator:</ReadableNumbers_SeparatorCharacter_Custom_Separator>
 	<ReadableNumbers_SeparatorCharacter_Custom_Decimal>Custom Decimal:</ReadableNumbers_SeparatorCharacter_Custom_Decimal>
-	
-	
-	<ReadableNumbers_SeparatorCharacter_None>None 	(1000000.00)</ReadableNumbers_SeparatorCharacter_None>
 
+	<ReadableNumbers_SeparatorGrouping_Heading>Digit Grouping</ReadableNumbers_SeparatorGrouping_Heading>
+	<ReadableNumbers_SeparatorGrouping_ThreeDigit>Three Digits</ReadableNumbers_SeparatorGrouping_ThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>Two And Three Digits</ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_FourDigit>Four Digits</ReadableNumbers_SeparatorGrouping_FourDigit>
+	<ReadableNumbers_SeparatorGrouping_None>None</ReadableNumbers_SeparatorGrouping_None>
 
+	<ReadableNumbers_Cache_Heading>Cacheing</ReadableNumbers_Cache_Heading>
 	<ReadableNumbers_Cache_Label>Cache:</ReadableNumbers_Cache_Label>
 	<ReadableNumbers_Cache_Desc>Used to improve performance by storing the formatted versions of previously encountered text\nThe cache is cleared whenever it reaches the set capacity, to prevent memory useage or delay looking up previous text</ReadableNumbers_Cache_Desc>
 	<ReadableNumbers_Cache_Enable>Enable Cache</ReadableNumbers_Cache_Enable>
 	<ReadableNumbers_Cache_MaxCapacity_Label>Cache Max Capacity (100 - 1,000,000)</ReadableNumbers_Cache_MaxCapacity_Label>
 
+	<ReadableNumbers_BlackList_Heading>BlackList</ReadableNumbers_BlackList_Heading>
 	<ReadableNumbers_Blacklist_Label>Blacklisted Text:</ReadableNumbers_Blacklist_Label>
 	<ReadableNumbers_Blacklist_Desc>In game text containing any of these strings of characters will be left in its original state</ReadableNumbers_Blacklist_Desc>
 	<ReadableNumbers_Blacklist_TextField>Add pattern here:</ReadableNumbers_Blacklist_TextField>

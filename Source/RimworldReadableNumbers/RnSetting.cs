@@ -13,6 +13,7 @@ namespace RimworldReadableNumbers
         public static bool Debug = SettingDefaults.Debug;
         public static bool FormatAllNumbers = SettingDefaults.FormatAllNumbers;
         public static RnMod.SeparatorAndDecimalFormat SeparatorAndDecimalFormat = SettingDefaults.SeparatorAndDecimalFormat;
+        public static RnMod.SeparatorGrouping SeparatorGrouping = SettingDefaults.SeparatorGrouping;
         public static BlacklistPattern[] Blacklist = SettingDefaults.Blacklist;
         
         public static char CustomSeparatorChar = SettingDefaults.CustomSeparatorChar;
@@ -58,6 +59,7 @@ namespace RimworldReadableNumbers
             public static readonly bool Debug = false;
             public static readonly bool FormatAllNumbers = true;
             public static readonly RnMod.SeparatorAndDecimalFormat SeparatorAndDecimalFormat = RnMod.SeparatorAndDecimalFormat.CommaPeriod;
+            public static readonly RnMod.SeparatorGrouping SeparatorGrouping = RnMod.SeparatorGrouping.ThreeDigits;
             public static readonly char CustomSeparatorChar = ',';
             public static readonly char CustomDecimalChar = '.';
             public static readonly bool CacheEnable = true;
@@ -120,17 +122,6 @@ namespace RimworldReadableNumbers
                 RnSetting.DecimalSeparator = SettingDefaults.CustomDecimalChar;
             }
 
-            Scribe_Values.Look(ref CacheEnable, "cacheenable", SettingDefaults.CacheEnable, false);
-            Scribe_Values.Look(ref CacheMaxCapacity, "cachemaxcapacity", SettingDefaults.CacheMaxCapacity, false);
-
-            string blackListSerialized = string.Join(
-                _blacklistSeparator.ToString(),
-                Blacklist.Select(a =>
-                        a.Pattern
-                            .Replace(_blacklistSeparator.ToString(), "\\" + _blacklistSeparator))
-                    .ToList());
-            Scribe_Values.Look(ref blackListSerialized, "blacklist", "", false);
-
             switch (SeparatorAndDecimalFormat)
             {
                 case RnMod.SeparatorAndDecimalFormat.CommaPeriod:
@@ -174,6 +165,19 @@ namespace RimworldReadableNumbers
                     _decimalSeparator = '.';
                     break;
             }
+            
+            Scribe_Values.Look(ref SeparatorGrouping, "separatorgrouping", SettingDefaults.SeparatorGrouping, false);
+            
+            Scribe_Values.Look(ref CacheEnable, "cacheenable", SettingDefaults.CacheEnable, false);
+            Scribe_Values.Look(ref CacheMaxCapacity, "cachemaxcapacity", SettingDefaults.CacheMaxCapacity, false);
+
+            string blackListSerialized = string.Join(
+                _blacklistSeparator.ToString(),
+                Blacklist.Select(a =>
+                        a.Pattern
+                            .Replace(_blacklistSeparator.ToString(), "\\" + _blacklistSeparator))
+                    .ToList());
+            Scribe_Values.Look(ref blackListSerialized, "blacklist", "", false);
 
             Blacklist = blackListSerialized
                 .Split(_blacklistSeparator)
@@ -194,7 +198,7 @@ namespace RimworldReadableNumbers
             // Data Setup
             //inRect.yMax = (45 * (Text.LineHeight)) + (Blacklist.Length * (Text.LineHeight) * 2);
             
-            float contentsHeight = (25 * (Text.LineHeight)) + (Blacklist.Length * (Text.LineHeight) * 1.0f);
+            float contentsHeight = (35 * (Text.LineHeight)) + (Blacklist.Length * (Text.LineHeight) * 1.5f);
             var patternScrollRect = new Rect(0f, 0f, inRect.width - 12f, inRect.height * 1.0f + contentsHeight * 1.0f);
             Widgets.BeginScrollView(inRect, ref scrollPosition, patternScrollRect, true);
 
@@ -204,17 +208,22 @@ namespace RimworldReadableNumbers
             listingStandard.ColumnWidth = (inRect.width / 4) * 3;
 
             #region Misc Settings
-
-            // Basic Options Section: Enable, Debug, Restore Defaults
-            listingStandard.CheckboxLabeled("ReadableNumbers_Option_Enable".Translate(), ref RnSetting.Enable);
-            listingStandard.CheckboxLabeled("ReadableNumbers_Option_Debug".Translate(), ref RnSetting.Debug);
-            listingStandard.CheckboxLabeled("ReadableNumbers_Option_FormatAllNumbers".Translate(), ref RnSetting.FormatAllNumbers);
-
-            listingStandard.Gap(Text.LineHeight);
-
+            
+            // Reset to Default
             bool resetButtonPressed =
                 listingStandard.ButtonText("ReadableNumbers_Option_RestoreDefault".Translate(), "", 0.4f);
             if (resetButtonPressed) ResetToDefault();
+            
+            // Basic Options Section: Enable, Debug, Restore Defaults
+            var generalSectionHeight = Text.LineHeight * 5;
+            var generalSection = listingStandard.BeginSection(generalSectionHeight);
+            Text.Font = GameFont.Medium;
+            generalSection.Label("ReadableNumbers_Option_Heading".Translate());
+            Text.Font = GameFont.Small;
+            generalSection.CheckboxLabeled("ReadableNumbers_Option_Enable".Translate(), ref RnSetting.Enable);
+            generalSection.CheckboxLabeled("ReadableNumbers_Option_Debug".Translate(), ref RnSetting.Debug);
+            generalSection.CheckboxLabeled("ReadableNumbers_Option_FormatAllNumbers".Translate(), ref RnSetting.FormatAllNumbers);
+            listingStandard.EndSection(generalSection);
 
             #endregion Misc Settings
 
@@ -225,10 +234,14 @@ namespace RimworldReadableNumbers
             #region Separator Selection
 
             // Separator Selector Options:
-            var separatorSectionHeight = Text.LineHeight * (Enum.GetNames(typeof(RnMod.SeparatorAndDecimalFormat)).Length + 7);
+            var separatorSectionHeight = Text.LineHeight * (Enum.GetNames(typeof(RnMod.SeparatorAndDecimalFormat)).Length + 8);
             var separatorSection = listingStandard.BeginSection(separatorSectionHeight);
-            separatorSection.Label("ReadableNumbers_SeparatorCharacter_Label".Translate());
-            if (separatorSection.RadioButton("ReadableNumbers_SeparatorCharacter_Comma_Period".Translate(),
+            Text.Font = GameFont.Medium;
+            separatorSection.Label("ReadableNumbers_SeparatorCharacter_Heading".Translate());
+            Text.Font = GameFont.Small;
+            //separatorSection.Label("ReadableNumbers_SeparatorCharacter_Label".Translate());
+            if (separatorSection.RadioButton("ReadableNumbers_SeparatorCharacter_Comma_Period".Translate().Resolve() 
+                                             + GenerateSeparatorDecimalExample(',','.'),
                     RnSetting.SeparatorAndDecimalFormat == RnMod.SeparatorAndDecimalFormat.CommaPeriod, 10f))
             {
                 RnSetting.SeparatorAndDecimalFormat = RnMod.SeparatorAndDecimalFormat.CommaPeriod;
@@ -236,7 +249,8 @@ namespace RimworldReadableNumbers
                 RnSetting.DecimalSeparator = '.';
             }
 
-            if (separatorSection.RadioButton("ReadableNumbers_SeparatorCharacter_Period_Comma".Translate(),
+            if (separatorSection.RadioButton("ReadableNumbers_SeparatorCharacter_Period_Comma".Translate().Resolve() 
+                                             + GenerateSeparatorDecimalExample('.',','),
                     RnSetting.SeparatorAndDecimalFormat == RnMod.SeparatorAndDecimalFormat.PeriodComma, 10f))
             {
                 RnSetting.SeparatorAndDecimalFormat = RnMod.SeparatorAndDecimalFormat.PeriodComma;
@@ -244,7 +258,8 @@ namespace RimworldReadableNumbers
                 RnSetting.DecimalSeparator = ',';
             }
 
-            if (separatorSection.RadioButton("ReadableNumbers_SeparatorCharacter_Space_Period".Translate(),
+            if (separatorSection.RadioButton("ReadableNumbers_SeparatorCharacter_Space_Period".Translate().Resolve() 
+                                             + GenerateSeparatorDecimalExample(' ','.'),
                     RnSetting.SeparatorAndDecimalFormat == RnMod.SeparatorAndDecimalFormat.SpacePeriod, 10f))
             {
                 RnSetting.SeparatorAndDecimalFormat = RnMod.SeparatorAndDecimalFormat.SpacePeriod;
@@ -252,7 +267,8 @@ namespace RimworldReadableNumbers
                 RnSetting.DecimalSeparator = '.';
             }
 
-            if (separatorSection.RadioButton("ReadableNumbers_SeparatorCharacter_Space_Comma".Translate(),
+            if (separatorSection.RadioButton("ReadableNumbers_SeparatorCharacter_Space_Comma".Translate().Resolve() 
+                                             + GenerateSeparatorDecimalExample(' ',','),
                     RnSetting.SeparatorAndDecimalFormat == RnMod.SeparatorAndDecimalFormat.SpaceComma, 10f))
             {
                 RnSetting.SeparatorAndDecimalFormat = RnMod.SeparatorAndDecimalFormat.SpaceComma;
@@ -260,7 +276,8 @@ namespace RimworldReadableNumbers
                 RnSetting.DecimalSeparator = ',';
             }
             
-            if (separatorSection.RadioButton("ReadableNumbers_SeparatorCharacter_Apostrophe_Period".Translate(),
+            if (separatorSection.RadioButton("ReadableNumbers_SeparatorCharacter_Apostrophe_Period".Translate().Resolve() 
+                                             + GenerateSeparatorDecimalExample('\'','.'),
                     RnSetting.SeparatorAndDecimalFormat == RnMod.SeparatorAndDecimalFormat.ApostrophePeriod, 10f))
             {
                 RnSetting.SeparatorAndDecimalFormat = RnMod.SeparatorAndDecimalFormat.ApostrophePeriod;
@@ -268,7 +285,8 @@ namespace RimworldReadableNumbers
                 RnSetting.DecimalSeparator = '.';
             }
 
-            if (separatorSection.RadioButton("ReadableNumbers_SeparatorCharacter_Apostrophe_Comma".Translate(),
+            if (separatorSection.RadioButton("ReadableNumbers_SeparatorCharacter_Apostrophe_Comma".Translate().Resolve() 
+                                             + GenerateSeparatorDecimalExample('\'',','),
                     RnSetting.SeparatorAndDecimalFormat == RnMod.SeparatorAndDecimalFormat.ApostropheComma, 10f))
             {
                 RnSetting.SeparatorAndDecimalFormat = RnMod.SeparatorAndDecimalFormat.ApostropheComma;
@@ -276,7 +294,7 @@ namespace RimworldReadableNumbers
                 RnSetting.DecimalSeparator = ',';
             }
             
-            if (separatorSection.RadioButton("ReadableNumbers_SeparatorCharacter_Custom".Translate(),
+            if (separatorSection.RadioButton("ReadableNumbers_SeparatorCharacter_Custom".Translate().Resolve(),
                     RnSetting.SeparatorAndDecimalFormat == RnMod.SeparatorAndDecimalFormat.Custom, 10f))
             {
                 RnSetting.SeparatorAndDecimalFormat = RnMod.SeparatorAndDecimalFormat.Custom;
@@ -313,9 +331,56 @@ namespace RimworldReadableNumbers
                 }
             }
             
+            GUI.color = Color.red;
+            separatorSection.Label("ReadableNumbers_SeparatorCharacter_Custom_Warning_Label".Translate());
+            GUI.color = Color.white;
             listingStandard.EndSection(separatorSection);
             
             #endregion Separator Selection
+
+            listingStandard.Gap(Text.LineHeight);
+            listingStandard.GapLine();
+            listingStandard.Gap(Text.LineHeight);
+            
+            #region Grouping Selection
+
+            // Grouping Selector Options:
+            var groupingSectionHeight = Text.LineHeight * (Enum.GetNames(typeof(RnMod.SeparatorGrouping)).Length + 2);
+            var groupingSection = listingStandard.BeginSection(groupingSectionHeight);
+            Text.Font = GameFont.Medium;
+            groupingSection.Label("ReadableNumbers_SeparatorGrouping_Heading".Translate());
+            Text.Font = GameFont.Small;
+            if (groupingSection.RadioButton("ReadableNumbers_SeparatorGrouping_ThreeDigit".Translate().Resolve() 
+                                            + GenerateGroupingExample(RnMod.SeparatorGrouping.ThreeDigits),
+                    RnSetting.SeparatorGrouping == RnMod.SeparatorGrouping.ThreeDigits, 10f))
+            {
+                RnSetting.SeparatorGrouping = RnMod.SeparatorGrouping.ThreeDigits;
+            }
+
+            if (groupingSection.RadioButton("ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit".Translate().Resolve() 
+                                            + GenerateGroupingExample(RnMod.SeparatorGrouping.TwoAndThreeDigits),
+                    RnSetting.SeparatorGrouping == RnMod.SeparatorGrouping.TwoAndThreeDigits, 10f))
+            {
+                RnSetting.SeparatorGrouping = RnMod.SeparatorGrouping.TwoAndThreeDigits;
+            }
+
+            if (groupingSection.RadioButton("ReadableNumbers_SeparatorGrouping_FourDigit".Translate().Resolve() 
+                                            + GenerateGroupingExample(RnMod.SeparatorGrouping.FourDigits),
+                    RnSetting.SeparatorGrouping == RnMod.SeparatorGrouping.FourDigits, 10f))
+            {
+                RnSetting.SeparatorGrouping = RnMod.SeparatorGrouping.FourDigits;
+            }
+
+            if (groupingSection.RadioButton("ReadableNumbers_SeparatorGrouping_None".Translate().Resolve() 
+                                            + GenerateGroupingExample(RnMod.SeparatorGrouping.None),
+                    RnSetting.SeparatorGrouping == RnMod.SeparatorGrouping.None, 10f))
+            {
+                RnSetting.SeparatorGrouping = RnMod.SeparatorGrouping.None;
+            }
+
+            listingStandard.EndSection(groupingSection);
+            
+            #endregion Grouping Selection
 
             listingStandard.Gap(Text.LineHeight);
             listingStandard.GapLine();
@@ -324,13 +389,19 @@ namespace RimworldReadableNumbers
             #region Cache
 
             // Cache Options:
-            listingStandard.CheckboxLabeled("ReadableNumbers_Cache_Enable".Translate(), ref RnSetting.CacheEnable);
-            listingStandard.Label("ReadableNumbers_Cache_Desc".Translate());
-            listingStandard.Gap(Text.LineHeight);
-            listingStandard.Label("ReadableNumbers_Cache_MaxCapacity_Label".Translate());
-            Rect cacheMaxCapacityRect = listingStandard.GetRect(Text.LineHeight);
+            var cacheSectionHeight = Text.LineHeight * 10;
+            var cacheSection = listingStandard.BeginSection(cacheSectionHeight);
+            Text.Font = GameFont.Medium;
+            cacheSection.Label("ReadableNumbers_Cache_Heading".Translate());
+            Text.Font = GameFont.Small;
+            cacheSection.CheckboxLabeled("ReadableNumbers_Cache_Enable".Translate(), ref RnSetting.CacheEnable);
+            cacheSection.Label("ReadableNumbers_Cache_Desc".Translate());
+            cacheSection.Gap(Text.LineHeight);
+            cacheSection.Label("ReadableNumbers_Cache_MaxCapacity_Label".Translate());
+            Rect cacheMaxCapacityRect = cacheSection.GetRect(Text.LineHeight);
             Widgets.TextFieldNumeric(cacheMaxCapacityRect, ref RnSetting.CacheMaxCapacity,
                 ref _cacheMaxCapacityTextboxBuffer, 100, 1000000);
+            listingStandard.EndSection(cacheSection);
 
             #endregion Cache
 
@@ -341,14 +412,19 @@ namespace RimworldReadableNumbers
             #region Blacklist
 
             // Blacklist Options:
-            listingStandard.Label("ReadableNumbers_Blacklist_Label".Translate());
-            listingStandard.Label("ReadableNumbers_Blacklist_Desc".Translate());
-            listingStandard.Gap(Text.LineHeight);
+            var blacklistSectionHeight = Text.LineHeight *  8 + (Blacklist.Length * (Text.LineHeight) * 1.5f);
+            var blacklistSection = listingStandard.BeginSection(blacklistSectionHeight);
+            Text.Font = GameFont.Medium;
+            blacklistSection.Label("ReadableNumbers_BlackList_Heading".Translate());
+            Text.Font = GameFont.Small;
+            //blacklistSection.Label("ReadableNumbers_Blacklist_Label".Translate());
+            blacklistSection.Label("ReadableNumbers_Blacklist_Desc".Translate());
+            blacklistSection.Gap(Text.LineHeight);
 
-            Rect textFieldRect = listingStandard.GetRect(Text.LineHeight);
+            Rect textFieldRect = blacklistSection.GetRect(Text.LineHeight);
             _blacklistTextboxBuffer = Widgets.TextField(textFieldRect, _blacklistTextboxBuffer);
-            bool addButtonPressed = listingStandard.ButtonText("ReadableNumbers_Blacklist_Add".Translate(), "", 1f);
-            listingStandard.Gap(Text.LineHeight);
+            bool addButtonPressed = blacklistSection.ButtonText("ReadableNumbers_Blacklist_Add".Translate(), "", 1f);
+            blacklistSection.Gap(Text.LineHeight);
             if (addButtonPressed)
             {
                 if (Blacklist.All(a => a.Pattern != _blacklistTextboxBuffer))
@@ -361,7 +437,6 @@ namespace RimworldReadableNumbers
 
                 _blacklistTextboxBuffer = string.Empty;
             }
-
 
             if (Blacklist == null)
             {
@@ -376,13 +451,38 @@ namespace RimworldReadableNumbers
 
             for (int i = 0; i < Blacklist.Length; i++)
             {
-                listingStandard.CheckboxLabeled($"{Blacklist[i].Pattern}", ref Blacklist[i].IsSetForRemoval);
+                blacklistSection.CheckboxLabeled($"{Blacklist[i].Pattern}", ref Blacklist[i].IsSetForRemoval);
             }
 
+            listingStandard.EndSection(blacklistSection);
             #endregion Blacklist
 
             listingStandard.End();
             Widgets.EndScrollView();
         }
+
+        #region Helper Methods
+        private static string GenerateSeparatorDecimalExample(char digitSeparatorChar, char decimalChar)
+        {
+            return $" \t \t(1{digitSeparatorChar}000{digitSeparatorChar}000{decimalChar}00)";
+        }
+        
+        private static string GenerateGroupingExample(RnMod.SeparatorGrouping grouping)
+        {
+            switch (grouping)
+            {
+                case RnMod.SeparatorGrouping.ThreeDigits:
+                    return $"\t \t \t(10,000,000.00)";
+                case RnMod.SeparatorGrouping.TwoAndThreeDigits:
+                    return $" \t \t(1,00,00,000.00)";
+                case RnMod.SeparatorGrouping.FourDigits:
+                    return $"\t \t \t(1000,0000.00)";
+                case RnMod.SeparatorGrouping.None:
+                    return $"\t \t \t \t(10000000.00)";
+            }
+            return "";
+        }
+        
+        #endregion Helper Methods
     }
 }

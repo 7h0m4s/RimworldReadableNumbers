@@ -24,12 +24,15 @@ namespace RimworldReadableNumbers.Utility
             };
 
             Span<char> resultValue = _resultMemory.Span;
+            RnMod.SeparatorGrouping separatorGrouping = RnSetting.SeparatorGrouping;
             bool isPastPeriod = !validationResult.HasDecimalPlace;
+            bool isPastFirstGroup = false;
             char digitSeparator = RnSetting.DigitSeparator;
             char decimalSeparator = RnSetting.DecimalSeparator;
             bool replaceDecimalCharacter = decimalSeparator != '.';
             short countSinceLastSeparator = 0;
             short resutCharCount = 0;
+            bool canInsertSeparator = false;
             for (short i = (short)originalValue.Length;  i-- > 0;) // Reverse Loop
             {
                 var currentChar = originalValue[i];
@@ -54,11 +57,36 @@ namespace RimworldReadableNumbers.Utility
                 resultValue[resultValue.Length - resutCharCount - 1] = currentChar;
                 resutCharCount++;
 
-                if (countSinceLastSeparator == 3 && i != 0) // Add commas only if there are more numbers ahead
+                // Add commas only if there are more numbers ahead
+                if (i != 0 && isPastPeriod) 
                 {
-                    resultValue[resultValue.Length - resutCharCount - 1] = digitSeparator;
-                    resutCharCount++;
-                    countSinceLastSeparator = 0;
+                    // Add a digit separator if enough digits have passed for the current SeparatorGrouping setting
+                    canInsertSeparator = false;
+                    switch (separatorGrouping)
+                    {
+                        case RnMod.SeparatorGrouping.ThreeDigits:
+                            canInsertSeparator = countSinceLastSeparator == 3;
+                            break;
+                        case RnMod.SeparatorGrouping.TwoAndThreeDigits:
+                            canInsertSeparator = (isPastFirstGroup == false && countSinceLastSeparator == 3) ||
+                                                 (isPastFirstGroup == true && countSinceLastSeparator == 2);
+                            break;
+                        case RnMod.SeparatorGrouping.FourDigits:
+                            canInsertSeparator = countSinceLastSeparator == 4;
+                            break;
+                        case RnMod.SeparatorGrouping.None:
+                            canInsertSeparator = false;
+                            break;
+                    }
+
+                    if (canInsertSeparator)
+                    {
+                        // Insert Separator and reset for next digit group
+                        resultValue[resultValue.Length - resutCharCount - 1] = digitSeparator;
+                        resutCharCount++;
+                        countSinceLastSeparator = 0;
+                        isPastFirstGroup = true;
+                    }
                 }
             }
             isSuccess = true;
@@ -76,5 +104,6 @@ namespace RimworldReadableNumbers.Utility
             TaggedString newFormattedTaggedString = new TaggedString(resolvedTaggedString);
             return newFormattedTaggedString;
         }
+        
     }
 }

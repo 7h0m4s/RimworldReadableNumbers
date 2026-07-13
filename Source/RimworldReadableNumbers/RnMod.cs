@@ -27,6 +27,14 @@ namespace RimworldReadableNumbers
             ApostropheComma,
             Custom,
         }
+        
+        public enum SeparatorGrouping
+        {
+            ThreeDigits,
+            TwoAndThreeDigits,
+            FourDigits,
+            None,
+        }
 
         public override void DoSettingsWindowContents(Rect inRect)
         {
