@@ -1,11 +1,11 @@
 # Rimworld Readable Numbers
 
-## [What does the mod do?]
+## What does the mod do?
 
 Makes numbers in Rimworld easier to read by adding digit separators.
 e.g. 1000000 -> 1,000,000
 
-## [Details]
+## Details
 4 different formats to choose from:
 
 - Comma separator with Period decimal 	(1,000,000.00) *-Default-*
@@ -19,7 +19,7 @@ Can easily enabled/disabled number formatting mid-game from the Mod Settings.
 
 A blacklist feature is available in settings to exclude for any text that shouldn't be modified.
 
-## [F.A.Q.]
+## F.A.Q.
 **Q.** Will this affect performance?
 
 **A.** There should be no noticable impact on performance. All processed text in game is cached for fast retrieval. Even without the cache, a lot of effort has been put in to optimising the formatting process to take as few CPU operations as possible and to quickly skip over any text that doesn't have enough sequential digits to need processing.
@@ -36,7 +36,7 @@ A blacklist feature is available in settings to exclude for any text that should
 
 **A.** No AI generated code was used in this project. Feel free to peruse the commits in the [Github](https://github.com/7h0m4s/RimworldReadableNumbers) to confirm. I got a lot of practice in optimising a simple task to be as performant as possible.
 
-## [Compatibility]
+## Compatibility
 This mod is safe to be added and removed at any point. As it does not make any changes to the save file.
 
 There shouldn't be any clashes with the majority of mods so long as they don't make changes to how text is rendered on screen in game.
@@ -44,7 +44,7 @@ There shouldn't be any clashes with the majority of mods so long as they don't m
 There is the possibility for a mod to encounter a visual bug when the slightly larger number text is now too big for the textbox. Causing the text to wraparound or become truncated. If this happens you can try adding a keyword or symbol in that textbox to the blacklist in this mods settings. To have any text that matches to be excluded from formatting.
 
 
-## [License]
+## License
 GNU GENERAL PUBLIC LICENSE V3
 
 

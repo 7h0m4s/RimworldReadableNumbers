@@ -25,11 +25,11 @@
 		<li>Dubwise.DubsPerformanceAnalyzer.steam</li>
 	</loadAfter>
 <description>
-	[h2][What does the mod do?][/h2]
+	[h2]What does the mod do?[/h2]
 	Makes numbers in Rimworld easier to read by adding digit separators.
 	[b]e.g. 1000000 -> 1,000,000[/b]
 
-	[h2][Details][/h2]
+	[h2]Details[/h2]
 	[b]4 different formats to choose from:[/b]
 	[list]
 	[*] Comma separator with Period decimal 	[b](1,000,000.00)[/b] -Default-
@@ -43,7 +43,7 @@
 
 	A blacklist feature is available in settings to exclude for any text that shouldn't be modified.
 
-	[h2][F.A.Q.][/h2]
+	[h2]F.A.Q.[/h2]
 	[b]Q.[/b] [b]Will this affect performance?[/b]
 	[b]A.[/b] There should be no noticable impact on performance. All processed text in game is cached for fast retrieval. Even without the cache, a lot of effort has been put in to optimising the formatting process to take as few CPU operations as possible and to quickly skip over any text that doesn't have enough sequential digits to need processing.
 
@@ -53,17 +53,17 @@
 	[b]Q.[/b] [b]Was this vibe coded with AI?[/b]
 	[b]A. [/b]No AI generated code was used in this project. Feel free to peruse the commits in the [url=https://github.com/7h0m4s/RimworldReadableNumbers]Github[/url] to confirm. I got a lot of practice in optimising a simple task to be as performant as possible.
 
-	[h2][Compatibility][/h2]
+	[h2]Compatibility[/h2]
 	This mod is safe to be added and removed at any point. As it does not make any changes to the save file.
 
 	There shouldn't be any clashes with the majority of mods so long as they don't make changes to how text is rendered on screen in game.
 
 	There is the possibility for a mod to encounter a visual bug when the slightly larger number text is now too big for the textbox. Causing the text to wraparound or become truncated. If this happens you can try adding a keyword or symbol in that textbox to the blacklist in this mods settings. To have any text that matches to be excluded from formatting.
 
-	[h2][Change Log][/h2]
+	[h2]Change Log[/h2]
 	1.0.0 - Release
 
-	[h2][License][/h2]
+	[h2]License[/h2]
 	GNU GENERAL PUBLIC LICENSE V3
 
 	
