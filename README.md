@@ -1,9 +1,10 @@
-# What does the mod do?
+# Rimworld Readable Numbers
 
+## What does the mod do?
 Makes numbers in Rimworld easier to read by adding digit separators.  
 **e.g. 1000000 -> 1,000,000**
 
-# Details
+## Details
 
 **Separators and Decimals can be any character you want:**
 
@@ -28,7 +29,7 @@ Can easily enable/disable number formatting mid-game from the Mod Settings.
 
 A blacklist feature is available in settings to exclude any text that shouldn't be modified.
 
-# F.A.Q.
+## F.A.Q.
 
 **Q.** **Will this affect performance?**  
 **A.** There should be no noticeable impact on performance. All processed text in game is cached for fast retrieval. Even without the cache, a lot of effort has been put in to optimising the formatting process to take as few CPU operations as possible and to quickly skip over any text that doesn't have enough sequential digits to need processing.
@@ -39,7 +40,7 @@ A blacklist feature is available in settings to exclude any text that shouldn't 
 **Q.** **Was this vibe coded with AI?**  
 **A.** No AI generated code was used in this project. Feel free to peruse the commits in the [Github](https://github.com/7h0m4s/RimworldReadableNumbers) to confirm. I got a lot of practice in optimising a simple task to be as performant as possible.
 
-# Compatibility
+## Compatibility
 
 This mod is safe to be added and removed at any point. As it does not make any changes to the save file.
 
@@ -47,7 +48,7 @@ There shouldn't be any clashes with the majority of mods so long as they don't m
 
 There is the possibility for a mod to encounter a visual bug when the slightly larger number text is now too big for the textbox. Causing the text to wrap around or become truncated. If this happens you can try adding a keyword or symbol in that textbox to the blacklist in this mod's settings. To have any text that matches to be excluded from formatting.
 
-# Change Log
+## Change Log
 
 **1.1.0:**
 
@@ -64,7 +65,7 @@ There is the possibility for a mod to encounter a visual bug when the slightly l
 **1.0.0:**
 
 - Mod Release
-# License
+## License
 
 GNU GENERAL PUBLIC LICENSE V3
 
