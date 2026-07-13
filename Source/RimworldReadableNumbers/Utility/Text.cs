@@ -94,16 +94,7 @@ namespace RimworldReadableNumbers.Utility
         }
 
 
-        // Use to override .Translate() to output correctly resolved and formatted text
-        // as pre-emptively formatting text before translation can lead to weird <color> tag behavior
-        public static TaggedString TranslateWithFormatting(this string key, NamedArgument arg1)
-        {
-            TaggedString translateResult = Verse.TranslatorFormattedStringExtensions.Translate(key, arg1);
-            string resolvedTaggedString = translateResult.Resolve();
-            Processing.ProcessLabel(ref resolvedTaggedString);
-            TaggedString newFormattedTaggedString = new TaggedString(resolvedTaggedString);
-            return newFormattedTaggedString;
-        }
+
         
     }
 }
