@@ -25,17 +25,25 @@
 		<li>Dubwise.DubsPerformanceAnalyzer.steam</li>
 	</loadAfter>
 <description>
-	[h2]What does the mod do?[/h2]
-	Makes numbers in Rimworld easier to read by adding digit separators.
+	[h2]What does the mod do?[/h2]Makes numbers in Rimworld easier to read by adding digit separators.
 	[b]e.g. 1000000 -> 1,000,000[/b]
 
-	[h2]Details[/h2]
-	[b]4 different formats to choose from:[/b]
+	[h2]Details[/h2][b]Separators and Decimals can be any character you want:[/b]
 	[list]
-	[*] Comma separator with Period decimal 	[b](1,000,000.00)[/b] -Default-
-	[*] Period separator with Comma decimal 	[b](1.000.000,00)[/b]
-	[*] Space separator with Period decimal 	[b](1 000 000.00)[/b]
-	[*] Space separator with Comma decimal 	[b](1 000 000,00)[/b]
+	[*] [b](1,000,000.00)[/b] Comma separator with Period decimal [b] -Default-[/b]
+	[*] [b](1.000.000,00)[/b] Period separator with Comma decimal
+	[*] [b](1 000 000.00)[/b] Space separator with Period decimal
+	[*] [b](1 000 000,00)[/b] Space separator with Comma decimal
+	[*] [b](1'000'000.00)[/b] Apostrophe separator with Period decimal
+	[*] [b](1'000'000,00)[/b] Apostrophe separator with Comma decimal
+	[*] [b](1#000#000@00)[/b] [B]Custom:[/B] [u]Any[/u] combination of 2 characters
+	[/list]
+	[b]Choose Your Preferred Digit Grouping Style:[/b]
+	[list]
+	[*] [b](100,000,000,000)[/b] Three Digits  [b]-Default-[/b]
+	[*] [b](1,00,00,00,00,000)[/b] Twos Then Three Digits
+	[*] [b](1000,0000,0000)[/b] Four Digits
+	[*] [b](100000000000)[/b] None
 	[/list]
 	Formatting will be applied to most modded UI elements.
 
@@ -45,7 +53,7 @@
 
 	[h2]F.A.Q.[/h2]
 	[b]Q.[/b] [b]Will this affect performance?[/b]
-	[b]A.[/b] There should be no noticable impact on performance. All processed text in game is cached for fast retrieval. Even without the cache, a lot of effort has been put in to optimising the formatting process to take as few CPU operations as possible and to quickly skip over any text that doesn't have enough sequential digits to need processing.
+	[b]A.[/b] There should be no noticeable impact on performance. All processed text in game is cached for fast retrieval. Even without the cache, a lot of effort has been put in to optimising the formatting process to take as few CPU operations as possible and to quickly skip over any text that doesn't have enough sequential digits to need processing.
 
 	[b]Q.[/b] [b]The mod is formatting a number I don't want it to! How can I fix this? In this case my pawn's name has lots of digits. [/b]
 	[b]A.[/b] There is a blacklist available in the mod settings. Add all or part of the text that is incorrectly being modified. Then Readable Numbers will avoid formatting any text in game that contains those specific characters. WARNING: An exceptionally long blacklist might cause performance impact.
@@ -53,20 +61,31 @@
 	[b]Q.[/b] [b]Was this vibe coded with AI?[/b]
 	[b]A. [/b]No AI generated code was used in this project. Feel free to peruse the commits in the [url=https://github.com/7h0m4s/RimworldReadableNumbers]Github[/url] to confirm. I got a lot of practice in optimising a simple task to be as performant as possible.
 
-	[h2]Compatibility[/h2]
-	This mod is safe to be added and removed at any point. As it does not make any changes to the save file.
+	[h2]Compatibility[/h2]This mod is safe to be added and removed at any point. As it does not make any changes to the save file.
 
 	There shouldn't be any clashes with the majority of mods so long as they don't make changes to how text is rendered on screen in game.
 
 	There is the possibility for a mod to encounter a visual bug when the slightly larger number text is now too big for the textbox. Causing the text to wraparound or become truncated. If this happens you can try adding a keyword or symbol in that textbox to the blacklist in this mods settings. To have any text that matches to be excluded from formatting.
 
-	[h2]Change Log[/h2]
-	1.0.0 - Release
-
+	[h2]Change Log[/h2][b]1.1.0:[/b]
+	[list]
+	[*] Tidied Mod Settings
+	[*] Expanded Separator And Decimal choices to include Apostrophe separator
+	[*] Added support for any characters to be used as Separator and Decimal
+	[*] Added Digit Grouping options
+	[*] Allowed mod to format the Decimal for numbers less than 1000 by default (e.g. 9.18kg -> 9,18kg)
+	[*] Added setting option to disable small number formatting
+	[*] Removed redundant Harmony.dll and PNG files
+	[*] Bug Fix: Quest Rewards not displaying $ value
+	[*] Bug Fix: Date year in History->Messages dialogue getting formatted
+	[/list][b]1.0.0:[/b]
+	[list]
+	[*]Mod Release
+	[/list]
 	[h2]License[/h2]
 	GNU GENERAL PUBLIC LICENSE V3
 
-	
+
 	[b]Github:[/b] [url=https://github.com/7h0m4s/RimworldReadableNumbers]https://github.com/7h0m4s/RimworldReadableNumbers[/url]
 </description>
 </ModMetaData>
