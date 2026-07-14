@@ -31,7 +31,7 @@ namespace RimworldReadableNumbers
         public enum SeparatorGrouping
         {
             ThreeDigits,
-            TwoAndThreeDigits,
+            ThreeThenTwoDigits,
             FourDigits,
             None,
         }

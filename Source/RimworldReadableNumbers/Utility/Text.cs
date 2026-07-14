@@ -67,7 +67,7 @@ namespace RimworldReadableNumbers.Utility
                         case RnMod.SeparatorGrouping.ThreeDigits:
                             canInsertSeparator = countSinceLastSeparator == 3;
                             break;
-                        case RnMod.SeparatorGrouping.TwoAndThreeDigits:
+                        case RnMod.SeparatorGrouping.ThreeThenTwoDigits:
                             canInsertSeparator = (isPastFirstGroup == false && countSinceLastSeparator == 3) ||
                                                  (isPastFirstGroup == true && countSinceLastSeparator == 2);
                             break;

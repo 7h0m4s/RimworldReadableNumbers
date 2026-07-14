@@ -23,6 +23,7 @@
 		<li>ludeon.rimworld.anomaly</li>
 		<li>ludeon.rimworld.odyssey</li>
 		<li>Dubwise.DubsPerformanceAnalyzer.steam</li>
+		<li>Jaxe.RimHUD</li>
 	</loadAfter>
 <description>
 	[h2]What does the mod do?[/h2]Makes numbers in Rimworld easier to read by adding digit separators.
@@ -41,7 +42,7 @@
 	[b]Choose Your Preferred Digit Grouping Style:[/b]
 	[list]
 	[*] [b](100,000,000,000)[/b] Three Digits  [b]-Default-[/b]
-	[*] [b](1,00,00,00,00,000)[/b] Twos Then Three Digits
+	[*] [b](1,00,00,00,00,000)[/b] Three Then Two Digits
 	[*] [b](1000,0000,0000)[/b] Four Digits
 	[*] [b](100000000000)[/b] None
 	[/list]

@@ -19,7 +19,7 @@ Makes numbers in Rimworld easier to read by adding digit separators.
 **Choose Your Preferred Digit Grouping Style:**
 
 - **(100,000,000,000)** Three Digits **-Default-**
-- **(1,00,00,00,00,000)** Twos Then Three Digits
+- **(1,00,00,00,00,000)** Three Then Two Digits
 - **(1000,0000,0000)** Four Digits
 - **(100000000000)** None
 

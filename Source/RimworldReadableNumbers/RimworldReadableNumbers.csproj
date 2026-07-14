@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Patches\DubsPerformanceAnalyzer\DubsPerformanceAnalyzerPatch.cs" />
+    <Compile Include="Patches\RimHud\RimHudTextExtensionsToDecimalStringPatch.cs" />
     <Compile Include="Patches\Rimworld\DateReadout\DateReadoutPatch.cs" />
     <Compile Include="Patches\Rimworld\DevGui\DevGuiLabelPatch.cs" />
     <Compile Include="Patches\Rimworld\DialogFileList\DialogFileListDoWindowContentsPatch.cs" />

@@ -132,7 +132,7 @@ namespace RimworldReadableNumbers
                     break;
                 case RnMod.SeparatorAndDecimalFormat.SpaceComma:
                 case RnMod.SeparatorAndDecimalFormat.SpacePeriod:
-                    _digitSeparator = ' ';
+                    _digitSeparator = ' ';
                     break;
                 case RnMod.SeparatorAndDecimalFormat.ApostropheComma:
                 case RnMod.SeparatorAndDecimalFormat.ApostrophePeriod:
@@ -259,20 +259,20 @@ namespace RimworldReadableNumbers
             }
 
             if (separatorSection.RadioButton("ReadableNumbers_SeparatorCharacter_Space_Period".Translate().Resolve() 
-                                             + GenerateSeparatorDecimalExample(' ','.'),
+                                             + GenerateSeparatorDecimalExample(' ','.'),
                     RnSetting.SeparatorAndDecimalFormat == RnMod.SeparatorAndDecimalFormat.SpacePeriod, 10f))
             {
                 RnSetting.SeparatorAndDecimalFormat = RnMod.SeparatorAndDecimalFormat.SpacePeriod;
-                RnSetting.DigitSeparator = ' ';
+                RnSetting.DigitSeparator = ' ';
                 RnSetting.DecimalSeparator = '.';
             }
 
             if (separatorSection.RadioButton("ReadableNumbers_SeparatorCharacter_Space_Comma".Translate().Resolve() 
-                                             + GenerateSeparatorDecimalExample(' ',','),
+                                             + GenerateSeparatorDecimalExample(' ',','),
                     RnSetting.SeparatorAndDecimalFormat == RnMod.SeparatorAndDecimalFormat.SpaceComma, 10f))
             {
                 RnSetting.SeparatorAndDecimalFormat = RnMod.SeparatorAndDecimalFormat.SpaceComma;
-                RnSetting.DigitSeparator = ' ';
+                RnSetting.DigitSeparator = ' ';
                 RnSetting.DecimalSeparator = ',';
             }
             
@@ -358,10 +358,10 @@ namespace RimworldReadableNumbers
             }
 
             if (groupingSection.RadioButton("ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit".Translate().Resolve() 
-                                            + GenerateGroupingExample(RnMod.SeparatorGrouping.TwoAndThreeDigits),
-                    RnSetting.SeparatorGrouping == RnMod.SeparatorGrouping.TwoAndThreeDigits, 10f))
+                                            + GenerateGroupingExample(RnMod.SeparatorGrouping.ThreeThenTwoDigits),
+                    RnSetting.SeparatorGrouping == RnMod.SeparatorGrouping.ThreeThenTwoDigits, 10f))
             {
-                RnSetting.SeparatorGrouping = RnMod.SeparatorGrouping.TwoAndThreeDigits;
+                RnSetting.SeparatorGrouping = RnMod.SeparatorGrouping.ThreeThenTwoDigits;
             }
 
             if (groupingSection.RadioButton("ReadableNumbers_SeparatorGrouping_FourDigit".Translate().Resolve() 
@@ -473,7 +473,7 @@ namespace RimworldReadableNumbers
             {
                 case RnMod.SeparatorGrouping.ThreeDigits:
                     return $"\t \t \t(10,000,000.00)";
-                case RnMod.SeparatorGrouping.TwoAndThreeDigits:
+                case RnMod.SeparatorGrouping.ThreeThenTwoDigits:
                     return $" \t \t(1,00,00,000.00)";
                 case RnMod.SeparatorGrouping.FourDigits:
                     return $"\t \t \t(1000,0000.00)";
