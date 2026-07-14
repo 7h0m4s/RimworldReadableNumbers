@@ -1,28 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
-<ReadableNumbers_Option_Mod_Name>Čitateľné čísla</ReadableNumbers_Option_Mod_Name>
+	
+	<ReadableNumbers_Option_Mod_Name>Čitateľné čísla</ReadableNumbers_Option_Mod_Name>
+	
+	
+	<ReadableNumbers_Option_Heading>Všeobecné nastavenia</ReadableNumbers_Option_Heading>
+	<ReadableNumbers_Option_Enable>Povoliť čitateľné čísla</ReadableNumbers_Option_Enable>
+	<ReadableNumbers_Option_RestoreDefault>Obnoviť predvolené nastavenia</ReadableNumbers_Option_RestoreDefault>
+	<ReadableNumbers_Option_Debug>Režim ladenia</ReadableNumbers_Option_Debug>
+	<ReadableNumbers_Option_FormatAllNumbers>Formátovať čísla menšie ako 1000</ReadableNumbers_Option_FormatAllNumbers>
 
-<ReadableNumbers_Option_Enable>Povoliť čitateľné čísla</ReadableNumbers_Option_Enable>
-<ReadableNumbers_Option_RestoreDefault>Obnoviť predvolené</ReadableNumbers_Option_RestoreDefault>
-<ReadableNumbers_Option_Debug>Režim ladenia</ReadableNumbers_Option_Debug>
+	<ReadableNumbers_SeparatorCharacter_Heading>Oddeľovače a desatinné znaky</ReadableNumbers_SeparatorCharacter_Heading>
+	<ReadableNumbers_SeparatorCharacter_Label>Vyberte požadovaný formát:</ReadableNumbers_SeparatorCharacter_Label>
+	<ReadableNumbers_SeparatorCharacter_Comma_Period>Oddeľovač čiarka 		| Desatinná bodka</ReadableNumbers_SeparatorCharacter_Comma_Period>
+	<ReadableNumbers_SeparatorCharacter_Period_Comma>Oddeľovač bodka 		| Desatinná čiarka</ReadableNumbers_SeparatorCharacter_Period_Comma>
+	<ReadableNumbers_SeparatorCharacter_Space_Period>Oddeľovač medzera 		| Desatinná bodka</ReadableNumbers_SeparatorCharacter_Space_Period>
+	<ReadableNumbers_SeparatorCharacter_Space_Comma>Oddeľovač medzera 		| Desatinná čiarka</ReadableNumbers_SeparatorCharacter_Space_Comma>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Period>Oddeľovač apostrof 	| Desatinná bodka</ReadableNumbers_SeparatorCharacter_Apostrophe_Period>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>Oddeľovač apostrof 	| Desatinná čiarka</ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>
+	<ReadableNumbers_SeparatorCharacter_Custom>Vlastný oddeľovač 		| Vlastný desatinný znak</ReadableNumbers_SeparatorCharacter_Custom>
+	<ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>Upozornenie: Používanie vlastných oddeľovačov a desatinných znakov môže spôsobiť chyby zobrazenia. Používajte na vlastné riziko.</ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>
+	<ReadableNumbers_SeparatorCharacter_Custom_Separator>Vlastný oddeľovač:</ReadableNumbers_SeparatorCharacter_Custom_Separator>
+	<ReadableNumbers_SeparatorCharacter_Custom_Decimal>Vlastný desatinný znak:</ReadableNumbers_SeparatorCharacter_Custom_Decimal>
 
-<ReadableNumbers_SeparatorCharacter_Label>Vyberte formát čísla:</ReadableNumbers_SeparatorCharacter_Label>
-<ReadableNumbers_SeparatorCharacter_Comma_Period>Oddeľovač čiarkou s bodkou v desatinnom súčte (1,000,000.00)</ReadableNumbers_SeparatorCharacter_Comma_Period>
-<ReadableNumbers_SeparatorCharacter_Period_Comma>Oddeľovač bodky s desatinnou čiarkou (1.000.000,00)</ReadableNumbers_SeparatorCharacter_Period_Comma>
-<ReadableNumbers_SeparatorCharacter_Space_Period>Oddeľovač medzier s desatinnou bodkou (1 000 000.00)</ReadableNumbers_SeparatorCharacter_Space_Period>
-<ReadableNumbers_SeparatorCharacter_Space_Comma>Oddeľovač medzier s desatinnou čiarkou (1 000 000,00)</ReadableNumbers_SeparatorCharacter_Space_Comma>
-<ReadableNumbers_SeparatorCharacter_None>Žiadne (1000000,00)</ReadableNumbers_SeparatorCharacter_None>
+	<ReadableNumbers_SeparatorGrouping_Heading>Zoskupovanie číslic</ReadableNumbers_SeparatorGrouping_Heading>
+	<ReadableNumbers_SeparatorGrouping_ThreeDigit>Tri číslice</ReadableNumbers_SeparatorGrouping_ThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>Dve a tri číslice</ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_FourDigit>Štyri číslice</ReadableNumbers_SeparatorGrouping_FourDigit>
+	<ReadableNumbers_SeparatorGrouping_None>Žiadne</ReadableNumbers_SeparatorGrouping_None>
 
-<ReadableNumbers_Cache_Label>Vyrovnávacia pamäť:</ReadableNumbers_Cache_Label>
-<ReadableNumbers_Cache_Desc>Používa sa na zlepšenie výkonu uložením formátovaných verzií predtým nájdeného textu.\nVyrovnávacia pamäť sa vymaže vždy, keď dosiahne nastavenú kapacitu, aby sa zabránilo využitiu pamäte alebo oneskoreniu vyhľadávania predchádzajúceho textu.</ReadableNumbers_Cache_Desc>
-<ReadableNumbers_Cache_Enable>Povoliť vyrovnávaciu pamäť</ReadableNumbers_Cache_Enable>
-<ReadableNumbers_Cache_MaxCapacity_Label>Maximálna kapacita vyrovnávacej pamäte (100 – 1 000 000)</ReadableNumbers_Cache_MaxCapacity_Label>
+	<ReadableNumbers_Cache_Heading>Vyrovnávacia pamäť</ReadableNumbers_Cache_Heading>
+	<ReadableNumbers_Cache_Label>Vyrovnávacia pamäť:</ReadableNumbers_Cache_Label>
+	<ReadableNumbers_Cache_Desc>Používa sa na zlepšenie výkonu ukladaním naformátovaných verzií predtým spracovaných textov\nVyrovnávacia pamäť sa vymaže po dosiahnutí nastavenej kapacity, aby sa zabránilo nadmernému využitiu pamäte alebo spomaleniu pri vyhľadávaní predchádzajúcich textov</ReadableNumbers_Cache_Desc>
+	<ReadableNumbers_Cache_Enable>Povoliť vyrovnávaciu pamäť</ReadableNumbers_Cache_Enable>
+	<ReadableNumbers_Cache_MaxCapacity_Label>Maximálna kapacita vyrovnávacej pamäte (100 - 1,000,000)</ReadableNumbers_Cache_MaxCapacity_Label>
 
-<ReadableNumbers_Blacklist_Label>Text na čiernej listine:</ReadableNumbers_Blacklist_Label>
-<ReadableNumbers_Blacklist_Desc>Text v hre obsahujúce ktorýkoľvek z týchto reťazcov znakov zostanú v pôvodnom stave</ReadableNumbers_Blacklist_Desc>
-<ReadableNumbers_Blacklist_TextField>Pridajte sem vzor:</ReadableNumbers_Blacklist_TextField>
-<ReadableNumbers_Blacklist_Add>Pridať</ReadableNumbers_Blacklist_Add>
-
-<!-- Pridajte príznaky na povolenie/zakázanie každej záplaty -->
+	<ReadableNumbers_BlackList_Heading>Čierna listina</ReadableNumbers_BlackList_Heading>
+	<ReadableNumbers_Blacklist_Label>Text na čiernej listine:</ReadableNumbers_Blacklist_Label>
+	<ReadableNumbers_Blacklist_Desc>Text v hre obsahujúci ktorýkoľvek z týchto reťazcov znakov zostane v pôvodnom stave</ReadableNumbers_Blacklist_Desc>
+	<ReadableNumbers_Blacklist_TextField>Sem pridajte vzor:</ReadableNumbers_Blacklist_TextField>
+	<ReadableNumbers_Blacklist_Add>Pridať</ReadableNumbers_Blacklist_Add>
+	
 </LanguageData>

@@ -1,29 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
-<ReadableNumbers_Option_Mod_Name>Números Legíveis</ReadableNumbers_Option_Mod_Name>
+	
+	<ReadableNumbers_Option_Mod_Name>Números Legíveis</ReadableNumbers_Option_Mod_Name>
+	
+	
+	<ReadableNumbers_Option_Heading>Definições Gerais</ReadableNumbers_Option_Heading>
+	<ReadableNumbers_Option_Enable>Ativar Números Legíveis</ReadableNumbers_Option_Enable>
+	<ReadableNumbers_Option_RestoreDefault>Restaurar Predefinições</ReadableNumbers_Option_RestoreDefault>
+	<ReadableNumbers_Option_Debug>Modo de Depuração</ReadableNumbers_Option_Debug>
+	<ReadableNumbers_Option_FormatAllNumbers>Formatar Números Inferiores a 1000</ReadableNumbers_Option_FormatAllNumbers>
 
-<ReadableNumbers_Option_Enable>Habilitar Números Legíveis</ReadableNumbers_Option_Enable>
-<ReadableNumbers_Option_RestoreDefault>Restaurar Padrão</ReadableNumbers_Option_RestoreDefault>
-<ReadableNumbers_Option_Debug>Modo de Depuração</ReadableNumbers_Option_Debug>
+	<ReadableNumbers_SeparatorCharacter_Heading>Separadores e Casas Decimais</ReadableNumbers_SeparatorCharacter_Heading>
+	<ReadableNumbers_SeparatorCharacter_Label>Selecione o formato pretendido:</ReadableNumbers_SeparatorCharacter_Label>
+	<ReadableNumbers_SeparatorCharacter_Comma_Period>Separador por vírgula 		| Decimal por ponto</ReadableNumbers_SeparatorCharacter_Comma_Period>
+	<ReadableNumbers_SeparatorCharacter_Period_Comma>Separador por ponto 		| Decimal por vírgula</ReadableNumbers_SeparatorCharacter_Period_Comma>
+	<ReadableNumbers_SeparatorCharacter_Space_Period>Separador por espaço 		| Decimal por ponto</ReadableNumbers_SeparatorCharacter_Space_Period>
+	<ReadableNumbers_SeparatorCharacter_Space_Comma>Separador por espaço 		| Decimal por vírgula</ReadableNumbers_SeparatorCharacter_Space_Comma>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Period>Separador por apóstrofo 	| Decimal por ponto</ReadableNumbers_SeparatorCharacter_Apostrophe_Period>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>Separador por apóstrofo 	| Decimal por vírgula</ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>
+	<ReadableNumbers_SeparatorCharacter_Custom>Separador personalizado 		| Decimal personalizado</ReadableNumbers_SeparatorCharacter_Custom>
+	<ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>Aviso: A utilização de separadores e decimais personalizados pode causar erros visuais. Utilize por sua conta e risco.</ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>
+	<ReadableNumbers_SeparatorCharacter_Custom_Separator>Separador personalizado:</ReadableNumbers_SeparatorCharacter_Custom_Separator>
+	<ReadableNumbers_SeparatorCharacter_Custom_Decimal>Decimal personalizado:</ReadableNumbers_SeparatorCharacter_Custom_Decimal>
 
-<ReadableNumbers_SeparatorCharacter_Label>Selecione o Formato do Número:</ReadableNumbers_SeparatorCharacter_Label>
-<ReadableNumbers_SeparatorCharacter_Comma_Period>Separador decimal por vírgula com ponto (1,000,000.00)</ReadableNumbers_SeparatorCharacter_Comma_Period>
-<ReadableNumbers_SeparatorCharacter_Period_Comma>Separador decimal com vírgula (1.000.000,00)</ReadableNumbers_SeparatorCharacter_Period_Comma>
-<ReadableNumbers_SeparatorCharacter_Space_Period>Separador decimal com espaço e ponto (1 000 000.00)</ReadableNumbers_SeparatorCharacter_Space_Period>
-<ReadableNumbers_SeparatorCharacter_Space_Comma>Separador decimal com espaço e vírgula (1 000 000,00)</ReadableNumbers_SeparatorCharacter_Space_Comma>
-<ReadableNumbers_SeparatorCharacter_None>Nenhum (1.000.000,00)</ReadableNumbers_SeparatorCharacter_None>
+	<ReadableNumbers_SeparatorGrouping_Heading>Agrupamento de Dígitos</ReadableNumbers_SeparatorGrouping_Heading>
+	<ReadableNumbers_SeparatorGrouping_ThreeDigit>Três Dígitos</ReadableNumbers_SeparatorGrouping_ThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>Dois e Três Dígitos</ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_FourDigit>Quatro Dígitos</ReadableNumbers_SeparatorGrouping_FourDigit>
+	<ReadableNumbers_SeparatorGrouping_None>Nenhum</ReadableNumbers_SeparatorGrouping_None>
 
-<ReadableNumbers_Cache_Label>Cache:</ReadableNumbers_Cache_Label>
-<ReadableNumbers_Cache_Desc>Usado para melhorar o desempenho, armazenando as versões formatadas de textos encontrados anteriormente. O cache é limpo sempre que atinge a capacidade definida, para evitar o uso de memória ou atrasos na busca de textos anteriores.</ReadableNumbers_Cache_Desc>
+	<ReadableNumbers_Cache_Heading>Cache</ReadableNumbers_Cache_Heading>
+	<ReadableNumbers_Cache_Label>Cache:</ReadableNumbers_Cache_Label>
+	<ReadableNumbers_Cache_Desc>Utilizado para melhorar o desempenho através do armazenamento das versões formatadas de texto previamente encontrado\nA cache é limpa sempre que atinge a capacidade definida, para evitar utilização excessiva de memória ou atrasos na pesquisa de texto anterior</ReadableNumbers_Cache_Desc>
+	<ReadableNumbers_Cache_Enable>Ativar Cache</ReadableNumbers_Cache_Enable>
+	<ReadableNumbers_Cache_MaxCapacity_Label>Capacidade Máxima da Cache (100 - 1,000,000)</ReadableNumbers_Cache_MaxCapacity_Label>
 
-<ReadableNumbers_Cache_Enable>Habilitar Cache</ReadableNumbers_Cache_Enable>
-<ReadableNumbers_Cache_MaxCapacity_Label>Capacidade Máxima do Cache (100 - 1.000.000)</ReadableNumbers_Cache_MaxCapacity_Label>
-
-<ReadableNumbers_Blacklist_Label>Texto na lista negra:</ReadableNumbers_Blacklist_Label>
-<ReadableNumbers_Blacklist_Desc>Textos no jogo que contenham qualquer uma dessas sequências de caracteres permanecerão em seu estado original.</ReadableNumbers_Blacklist_Desc>
-<ReadableNumbers_Blacklist_TextField>Adicione o padrão aqui:</ReadableNumbers_Blacklist_TextField>
-<ReadableNumbers_Blacklist_Add>Adicionar</ReadableNumbers_Blacklist_Add>
-
-<!-- Adicione flags para habilitar/desabilitar cada patch -->
+	<ReadableNumbers_BlackList_Heading>Lista Negra</ReadableNumbers_BlackList_Heading>
+	<ReadableNumbers_Blacklist_Label>Texto na Lista Negra:</ReadableNumbers_Blacklist_Label>
+	<ReadableNumbers_Blacklist_Desc>O texto do jogo que contenha qualquer uma destas sequências de caracteres permanecerá inalterado</ReadableNumbers_Blacklist_Desc>
+	<ReadableNumbers_Blacklist_TextField>Adicione um padrão aqui:</ReadableNumbers_Blacklist_TextField>
+	<ReadableNumbers_Blacklist_Add>Adicionar</ReadableNumbers_Blacklist_Add>
+	
 </LanguageData>

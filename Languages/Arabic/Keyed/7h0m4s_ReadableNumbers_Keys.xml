@@ -1,41 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
-<ReadableNumbers_Option_Mod_Name>أرقام قابلة للقراءة</ReadableNumbers_Option_Mod_Name>
+	
+	<ReadableNumbers_Option_Mod_Name>الأرقام المقروءة</ReadableNumbers_Option_Mod_Name>
+	
+	
+	<ReadableNumbers_Option_Heading>الإعدادات العامة</ReadableNumbers_Option_Heading>
+	<ReadableNumbers_Option_Enable>تفعيل الأرقام المقروءة</ReadableNumbers_Option_Enable>
+	<ReadableNumbers_Option_RestoreDefault>استعادة الإعدادات الافتراضية</ReadableNumbers_Option_RestoreDefault>
+	<ReadableNumbers_Option_Debug>وضع التصحيح</ReadableNumbers_Option_Debug>
+	<ReadableNumbers_Option_FormatAllNumbers>تنسيق الأرقام الأقل من 1000</ReadableNumbers_Option_FormatAllNumbers>
 
-<ReadableNumbers_Option_Enable>تفعيل الأرقام القابلة للقراءة</ReadableNumbers_Option_Enable>
+	<ReadableNumbers_SeparatorCharacter_Heading>الفواصل والعلامات العشرية</ReadableNumbers_SeparatorCharacter_Heading>
+	<ReadableNumbers_SeparatorCharacter_Label>اختر التنسيق المطلوب:</ReadableNumbers_SeparatorCharacter_Label>
+	<ReadableNumbers_SeparatorCharacter_Comma_Period>فاصل فاصلة 		| فاصلة عشرية نقطة</ReadableNumbers_SeparatorCharacter_Comma_Period>
+	<ReadableNumbers_SeparatorCharacter_Period_Comma>فاصل نقطة 		| فاصلة عشرية فاصلة</ReadableNumbers_SeparatorCharacter_Period_Comma>
+	<ReadableNumbers_SeparatorCharacter_Space_Period>فاصل مسافة 		| فاصلة عشرية نقطة</ReadableNumbers_SeparatorCharacter_Space_Period>
+	<ReadableNumbers_SeparatorCharacter_Space_Comma>فاصل مسافة 		| فاصلة عشرية فاصلة</ReadableNumbers_SeparatorCharacter_Space_Comma>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Period>فاصل علامة اقتباس مفردة 	| فاصلة عشرية نقطة</ReadableNumbers_SeparatorCharacter_Apostrophe_Period>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>فاصل علامة اقتباس مفردة 	| فاصلة عشرية فاصلة</ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>
+	<ReadableNumbers_SeparatorCharacter_Custom>فاصل مخصص 		| علامة عشرية مخصصة</ReadableNumbers_SeparatorCharacter_Custom>
+	<ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>تحذير: قد يؤدي استخدام فواصل وعلامات عشرية مخصصة إلى حدوث أخطاء مرئية. استخدمها على مسؤوليتك الخاصة.</ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>
+	<ReadableNumbers_SeparatorCharacter_Custom_Separator>الفاصل المخصص:</ReadableNumbers_SeparatorCharacter_Custom_Separator>
+	<ReadableNumbers_SeparatorCharacter_Custom_Decimal>العلامة العشرية المخصصة:</ReadableNumbers_SeparatorCharacter_Custom_Decimal>
 
-<ReadableNumbers_Option_RestoreDefault>استعادة الإعدادات الافتراضية</ReadableNumbers_Option_RestoreDefault>
+	<ReadableNumbers_SeparatorGrouping_Heading>تجميع الأرقام</ReadableNumbers_SeparatorGrouping_Heading>
+	<ReadableNumbers_SeparatorGrouping_ThreeDigit>كل ثلاثة أرقام</ReadableNumbers_SeparatorGrouping_ThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>كل رقمين وثلاثة أرقام</ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_FourDigit>كل أربعة أرقام</ReadableNumbers_SeparatorGrouping_FourDigit>
+	<ReadableNumbers_SeparatorGrouping_None>بدون</ReadableNumbers_SeparatorGrouping_None>
 
-<ReadableNumbers_Option_Debug>وضع التصحيح</ReadableNumbers_Option_Debug>
+	<ReadableNumbers_Cache_Heading>التخزين المؤقت</ReadableNumbers_Cache_Heading>
+	<ReadableNumbers_Cache_Label>التخزين المؤقت:</ReadableNumbers_Cache_Label>
+	<ReadableNumbers_Cache_Desc>يُستخدم لتحسين الأداء عن طريق تخزين النسخ المنسقة للنصوص التي تمت معالجتها سابقًا\nيتم مسح ذاكرة التخزين المؤقت عند وصولها إلى السعة المحددة، لمنع استهلاك الذاكرة أو التأخير عند البحث عن النصوص السابقة</ReadableNumbers_Cache_Desc>
+	<ReadableNumbers_Cache_Enable>تفعيل التخزين المؤقت</ReadableNumbers_Cache_Enable>
+	<ReadableNumbers_Cache_MaxCapacity_Label>الحد الأقصى لسعة التخزين المؤقت (100 - 1,000,000)</ReadableNumbers_Cache_MaxCapacity_Label>
 
-<ReadableNumbers_SeparatorCharacter_Label>تحديد تنسيق الرقم:</ReadableNumbers_SeparatorCharacter_Label>
-
-<ReadableNumbers_SeparatorCharacter_Comma_Period>فاصلة عشرية مع نقطة (1,000,000.00)</ReadableNumbers_SeparatorCharacter_Comma_Period>
-
-<ReadableNumbers_SeparatorCharacter_Period_Comma>فاصلة عشرية (1.000.000,00)</ReadableNumbers_SeparatorCharacter_Period_Comma>
-
-<ReadableNumbers_SeparatorCharacter_Space_Period>فاصلة عشرية (1 000 000.00)</ReadableNumbers_SeparatorCharacter_Space_Period>
-
-<ReadableNumbers_SeparatorCharacter_Space_Comma>فاصلة عشرية (1 000 000,00)</ReadableNumbers_SeparatorCharacter_Space_Comma>
-
-<ReadableNumbers_SeparatorCharacter_None>لا شيء (1000000.00)</ReadableNumbers_SeparatorCharacter_None>
-
-<ReadableNumbers_Cache_Label>ذاكرة التخزين المؤقت:</ReadableNumbers_Cache_Label>
-
-<ReadableNumbers_Cache_Desc>تُستخدم لتحسين الأداء عن طريق تخزين النسخ المنسقة من النصوص التي تمت معالجتها سابقًا.\nيتم مسح ذاكرة التخزين المؤقت عند وصولها إلى السعة المحددة، وذلك لمنع استهلاك الذاكرة أو تأخير البحث عن النصوص السابقة.</ReadableNumbers_Cache_Desc>
-
-<ReadableNumbers_Cache_Enable>تفعيل ذاكرة التخزين المؤقت.</ReadableNumbers_Cache_Enable>
-
-<ReadableNumbers_Cache_MaxCapacity_Label>الحد الأقصى لسعة ذاكرة التخزين المؤقت (100 - 1,000,000)</ReadableNumbers_Cache_MaxCapacity_Label>
-
-<ReadableNumbers_Blacklist_Label>النص المحظور:</ReadableNumbers_Blacklist_Label>
-
-<ReadableNumbers_Blacklist_Desc>سيُترك النص داخل اللعبة الذي يحتوي على أي من هذه السلاسل من الأحرف في حالته الأصلية</ReadableNumbers_Blacklist_Desc>
-
-<ReadableNumbers_Blacklist_TextField>أضف النمط هنا:</ReadableNumbers_Blacklist_TextField>
-
-<ReadableNumbers_Blacklist_Add>أضف</ReadableNumbers_Blacklist_Add>
-
-<!-- ضع علامات لتفعيل/تعطيل كل تحديث -->
+	<ReadableNumbers_BlackList_Heading>القائمة السوداء</ReadableNumbers_BlackList_Heading>
+	<ReadableNumbers_Blacklist_Label>النصوص الموجودة في القائمة السوداء:</ReadableNumbers_Blacklist_Label>
+	<ReadableNumbers_Blacklist_Desc>سيتم ترك أي نص داخل اللعبة يحتوي على أي من سلاسل الأحرف هذه دون تعديل</ReadableNumbers_Blacklist_Desc>
+	<ReadableNumbers_Blacklist_TextField>أضف النمط هنا:</ReadableNumbers_Blacklist_TextField>
+	<ReadableNumbers_Blacklist_Add>إضافة</ReadableNumbers_Blacklist_Add>
+	
 </LanguageData>

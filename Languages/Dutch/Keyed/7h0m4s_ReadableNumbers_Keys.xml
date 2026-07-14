@@ -1,40 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
-<ReadableNumbers_Option_Mod_Name>Leesbare getallen</ReadableNumbers_Option_Mod_Name>
+	
+	<ReadableNumbers_Option_Mod_Name>Leesbare getallen</ReadableNumbers_Option_Mod_Name>
+	
+	
+	<ReadableNumbers_Option_Heading>Algemene instellingen</ReadableNumbers_Option_Heading>
+	<ReadableNumbers_Option_Enable>Leesbare getallen inschakelen</ReadableNumbers_Option_Enable>
+	<ReadableNumbers_Option_RestoreDefault>Standaardinstellingen herstellen</ReadableNumbers_Option_RestoreDefault>
+	<ReadableNumbers_Option_Debug>Foutopsporingsmodus</ReadableNumbers_Option_Debug>
+	<ReadableNumbers_Option_FormatAllNumbers>Getallen kleiner dan 1000 opmaken</ReadableNumbers_Option_FormatAllNumbers>
 
-<ReadableNumbers_Option_Enable>Leesbare getallen inschakelen</ReadableNumbers_Option_Enable>
+	<ReadableNumbers_SeparatorCharacter_Heading>Scheidingstekens en decimalen</ReadableNumbers_SeparatorCharacter_Heading>
+	<ReadableNumbers_SeparatorCharacter_Label>Selecteer de gewenste notatie:</ReadableNumbers_SeparatorCharacter_Label>
+	<ReadableNumbers_SeparatorCharacter_Comma_Period>Komma als scheidingsteken 		| Punt als decimaalteken</ReadableNumbers_SeparatorCharacter_Comma_Period>
+	<ReadableNumbers_SeparatorCharacter_Period_Comma>Punt als scheidingsteken 		| Komma als decimaalteken</ReadableNumbers_SeparatorCharacter_Period_Comma>
+	<ReadableNumbers_SeparatorCharacter_Space_Period>Spatie als scheidingsteken 		| Punt als decimaalteken</ReadableNumbers_SeparatorCharacter_Space_Period>
+	<ReadableNumbers_SeparatorCharacter_Space_Comma>Spatie als scheidingsteken 		| Komma als decimaalteken</ReadableNumbers_SeparatorCharacter_Space_Comma>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Period>Apostrof als scheidingsteken 	| Punt als decimaalteken</ReadableNumbers_SeparatorCharacter_Apostrophe_Period>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>Apostrof als scheidingsteken 	| Komma als decimaalteken</ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>
+	<ReadableNumbers_SeparatorCharacter_Custom>Aangepast scheidingsteken 		| Aangepast decimaalteken</ReadableNumbers_SeparatorCharacter_Custom>
+	<ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>Waarschuwing: Het gebruik van aangepaste scheidingstekens en decimalen kan visuele fouten veroorzaken. Gebruik op eigen risico.</ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>
+	<ReadableNumbers_SeparatorCharacter_Custom_Separator>Aangepast scheidingsteken:</ReadableNumbers_SeparatorCharacter_Custom_Separator>
+	<ReadableNumbers_SeparatorCharacter_Custom_Decimal>Aangepast decimaalteken:</ReadableNumbers_SeparatorCharacter_Custom_Decimal>
 
-<ReadableNumbers_Option_RestoreDefault>Standaardinstellingen herstellen</ReadableNumbers_Option_RestoreDefault>
+	<ReadableNumbers_SeparatorGrouping_Heading>Cijfergroepering</ReadableNumbers_SeparatorGrouping_Heading>
+	<ReadableNumbers_SeparatorGrouping_ThreeDigit>Drie cijfers</ReadableNumbers_SeparatorGrouping_ThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>Twee en drie cijfers</ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_FourDigit>Vier cijfers</ReadableNumbers_SeparatorGrouping_FourDigit>
+	<ReadableNumbers_SeparatorGrouping_None>Geen</ReadableNumbers_SeparatorGrouping_None>
 
-<ReadableNumbers_Option_Debug>Foutopsporingsmodus</ReadableNumbers_Option_Debug>
+	<ReadableNumbers_Cache_Heading>Cache</ReadableNumbers_Cache_Heading>
+	<ReadableNumbers_Cache_Label>Cache:</ReadableNumbers_Cache_Label>
+	<ReadableNumbers_Cache_Desc>Wordt gebruikt om de prestaties te verbeteren door opgemaakte versies van eerder tegengekomen tekst op te slaan\nDe cache wordt gewist zodra de ingestelde capaciteit is bereikt om overmatig geheugengebruik of vertragingen bij het opzoeken van eerdere tekst te voorkomen</ReadableNumbers_Cache_Desc>
+	<ReadableNumbers_Cache_Enable>Cache inschakelen</ReadableNumbers_Cache_Enable>
+	<ReadableNumbers_Cache_MaxCapacity_Label>Maximale cachecapaciteit (100 - 1,000,000)</ReadableNumbers_Cache_MaxCapacity_Label>
 
-<ReadableNumbers_SeparatorCharacter_Label>Getalindeling selecteren:</ReadableNumbers_SeparatorCharacter_Label>
-
-<ReadableNumbers_SeparatorCharacter_Comma_Period>Komma als scheidingsteken met punt als decimaal (1.000.000,00)</ReadableNumbers_SeparatorCharacter_Comma_Period>
-
-<ReadableNumbers_SeparatorCharacter_Period_Comma>Puntscheidingsteken met komma decimaal (1.000.000,00)</ReadableNumbers_SeparatorCharacter_Period_Comma>
-
-<ReadableNumbers_SeparatorCharacter_Space_Period>Spatiescheidingsteken met punt decimaal (1 000 000.00)</ReadableNumbers_SeparatorCharacter_Space_Period>
-
-<ReadableNumbers_SeparatorCharacter_Space_Comma>Spatiescheidingsteken met komma decimaal (1 000 000,00)</ReadableNumbers_SeparatorCharacter_Space_Comma>
-<ReadableNumbers_SeparatorCharacter_None>Geen (1000000.00)</ReadableNumbers_SeparatorCharacter_None>
-
-<ReadableNumbers_Cache_Label>Cache:</ReadableNumbers_Cache_Label>
-
-<ReadableNumbers_Cache_Desc>Wordt gebruikt om de prestaties te verbeteren door de geformatteerde versies van eerder gevonden tekst op te slaan. De cache wordt gewist zodra de ingestelde capaciteit is bereikt, om geheugengebruik of vertraging bij het opzoeken van eerdere tekst te voorkomen.</ReadableNumbers_Cache_Desc>
-
-<ReadableNumbers_Cache_Enable>Cache inschakelen</ReadableNumbers_Cache_Enable>
-
-<ReadableNumbers_Cache_MaxCapacity_Label>Maximale cachecapaciteit (100 - 1.000.000)</ReadableNumbers_Cache_MaxCapacity_Label>
-
-<ReadableNumbers_Blacklist_Label>Geblokkeerde tekst:</ReadableNumbers_Blacklist_Label>
-
-<ReadableNumbers_Blacklist_Desc>Tekst in het spel die een van deze tekenreeksen bevat, blijft in de oorspronkelijke staat.</ReadableNumbers_Blacklist_Desc>
-
-<ReadableNumbers_Blacklist_TextField>Voeg hier een patroon toe:</ReadableNumbers_Blacklist_TextField>
-
-<ReadableNumbers_Blacklist_Add>Toevoegen</ReadableNumbers_Blacklist_Add>
-
-<!-- Plaats vlaggen om elke patch in/uit te schakelen -->
+	<ReadableNumbers_BlackList_Heading>Zwarte lijst</ReadableNumbers_BlackList_Heading>
+	<ReadableNumbers_Blacklist_Label>Tekst op de zwarte lijst:</ReadableNumbers_Blacklist_Label>
+	<ReadableNumbers_Blacklist_Desc>Tekst in het spel die een van deze tekenreeksen bevat, blijft ongewijzigd</ReadableNumbers_Blacklist_Desc>
+	<ReadableNumbers_Blacklist_TextField>Voeg hier een patroon toe:</ReadableNumbers_Blacklist_TextField>
+	<ReadableNumbers_Blacklist_Add>Toevoegen</ReadableNumbers_Blacklist_Add>
+	
 </LanguageData>

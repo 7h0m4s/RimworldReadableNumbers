@@ -1,42 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
-<ReadableNumbers_Option_Mod_Name>읽기 쉬운 숫자</ReadableNumbers_Option_Mod_Name>
+	
+	<ReadableNumbers_Option_Mod_Name>읽기 쉬운 숫자</ReadableNumbers_Option_Mod_Name>
+	
+	
+	<ReadableNumbers_Option_Heading>일반 설정</ReadableNumbers_Option_Heading>
+	<ReadableNumbers_Option_Enable>읽기 쉬운 숫자 사용</ReadableNumbers_Option_Enable>
+	<ReadableNumbers_Option_RestoreDefault>기본 설정 복원</ReadableNumbers_Option_RestoreDefault>
+	<ReadableNumbers_Option_Debug>디버그 모드</ReadableNumbers_Option_Debug>
+	<ReadableNumbers_Option_FormatAllNumbers>1000 미만의 숫자 서식 지정</ReadableNumbers_Option_FormatAllNumbers>
 
-<ReadableNumbers_Option_Enable>읽기 쉬운 숫자 활성화</ReadableNumbers_Option_Enable>
+	<ReadableNumbers_SeparatorCharacter_Heading>구분 기호 및 소수점</ReadableNumbers_SeparatorCharacter_Heading>
+	<ReadableNumbers_SeparatorCharacter_Label>원하는 숫자 형식을 선택하세요:</ReadableNumbers_SeparatorCharacter_Label>
+	<ReadableNumbers_SeparatorCharacter_Comma_Period>쉼표 구분 기호 		| 마침표 소수점</ReadableNumbers_SeparatorCharacter_Comma_Period>
+	<ReadableNumbers_SeparatorCharacter_Period_Comma>마침표 구분 기호 		| 쉼표 소수점</ReadableNumbers_SeparatorCharacter_Period_Comma>
+	<ReadableNumbers_SeparatorCharacter_Space_Period>공백 구분 기호 		| 마침표 소수점</ReadableNumbers_SeparatorCharacter_Space_Period>
+	<ReadableNumbers_SeparatorCharacter_Space_Comma>공백 구분 기호 		| 쉼표 소수점</ReadableNumbers_SeparatorCharacter_Space_Comma>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Period>작은따옴표 구분 기호 	| 마침표 소수점</ReadableNumbers_SeparatorCharacter_Apostrophe_Period>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>작은따옴표 구분 기호 	| 쉼표 소수점</ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>
+	<ReadableNumbers_SeparatorCharacter_Custom>사용자 지정 구분 기호 		| 사용자 지정 소수점</ReadableNumbers_SeparatorCharacter_Custom>
+	<ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>경고: 사용자 지정 구분 기호 및 소수점을 사용하면 화면 표시 오류가 발생할 수 있습니다. 사용에 따른 책임은 사용자에게 있습니다.</ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>
+	<ReadableNumbers_SeparatorCharacter_Custom_Separator>사용자 지정 구분 기호:</ReadableNumbers_SeparatorCharacter_Custom_Separator>
+	<ReadableNumbers_SeparatorCharacter_Custom_Decimal>사용자 지정 소수점:</ReadableNumbers_SeparatorCharacter_Custom_Decimal>
 
-<ReadableNumbers_Option_RestoreDefault>기본값 복원</ReadableNumbers_Option_RestoreDefault>
+	<ReadableNumbers_SeparatorGrouping_Heading>숫자 자릿수 그룹화</ReadableNumbers_SeparatorGrouping_Heading>
+	<ReadableNumbers_SeparatorGrouping_ThreeDigit>3자리씩</ReadableNumbers_SeparatorGrouping_ThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>2자리 및 3자리씩</ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_FourDigit>4자리씩</ReadableNumbers_SeparatorGrouping_FourDigit>
+	<ReadableNumbers_SeparatorGrouping_None>사용 안 함</ReadableNumbers_SeparatorGrouping_None>
 
-<ReadableNumbers_Option_Debug>디버그 모드</ReadableNumbers_Option_Debug>
+	<ReadableNumbers_Cache_Heading>캐시</ReadableNumbers_Cache_Heading>
+	<ReadableNumbers_Cache_Label>캐시:</ReadableNumbers_Cache_Label>
+	<ReadableNumbers_Cache_Desc>이전에 처리한 텍스트의 서식이 적용된 버전을 저장하여 성능을 향상시킵니다\n캐시는 설정된 최대 용량에 도달하면 자동으로 비워져 메모리 사용량 증가나 이전 텍스트 검색 지연을 방지합니다.</ReadableNumbers_Cache_Desc>
+	<ReadableNumbers_Cache_Enable>캐시 사용</ReadableNumbers_Cache_Enable>
+	<ReadableNumbers_Cache_MaxCapacity_Label>캐시 최대 용량 (100 - 1,000,000)</ReadableNumbers_Cache_MaxCapacity_Label>
 
-<ReadableNumbers_SeparatorCharacter_Label>숫자 형식 선택:</ReadableNumbers_SeparatorCharacter_Label>
-
-<ReadableNumbers_SeparatorCharacter_Comma_Period>쉼표와 마침표로 구분된 소수점 형식(1,000,000.00)</ReadableNumbers_SeparatorCharacter_Comma_Period>
-
-<ReadableNumbers_SeparatorCharacter_Period_Comma>쉼표로 구분된 소수점 (1.000.000,00)</ReadableNumbers_SeparatorCharacter_Period_Comma>
-
-<ReadableNumbers_SeparatorCharacter_Space_Period>공백으로 구분된 소수점 (1 000 000.00)</ReadableNumbers_SeparatorCharacter_Space_Period>
-
-<ReadableNumbers_SeparatorCharacter_Space_Comma>공백으로 구분된 소수점 (1 000 000,00)</ReadableNumbers_SeparatorCharacter_Space_Comma>
-
-<ReadableNumbers_SeparatorCharacter_None>없음 (1,000,000.00)</ReadableNumbers_SeparatorCharacter_None>
-
-<ReadableNumbers_Cache_Label>캐시:</ReadableNumbers_Cache_Label>
-
-<ReadableNumbers_Cache_Desc>이전에 접한 텍스트의 형식화된 버전을 저장하여 성능을 향상시키는 데 사용됩니다.\n캐시는 설정된 용량에 도달하면 메모리 사용량 증가 또는 이전 텍스트 검색 지연을 방지하기 위해 지워집니다.</ReadableNumbers_Cache_Desc>
-
-<ReadableNumbers_Cache_Enable>캐시 활성화</ReadableNumbers_Cache_Enable>
-
-<ReadableNumbers_Cache_MaxCapacity_Label>캐시 최대 용량 (100 - 1,000,000)</ReadableNumbers_Cache_MaxCapacity_Label>
-
-<ReadableNumbers_Blacklist_Label>블랙리스트에 등록됨</ReadableNumbers_Blacklist_Label>
-
-
-<ReadableNumbers_Blacklist_Desc>게임 내 텍스트에 다음 문자열이 포함되어 있으면 원래 상태로 유지됩니다.</ReadableNumbers_Blacklist_Desc>
-
-<ReadableNumbers_Blacklist_TextField>여기에 패턴을 추가하세요:</ReadableNumbers_Blacklist_TextField>
-
-<ReadableNumbers_Blacklist_Add>추가</ReadableNumbers_Blacklist_Add>
-
-<!-- 각 패치를 활성화/비활성화하는 플래그를 추가하세요 -->
+	<ReadableNumbers_BlackList_Heading>차단 목록</ReadableNumbers_BlackList_Heading>
+	<ReadableNumbers_Blacklist_Label>차단된 텍스트:</ReadableNumbers_Blacklist_Label>
+	<ReadableNumbers_Blacklist_Desc>다음 문자열 중 하나라도 포함된 게임 내 텍스트는 원래 상태 그대로 유지됩니다.</ReadableNumbers_Blacklist_Desc>
+	<ReadableNumbers_Blacklist_TextField>여기에 패턴 추가:</ReadableNumbers_Blacklist_TextField>
+	<ReadableNumbers_Blacklist_Add>추가</ReadableNumbers_Blacklist_Add>
+	
 </LanguageData>

@@ -1,41 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
-<ReadableNumbers_Option_Mod_Name>読みやすい数値</ReadableNumbers_Option_Mod_Name>
+	
+	<ReadableNumbers_Option_Mod_Name>見やすい数字</ReadableNumbers_Option_Mod_Name>
+	
+	
+	<ReadableNumbers_Option_Heading>一般設定</ReadableNumbers_Option_Heading>
+	<ReadableNumbers_Option_Enable>見やすい数字を有効化</ReadableNumbers_Option_Enable>
+	<ReadableNumbers_Option_RestoreDefault>デフォルト設定に戻す</ReadableNumbers_Option_RestoreDefault>
+	<ReadableNumbers_Option_Debug>デバッグモード</ReadableNumbers_Option_Debug>
+	<ReadableNumbers_Option_FormatAllNumbers>1000未満の数字をフォーマットする</ReadableNumbers_Option_FormatAllNumbers>
 
-<ReadableNumbers_Option_Enable>読みやすい数値を有効にする</ReadableNumbers_Option_Enable>
+	<ReadableNumbers_SeparatorCharacter_Heading>区切り文字と小数点</ReadableNumbers_SeparatorCharacter_Heading>
+	<ReadableNumbers_SeparatorCharacter_Label>希望する数値形式を選択してください：</ReadableNumbers_SeparatorCharacter_Label>
+	<ReadableNumbers_SeparatorCharacter_Comma_Period>カンマ区切り 		| ピリオド小数点</ReadableNumbers_SeparatorCharacter_Comma_Period>
+	<ReadableNumbers_SeparatorCharacter_Period_Comma>ピリオド区切り 		| カンマ小数点</ReadableNumbers_SeparatorCharacter_Period_Comma>
+	<ReadableNumbers_SeparatorCharacter_Space_Period>スペース区切り 		| ピリオド小数点</ReadableNumbers_SeparatorCharacter_Space_Period>
+	<ReadableNumbers_SeparatorCharacter_Space_Comma>スペース区切り 		| カンマ小数点</ReadableNumbers_SeparatorCharacter_Space_Comma>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Period>アポストロフィ区切り 	| ピリオド小数点</ReadableNumbers_SeparatorCharacter_Apostrophe_Period>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>アポストロフィ区切り 	| カンマ小数点</ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>
+	<ReadableNumbers_SeparatorCharacter_Custom>カスタム区切り 		| カスタム小数点</ReadableNumbers_SeparatorCharacter_Custom>
+	<ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>警告：カスタム区切り文字や小数点を使用すると、表示上の不具合が発生する場合があります。自己責任で使用してください。</ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>
+	<ReadableNumbers_SeparatorCharacter_Custom_Separator>カスタム区切り文字：</ReadableNumbers_SeparatorCharacter_Custom_Separator>
+	<ReadableNumbers_SeparatorCharacter_Custom_Decimal>カスタム小数点：</ReadableNumbers_SeparatorCharacter_Custom_Decimal>
 
-<ReadableNumbers_Option_RestoreDefault>デフォルトに戻す</ReadableNumbers_Option_RestoreDefault>
+	<ReadableNumbers_SeparatorGrouping_Heading>桁区切り</ReadableNumbers_SeparatorGrouping_Heading>
+	<ReadableNumbers_SeparatorGrouping_ThreeDigit>3桁ごと</ReadableNumbers_SeparatorGrouping_ThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>2桁・3桁ごと</ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_FourDigit>4桁ごと</ReadableNumbers_SeparatorGrouping_FourDigit>
+	<ReadableNumbers_SeparatorGrouping_None>なし</ReadableNumbers_SeparatorGrouping_None>
 
-<ReadableNumbers_Option_Debug>デバッグモード</ReadableNumbers_Option_Debug>
+	<ReadableNumbers_Cache_Heading>キャッシュ</ReadableNumbers_Cache_Heading>
+	<ReadableNumbers_Cache_Label>キャッシュ：</ReadableNumbers_Cache_Label>
+	<ReadableNumbers_Cache_Desc>以前に処理したテキストのフォーマット済みバージョンを保存し、パフォーマンスを向上させます\nキャッシュは設定された容量に達すると自動的にクリアされ、メモリ使用量の増加や過去のテキスト検索時の遅延を防ぎます</ReadableNumbers_Cache_Desc>
+	<ReadableNumbers_Cache_Enable>キャッシュを有効化</ReadableNumbers_Cache_Enable>
+	<ReadableNumbers_Cache_MaxCapacity_Label>キャッシュ最大容量 (100 - 1,000,000)</ReadableNumbers_Cache_MaxCapacity_Label>
 
-<ReadableNumbers_SeparatorCharacter_Label>数値形式を選択してください</ReadableNumbers_SeparatorCharacter_Label>
-
-<ReadableNumbers_SeparatorCharacter_Comma_Period>小数点にカンマ区切り（1,000,000.00）</ReadableNumbers_SeparatorCharacter_Comma_Period>
-
-<ReadableNumbers_SeparatorCharacter_Period_Comma>小数点以下をカンマで区切るピリオド区切り文字 (1.000.000,00)</ReadableNumbers_SeparatorCharacter_Period_Comma>
-
-<ReadableNumbers_SeparatorCharacter_Space_Period>小数点以下をピリオドで区切るスペース区切り文字 (1 000 000.00)</ReadableNumbers_SeparatorCharacter_Space_Period>
-
-<ReadableNumbers_SeparatorCharacter_Space_Comma>小数点以下をカンマで区切るスペース区切り文字 (1 000 000,00)</ReadableNumbers_SeparatorCharacter_Space_Comma>
-
-<ReadableNumbers_SeparatorCharacter_None>なし (1000000.00)</ReadableNumbers_SeparatorCharacter_None>
-
-<ReadableNumbers_Cache_Label>キャッシュ:</ReadableNumbers_Cache_Label>
-
-<ReadableNumbers_Cache_Desc>以前に処理されたテキストのフォーマット済みバージョンを保存することでパフォーマンスを向上させます。\nキャッシュは設定された容量に達するとクリアされ、メモリ使用量の増加や以前のテキストの検索遅延を防ぎます。</ReadableNumbers_Cache_Desc>
-
-<ReadableNumbers_Cache_Enable>キャッシュを有効にする</ReadableNumbers_Cache_Enable>
-
-<ReadableNumbers_Cache_MaxCapacity_Label>キャッシュの最大容量（100～1,000,000）</ReadableNumbers_Cache_MaxCapacity_Label>
-
-<ReadableNumbers_Blacklist_Label>ブラックリストに登録されたテキスト：</ReadableNumbers_Blacklist_Label>
-
-<ReadableNumbers_Blacklist_Desc>これらの文字列を含むゲーム内テキストは元の状態のままになります。</ReadableNumbers_Blacklist_Desc>
-
-<ReadableNumbers_Blacklist_TextField>ここにパターンを追加：</ReadableNumbers_Blacklist_TextField>
-
-<ReadableNumbers_Blacklist_Add>追加</ReadableNumbers_Blacklist_Add>
-
-<!-- 各パッチの有効/無効を切り替えるフラグを設定 -->
+	<ReadableNumbers_BlackList_Heading>ブラックリスト</ReadableNumbers_BlackList_Heading>
+	<ReadableNumbers_Blacklist_Label>ブラックリスト対象のテキスト：</ReadableNumbers_Blacklist_Label>
+	<ReadableNumbers_Blacklist_Desc>これらの文字列のいずれかを含むゲーム内テキストは、元の状態のまま変更されません</ReadableNumbers_Blacklist_Desc>
+	<ReadableNumbers_Blacklist_TextField>ここにパターンを追加：</ReadableNumbers_Blacklist_TextField>
+	<ReadableNumbers_Blacklist_Add>追加</ReadableNumbers_Blacklist_Add>
+	
 </LanguageData>

@@ -1,28 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
-<ReadableNumbers_Option_Mod_Name>Loetavad numbrid</ReadableNumbers_Option_Mod_Name>
+	
+	<ReadableNumbers_Option_Mod_Name>Loetavad numbrid</ReadableNumbers_Option_Mod_Name>
+	
+	
+	<ReadableNumbers_Option_Heading>Üldsätted</ReadableNumbers_Option_Heading>
+	<ReadableNumbers_Option_Enable>Luba loetavad numbrid</ReadableNumbers_Option_Enable>
+	<ReadableNumbers_Option_RestoreDefault>Taasta vaikeseaded</ReadableNumbers_Option_RestoreDefault>
+	<ReadableNumbers_Option_Debug>Silumisrežiim</ReadableNumbers_Option_Debug>
+	<ReadableNumbers_Option_FormatAllNumbers>Vorminda arvud, mis on väiksemad kui 1000</ReadableNumbers_Option_FormatAllNumbers>
 
-<ReadableNumbers_Option_Enable>Luba loetavad numbrid</ReadableNumbers_Option_Enable>
-<ReadableNumbers_Option_RestoreDefault>Taasta vaikesäte</ReadableNumbers_Option_RestoreDefault>
-<ReadableNumbers_Option_Debug>Silumisrežiim</ReadableNumbers_Option_Debug>
+	<ReadableNumbers_SeparatorCharacter_Heading>Eraldajad ja kümnendkohad</ReadableNumbers_SeparatorCharacter_Heading>
+	<ReadableNumbers_SeparatorCharacter_Label>Vali soovitud numbrivorming:</ReadableNumbers_SeparatorCharacter_Label>
+	<ReadableNumbers_SeparatorCharacter_Comma_Period>Koma eraldaja 		| Punkt kümnendmärgina</ReadableNumbers_SeparatorCharacter_Comma_Period>
+	<ReadableNumbers_SeparatorCharacter_Period_Comma>Punkt eraldajana 		| Koma kümnendmärgina</ReadableNumbers_SeparatorCharacter_Period_Comma>
+	<ReadableNumbers_SeparatorCharacter_Space_Period>Tühik eraldajana 		| Punkt kümnendmärgina</ReadableNumbers_SeparatorCharacter_Space_Period>
+	<ReadableNumbers_SeparatorCharacter_Space_Comma>Tühik eraldajana 		| Koma kümnendmärgina</ReadableNumbers_SeparatorCharacter_Space_Comma>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Period>Apostroof eraldajana 	| Punkt kümnendmärgina</ReadableNumbers_SeparatorCharacter_Apostrophe_Period>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>Apostroof eraldajana 	| Koma kümnendmärgina</ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>
+	<ReadableNumbers_SeparatorCharacter_Custom>Kohandatud eraldaja 		| Kohandatud kümnendmärk</ReadableNumbers_SeparatorCharacter_Custom>
+	<ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>Hoiatus: Kohandatud eraldajate ja kümnendmärkide kasutamine võib põhjustada kuvamisvigu. Kasuta omal vastutusel.</ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>
+	<ReadableNumbers_SeparatorCharacter_Custom_Separator>Kohandatud eraldaja:</ReadableNumbers_SeparatorCharacter_Custom_Separator>
+	<ReadableNumbers_SeparatorCharacter_Custom_Decimal>Kohandatud kümnendmärk:</ReadableNumbers_SeparatorCharacter_Custom_Decimal>
 
-<ReadableNumbers_SeparatorCharacter_Label>Vali numbrivorming:</ReadableNumbers_SeparatorCharacter_Label>
-<ReadableNumbers_SeparatorCharacter_Comma_Period>Koma eraldaja punktiga kümnendmurruga (1,000,000.00)</ReadableNumbers_SeparatorCharacter_Comma_Period>
-<ReadableNumbers_SeparatorCharacter_Period_Comma>Punktide eraldaja komaga (1.000.000,00)</ReadableNumbers_SeparatorCharacter_Period_Comma>
-<ReadableNumbers_SeparatorCharacter_Space_Period>Tühiku eraldaja komaga (1 000 000.00)</ReadableNumbers_SeparatorCharacter_Space_Period>
-<ReadableNumbers_SeparatorCharacter_Space_Comma>Tühiku eraldaja komaga (1 000 000,00)</ReadableNumbers_SeparatorCharacter_Space_Comma>
-<ReadableNumbers_SeparatorCharacter_None>Puudub (1000000,00)</ReadableNumbers_SeparatorCharacter_None>
+	<ReadableNumbers_SeparatorGrouping_Heading>Numbrite rühmitamine</ReadableNumbers_SeparatorGrouping_Heading>
+	<ReadableNumbers_SeparatorGrouping_ThreeDigit>Kolmekohaline rühmitus</ReadableNumbers_SeparatorGrouping_ThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>Kahe- ja kolmekohaline rühmitus</ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_FourDigit>Neljakohaline rühmitus</ReadableNumbers_SeparatorGrouping_FourDigit>
+	<ReadableNumbers_SeparatorGrouping_None>Puudub</ReadableNumbers_SeparatorGrouping_None>
 
-<ReadableNumbers_Cache_Label>Vahemälu:</ReadableNumbers_Cache_Label>
-<ReadableNumbers_Cache_Desc>Kasutatakse jõudluse parandamiseks, salvestades eelnevalt kohatud teksti vormindatud versioone\nVahemälu tühjendatakse alati, kui see saavutab seatud mahutavuse, et vältida mälu kasutamist või eelmise teksti otsimise viivitust</ReadableNumbers_Cache_Desc>
-<ReadableNumbers_Cache_Enable>Luba vahemälu</ReadableNumbers_Cache_Enable>
-<ReadableNumbers_Cache_MaxCapacity_Label>Vahemälu maksimaalne maht (100 - 1 000 000)</ReadableNumbers_Cache_MaxCapacity_Label>
+	<ReadableNumbers_Cache_Heading>Vahemälu</ReadableNumbers_Cache_Heading>
+	<ReadableNumbers_Cache_Label>Vahemälu:</ReadableNumbers_Cache_Label>
+	<ReadableNumbers_Cache_Desc>Kasutatakse jõudluse parandamiseks, salvestades varem kohatud tekstide vormindatud versioonid\nVahemälu tühjendatakse automaatselt, kui see saavutab määratud mahu, et vältida liigset mälukasutust või viivitusi varasemate tekstide otsimisel</ReadableNumbers_Cache_Desc>
+	<ReadableNumbers_Cache_Enable>Luba vahemälu</ReadableNumbers_Cache_Enable>
+	<ReadableNumbers_Cache_MaxCapacity_Label>Vahemälu maksimaalne maht (100 - 1,000,000)</ReadableNumbers_Cache_MaxCapacity_Label>
 
-<ReadableNumbers_Blacklist_Label>Musta nimekirja kantud tekst:</ReadableNumbers_Blacklist_Label>
-<ReadableNumbers_Blacklist_Desc>Mängus jäetakse tekst, mis sisaldab mõnda neist tähemärkidest, algsele kujule olek</ReadableNumbers_Blacklist_Desc>
-<ReadableNumbers_Blacklist_TextField>Lisa siia muster:</ReadableNumbers_Blacklist_TextField>
-<ReadableNumbers_Blacklist_Add>Lisa</ReadableNumbers_Blacklist_Add>
-
-<!-- Lisa lipud iga paiga lubamiseks/keelamiseks -->
+	<ReadableNumbers_BlackList_Heading>Must nimekiri</ReadableNumbers_BlackList_Heading>
+	<ReadableNumbers_Blacklist_Label>Musta nimekirja tekst:</ReadableNumbers_Blacklist_Label>
+	<ReadableNumbers_Blacklist_Desc>Mängus olev tekst, mis sisaldab mõnda neist märgijadadest, jäetakse muutmata</ReadableNumbers_Blacklist_Desc>
+	<ReadableNumbers_Blacklist_TextField>Lisa muster siia:</ReadableNumbers_Blacklist_TextField>
+	<ReadableNumbers_Blacklist_Add>Lisa</ReadableNumbers_Blacklist_Add>
+	
 </LanguageData>

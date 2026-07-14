@@ -1,41 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-
 <LanguageData>
 
-<ReadableNumbers_Option_Mod_Name>Nombres lisibles</ReadableNumbers_Option_Mod_Name>
+	
+	<ReadableNumbers_Option_Mod_Name>Nombres lisibles</ReadableNumbers_Option_Mod_Name>
+	
+	
+	<ReadableNumbers_Option_Heading>Paramètres généraux</ReadableNumbers_Option_Heading>
+	<ReadableNumbers_Option_Enable>Activer les nombres lisibles</ReadableNumbers_Option_Enable>
+	<ReadableNumbers_Option_RestoreDefault>Restaurer les paramètres par défaut</ReadableNumbers_Option_RestoreDefault>
+	<ReadableNumbers_Option_Debug>Mode débogage</ReadableNumbers_Option_Debug>
+	<ReadableNumbers_Option_FormatAllNumbers>Formater les nombres inférieurs à 1000</ReadableNumbers_Option_FormatAllNumbers>
 
-<ReadableNumbers_Option_Enable>Activer les nombres lisibles</ReadableNumbers_Option_Enable>
+	<ReadableNumbers_SeparatorCharacter_Heading>Séparateurs et décimales</ReadableNumbers_SeparatorCharacter_Heading>
+	<ReadableNumbers_SeparatorCharacter_Label>Sélectionnez le format souhaité :</ReadableNumbers_SeparatorCharacter_Label>
+	<ReadableNumbers_SeparatorCharacter_Comma_Period>Virgule comme séparateur 		| Point comme décimale</ReadableNumbers_SeparatorCharacter_Comma_Period>
+	<ReadableNumbers_SeparatorCharacter_Period_Comma>Point comme séparateur 		| Virgule comme décimale</ReadableNumbers_SeparatorCharacter_Period_Comma>
+	<ReadableNumbers_SeparatorCharacter_Space_Period>Espace comme séparateur 		| Point comme décimale</ReadableNumbers_SeparatorCharacter_Space_Period>
+	<ReadableNumbers_SeparatorCharacter_Space_Comma>Espace comme séparateur 		| Virgule comme décimale</ReadableNumbers_SeparatorCharacter_Space_Comma>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Period>Apostrophe comme séparateur 	| Point comme décimale</ReadableNumbers_SeparatorCharacter_Apostrophe_Period>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>Apostrophe comme séparateur 	| Virgule comme décimale</ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>
+	<ReadableNumbers_SeparatorCharacter_Custom>Séparateur personnalisé 		| Décimale personnalisée</ReadableNumbers_SeparatorCharacter_Custom>
+	<ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>Avertissement : l'utilisation de séparateurs et de décimales personnalisés peut provoquer des anomalies d'affichage. À utiliser à vos propres risques.</ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>
+	<ReadableNumbers_SeparatorCharacter_Custom_Separator>Séparateur personnalisé :</ReadableNumbers_SeparatorCharacter_Custom_Separator>
+	<ReadableNumbers_SeparatorCharacter_Custom_Decimal>Décimale personnalisée :</ReadableNumbers_SeparatorCharacter_Custom_Decimal>
 
-<ReadableNumbers_Option_RestoreDefault>Restaurer les valeurs par défaut</ReadableNumbers_Option_RestoreDefault>
+	<ReadableNumbers_SeparatorGrouping_Heading>Regroupement des chiffres</ReadableNumbers_SeparatorGrouping_Heading>
+	<ReadableNumbers_SeparatorGrouping_ThreeDigit>Trois chiffres</ReadableNumbers_SeparatorGrouping_ThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>Deux et trois chiffres</ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_FourDigit>Quatre chiffres</ReadableNumbers_SeparatorGrouping_FourDigit>
+	<ReadableNumbers_SeparatorGrouping_None>Aucun</ReadableNumbers_SeparatorGrouping_None>
 
-<ReadableNumbers_Option_Debug>Mode débogage</ReadableNumbers_Option_Debug>
+	<ReadableNumbers_Cache_Heading>Cache</ReadableNumbers_Cache_Heading>
+	<ReadableNumbers_Cache_Label>Cache :</ReadableNumbers_Cache_Label>
+	<ReadableNumbers_Cache_Desc>Permet d'améliorer les performances en stockant les versions formatées des textes déjà rencontrés\nLe cache est vidé lorsqu'il atteint la capacité définie afin d'éviter une utilisation excessive de la mémoire ou des ralentissements lors de la recherche de textes précédents</ReadableNumbers_Cache_Desc>
+	<ReadableNumbers_Cache_Enable>Activer le cache</ReadableNumbers_Cache_Enable>
+	<ReadableNumbers_Cache_MaxCapacity_Label>Capacité maximale du cache (100 - 1,000,000)</ReadableNumbers_Cache_MaxCapacity_Label>
 
-<ReadableNumbers_SeparatorCharacter_Label>Sélectionner le format des nombres :</ReadableNumbers_SeparatorCharacter_Label>
-
-<ReadableNumbers_SeparatorCharacter_Comma_Period>Séparateur : virgule et point (décimal) (1,000,000.00)</ReadableNumbers_SeparatorCharacter_Comma_Period>
-
-<ReadableNumbers_SeparatorCharacter_Period_Comma>Séparateur décimal : point et virgule (1.000.000,00)</ReadableNumbers_SeparatorCharacter_Period_Comma>
-
-<ReadableNumbers_SeparatorCharacter_Space_Period>Séparateur décimal : espace et point (1 000 000.00)</ReadableNumbers_SeparatorCharacter_Space_Period>
-
-<ReadableNumbers_SeparatorCharacter_Space_Comma>Séparateur décimal : espace et virgule (1 000 000,00)</ReadableNumbers_SeparatorCharacter_Space_Comma>
-<ReadableNumbers_SeparatorCharacter_None>Aucun (1 000 000,00)</ReadableNumbers_SeparatorCharacter_None>
-
-<ReadableNumbers_Cache_Label>Cache :</ReadableNumbers_Cache_Label>
-
-<ReadableNumbers_Cache_Desc>Utilisé pour améliorer les performances en stockant les versions formatées du texte précédemment rencontré. Le cache est vidé lorsqu'il atteint sa capacité maximale afin d'éviter une utilisation excessive de la mémoire ou des retards dans la recherche de texte.</ReadableNumbers_Cache_Desc>
-
-<ReadableNumbers_Cache_Enable>Activer le cache</ReadableNumbers_Cache_Enable>
-
-<ReadableNumbers_Cache_MaxCapacity_Label>Capacité maximale du cache (100 - 1 000 000)</ReadableNumbers_Cache_MaxCapacity_Label>
-
-<ReadableNumbers_Blacklist_Label>Texte interdit :</ReadableNumbers_Blacklist_Label>
-
-<ReadableNumbers_Blacklist_Desc>Le texte du jeu contenant l'une de ces chaînes de caractères restera inchangé.</ReadableNumbers_Blacklist_Desc>
-
-<ReadableNumbers_Blacklist_TextField>Ajouter le motif ici :</ReadableNumbers_Blacklist_TextField>
-
-<ReadableNumbers_Blacklist_Add>Ajouter</ReadableNumbers_Blacklist_Add>
-
-<!-- Activer/Désactiver chaque correctif -->
+	<ReadableNumbers_BlackList_Heading>Liste noire</ReadableNumbers_BlackList_Heading>
+	<ReadableNumbers_Blacklist_Label>Texte sur liste noire :</ReadableNumbers_Blacklist_Label>
+	<ReadableNumbers_Blacklist_Desc>Les textes du jeu contenant l'une de ces chaînes de caractères resteront inchangés</ReadableNumbers_Blacklist_Desc>
+	<ReadableNumbers_Blacklist_TextField>Ajouter un motif ici :</ReadableNumbers_Blacklist_TextField>
+	<ReadableNumbers_Blacklist_Add>Ajouter</ReadableNumbers_Blacklist_Add>
+	
 </LanguageData>

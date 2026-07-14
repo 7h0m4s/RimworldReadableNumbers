@@ -1,28 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
-<ReadableNumbers_Option_Mod_Name>Numeri Legibiles</ReadableNumbers_Option_Mod_Name>
+	
+	<ReadableNumbers_Option_Mod_Name>Readable Numbers</ReadableNumbers_Option_Mod_Name>
+	
+	
+	<ReadableNumbers_Option_Heading>Configuración General</ReadableNumbers_Option_Heading>
+	<ReadableNumbers_Option_Enable>Habilitar Readable Numbers</ReadableNumbers_Option_Enable>
+	<ReadableNumbers_Option_RestoreDefault>Restaurar Valores Predeterminados</ReadableNumbers_Option_RestoreDefault>
+	<ReadableNumbers_Option_Debug>Modo Depuración</ReadableNumbers_Option_Debug>
+	<ReadableNumbers_Option_FormatAllNumbers>Formatear Números Menores a 1000</ReadableNumbers_Option_FormatAllNumbers>
 
-<ReadableNumbers_Option_Enable>Numeros Legibiles Activare</ReadableNumbers_Option_Enable>
-<ReadableNumbers_Option_RestoreDefault>Status Default Restituere</ReadableNumbers_Option_RestoreDefault>
-<ReadableNumbers_Option_Debug>Modus Debug</ReadableNumbers_Option_Debug>
+	<ReadableNumbers_SeparatorCharacter_Heading>Separadores y Decimales</ReadableNumbers_SeparatorCharacter_Heading>
+	<ReadableNumbers_SeparatorCharacter_Label>Seleccionar Formato Deseado:</ReadableNumbers_SeparatorCharacter_Label>
+	<ReadableNumbers_SeparatorCharacter_Comma_Period>Separador de coma        | Decimal de punto</ReadableNumbers_SeparatorCharacter_Comma_Period>
+	<ReadableNumbers_SeparatorCharacter_Period_Comma>Separador de punto       | Decimal de coma</ReadableNumbers_SeparatorCharacter_Period_Comma>
+	<ReadableNumbers_SeparatorCharacter_Space_Period>Separador de espacio     | Decimal de punto</ReadableNumbers_SeparatorCharacter_Space_Period>
+	<ReadableNumbers_SeparatorCharacter_Space_Comma>Separador de espacio     | Decimal de coma</ReadableNumbers_SeparatorCharacter_Space_Comma>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Period>Separador de apóstrofe   | Decimal de punto</ReadableNumbers_SeparatorCharacter_Apostrophe_Period>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>Separador de apóstrofe   | Decimal de coma</ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>
+	<ReadableNumbers_SeparatorCharacter_Custom>Separador personalizado  | Decimal personalizado</ReadableNumbers_SeparatorCharacter_Custom>
+	<ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>Advertencia: El uso de separadores y decimales personalizados puede causar errores visuales. Úselo bajo su propio riesgo.</ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>
+	<ReadableNumbers_SeparatorCharacter_Custom_Separator>Separador Personalizado:</ReadableNumbers_SeparatorCharacter_Custom_Separator>
+	<ReadableNumbers_SeparatorCharacter_Custom_Decimal>Decimal Personalizado:</ReadableNumbers_SeparatorCharacter_Custom_Decimal>
 
-<ReadableNumbers_SeparatorCharacter_Label>Formam Numeri Elige:</ReadableNumbers_SeparatorCharacter_Label>
-<ReadableNumbers_SeparatorCharacter_Comma_Period>Separator Commatum cum Periodo decimali (1,000,000.00)</ReadableNumbers_SeparatorCharacter_Comma_Period>
-<ReadableNumbers_SeparatorCharacter_Period_Comma>Separator punctorum cum decimali commate (1.000.000,00)</ReadableNumbers_SeparatorCharacter_Period_Comma>
-<ReadableNumbers_SeparatorCharacter_Space_Period>Separator spatiorum cum decimali punctorum (1 000 000.00)</ReadableNumbers_SeparatorCharacter_Space_Period>
-<ReadableNumbers_SeparatorCharacter_Space_Comma>Separator spatiorum cum decimali commate (1 000 000,00)</ReadableNumbers_SeparatorCharacter_Space_Comma>
-<ReadableNumbers_SeparatorCharacter_None>Nullus (1000000.00)</ReadableNumbers_SeparatorCharacter_None>
+	<ReadableNumbers_SeparatorGrouping_Heading>Agrupación de Dígitos</ReadableNumbers_SeparatorGrouping_Heading>
+	<ReadableNumbers_SeparatorGrouping_ThreeDigit>Tres Dígitos</ReadableNumbers_SeparatorGrouping_ThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>Dos y Tres Dígitos</ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_FourDigit>Cuatro Dígitos</ReadableNumbers_SeparatorGrouping_FourDigit>
+	<ReadableNumbers_SeparatorGrouping_None>Ninguno</ReadableNumbers_SeparatorGrouping_None>
 
-<ReadableNumbers_Cache_Label>Repositorium:</ReadableNumbers_Cache_Label>
-<ReadableNumbers_Cache_Desc>Adhibetur ad efficientiam emendandam per conservationem versionum formatarum textus antea inventi\nRepositorium purgatur quotiescumque capacitatem statutam attingit, ne memoria utatur aut textus prioris inquisitio differatur</ReadableNumbers_Cache_Desc>
-<ReadableNumbers_Cache_Enable>Permittere Repositorium</ReadableNumbers_Cache_Enable>
-<ReadableNumbers_Cache_MaxCapacity_Label>Capacitas Maxima Repositorii (100 - 1,000,000)</ReadableNumbers_Cache_MaxCapacity_Label>
+	<ReadableNumbers_Cache_Heading>Caché</ReadableNumbers_Cache_Heading>
+	<ReadableNumbers_Cache_Label>Caché:</ReadableNumbers_Cache_Label>
+	<ReadableNumbers_Cache_Desc>Se utiliza para mejorar el rendimiento almacenando las versiones formateadas del texto encontrado anteriormente\nLa caché se borra cada vez que alcanza la capacidad establecida, para evitar el uso excesivo de memoria o retrasos al buscar texto anterior</ReadableNumbers_Cache_Desc>
+	<ReadableNumbers_Cache_Enable>Habilitar Caché</ReadableNumbers_Cache_Enable>
+	<ReadableNumbers_Cache_MaxCapacity_Label>Capacidad Máxima de la Caché (100 - 1,000,000)</ReadableNumbers_Cache_MaxCapacity_Label>
 
-<ReadableNumbers_Blacklist_Label>Textus in Lista Nigra:</ReadableNumbers_Blacklist_Label>
-<ReadableNumbers_Blacklist_Desc>In ludo textus qui has series characterum continet in originali suo relinquetur. status</ReadableNumbers_Blacklist_Desc>
-<ReadableNumbers_Blacklist_TextField>Exemplar hic adde:</ReadableNumbers_Blacklist_TextField>
-<ReadableNumbers_Blacklist_Add>Adde</ReadableNumbers_Blacklist_Add>
-
-<!-- Vexilla pone ad singulas partes activandas/inactivandas -->
+	<ReadableNumbers_BlackList_Heading>Lista Negra</ReadableNumbers_BlackList_Heading>
+	<ReadableNumbers_Blacklist_Label>Texto en Lista Negra:</ReadableNumbers_Blacklist_Label>
+	<ReadableNumbers_Blacklist_Desc>El texto dentro del juego que contenga cualquiera de estas cadenas de caracteres se dejará en su estado original</ReadableNumbers_Blacklist_Desc>
+	<ReadableNumbers_Blacklist_TextField>Añadir patrón aquí:</ReadableNumbers_Blacklist_TextField>
+	<ReadableNumbers_Blacklist_Add>Añadir</ReadableNumbers_Blacklist_Add>
+	
 </LanguageData>

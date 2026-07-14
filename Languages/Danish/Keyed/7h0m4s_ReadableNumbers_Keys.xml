@@ -1,28 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
-<ReadableNumbers_Option_Mod_Name>Læsbare tal</ReadableNumbers_Option_Mod_Name>
+	
+	<ReadableNumbers_Option_Mod_Name>Læsbare tal</ReadableNumbers_Option_Mod_Name>
+	
+	
+	<ReadableNumbers_Option_Heading>Generelle indstillinger</ReadableNumbers_Option_Heading>
+	<ReadableNumbers_Option_Enable>Aktivér læsbare tal</ReadableNumbers_Option_Enable>
+	<ReadableNumbers_Option_RestoreDefault>Gendan standardindstillinger</ReadableNumbers_Option_RestoreDefault>
+	<ReadableNumbers_Option_Debug>Fejlsøgningstilstand</ReadableNumbers_Option_Debug>
+	<ReadableNumbers_Option_FormatAllNumbers>Formatér tal mindre end 1000</ReadableNumbers_Option_FormatAllNumbers>
 
-<ReadableNumbers_Option_Enable>Aktiver læsbare tal</ReadableNumbers_Option_Enable>
-<ReadableNumbers_Option_RestoreDefault>Gendan standard</ReadableNumbers_Option_RestoreDefault>
-<ReadableNumbers_Option_Debug>Fejlfindingstilstand</ReadableNumbers_Option_Debug>
+	<ReadableNumbers_SeparatorCharacter_Heading>Separatorer og decimaler</ReadableNumbers_SeparatorCharacter_Heading>
+	<ReadableNumbers_SeparatorCharacter_Label>Vælg det ønskede talformat:</ReadableNumbers_SeparatorCharacter_Label>
+	<ReadableNumbers_SeparatorCharacter_Comma_Period>Komma som tusindtalsseparator 		| Punktum som decimaltegn</ReadableNumbers_SeparatorCharacter_Comma_Period>
+	<ReadableNumbers_SeparatorCharacter_Period_Comma>Punktum som tusindtalsseparator 		| Komma som decimaltegn</ReadableNumbers_SeparatorCharacter_Period_Comma>
+	<ReadableNumbers_SeparatorCharacter_Space_Period>Mellemrum som tusindtalsseparator 		| Punktum som decimaltegn</ReadableNumbers_SeparatorCharacter_Space_Period>
+	<ReadableNumbers_SeparatorCharacter_Space_Comma>Mellemrum som tusindtalsseparator 		| Komma som decimaltegn</ReadableNumbers_SeparatorCharacter_Space_Comma>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Period>Apostrof som tusindtalsseparator 	| Punktum som decimaltegn</ReadableNumbers_SeparatorCharacter_Apostrophe_Period>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>Apostrof som tusindtalsseparator 	| Komma som decimaltegn</ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>
+	<ReadableNumbers_SeparatorCharacter_Custom>Brugerdefineret separator 		| Brugerdefineret decimaltegn</ReadableNumbers_SeparatorCharacter_Custom>
+	<ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>Advarsel: Brug af brugerdefinerede separatorer og decimaltegn kan forårsage visuelle fejl. Brug på eget ansvar.</ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>
+	<ReadableNumbers_SeparatorCharacter_Custom_Separator>Brugerdefineret separator:</ReadableNumbers_SeparatorCharacter_Custom_Separator>
+	<ReadableNumbers_SeparatorCharacter_Custom_Decimal>Brugerdefineret decimaltegn:</ReadableNumbers_SeparatorCharacter_Custom_Decimal>
 
-<ReadableNumbers_SeparatorCharacter_Label>Vælg talformat:</ReadableNumbers_SeparatorCharacter_Label>
-<ReadableNumbers_SeparatorCharacter_Comma_Period>Kommaseparator med punktum decimal (1,000,000.00)</ReadableNumbers_SeparatorCharacter_Comma_Period>
-<ReadableNumbers_SeparatorCharacter_Period_Comma>Punktumseparator med kommadecimal (1.000.000,00)</ReadableNumbers_SeparatorCharacter_Period_Comma>
-<ReadableNumbers_SeparatorCharacter_Space_Period>Mellemrumseparator med punktumdecimal (1 000 000.00)</ReadableNumbers_SeparatorCharacter_Space_Period>
-<ReadableNumbers_SeparatorCharacter_Space_Comma>Mellemrumseparator med kommadecimal (1 000 000,00)</ReadableNumbers_SeparatorCharacter_Space_Comma>
-<ReadableNumbers_SeparatorCharacter_None>Ingen (1000000,00)</ReadableNumbers_SeparatorCharacter_None>
+	<ReadableNumbers_SeparatorGrouping_Heading>Ciffergruppering</ReadableNumbers_SeparatorGrouping_Heading>
+	<ReadableNumbers_SeparatorGrouping_ThreeDigit>Tre cifre</ReadableNumbers_SeparatorGrouping_ThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>To og tre cifre</ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_FourDigit>Fire cifre</ReadableNumbers_SeparatorGrouping_FourDigit>
+	<ReadableNumbers_SeparatorGrouping_None>Ingen</ReadableNumbers_SeparatorGrouping_None>
 
-<ReadableNumbers_Cache_Label>Cache:</ReadableNumbers_Cache_Label>
-<ReadableNumbers_Cache_Desc>Bruges til at forbedre ydeevnen ved at gemme formaterede versioner af tidligere fundet tekst.\nCachen ryddes, når den når den angivne kapacitet, for at forhindre hukommelsesforbrug eller forsinke opslag af tidligere tekst.</ReadableNumbers_Cache_Desc>
-<ReadableNumbers_Cache_Enable>Aktiver cache</ReadableNumbers_Cache_Enable>
-<ReadableNumbers_Cache_MaxCapacity_Label>Maksimal cachekapacitet (100 - 1.000.000)</ReadableNumbers_Cache_MaxCapacity_Label>
+	<ReadableNumbers_Cache_Heading>Cache</ReadableNumbers_Cache_Heading>
+	<ReadableNumbers_Cache_Label>Cache:</ReadableNumbers_Cache_Label>
+	<ReadableNumbers_Cache_Desc>Bruges til at forbedre ydeevnen ved at gemme formaterede versioner af tidligere viste tekster\nCachen ryddes automatisk, når den når den angivne kapacitet, for at forhindre unødigt hukommelsesforbrug eller forsinkelser ved opslag af tidligere tekst</ReadableNumbers_Cache_Desc>
+	<ReadableNumbers_Cache_Enable>Aktivér cache</ReadableNumbers_Cache_Enable>
+	<ReadableNumbers_Cache_MaxCapacity_Label>Maksimal cachekapacitet (100 - 1,000,000)</ReadableNumbers_Cache_MaxCapacity_Label>
 
-<ReadableNumbers_Blacklist_Label>Sortlistet tekst:</ReadableNumbers_Blacklist_Label>
-<ReadableNumbers_Blacklist_Desc>Tekst i spillet, der indeholder en af ​​disse tegnstrenge, vil blive efterladt i sin oprindelige tilstand</ReadableNumbers_Blacklist_Desc>
-<ReadableNumbers_Blacklist_TextField>Tilføj mønster her:</ReadableNumbers_Blacklist_TextField>
-<ReadableNumbers_Blacklist_Add>Tilføj</ReadableNumbers_Blacklist_Add>
-
-<!-- Sæt flag for at aktivere/deaktivere hver patch -->
+	<ReadableNumbers_BlackList_Heading>Sortliste</ReadableNumbers_BlackList_Heading>
+	<ReadableNumbers_Blacklist_Label>Sortlistet tekst:</ReadableNumbers_Blacklist_Label>
+	<ReadableNumbers_Blacklist_Desc>Tekst i spillet, der indeholder en af disse tegnstrenge, forbliver uændret</ReadableNumbers_Blacklist_Desc>
+	<ReadableNumbers_Blacklist_TextField>Tilføj mønster her:</ReadableNumbers_Blacklist_TextField>
+	<ReadableNumbers_Blacklist_Add>Tilføj</ReadableNumbers_Blacklist_Add>
+	
 </LanguageData>

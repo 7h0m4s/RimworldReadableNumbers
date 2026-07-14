@@ -1,38 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
-<ReadableNumbers_Option_Mod_Name>Lesbare Zahlen</ReadableNumbers_Option_Mod_Name>
+	
+	<ReadableNumbers_Option_Mod_Name>Lesbare Zahlen</ReadableNumbers_Option_Mod_Name>
+	
+	
+	<ReadableNumbers_Option_Heading>Allgemeine Einstellungen</ReadableNumbers_Option_Heading>
+	<ReadableNumbers_Option_Enable>Lesbare Zahlen aktivieren</ReadableNumbers_Option_Enable>
+	<ReadableNumbers_Option_RestoreDefault>Standardeinstellungen wiederherstellen</ReadableNumbers_Option_RestoreDefault>
+	<ReadableNumbers_Option_Debug>Debug-Modus</ReadableNumbers_Option_Debug>
+	<ReadableNumbers_Option_FormatAllNumbers>Zahlen unter 1000 formatieren</ReadableNumbers_Option_FormatAllNumbers>
 
-<ReadableNumbers_Option_Enable>Lesbare Zahlen aktivieren</ReadableNumbers_Option_Enable>
+	<ReadableNumbers_SeparatorCharacter_Heading>Trennzeichen und Dezimalstellen</ReadableNumbers_SeparatorCharacter_Heading>
+	<ReadableNumbers_SeparatorCharacter_Label>Gewünschtes Zahlenformat auswählen:</ReadableNumbers_SeparatorCharacter_Label>
+	<ReadableNumbers_SeparatorCharacter_Comma_Period>Komma als Trennzeichen 		| Punkt als Dezimaltrennzeichen</ReadableNumbers_SeparatorCharacter_Comma_Period>
+	<ReadableNumbers_SeparatorCharacter_Period_Comma>Punkt als Trennzeichen 		| Komma als Dezimaltrennzeichen</ReadableNumbers_SeparatorCharacter_Period_Comma>
+	<ReadableNumbers_SeparatorCharacter_Space_Period>Leerzeichen als Trennzeichen 		| Punkt als Dezimaltrennzeichen</ReadableNumbers_SeparatorCharacter_Space_Period>
+	<ReadableNumbers_SeparatorCharacter_Space_Comma>Leerzeichen als Trennzeichen 		| Komma als Dezimaltrennzeichen</ReadableNumbers_SeparatorCharacter_Space_Comma>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Period>Apostroph als Trennzeichen 	| Punkt als Dezimaltrennzeichen</ReadableNumbers_SeparatorCharacter_Apostrophe_Period>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>Apostroph als Trennzeichen 	| Komma als Dezimaltrennzeichen</ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>
+	<ReadableNumbers_SeparatorCharacter_Custom>Benutzerdefiniertes Trennzeichen 		| Benutzerdefiniertes Dezimaltrennzeichen</ReadableNumbers_SeparatorCharacter_Custom>
+	<ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>Warnung: Die Verwendung benutzerdefinierter Trenn- und Dezimalzeichen kann zu Darstellungsfehlern führen. Verwendung auf eigene Gefahr.</ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>
+	<ReadableNumbers_SeparatorCharacter_Custom_Separator>Benutzerdefiniertes Trennzeichen:</ReadableNumbers_SeparatorCharacter_Custom_Separator>
+	<ReadableNumbers_SeparatorCharacter_Custom_Decimal>Benutzerdefiniertes Dezimaltrennzeichen:</ReadableNumbers_SeparatorCharacter_Custom_Decimal>
 
-<ReadableNumbers_Option_RestoreDefault>Standardeinstellungen wiederherstellen</ReadableNumbers_Option_RestoreDefault>
+	<ReadableNumbers_SeparatorGrouping_Heading>Zifferngruppierung</ReadableNumbers_SeparatorGrouping_Heading>
+	<ReadableNumbers_SeparatorGrouping_ThreeDigit>Dreistellig</ReadableNumbers_SeparatorGrouping_ThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>Zwei- und dreistellig</ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_FourDigit>Vierstellig</ReadableNumbers_SeparatorGrouping_FourDigit>
+	<ReadableNumbers_SeparatorGrouping_None>Keine</ReadableNumbers_SeparatorGrouping_None>
 
-<ReadableNumbers_Option_Debug>Debug-Modus</ReadableNumbers_Option_Debug>
+	<ReadableNumbers_Cache_Heading>Zwischenspeicher</ReadableNumbers_Cache_Heading>
+	<ReadableNumbers_Cache_Label>Zwischenspeicher:</ReadableNumbers_Cache_Label>
+	<ReadableNumbers_Cache_Desc>Verbessert die Leistung, indem formatierte Versionen bereits verarbeiteter Texte gespeichert werden\nDer Zwischenspeicher wird geleert, sobald die festgelegte Kapazität erreicht ist, um übermäßigen Speicherverbrauch oder Verzögerungen beim Nachschlagen früherer Texte zu vermeiden</ReadableNumbers_Cache_Desc>
+	<ReadableNumbers_Cache_Enable>Zwischenspeicher aktivieren</ReadableNumbers_Cache_Enable>
+	<ReadableNumbers_Cache_MaxCapacity_Label>Maximale Kapazität des Zwischenspeichers (100 - 1,000,000)</ReadableNumbers_Cache_MaxCapacity_Label>
 
-<ReadableNumbers_SeparatorCharacter_Label>Zahlenformat auswählen:</ReadableNumbers_SeparatorCharacter_Label>
-
-<ReadableNumbers_SeparatorCharacter_Comma_Period>Kommatrennzeichen mit Punkt als Dezimaltrennzeichen (1,000,000.00)</ReadableNumbers_SeparatorCharacter_Comma_Period>
-<ReadableNumbers_SeparatorCharacter_Period_Comma>Punkt-Trennzeichen mit Komma als Dezimaltrennzeichen (1.000.000,00)</ReadableNumbers_SeparatorCharacter_Period_Comma>
-<ReadableNumbers_SeparatorCharacter_Space_Period>Leerzeichen-Trennzeichen mit Punkt als Dezimaltrennzeichen (1 000 000.00)</ReadableNumbers_SeparatorCharacter_Space_Period>
-<ReadableNumbers_SeparatorCharacter_Space_Comma>Leerzeichen-Trennzeichen mit Komma als Dezimaltrennzeichen (1 000 000,00)</ReadableNumbers_SeparatorCharacter_Space_Comma>
-
-<ReadableNumbers_SeparatorCharacter_None>Keine (1000000.00)</ReadableNumbers_SeparatorCharacter_None>
-
-<ReadableNumbers_Cache_Label>Cache:</ReadableNumbers_Cache_Label>
-
-<ReadableNumbers_Cache_Desc>Wird verwendet, um die Leistung zu verbessern, indem formatierte Versionen zuvor gelesener Texte gespeichert werden. Der Cache wird geleert, sobald er die festgelegte Kapazität erreicht, um Speicherverbrauch zu vermeiden oder das Auffinden vorheriger Texte zu verzögern.</ReadableNumbers_Cache_Desc>
-
-<ReadableNumbers_Cache_Enable>Cache aktivieren</ReadableNumbers_Cache_Enable>
-<ReadableNumbers_Cache_MaxCapacity_Label>Maximale Cache-Kapazität (100 - 1.000.000)</ReadableNumbers_Cache_MaxCapacity_Label>
-
-<ReadableNumbers_Blacklist_Label>Gesperrter Text:</ReadableNumbers_Blacklist_Label>
-
-<ReadableNumbers_Blacklist_Desc>Spieltext, der eine der folgenden Zeichenketten enthält, bleibt unverändert.</ReadableNumbers_Blacklist_Desc>
-
-<ReadableNumbers_Blacklist_TextField>Muster hier einfügen:</ReadableNumbers_Blacklist_TextField>
-
-<ReadableNumbers_Blacklist_Add>Hinzufügen</ReadableNumbers_Blacklist_Add>
-
-<!-- Flags zum Aktivieren/Deaktivieren der einzelnen Patches einfügen -->
-
+	<ReadableNumbers_BlackList_Heading>Schwarze Liste</ReadableNumbers_BlackList_Heading>
+	<ReadableNumbers_Blacklist_Label>Text auf der schwarzen Liste:</ReadableNumbers_Blacklist_Label>
+	<ReadableNumbers_Blacklist_Desc>Spieltexte, die eine dieser Zeichenfolgen enthalten, bleiben unverändert</ReadableNumbers_Blacklist_Desc>
+	<ReadableNumbers_Blacklist_TextField>Muster hier hinzufügen:</ReadableNumbers_Blacklist_TextField>
+	<ReadableNumbers_Blacklist_Add>Hinzufügen</ReadableNumbers_Blacklist_Add>
+	
 </LanguageData>

@@ -1,28 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
-<ReadableNumbers_Option_Mod_Name>Olvasható számok</ReadableNumbers_Option_Mod_Name>
+	
+	<ReadableNumbers_Option_Mod_Name>Jól olvasható számok</ReadableNumbers_Option_Mod_Name>
+	
+	
+	<ReadableNumbers_Option_Heading>Általános beállítások</ReadableNumbers_Option_Heading>
+	<ReadableNumbers_Option_Enable>Jól olvasható számok engedélyezése</ReadableNumbers_Option_Enable>
+	<ReadableNumbers_Option_RestoreDefault>Alapértelmezett beállítások visszaállítása</ReadableNumbers_Option_RestoreDefault>
+	<ReadableNumbers_Option_Debug>Hibakeresési mód</ReadableNumbers_Option_Debug>
+	<ReadableNumbers_Option_FormatAllNumbers>1000 alatti számok formázása</ReadableNumbers_Option_FormatAllNumbers>
 
-<ReadableNumbers_Option_Enable>Olvasható számok engedélyezése</ReadableNumbers_Option_Enable>
-<ReadableNumbers_Option_RestoreDefault>Alapértelmezett visszaállítása</ReadableNumbers_Option_RestoreDefault>
-<ReadableNumbers_Option_Debug>Hibakeresési mód</ReadableNumbers_Option_Debug>
+	<ReadableNumbers_SeparatorCharacter_Heading>Elválasztók és tizedesjelek</ReadableNumbers_SeparatorCharacter_Heading>
+	<ReadableNumbers_SeparatorCharacter_Label>Válassza ki a kívánt számformátumot:</ReadableNumbers_SeparatorCharacter_Label>
+	<ReadableNumbers_SeparatorCharacter_Comma_Period>Vessző mint ezreselválasztó 		| Pont mint tizedesjel</ReadableNumbers_SeparatorCharacter_Comma_Period>
+	<ReadableNumbers_SeparatorCharacter_Period_Comma>Pont mint ezreselválasztó 		| Vessző mint tizedesjel</ReadableNumbers_SeparatorCharacter_Period_Comma>
+	<ReadableNumbers_SeparatorCharacter_Space_Period>Szóköz mint ezreselválasztó 		| Pont mint tizedesjel</ReadableNumbers_SeparatorCharacter_Space_Period>
+	<ReadableNumbers_SeparatorCharacter_Space_Comma>Szóköz mint ezreselválasztó 		| Vessző mint tizedesjel</ReadableNumbers_SeparatorCharacter_Space_Comma>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Period>Aposztróf mint ezreselválasztó 	| Pont mint tizedesjel</ReadableNumbers_SeparatorCharacter_Apostrophe_Period>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>Aposztróf mint ezreselválasztó 	| Vessző mint tizedesjel</ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>
+	<ReadableNumbers_SeparatorCharacter_Custom>Egyéni elválasztó 		| Egyéni tizedesjel</ReadableNumbers_SeparatorCharacter_Custom>
+	<ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>Figyelmeztetés: Az egyéni elválasztók és tizedesjelek használata megjelenítési hibákat okozhat. Csak saját felelősségre használja.</ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>
+	<ReadableNumbers_SeparatorCharacter_Custom_Separator>Egyéni elválasztó:</ReadableNumbers_SeparatorCharacter_Custom_Separator>
+	<ReadableNumbers_SeparatorCharacter_Custom_Decimal>Egyéni tizedesjel:</ReadableNumbers_SeparatorCharacter_Custom_Decimal>
 
-<ReadableNumbers_SeparatorCharacter_Label>Számformátum kiválasztása:</ReadableNumbers_SeparatorCharacter_Label>
-<ReadableNumbers_SeparatorCharacter_Comma_Period>Vesszővel elválasztva, ponttal elválasztva, tizedes törttel (1,000,000.00)</ReadableNumbers_SeparatorCharacter_Comma_Period>
-<ReadableNumbers_SeparatorCharacter_Period_Comma>Pont elválasztó vesszővel és tizedes törttel (1.000.000,00)</ReadableNumbers_SeparatorCharacter_Period_Comma>
-<ReadableNumbers_SeparatorCharacter_Space_Period>Szóköz elválasztó vesszővel és tizedes törttel (1 000 000.00)</ReadableNumbers_SeparatorCharacter_Space_Period>
-<ReadableNumbers_SeparatorCharacter_Space_Comma>Szóköz elválasztó vesszővel és tizedes törttel (1 000 000,00)</ReadableNumbers_SeparatorCharacter_Space_Comma>
-<ReadableNumbers_SeparatorCharacter_None>Nincs (1000000,00)</ReadableNumbers_SeparatorCharacter_None>
+	<ReadableNumbers_SeparatorGrouping_Heading>Számjegyek csoportosítása</ReadableNumbers_SeparatorGrouping_Heading>
+	<ReadableNumbers_SeparatorGrouping_ThreeDigit>Három számjegyenként</ReadableNumbers_SeparatorGrouping_ThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>Két- és háromjegyű csoportosítás</ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_FourDigit>Négy számjegyenként</ReadableNumbers_SeparatorGrouping_FourDigit>
+	<ReadableNumbers_SeparatorGrouping_None>Nincs</ReadableNumbers_SeparatorGrouping_None>
 
-<ReadableNumbers_Cache_Label>Gyorsítótár:</ReadableNumbers_Cache_Label>
-<ReadableNumbers_Cache_Desc>A teljesítmény javítására szolgál azáltal, hogy tárolja a korábban talált szövegek formázott verzióit.\nA gyorsítótár ürül, amikor eléri a beállított kapacitást, hogy megakadályozza a memóriahasználatot vagy a korábbi szövegek keresésének késleltetését.</ReadableNumbers_Cache_Desc>
-<ReadableNumbers_Cache_Enable>Gyorsítótár engedélyezése</ReadableNumbers_Cache_Enable>
-<ReadableNumbers_Cache_MaxCapacity_Label>Gyorsítótár maximális kapacitása (100 - 1 000 000)</ReadableNumbers_Cache_MaxCapacity_Label>
+	<ReadableNumbers_Cache_Heading>Gyorsítótár</ReadableNumbers_Cache_Heading>
+	<ReadableNumbers_Cache_Label>Gyorsítótár:</ReadableNumbers_Cache_Label>
+	<ReadableNumbers_Cache_Desc>A teljesítmény javítására szolgál a korábban előfordult szövegek formázott változatainak tárolásával\nA gyorsítótár automatikusan törlődik, amikor eléri a beállított kapacitást, hogy elkerülje a túlzott memóriahasználatot vagy a korábbi szövegek keresésének lassulását</ReadableNumbers_Cache_Desc>
+	<ReadableNumbers_Cache_Enable>Gyorsítótár engedélyezése</ReadableNumbers_Cache_Enable>
+	<ReadableNumbers_Cache_MaxCapacity_Label>Gyorsítótár maximális mérete (100 - 1,000,000)</ReadableNumbers_Cache_MaxCapacity_Label>
 
-<ReadableNumbers_Blacklist_Label>Feketelistás szöveg:</ReadableNumbers_Blacklist_Label>
-<ReadableNumbers_Blacklist_Desc>A játékban a fenti karakterláncok bármelyikét tartalmazó szövegek eredeti állapotukban maradnak. állapot</ReadableNumbers_Blacklist_Desc>
-<ReadableNumbers_Blacklist_TextField>Minta hozzáadása itt:</ReadableNumbers_Blacklist_TextField>
-<ReadableNumbers_Blacklist_Add>Hozzáadás</ReadableNumbers_Blacklist_Add>
-
-<!-- Jelzők elhelyezése az egyes javítások engedélyezéséhez/letiltásához -->
+	<ReadableNumbers_BlackList_Heading>Tiltólista</ReadableNumbers_BlackList_Heading>
+	<ReadableNumbers_Blacklist_Label>Tiltólistás szöveg:</ReadableNumbers_Blacklist_Label>
+	<ReadableNumbers_Blacklist_Desc>A játékban megjelenő, ezen karakterláncok bármelyikét tartalmazó szöveg eredeti formájában marad</ReadableNumbers_Blacklist_Desc>
+	<ReadableNumbers_Blacklist_TextField>Minta hozzáadása:</ReadableNumbers_Blacklist_TextField>
+	<ReadableNumbers_Blacklist_Add>Hozzáadás</ReadableNumbers_Blacklist_Add>
+	
 </LanguageData>

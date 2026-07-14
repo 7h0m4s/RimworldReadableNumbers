@@ -1,43 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-
 <LanguageData>
 
-<ReadableNumbers_Option_Mod_Name>可讀數字</ReadableNumbers_Option_Mod_Name>
+	
+	<ReadableNumbers_Option_Mod_Name>易讀數字</ReadableNumbers_Option_Mod_Name>
+	
+	
+	<ReadableNumbers_Option_Heading>一般設定</ReadableNumbers_Option_Heading>
+	<ReadableNumbers_Option_Enable>啟用易讀數字</ReadableNumbers_Option_Enable>
+	<ReadableNumbers_Option_RestoreDefault>恢復預設值</ReadableNumbers_Option_RestoreDefault>
+	<ReadableNumbers_Option_Debug>除錯模式</ReadableNumbers_Option_Debug>
+	<ReadableNumbers_Option_FormatAllNumbers>格式化小於 1000 的數字</ReadableNumbers_Option_FormatAllNumbers>
 
-<ReadableNumbers_Option_Enable>啟用可讀數字</ReadableNumbers_Option_Enable>
+	<ReadableNumbers_SeparatorCharacter_Heading>分隔符號與小數點</ReadableNumbers_SeparatorCharacter_Heading>
+	<ReadableNumbers_SeparatorCharacter_Label>選擇所需的數字格式：</ReadableNumbers_SeparatorCharacter_Label>
+	<ReadableNumbers_SeparatorCharacter_Comma_Period>逗號分隔符號 		| 句點小數點</ReadableNumbers_SeparatorCharacter_Comma_Period>
+	<ReadableNumbers_SeparatorCharacter_Period_Comma>句點分隔符號 		| 逗號小數點</ReadableNumbers_SeparatorCharacter_Period_Comma>
+	<ReadableNumbers_SeparatorCharacter_Space_Period>空格分隔符號 		| 句點小數點</ReadableNumbers_SeparatorCharacter_Space_Period>
+	<ReadableNumbers_SeparatorCharacter_Space_Comma>空格分隔符號 		| 逗號小數點</ReadableNumbers_SeparatorCharacter_Space_Comma>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Period>單引號分隔符號 	| 句點小數點</ReadableNumbers_SeparatorCharacter_Apostrophe_Period>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>單引號分隔符號 	| 逗號小數點</ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>
+	<ReadableNumbers_SeparatorCharacter_Custom>自訂分隔符號 		| 自訂小數點</ReadableNumbers_SeparatorCharacter_Custom>
+	<ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>警告：使用自訂分隔符號與小數點可能導致顯示異常。請自行承擔使用風險。</ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>
+	<ReadableNumbers_SeparatorCharacter_Custom_Separator>自訂分隔符號：</ReadableNumbers_SeparatorCharacter_Custom_Separator>
+	<ReadableNumbers_SeparatorCharacter_Custom_Decimal>自訂小數點：</ReadableNumbers_SeparatorCharacter_Custom_Decimal>
 
-<ReadableNumbers_Option_RestoreDefault>恢復預設值</ReadableNumbers_Option_RestoreDefault>
+	<ReadableNumbers_SeparatorGrouping_Heading>數字分組</ReadableNumbers_SeparatorGrouping_Heading>
+	<ReadableNumbers_SeparatorGrouping_ThreeDigit>每三位分組</ReadableNumbers_SeparatorGrouping_ThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>兩位與三位分組</ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_FourDigit>每四位分組</ReadableNumbers_SeparatorGrouping_FourDigit>
+	<ReadableNumbers_SeparatorGrouping_None>無</ReadableNumbers_SeparatorGrouping_None>
 
-<ReadableNumbers_Option_Debug>偵錯模式</ReadableNumbers_Option_Debug>
+	<ReadableNumbers_Cache_Heading>快取</ReadableNumbers_Cache_Heading>
+	<ReadableNumbers_Cache_Label>快取：</ReadableNumbers_Cache_Label>
+	<ReadableNumbers_Cache_Desc>透過儲存先前遇到文字的格式化版本來提升效能\n當快取達到設定容量時將自動清除，以避免記憶體占用過高或查找舊文字時發生延遲</ReadableNumbers_Cache_Desc>
+	<ReadableNumbers_Cache_Enable>啟用快取</ReadableNumbers_Cache_Enable>
+	<ReadableNumbers_Cache_MaxCapacity_Label>快取最大容量 (100 - 1,000,000)</ReadableNumbers_Cache_MaxCapacity_Label>
 
-<ReadableNumbers_SeparatorCharacter_Label>選擇數位格式：</ReadableNumbers_SeparatorCharacter_Label>
-
-<ReadableNumbers_SeparatorCharacter_Comma_Period>帶句點的逗號分隔符號（小數點後加句點） (1,000,000.00)</ReadableNumbers_SeparatorCharacter_Comma_Period>
-
-<ReadableNumbers_SeparatorCharacter_Period_Comma> 帶數字符號， (1.000.000,00)</ReadableNumbers_SeparatorCharacter_Period_Comma>
-
-<ReadableNumbers_SeparatorCharacter_Space_Period>空格分隔符，帶句點小數點 (1 000 000.00)</ReadableNumbers_SeparatorCharacter_Space_Period>
-
-<ReadableNumbers_SeparatorCharacter_Space_Comma>空格分隔符，帶逗號小數點 (1 000 000,00)</ReadableNumbers_SeparatorCharacter_Space_Comma>
-
-<ReadableNumbers_SeparatorCharacter_None>無(1000000.00)</ReadableNumbers_SeparatorCharacter_None>
-
-<ReadableNumbers_Cache_Label>快取：</ReadableNumbers_Cache_Label>
-
-<ReadableNumbers_Cache_Desc>用於儲存先前遇到的文字的格式化版本，以提高效能。當快取達到設定的容量時，快取將被清除，以防止記憶體佔用過高或延遲查找先前文字。 </ReadableNumbers_Cache_Desc>
-
-<ReadableNumbers_Cache_Enable>啟用快取</ReadableNumbers_Cache_Enable>
-
-<ReadableNumbers_Cache_MaxCapacity_Label>快取最大容量 (100 - 1,000,000)</ReadableNumbers_Cache_MaxCapacity_Label>
-
-<ReadableNumbers_Blacklist_Label>黑名單文字：</ReadableNumbers_Blacklist_Label>
-
-<ReadableNumbers_Blacklist_Desc>遊戲文字中包含以下任何字串的內容將保持其原始狀態</ReadableNumbers_Blacklist_Desc>
-
-<ReadableNumbers_Blacklist_TextField>在此處新增模式：</ReadableNumbers_Blacklist_TextField>
-
-<ReadableNumbers_Blacklist_Add>新增</ReadableNumbers_Blacklist_Add>
-
-<!-- 為每個補丁新增啟用/停用標誌 -->
-
+	<ReadableNumbers_BlackList_Heading>黑名單</ReadableNumbers_BlackList_Heading>
+	<ReadableNumbers_Blacklist_Label>黑名單文字：</ReadableNumbers_Blacklist_Label>
+	<ReadableNumbers_Blacklist_Desc>遊戲中包含以下任一字串的文字將保持原樣，不會被修改</ReadableNumbers_Blacklist_Desc>
+	<ReadableNumbers_Blacklist_TextField>在此新增模式：</ReadableNumbers_Blacklist_TextField>
+	<ReadableNumbers_Blacklist_Add>新增</ReadableNumbers_Blacklist_Add>
+	
 </LanguageData>

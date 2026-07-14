@@ -1,28 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
-<ReadableNumbers_Option_Mod_Name>Numere lizibile</ReadableNumbers_Option_Mod_Name>
+	
+	<ReadableNumbers_Option_Mod_Name>Numere ușor de citit</ReadableNumbers_Option_Mod_Name>
+	
+	
+	<ReadableNumbers_Option_Heading>Setări generale</ReadableNumbers_Option_Heading>
+	<ReadableNumbers_Option_Enable>Activează numerele ușor de citit</ReadableNumbers_Option_Enable>
+	<ReadableNumbers_Option_RestoreDefault>Restabilește valorile implicite</ReadableNumbers_Option_RestoreDefault>
+	<ReadableNumbers_Option_Debug>Mod depanare</ReadableNumbers_Option_Debug>
+	<ReadableNumbers_Option_FormatAllNumbers>Formatează numerele mai mici de 1000</ReadableNumbers_Option_FormatAllNumbers>
 
-<ReadableNumbers_Option_Enable>Activează numerele lizibile</ReadableNumbers_Option_Enable>
-<ReadableNumbers_Option_RestoreDefault>Restaurează valorile implicite</ReadableNumbers_Option_RestoreDefault>
-<ReadableNumbers_Option_Debug>Mod de depanare</ReadableNumbers_Option_Debug>
+	<ReadableNumbers_SeparatorCharacter_Heading>Separatoare și zecimale</ReadableNumbers_SeparatorCharacter_Heading>
+	<ReadableNumbers_SeparatorCharacter_Label>Selectați formatul dorit:</ReadableNumbers_SeparatorCharacter_Label>
+	<ReadableNumbers_SeparatorCharacter_Comma_Period>Separator virgulă 		| Zecimal punct</ReadableNumbers_SeparatorCharacter_Comma_Period>
+	<ReadableNumbers_SeparatorCharacter_Period_Comma>Separator punct 		| Zecimal virgulă</ReadableNumbers_SeparatorCharacter_Period_Comma>
+	<ReadableNumbers_SeparatorCharacter_Space_Period>Separator spațiu 		| Zecimal punct</ReadableNumbers_SeparatorCharacter_Space_Period>
+	<ReadableNumbers_SeparatorCharacter_Space_Comma>Separator spațiu 		| Zecimal virgulă</ReadableNumbers_SeparatorCharacter_Space_Comma>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Period>Separator apostrof 	| Zecimal punct</ReadableNumbers_SeparatorCharacter_Apostrophe_Period>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>Separator apostrof 	| Zecimal virgulă</ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>
+	<ReadableNumbers_SeparatorCharacter_Custom>Separator personalizat 		| Zecimal personalizat</ReadableNumbers_SeparatorCharacter_Custom>
+	<ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>Avertisment: Utilizarea separatoarelor și a zecimalelor personalizate poate provoca erori de afișare. Folosiți această opțiune pe propria răspundere.</ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>
+	<ReadableNumbers_SeparatorCharacter_Custom_Separator>Separator personalizat:</ReadableNumbers_SeparatorCharacter_Custom_Separator>
+	<ReadableNumbers_SeparatorCharacter_Custom_Decimal>Zecimal personalizat:</ReadableNumbers_SeparatorCharacter_Custom_Decimal>
 
-<ReadableNumbers_SeparatorCharacter_Label>Selectați formatul numărului:</ReadableNumbers_SeparatorCharacter_Label>
-<ReadableNumbers_SeparatorCharacter_Comma_Period>Separator virgulă cu punct zecimal (1,000,000.00)</ReadableNumbers_SeparatorCharacter_Comma_Period>
-<ReadableNumbers_SeparatorCharacter_Period_Comma>Separator punct cu virgulă zecimală (1.000.000,00)</ReadableNumbers_SeparatorCharacter_Period_Comma>
-<ReadableNumbers_SeparatorCharacter_Space_Period>Separator spațiu cu punct zecimală (1 000 000.00)</ReadableNumbers_SeparatorCharacter_Space_Period>
-<ReadableNumbers_SeparatorCharacter_Space_Comma>Separator spațiu cu virgulă zecimală (1 000 000,00)</ReadableNumbers_SeparatorCharacter_Space_Comma>
-<ReadableNumbers_SeparatorCharacter_None>Niciunul (1000000.00)</ReadableNumbers_SeparatorCharacter_None>
+	<ReadableNumbers_SeparatorGrouping_Heading>Gruparea cifrelor</ReadableNumbers_SeparatorGrouping_Heading>
+	<ReadableNumbers_SeparatorGrouping_ThreeDigit>Trei cifre</ReadableNumbers_SeparatorGrouping_ThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>Două și trei cifre</ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_FourDigit>Patru cifre</ReadableNumbers_SeparatorGrouping_FourDigit>
+	<ReadableNumbers_SeparatorGrouping_None>Niciuna</ReadableNumbers_SeparatorGrouping_None>
 
-<ReadableNumbers_Cache_Label>Memorie cache:</ReadableNumbers_Cache_Label>
-<ReadableNumbers_Cache_Desc>Utilizat pentru a îmbunătăți performanța prin stocarea versiunilor formatate ale textului întâlnit anterior\nMemoria cache este golită ori de câte ori atinge capacitatea setată, pentru a preveni utilizarea memoriei sau întârzierea căutării textului anterior</ReadableNumbers_Cache_Desc>
-<ReadableNumbers_Cache_Enable>Activează memoria cache</ReadableNumbers_Cache_Enable>
-<ReadableNumbers_Cache_MaxCapacity_Label>Capacitate maximă memorie cache (100 - 1.000.000)</ReadableNumbers_Cache_MaxCapacity_Label>
+	<ReadableNumbers_Cache_Heading>Memorie cache</ReadableNumbers_Cache_Heading>
+	<ReadableNumbers_Cache_Label>Memorie cache:</ReadableNumbers_Cache_Label>
+	<ReadableNumbers_Cache_Desc>Utilizată pentru îmbunătățirea performanței prin stocarea versiunilor formatate ale textelor întâlnite anterior\nMemoria cache este golită atunci când atinge capacitatea stabilită, pentru a preveni utilizarea excesivă a memoriei sau întârzierile la căutarea textelor anterioare</ReadableNumbers_Cache_Desc>
+	<ReadableNumbers_Cache_Enable>Activează memoria cache</ReadableNumbers_Cache_Enable>
+	<ReadableNumbers_Cache_MaxCapacity_Label>Capacitatea maximă a memoriei cache (100 - 1,000,000)</ReadableNumbers_Cache_MaxCapacity_Label>
 
-<ReadableNumbers_Blacklist_Label>Text inclus pe lista neagră:</ReadableNumbers_Blacklist_Label>
-<ReadableNumbers_Blacklist_Desc>În joc, textul care conține oricare dintre aceste șiruri de caractere va fi lăsat în original stare</ReadableNumbers_Blacklist_Desc>
-<ReadableNumbers_Blacklist_TextField>Adăugați modelul aici:</ReadableNumbers_Blacklist_TextField>
-<ReadableNumbers_Blacklist_Add>Adăugați</ReadableNumbers_Blacklist_Add>
-
-<!-- Puneți steaguri pentru a activa/dezactiva fiecare patch -->
+	<ReadableNumbers_BlackList_Heading>Listă neagră</ReadableNumbers_BlackList_Heading>
+	<ReadableNumbers_Blacklist_Label>Text din lista neagră:</ReadableNumbers_Blacklist_Label>
+	<ReadableNumbers_Blacklist_Desc>Textul din joc care conține oricare dintre aceste șiruri de caractere va rămâne în forma sa originală</ReadableNumbers_Blacklist_Desc>
+	<ReadableNumbers_Blacklist_TextField>Adăugați un model aici:</ReadableNumbers_Blacklist_TextField>
+	<ReadableNumbers_Blacklist_Add>Adaugă</ReadableNumbers_Blacklist_Add>
+	
 </LanguageData>

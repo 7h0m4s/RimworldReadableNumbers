@@ -1,28 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
-<ReadableNumbers_Option_Mod_Name>Liczby czytelne</ReadableNumbers_Option_Mod_Name>
+	
+	<ReadableNumbers_Option_Mod_Name>Czytelne liczby</ReadableNumbers_Option_Mod_Name>
+	
+	
+	<ReadableNumbers_Option_Heading>Ustawienia ogólne</ReadableNumbers_Option_Heading>
+	<ReadableNumbers_Option_Enable>Włącz czytelne liczby</ReadableNumbers_Option_Enable>
+	<ReadableNumbers_Option_RestoreDefault>Przywróć ustawienia domyślne</ReadableNumbers_Option_RestoreDefault>
+	<ReadableNumbers_Option_Debug>Tryb debugowania</ReadableNumbers_Option_Debug>
+	<ReadableNumbers_Option_FormatAllNumbers>Formatuj liczby mniejsze niż 1000</ReadableNumbers_Option_FormatAllNumbers>
 
-<ReadableNumbers_Option_Enable>Włącz liczby czytelne</ReadableNumbers_Option_Enable>
-<ReadableNumbers_Option_RestoreDefault>Przywróć domyślne</ReadableNumbers_Option_RestoreDefault>
-<ReadableNumbers_Option_Debug>Tryb debugowania</ReadableNumbers_Option_Debug>
+	<ReadableNumbers_SeparatorCharacter_Heading>Separatory i miejsca dziesiętne</ReadableNumbers_SeparatorCharacter_Heading>
+	<ReadableNumbers_SeparatorCharacter_Label>Wybierz żądany format liczb:</ReadableNumbers_SeparatorCharacter_Label>
+	<ReadableNumbers_SeparatorCharacter_Comma_Period>Separator przecinek 		| Kropka dziesiętna</ReadableNumbers_SeparatorCharacter_Comma_Period>
+	<ReadableNumbers_SeparatorCharacter_Period_Comma>Separator kropka 		| Przecinek dziesiętny</ReadableNumbers_SeparatorCharacter_Period_Comma>
+	<ReadableNumbers_SeparatorCharacter_Space_Period>Separator spacja 		| Kropka dziesiętna</ReadableNumbers_SeparatorCharacter_Space_Period>
+	<ReadableNumbers_SeparatorCharacter_Space_Comma>Separator spacja 		| Przecinek dziesiętny</ReadableNumbers_SeparatorCharacter_Space_Comma>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Period>Separator apostrof 	| Kropka dziesiętna</ReadableNumbers_SeparatorCharacter_Apostrophe_Period>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>Separator apostrof 	| Przecinek dziesiętny</ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>
+	<ReadableNumbers_SeparatorCharacter_Custom>Niestandardowy separator 		| Niestandardowy separator dziesiętny</ReadableNumbers_SeparatorCharacter_Custom>
+	<ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>Ostrzeżenie: Używanie niestandardowych separatorów i znaków dziesiętnych może powodować błędy wyświetlania. Korzystasz na własne ryzyko.</ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>
+	<ReadableNumbers_SeparatorCharacter_Custom_Separator>Niestandardowy separator:</ReadableNumbers_SeparatorCharacter_Custom_Separator>
+	<ReadableNumbers_SeparatorCharacter_Custom_Decimal>Niestandardowy separator dziesiętny:</ReadableNumbers_SeparatorCharacter_Custom_Decimal>
 
-<ReadableNumbers_SeparatorCharacter_Label>Wybierz format liczb:</ReadableNumbers_SeparatorCharacter_Label>
-<ReadableNumbers_SeparatorCharacter_Comma_Period>Przecinek jako separator dziesiętny z kropką (1,000,000.00)</ReadableNumbers_SeparatorCharacter_Comma_Period>
-<ReadableNumbers_SeparatorCharacter_Period_Comma>Przecinek jako separator dziesiętny z przecinkiem (1.000.000,00)</ReadableNumbers_SeparatorCharacter_Period_Comma>
-<ReadableNumbers_SeparatorCharacter_Space_Period>Przecinek jako separator dziesiętny z kropką (1 000 000.00)</ReadableNumbers_SeparatorCharacter_Space_Period>
-<ReadableNumbers_SeparatorCharacter_Space_Comma>Przecinek jako separator dziesiętny dziesiętny (1 000 000,00)</ReadableNumbers_SeparatorCharacter_Space_Comma>
-<ReadableNumbers_SeparatorCharacter_None>Brak (1000000.00)</ReadableNumbers_SeparatorCharacter_None>
+	<ReadableNumbers_SeparatorGrouping_Heading>Grupowanie cyfr</ReadableNumbers_SeparatorGrouping_Heading>
+	<ReadableNumbers_SeparatorGrouping_ThreeDigit>Trzy cyfry</ReadableNumbers_SeparatorGrouping_ThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>Dwie i trzy cyfry</ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_FourDigit>Cztery cyfry</ReadableNumbers_SeparatorGrouping_FourDigit>
+	<ReadableNumbers_SeparatorGrouping_None>Brak</ReadableNumbers_SeparatorGrouping_None>
 
-<ReadableNumbers_Cache_Label>Pamięć podręczna:</ReadableNumbers_Cache_Label>
-<ReadableNumbers_Cache_Desc>Używane w celu poprawy wydajności poprzez przechowywanie sformatowanych wersji wcześniej napotkanego tekstu. Pamięć podręczna jest czyszczona po osiągnięciu ustawionej pojemności, aby zapobiec zużyciu pamięci lub opóźnieniom w wyszukiwaniu poprzedniego tekstu.</ReadableNumbers_Cache_Desc>
-<ReadableNumbers_Cache_Enable>Włącz pamięć podręczną</ReadableNumbers_Cache_Enable>
-<ReadableNumbers_Cache_MaxCapacity_Label>Maksymalna pojemność pamięci podręcznej (100–1 000 000)</ReadableNumbers_Cache_MaxCapacity_Label>
+	<ReadableNumbers_Cache_Heading>Pamięć podręczna</ReadableNumbers_Cache_Heading>
+	<ReadableNumbers_Cache_Label>Pamięć podręczna:</ReadableNumbers_Cache_Label>
+	<ReadableNumbers_Cache_Desc>Służy do poprawy wydajności poprzez przechowywanie sformatowanych wersji wcześniej napotkanych tekstów\nPamięć podręczna jest czyszczona po osiągnięciu ustawionej pojemności, aby zapobiec nadmiernemu zużyciu pamięci lub opóźnieniom podczas wyszukiwania wcześniejszych tekstów</ReadableNumbers_Cache_Desc>
+	<ReadableNumbers_Cache_Enable>Włącz pamięć podręczną</ReadableNumbers_Cache_Enable>
+	<ReadableNumbers_Cache_MaxCapacity_Label>Maksymalna pojemność pamięci podręcznej (100 - 1,000,000)</ReadableNumbers_Cache_MaxCapacity_Label>
 
-<ReadableNumbers_Blacklist_Label>Tekst na czarnej liście:</ReadableNumbers_Blacklist_Label>
-<ReadableNumbers_Blacklist_Desc>Tekst w grze zawierający którykolwiek z tych ciągów znaków zostanie pozostawiony w oryginalnym stanie</ReadableNumbers_Blacklist_Desc>
-<ReadableNumbers_Blacklist_TextField>Dodaj tutaj wzór:</ReadableNumbers_Blacklist_TextField>
-<ReadableNumbers_Blacklist_Add>Dodaj</ReadableNumbers_Blacklist_Add>
-
-<!-- Ustaw flagi, aby włączyć/wyłączyć każdą poprawkę -->
+	<ReadableNumbers_BlackList_Heading>Czarna lista</ReadableNumbers_BlackList_Heading>
+	<ReadableNumbers_Blacklist_Label>Tekst na czarnej liście:</ReadableNumbers_Blacklist_Label>
+	<ReadableNumbers_Blacklist_Desc>Tekst w grze zawierający dowolny z tych ciągów znaków pozostanie niezmieniony</ReadableNumbers_Blacklist_Desc>
+	<ReadableNumbers_Blacklist_TextField>Dodaj wzorzec tutaj:</ReadableNumbers_Blacklist_TextField>
+	<ReadableNumbers_Blacklist_Add>Dodaj</ReadableNumbers_Blacklist_Add>
+	
 </LanguageData>
