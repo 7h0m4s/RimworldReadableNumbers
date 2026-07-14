@@ -6,11 +6,10 @@ File creates custom tab in "Dubs Performance Analyzer"
 <Analyzer>
     <ReadableNumbers>
         <Types>
-            <li>Verse.Widgets.Label</li>
-            <li>RimworldReadableNumbers.Patches.Widgets.Widgets</li>
             <li>RimworldReadableNumbers.Utility.Processing</li>
             <li>RimworldReadableNumbers.Utility.Text</li>
             <li>RimworldReadableNumbers.Utility.Validation</li>
+            <li>RimworldReadableNumbers.Utility.Patching</li>
         </Types>
     </ReadableNumbers>
 </Analyzer>
