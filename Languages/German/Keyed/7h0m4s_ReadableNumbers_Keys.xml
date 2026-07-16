@@ -13,13 +13,13 @@
 
 	<ReadableNumbers_SeparatorCharacter_Heading>Trennzeichen und Dezimalstellen</ReadableNumbers_SeparatorCharacter_Heading>
 	<ReadableNumbers_SeparatorCharacter_Label>Gewünschtes Zahlenformat auswählen:</ReadableNumbers_SeparatorCharacter_Label>
-	<ReadableNumbers_SeparatorCharacter_Comma_Period>Komma als Trennzeichen 		| Punkt als Dezimaltrennzeichen</ReadableNumbers_SeparatorCharacter_Comma_Period>
-	<ReadableNumbers_SeparatorCharacter_Period_Comma>Punkt als Trennzeichen 		| Komma als Dezimaltrennzeichen</ReadableNumbers_SeparatorCharacter_Period_Comma>
-	<ReadableNumbers_SeparatorCharacter_Space_Period>Leerzeichen als Trennzeichen 		| Punkt als Dezimaltrennzeichen</ReadableNumbers_SeparatorCharacter_Space_Period>
-	<ReadableNumbers_SeparatorCharacter_Space_Comma>Leerzeichen als Trennzeichen 		| Komma als Dezimaltrennzeichen</ReadableNumbers_SeparatorCharacter_Space_Comma>
-	<ReadableNumbers_SeparatorCharacter_Apostrophe_Period>Apostroph als Trennzeichen 	| Punkt als Dezimaltrennzeichen</ReadableNumbers_SeparatorCharacter_Apostrophe_Period>
-	<ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>Apostroph als Trennzeichen 	| Komma als Dezimaltrennzeichen</ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>
-	<ReadableNumbers_SeparatorCharacter_Custom>Benutzerdefiniertes Trennzeichen 		| Benutzerdefiniertes Dezimaltrennzeichen</ReadableNumbers_SeparatorCharacter_Custom>
+	<ReadableNumbers_SeparatorCharacter_Comma_Period>Komma | Punkt 	</ReadableNumbers_SeparatorCharacter_Comma_Period>
+	<ReadableNumbers_SeparatorCharacter_Period_Comma>Punkt | Komma 	</ReadableNumbers_SeparatorCharacter_Period_Comma>
+	<ReadableNumbers_SeparatorCharacter_Space_Period>Leerzeichen  | Punkt </ReadableNumbers_SeparatorCharacter_Space_Period>
+	<ReadableNumbers_SeparatorCharacter_Space_Comma>Leerzeichen | Komma </ReadableNumbers_SeparatorCharacter_Space_Comma>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Period>Apostroph | Punkt 	</ReadableNumbers_SeparatorCharacter_Apostrophe_Period>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>Apostroph  | Komma </ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>
+	<ReadableNumbers_SeparatorCharacter_Custom>Benutzerdefiniertes | Benutzerdefiniertes </ReadableNumbers_SeparatorCharacter_Custom>
 	<ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>Warnung: Die Verwendung benutzerdefinierter Trenn- und Dezimalzeichen kann zu Darstellungsfehlern führen. Verwendung auf eigene Gefahr.</ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>
 	<ReadableNumbers_SeparatorCharacter_Custom_Separator>Benutzerdefiniertes Trennzeichen:</ReadableNumbers_SeparatorCharacter_Custom_Separator>
 	<ReadableNumbers_SeparatorCharacter_Custom_Decimal>Benutzerdefiniertes Dezimaltrennzeichen:</ReadableNumbers_SeparatorCharacter_Custom_Decimal>
