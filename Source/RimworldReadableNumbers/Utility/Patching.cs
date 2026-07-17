@@ -55,7 +55,12 @@ namespace RimworldReadableNumbers.Utility
             Utility.Patching.DisableReadableNumberFormatting = true;
             Verse.Widgets.Label(rect, label);
             Utility.Patching.DisableReadableNumberFormatting = false;
-            
+        }
+
+        public static UnityEngine.Vector2 TextCalcSizeWithFormatting(string label)
+        {
+            Processing.ProcessLabel(ref label);
+            return Verse.Text.CalcSize(label);
         }
         
         public static IEnumerable<CodeInstruction> FirstMethodReplacer(this IEnumerable<CodeInstruction> instructions, MethodBase from, MethodBase to)
