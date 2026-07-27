@@ -22,24 +22,24 @@ namespace RimworldReadableNumbers.Patches.Verse.GenMapUI
     public static class GenMapUIDrawPawnLabelPatch
     {
 
-        [HarmonyPrefix]
-        public static bool Prefix(Pawn pawn,
-            Rect bgRect,
-            float alpha = 1f,
-            float truncateToWidth = 9999f,
-            Dictionary<string, string> truncatedLabelsCache = null,
-            GameFont font = GameFont.Tiny,
-            bool alwaysDrawBg = true,
-            bool alignCenter = true)
-        {
-            
-            return true;
-        }
+        // [HarmonyPrefix]
+        // public static bool Prefix(Pawn pawn,
+        //     Rect bgRect,
+        //     float alpha = 1f,
+        //     float truncateToWidth = 9999f,
+        //     Dictionary<string, string> truncatedLabelsCache = null,
+        //     GameFont font = GameFont.Tiny,
+        //     bool alwaysDrawBg = true,
+        //     bool alignCenter = true)
+        // {
+        //     
+        //     return true;
+        // }
 
         [HarmonyPostfix]
         public static void Postfix()
         {
-            
+            Utility.Patching.DisableReadableNumberFormatting = false;
         }
     
     }
