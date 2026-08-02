@@ -11,9 +11,10 @@ namespace RimworldReadableNumbers.Patches.Verse.GenMapUI
         [HarmonyPostfix]
         public static void Postfix(ref string __result)
         {
+            bool previousState = Utility.Patching.DisableReadableNumberFormatting;
             Utility.Patching.DisableReadableNumberFormatting = false;
             Utility.Processing.ProcessLabel(ref __result);
-            Utility.Patching.DisableReadableNumberFormatting = true;
+            Utility.Patching.DisableReadableNumberFormatting = previousState;
         }
     }
 }

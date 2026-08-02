@@ -50,7 +50,7 @@ namespace RimworldReadableNumbers.Patches.Verse.Widgets
                 ArgumentType.Normal,
                 ArgumentType.Normal,
             })]
-        public static bool Prefix(float x, ref float curY, float width, string text, TipSignal tip = default(TipSignal))
+        public static bool Prefix(float x, ref float curY, float width, ref string text, TipSignal tip = default(TipSignal))
         {
             if (Utility.Patching.DisableReadableNumberFormatting || Utility.Patching.IsAlreadyReadableNumberFormatted) return true;
             Utility.Processing.ProcessLabel(ref text);
