@@ -33,7 +33,6 @@
   <ItemGroup>
     <Reference Include="0Harmony">
       <HintPath>..\..\..\..\..\workshop\content\294100\2009463077\Current\Assemblies\0Harmony.dll</HintPath>
-      <Private>false</Private>
       <CopyLocal>false</CopyLocal>
     </Reference>
     <Reference Include="Assembly-CSharp">
@@ -55,6 +54,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Patches\DawnOfANewDay\DawnOfANewDayDrawTextPatch.cs" />
     <Compile Include="Patches\DubsPerformanceAnalyzer\DubsPerformanceAnalyzerPatch.cs" />
     <Compile Include="Patches\RimHud\RimHudTextExtensionsToDecimalStringPatch.cs" />
     <Compile Include="Patches\Rimworld\DateReadout\DateReadoutPatch.cs" />
@@ -65,6 +65,7 @@
     <Compile Include="Patches\Rimworld\MainTabWindowHistory\MainTabWindowHistoryDoArchivableRowPatch.cs" />
     <Compile Include="Patches\Rimworld\MainTabWindowQuests\MainTabWindowQuestsDoRewardsPatch.cs" />
     <Compile Include="Patches\Rimworld\QuestPartUtility\QuestPartUtilityGetRewardStackElementsForThingsPatch.cs" />
+    <Compile Include="Patches\Rimworld\VersionControl\VersionControlDrawInfoInCornerPatch.cs" />
     <Compile Include="Patches\ToggleableReadouts\ToggleableReadoutsReadoutCachePatch.cs" />
     <Compile Include="Patches\Unity\Gui\GuiLabelPatch.cs" />
     <Compile Include="Patches\Verse\GenMapUI\GenMapUIDrawPawnLabelPatch.cs" />
