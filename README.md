@@ -49,6 +49,11 @@ There shouldn't be any clashes with the majority of mods so long as they don't m
 There is the possibility for a mod to encounter a visual bug when the slightly larger number text is now too big for the textbox. Causing the text to wrap around or become truncated. If this happens you can try adding a keyword or symbol in that textbox to the blacklist in this mod's settings. To have any text that matches to be excluded from formatting.
 
 ## Change Log
+**1.2.0:**
+
+- Improved support for all Mods. Should now be far less likely for text in modded screens to be displayed incorrectly.
+- Added mod setting to set the minimum number of digets a number must have before sparators are added. Specifically to allow users to exclude years (e.g. 2,026) and weapon names (e.g. M1,911) from being formatted.
+- Minor performance improvements
 
 **1.1.0:**
 

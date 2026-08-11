@@ -27,7 +27,7 @@ namespace RimworldReadableNumbers.Utility
     {
         public static bool HasEnoughDigitsAndNotBlackListed(ref ReadOnlySpan<char> label)
         {
-            var blacklist = RnSetting.Blacklist;
+            var blacklist = RnSetting.Blacklist.AsSpan();
             bool isEnoughDigits = false;
 
             short numDigitsInSequence = 0;
@@ -44,18 +44,19 @@ namespace RimworldReadableNumbers.Utility
                     for (short j = 0; j < blacklist.Length; j++)
                     {
                         var blacklistItem = blacklist[j];
-                        if (i == 0) blacklistItem.SearchIndex = 0;
+                        var blacklistPattern = blacklistItem.Pattern.AsSpan();
+                        if (i == 0) blacklistItem.SearchIndex = 0; // Reset blacklist search positions for new validation.
 
                         // skip if pattern is too big to match anymore
-                        if (blacklistItem.Pattern.Length > label.Length
-                            || blacklistItem.Pattern.Length - blacklistItem.SearchIndex > label.Length - i
-                            || blacklistItem.SearchIndex > blacklistItem.Pattern.Length - 1) continue;
+                        if (blacklistPattern.Length > label.Length
+                            || blacklistPattern.Length - blacklistItem.SearchIndex > label.Length - i
+                            || blacklistItem.SearchIndex > blacklistPattern.Length - 1) continue;
 
 
-                        char currentPatternChar = blacklistItem.Pattern[blacklistItem.SearchIndex];
+                        char currentPatternChar = blacklistPattern[blacklistItem.SearchIndex];
                         if (currentPatternChar == currentChar)
                         {
-                            if (blacklistItem.Pattern.Length - 1 == blacklistItem.SearchIndex)
+                            if (blacklistPattern.Length - 1 == blacklistItem.SearchIndex)
                             {
                                 // if a whole pattern has been matched then return failure
                                 return false;
@@ -73,7 +74,7 @@ namespace RimworldReadableNumbers.Utility
                 if (char.IsNumber(currentChar))
                 {
                     numDigitsInSequence++;
-                    if (numDigitsInSequence >= 4) isEnoughDigits = true;
+                    if (numDigitsInSequence >= RnSetting.MinimumDigitsForSeparatorFormatting) isEnoughDigits = true;
                     if (lastChar == '.' && char.IsNumber(secondLastChar))
                     {
                         hasDecimalPlace = true;

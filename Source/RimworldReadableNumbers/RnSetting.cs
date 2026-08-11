@@ -12,6 +12,7 @@ namespace RimworldReadableNumbers
         public static bool Enable = SettingDefaults.Enable;
         public static bool Debug = SettingDefaults.Debug;
         public static bool FormatAllNumbers = SettingDefaults.FormatAllNumbers;
+        public static int MinimumDigitsForSeparatorFormatting = SettingDefaults.MinimumDigitsForSeparatorFormatting;
         public static RnMod.SeparatorAndDecimalFormat SeparatorAndDecimalFormat = SettingDefaults.SeparatorAndDecimalFormat;
         public static RnMod.SeparatorGrouping SeparatorGrouping = SettingDefaults.SeparatorGrouping;
         public static BlacklistPattern[] Blacklist = SettingDefaults.Blacklist;
@@ -58,6 +59,7 @@ namespace RimworldReadableNumbers
             public static readonly bool Enable = true;
             public static readonly bool Debug = false;
             public static readonly bool FormatAllNumbers = true;
+            public static readonly int MinimumDigitsForSeparatorFormatting = 4;
             public static readonly RnMod.SeparatorAndDecimalFormat SeparatorAndDecimalFormat = RnMod.SeparatorAndDecimalFormat.CommaPeriod;
             public static readonly RnMod.SeparatorGrouping SeparatorGrouping = RnMod.SeparatorGrouping.ThreeDigits;
             public static readonly char CustomSeparatorChar = ',';
@@ -72,6 +74,7 @@ namespace RimworldReadableNumbers
             Enable = SettingDefaults.Enable;
             Debug = SettingDefaults.Debug;
             FormatAllNumbers = SettingDefaults.FormatAllNumbers;
+            MinimumDigitsForSeparatorFormatting = SettingDefaults.MinimumDigitsForSeparatorFormatting;
             
             SeparatorAndDecimalFormat = SettingDefaults.SeparatorAndDecimalFormat;
             CustomSeparatorChar = SettingDefaults.CustomSeparatorChar;
@@ -95,6 +98,7 @@ namespace RimworldReadableNumbers
             Scribe_Values.Look(ref Enable, "enable", SettingDefaults.Enable, false);
             Scribe_Values.Look(ref Debug, "debugmode", SettingDefaults.Debug, false);
             Scribe_Values.Look(ref FormatAllNumbers, "formatallnumbers", SettingDefaults.FormatAllNumbers, false);
+            Scribe_Values.Look(ref MinimumDigitsForSeparatorFormatting, "minimumdigitsforseparatorformatting", SettingDefaults.MinimumDigitsForSeparatorFormatting, false);
             Scribe_Values.Look(ref SeparatorAndDecimalFormat, "numberformat", SettingDefaults.SeparatorAndDecimalFormat, false);
             
             
@@ -215,7 +219,7 @@ namespace RimworldReadableNumbers
             if (resetButtonPressed) ResetToDefault();
             
             // Basic Options Section: Enable, Debug, Restore Defaults
-            var generalSectionHeight = Text.LineHeight * 5;
+            var generalSectionHeight = Text.LineHeight * 10;
             var generalSection = listingStandard.BeginSection(generalSectionHeight);
             Text.Font = GameFont.Medium;
             generalSection.Label("ReadableNumbers_Option_Heading".Translate());
@@ -223,6 +227,10 @@ namespace RimworldReadableNumbers
             generalSection.CheckboxLabeled("ReadableNumbers_Option_Enable".Translate(), ref RnSetting.Enable);
             generalSection.CheckboxLabeled("ReadableNumbers_Option_Debug".Translate(), ref RnSetting.Debug);
             generalSection.CheckboxLabeled("ReadableNumbers_Option_FormatAllNumbers".Translate(), ref RnSetting.FormatAllNumbers);
+            
+            generalSection.Label("ReadableNumbers_Option_MinimumDigitsForSeparatorFormatting".Translate(MinimumDigitsForSeparatorFormatting));
+            generalSection.IntAdjuster(ref MinimumDigitsForSeparatorFormatting, 1, 4);
+            
             listingStandard.EndSection(generalSection);
 
             #endregion Misc Settings

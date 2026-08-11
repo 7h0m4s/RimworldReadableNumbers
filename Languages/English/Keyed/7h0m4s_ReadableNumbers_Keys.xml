@@ -9,7 +9,8 @@
 	<ReadableNumbers_Option_Enable>Enable Readable Numbers</ReadableNumbers_Option_Enable>
 	<ReadableNumbers_Option_RestoreDefault>Restore Default</ReadableNumbers_Option_RestoreDefault>
 	<ReadableNumbers_Option_Debug>Debug Mode</ReadableNumbers_Option_Debug>
-	<ReadableNumbers_Option_FormatAllNumbers>Format Numbers Less Than 1000</ReadableNumbers_Option_FormatAllNumbers>
+	<ReadableNumbers_Option_FormatAllNumbers>Apply decimal format to all numbers</ReadableNumbers_Option_FormatAllNumbers>
+	<ReadableNumbers_Option_MinimumDigitsForSeparatorFormatting>Minimum number length to apply separators: {0}</ReadableNumbers_Option_MinimumDigitsForSeparatorFormatting>
 
 	<ReadableNumbers_SeparatorCharacter_Heading>Separators And Decimals</ReadableNumbers_SeparatorCharacter_Heading>
 	<ReadableNumbers_SeparatorCharacter_Label>Select Desired Format Format:</ReadableNumbers_SeparatorCharacter_Label>

@@ -23,6 +23,9 @@ namespace RimworldReadableNumbers.Utility
         private static readonly char[] _colourTagPrefix = "<color=".ToCharArray();
         private static short _colourTagIndex = 0;
         private static bool _isColourTag = false;
+        private static Rect dummyRect = new Rect(float.MinValue, float.MinValue, float.MinValue, float.MinValue);
+        private static bool _hasLabelChanged = false;
+        
 
         private struct Token
         {
@@ -30,9 +33,15 @@ namespace RimworldReadableNumbers.Utility
             public short Length;
             public bool HasNumber;
         }
-        
-        
-        public static void ProcessLabel(ref string label)
+
+
+        /// <summary>
+        /// Returns True if label was modified
+        /// Returns False if no formatting was performed
+        /// </summary>
+        /// <param name="label"></param>
+        /// <returns></returns>
+        public static bool ProcessLabel(ref string label)
         {
             ReadOnlySpan<char> labelSpan = label.AsSpan();
             if (labelSpan == null
@@ -42,17 +51,20 @@ namespace RimworldReadableNumbers.Utility
                 || Patching.DisableReadableNumberFormatting // skip if formatting has already been done earlier
                 // || Current.ProgramState != ProgramState.Playing
                 // || Current.Game.CurrentMap == null
-               ) return;
+               ) return false;
+            
+            // Reset _hasLabelChanged
+            _hasLabelChanged = false;
             
             // 1. Try to get result from cache
-            if (TryResultCache(ref label)) return;
+            if (TryResultCache(ref label)) return _hasLabelChanged;
             
             // 2. Try to quickly prove that the string is not valid for formatting
             // e.g. not enough sequential numbers
             if (!Validation.HasEnoughDigitsAndNotBlackListed(ref labelSpan))
             {
                 TryAddToResultCache(ref label, null);
-                return;
+                return _hasLabelChanged;
             }
             
             // 3. Split the string up into tokens of sequential digits and sequential non-digits
@@ -63,12 +75,13 @@ namespace RimworldReadableNumbers.Utility
             if (!_hasAnyNumbers)
             {
                 TryAddToResultCache(ref label, null);
-                return;
+                return _hasLabelChanged;
             }
 
             // 5. Perform formatting process and update original label
             CompileLabelResult(ref label, ref labelSpan);
-
+            
+            return _hasLabelChanged;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -77,8 +90,12 @@ namespace RimworldReadableNumbers.Utility
             if(RnSetting.CacheEnable == false) return false;
             if (_resultCache.TryGetValue(label, out string resultValue))
             {
-                if (resultValue == null) return true; // Cached as no formatting needed
+                if (resultValue == null)
+                {
+                    return true; // Cached as no formatting needed
+                }
                 label = resultValue;
+                _hasLabelChanged = true;
                 return true;
             };
             return false;
@@ -103,7 +120,7 @@ namespace RimworldReadableNumbers.Utility
             return new Dictionary<string, string>(new Dictionary<string, string>(RnSetting.CacheMaxCapacity), StringComparer.Ordinal);
         }
         
-        public static void TokeniseString(ReadOnlySpan<char> stringReadOnlySpan)
+        private static void TokeniseString(ReadOnlySpan<char> stringReadOnlySpan)
         {
             _tokenCount = 0;
             _tokenLength = 0;
@@ -170,9 +187,8 @@ namespace RimworldReadableNumbers.Utility
         }
 
 
-        public static void CompileLabelResult(ref string label, ref ReadOnlySpan<char> labelSpan)
+        private static void CompileLabelResult(ref string label, ref ReadOnlySpan<char> labelSpan)
         {
-            bool hasAnySuccessfulFormats = false;
             _resultLength = 0;
             var resultSpan = _resultMemory.Span;
             
@@ -199,7 +215,7 @@ namespace RimworldReadableNumbers.Utility
                 {
                     formattedNumber.CopyTo(resultSpan.Slice(_resultLength, formattedNumber.Length));
                     _resultLength += formattedNumber.Length;
-                    hasAnySuccessfulFormats =  true;
+                    _hasLabelChanged =  true;
                 }
                 else
                 {
@@ -209,7 +225,7 @@ namespace RimworldReadableNumbers.Utility
                 }
             }
 
-            if (hasAnySuccessfulFormats)
+            if (_hasLabelChanged)
             {
                 // Save formatted result and override original Label's value
                 string resultValue = _resultMemory.Slice(0,_resultLength).ToString();

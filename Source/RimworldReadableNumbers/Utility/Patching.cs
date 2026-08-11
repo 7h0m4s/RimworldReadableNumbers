@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
+using System.Runtime.CompilerServices;
 using HarmonyLib;
 using UnityEngine;
 using Verse;
@@ -11,23 +12,11 @@ namespace RimworldReadableNumbers.Utility
 {
     public static class Patching
     {
-        [ThreadStatic]
-        private static bool _disableReadableNumberFormatting = false;
-        public static bool DisableReadableNumberFormatting
-        {
-            get => _disableReadableNumberFormatting;
-            set => _disableReadableNumberFormatting = value;
-        }
-        
+        [ThreadStatic] 
+        public static bool DisableReadableNumberFormatting;
         
         [ThreadStatic]
-        private static bool _isAlreadyReadableNumberFormatted = false;
-        
-        public static bool IsAlreadyReadableNumberFormatted
-        {
-            get => _isAlreadyReadableNumberFormatted;
-            set => _isAlreadyReadableNumberFormatted = value;
-        }
+        public static bool IsAlreadyReadableNumberFormatted;
         
         public static IEnumerable<CodeInstruction> TranspileTranslatorFormattedStringExtensionsTranslate(IEnumerable<CodeInstruction> instructions)
         {
@@ -83,5 +72,16 @@ namespace RimworldReadableNumbers.Utility
                 yield return instruction;
             }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void FormatGuiContentText(ref GUIContent content)
+        {
+            string tempText = content.text;
+            if (Utility.Processing.ProcessLabel(ref tempText))
+            {
+                content.text = tempText;
+            }
+        }
+        
     }
 }
