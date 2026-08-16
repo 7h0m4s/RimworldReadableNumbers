@@ -43,12 +43,11 @@ namespace RimworldReadableNumbers.Utility
         /// <returns></returns>
         public static bool ProcessLabel(ref string label)
         {
-            ReadOnlySpan<char> labelSpan = label.AsSpan();
-            if (labelSpan == null
-                || labelSpan.Length <= 2 // skip if result string is too short to need a separator
-                || labelSpan.Length > short.MaxValue - 1 // skip if string is too big
-                || !RnSetting.Enable
+            int labelLength = label.Length;
+            if (labelLength <= 2 // skip if result string is too short to need a separator
+                || labelLength > short.MaxValue - 1 // skip if string is too big
                 || Patching.DisableReadableNumberFormatting // skip if formatting has already been done earlier
+                || !RnSetting.Enable
                 // || Current.ProgramState != ProgramState.Playing
                 // || Current.Game.CurrentMap == null
                ) return false;
@@ -58,6 +57,8 @@ namespace RimworldReadableNumbers.Utility
             
             // 1. Try to get result from cache
             if (TryResultCache(ref label)) return _hasLabelChanged;
+            
+            ReadOnlySpan<char> labelSpan =  label.AsSpan();
             
             // 2. Try to quickly prove that the string is not valid for formatting
             // e.g. not enough sequential numbers
@@ -236,7 +237,7 @@ namespace RimworldReadableNumbers.Utility
             {
                 // No formatting occured, but store the result in cache anyway
                 // to skip this process in the future
-                TryAddToResultCache(ref label, label);
+                TryAddToResultCache(ref label, null);
             }
         }
       
