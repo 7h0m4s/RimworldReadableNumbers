@@ -56,7 +56,7 @@ There is the possibility for a mod to encounter a visual bug when the slightly l
 **1.2.0:**
 
 - Improved support for all Mods. Should now be far less likely for text in modded screens to be displayed incorrectly.
-- Added mod setting to set the minimum number of digets a number must have before sparators are added. Specifically to allow users to exclude years (e.g. 2,026) and weapon names (e.g. M1,911) from being formatted.
+- Added mod setting to set the minimum number of digts a number must have before sparators are added. Specifically to allow users to exclude years (e.g. 2,026) and weapon names (e.g. M1,911) from being formatted.
 - Minor performance improvements
 
 **1.1.0:**
