@@ -25,14 +25,18 @@ Makes numbers in Rimworld easier to read by adding digit separators.
 
 Formatting will be applied to most modded UI elements.
 
-Can easily enable/disable number formatting mid-game from the Mod Settings.
+Can easily be enabled/disabled via Mod Settings.
 
-A blacklist feature is available in settings to exclude any text that shouldn't be modified.
+A blacklist feature is available in settings to exclude text that shouldn't be modified.
+
+You can customise how long a number must be before formatting is applied.
 
 ## F.A.Q.
 
 **Q.** **Will this affect performance?**  
-**A.** There should be no noticeable impact on performance. All processed text in game is cached for fast retrieval. Even without the cache, a lot of effort has been put in to optimising the formatting process to take as few CPU operations as possible and to quickly skip over any text that doesn't have enough sequential digits to need processing.
+**A.** 
+* For years (for example 2026 -> 2,026), go to mod settings and increase the minimum number of digits a number must have to get separator formatting.
+* For everything else such as pawn or item names (for example M1911 -> M,1911). There is a blacklist available in mod settings. Add all or part of the text that is incorrectly being modified. The mod will avoid formatting any text in game that contains those specific characters. WARNING: An exceptionally long blacklist might cause performance impact.
 
 **Q.** **The mod is formatting a number I don't want it to! How can I fix this? In this case my pawn's name has lots of digits.**  
 **A.** There is a blacklist available in the mod settings. Add all or part of the text that is incorrectly being modified. Then Readable Numbers will avoid formatting any text in game that contains those specific characters. WARNING: An exceptionally long blacklist might cause performance impact.
@@ -74,4 +78,6 @@ There is the possibility for a mod to encounter a visual bug when the slightly l
 
 GNU GENERAL PUBLIC LICENSE V3
 
-**Github:** [https://github.com/7h0m4s/RimworldReadableNumbers](https://github.com/7h0m4s/RimworldReadableNumbers)
+ ### [**Github**](https://github.com/7h0m4s/RimworldReadableNumbers)
+
+ ### [**Ko-Fi**](https://github.com/7h0m4s/RimworldReadableNumbers)
