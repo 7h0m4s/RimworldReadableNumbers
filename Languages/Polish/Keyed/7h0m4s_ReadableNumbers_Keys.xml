@@ -2,43 +2,44 @@
 <LanguageData>
 
 	
-	<ReadableNumbers_Option_Mod_Name>Czytelne liczby</ReadableNumbers_Option_Mod_Name>
+	<ReadableNumbers_Option_Mod_Name>Czytelne Liczby</ReadableNumbers_Option_Mod_Name>
 	
 	
-	<ReadableNumbers_Option_Heading>Ustawienia ogólne</ReadableNumbers_Option_Heading>
-	<ReadableNumbers_Option_Enable>Włącz czytelne liczby</ReadableNumbers_Option_Enable>
-	<ReadableNumbers_Option_RestoreDefault>Przywróć ustawienia domyślne</ReadableNumbers_Option_RestoreDefault>
-	<ReadableNumbers_Option_Debug>Tryb debugowania</ReadableNumbers_Option_Debug>
-	<ReadableNumbers_Option_FormatAllNumbers>Formatuj liczby mniejsze niż 1000</ReadableNumbers_Option_FormatAllNumbers>
+	<ReadableNumbers_Option_Heading>Ustawienia Ogólne</ReadableNumbers_Option_Heading>
+	<ReadableNumbers_Option_Enable>Włącz Czytelne Liczby</ReadableNumbers_Option_Enable>
+	<ReadableNumbers_Option_RestoreDefault>Przywróć Domyślne</ReadableNumbers_Option_RestoreDefault>
+	<ReadableNumbers_Option_Debug>Tryb Debugowania</ReadableNumbers_Option_Debug>
+	<ReadableNumbers_Option_FormatAllNumbers>Zastosuj format dziesiętny do wszystkich liczb</ReadableNumbers_Option_FormatAllNumbers>
+	<ReadableNumbers_Option_MinimumDigitsForSeparatorFormatting>Minimalna liczba cyfr, aby zastosować separatory: {0}</ReadableNumbers_Option_MinimumDigitsForSeparatorFormatting>
 
-	<ReadableNumbers_SeparatorCharacter_Heading>Separatory i miejsca dziesiętne</ReadableNumbers_SeparatorCharacter_Heading>
-	<ReadableNumbers_SeparatorCharacter_Label>Wybierz żądany format liczb:</ReadableNumbers_SeparatorCharacter_Label>
-	<ReadableNumbers_SeparatorCharacter_Comma_Period>Separator przecinek 		| Kropka dziesiętna</ReadableNumbers_SeparatorCharacter_Comma_Period>
-	<ReadableNumbers_SeparatorCharacter_Period_Comma>Separator kropka 		| Przecinek dziesiętny</ReadableNumbers_SeparatorCharacter_Period_Comma>
-	<ReadableNumbers_SeparatorCharacter_Space_Period>Separator spacja 		| Kropka dziesiętna</ReadableNumbers_SeparatorCharacter_Space_Period>
-	<ReadableNumbers_SeparatorCharacter_Space_Comma>Separator spacja 		| Przecinek dziesiętny</ReadableNumbers_SeparatorCharacter_Space_Comma>
-	<ReadableNumbers_SeparatorCharacter_Apostrophe_Period>Separator apostrof 	| Kropka dziesiętna</ReadableNumbers_SeparatorCharacter_Apostrophe_Period>
-	<ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>Separator apostrof 	| Przecinek dziesiętny</ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>
-	<ReadableNumbers_SeparatorCharacter_Custom>Niestandardowy separator 		| Niestandardowy separator dziesiętny</ReadableNumbers_SeparatorCharacter_Custom>
-	<ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>Ostrzeżenie: Używanie niestandardowych separatorów i znaków dziesiętnych może powodować błędy wyświetlania. Korzystasz na własne ryzyko.</ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>
+	<ReadableNumbers_SeparatorCharacter_Heading>Separatory i Ułamki Dzielne</ReadableNumbers_SeparatorCharacter_Heading>
+	<ReadableNumbers_SeparatorCharacter_Label>Wybierz żądany format:</ReadableNumbers_SeparatorCharacter_Label>
+	<ReadableNumbers_SeparatorCharacter_Comma_Period>Przecinek jako separator | Kropka jako ułamek</ReadableNumbers_SeparatorCharacter_Comma_Period>
+	<ReadableNumbers_SeparatorCharacter_Period_Comma>Kropka jako separator | Przecinek jako ułamek</ReadableNumbers_SeparatorCharacter_Period_Comma>
+	<ReadableNumbers_SeparatorCharacter_Space_Period>Spacja jako separator | Kropka jako ułamek</ReadableNumbers_SeparatorCharacter_Space_Period>
+	<ReadableNumbers_SeparatorCharacter_Space_Comma>Spacja jako separator | Przecinek jako ułamek</ReadableNumbers_SeparatorCharacter_Space_Comma>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Period>Apostrof jako separator | Kropka jako ułamek</ReadableNumbers_SeparatorCharacter_Apostrophe_Period>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>Apostrof jako separator | Przecinek jako ułamek</ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>
+	<ReadableNumbers_SeparatorCharacter_Custom>Niestandardowy separator | Niestandardowy ułamek</ReadableNumbers_SeparatorCharacter_Custom>
+	<ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>Ostrzeżenie: Używanie niestandardowych separatorów i ułamków może powodować błędy wizualne. Używaj na własne ryzyko.</ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>
 	<ReadableNumbers_SeparatorCharacter_Custom_Separator>Niestandardowy separator:</ReadableNumbers_SeparatorCharacter_Custom_Separator>
-	<ReadableNumbers_SeparatorCharacter_Custom_Decimal>Niestandardowy separator dziesiętny:</ReadableNumbers_SeparatorCharacter_Custom_Decimal>
+	<ReadableNumbers_SeparatorCharacter_Custom_Decimal>Niestandardowy ułamek:</ReadableNumbers_SeparatorCharacter_Custom_Decimal>
 
-	<ReadableNumbers_SeparatorGrouping_Heading>Grupowanie cyfr</ReadableNumbers_SeparatorGrouping_Heading>
+	<ReadableNumbers_SeparatorGrouping_Heading>Grupowanie Cyfr</ReadableNumbers_SeparatorGrouping_Heading>
 	<ReadableNumbers_SeparatorGrouping_ThreeDigit>Trzy cyfry</ReadableNumbers_SeparatorGrouping_ThreeDigit>
 	<ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>Dwie i trzy cyfry</ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>
 	<ReadableNumbers_SeparatorGrouping_FourDigit>Cztery cyfry</ReadableNumbers_SeparatorGrouping_FourDigit>
 	<ReadableNumbers_SeparatorGrouping_None>Brak</ReadableNumbers_SeparatorGrouping_None>
 
-	<ReadableNumbers_Cache_Heading>Pamięć podręczna</ReadableNumbers_Cache_Heading>
-	<ReadableNumbers_Cache_Label>Pamięć podręczna:</ReadableNumbers_Cache_Label>
-	<ReadableNumbers_Cache_Desc>Służy do poprawy wydajności poprzez przechowywanie sformatowanych wersji wcześniej napotkanych tekstów\nPamięć podręczna jest czyszczona po osiągnięciu ustawionej pojemności, aby zapobiec nadmiernemu zużyciu pamięci lub opóźnieniom podczas wyszukiwania wcześniejszych tekstów</ReadableNumbers_Cache_Desc>
-	<ReadableNumbers_Cache_Enable>Włącz pamięć podręczną</ReadableNumbers_Cache_Enable>
-	<ReadableNumbers_Cache_MaxCapacity_Label>Maksymalna pojemność pamięci podręcznej (100 - 1,000,000)</ReadableNumbers_Cache_MaxCapacity_Label>
+	<ReadableNumbers_Cache_Heading>Pamięć Podrędna</ReadableNumbers_Cache_Heading>
+	<ReadableNumbers_Cache_Label>Pamięć podrędna:</ReadableNumbers_Cache_Label>
+	<ReadableNumbers_Cache_Desc>Używany do poprawy wydajności poprzez przechowywanie sformatowanych wersji wcześniej napotkanych tekstów.\n Pamięć podręczna jest czyszczona, gdy osiąga ustawioną pojemność, aby uniknąć nadmiernego użycia pamięci lub opóźnić wyszukiwanie poprzedniego tekstu</ReadableNumbers_Cache_Desc>
+	<ReadableNumbers_Cache_Enable>Włącz Pamięć Podręną</ReadableNumbers_Cache_Enable>
+	<ReadableNumbers_Cache_MaxCapacity_Label>Maksymalna pojemność pamięci podręcznej (100 - 1 000 000)</ReadableNumbers_Cache_MaxCapacity_Label>
 
-	<ReadableNumbers_BlackList_Heading>Czarna lista</ReadableNumbers_BlackList_Heading>
+	<ReadableNumbers_BlackList_Heading>Czarna Lista</ReadableNumbers_BlackList_Heading>
 	<ReadableNumbers_Blacklist_Label>Tekst na czarnej liście:</ReadableNumbers_Blacklist_Label>
-	<ReadableNumbers_Blacklist_Desc>Tekst w grze zawierający dowolny z tych ciągów znaków pozostanie niezmieniony</ReadableNumbers_Blacklist_Desc>
+	<ReadableNumbers_Blacklist_Desc>Tekst w grze zawierający którąkolwiek z tych sekwencji znaków pozostanie w stanie oryginalnym</ReadableNumbers_Blacklist_Desc>
 	<ReadableNumbers_Blacklist_TextField>Dodaj wzorzec tutaj:</ReadableNumbers_Blacklist_TextField>
 	<ReadableNumbers_Blacklist_Add>Dodaj</ReadableNumbers_Blacklist_Add>
 	

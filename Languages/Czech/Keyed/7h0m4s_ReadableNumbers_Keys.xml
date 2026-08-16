@@ -5,41 +5,42 @@
 	<ReadableNumbers_Option_Mod_Name>Čitelná čísla</ReadableNumbers_Option_Mod_Name>
 	
 	
-	<ReadableNumbers_Option_Heading>Obecná nastavení</ReadableNumbers_Option_Heading>
+	<ReadableNumbers_Option_Heading>Obecné nastavení</ReadableNumbers_Option_Heading>
 	<ReadableNumbers_Option_Enable>Povolit čitelná čísla</ReadableNumbers_Option_Enable>
 	<ReadableNumbers_Option_RestoreDefault>Obnovit výchozí nastavení</ReadableNumbers_Option_RestoreDefault>
-	<ReadableNumbers_Option_Debug>Režim ladění</ReadableNumbers_Option_Debug>
-	<ReadableNumbers_Option_FormatAllNumbers>Formátovat čísla menší než 1000</ReadableNumbers_Option_FormatAllNumbers>
+	<ReadableNumbers_Option_Debug>Ladící režim</ReadableNumbers_Option_Debug>
+	<ReadableNumbers_Option_FormatAllNumbers>Použít desetiný formát pro všechna čísla</ReadableNumbers_Option_FormatAllNumbers>
+	<ReadableNumbers_Option_MinimumDigitsForSeparatorFormatting>Minimální délka čísla pro formátování oddělovačů: {0}</ReadableNumbers_Option_MinimumDigitsForSeparatorFormatting>
 
-	<ReadableNumbers_SeparatorCharacter_Heading>Oddělovače a desetinné čárky</ReadableNumbers_SeparatorCharacter_Heading>
+	<ReadableNumbers_SeparatorCharacter_Heading>Oddělovače a desetinná místa</ReadableNumbers_SeparatorCharacter_Heading>
 	<ReadableNumbers_SeparatorCharacter_Label>Vyberte požadovaný formát:</ReadableNumbers_SeparatorCharacter_Label>
-	<ReadableNumbers_SeparatorCharacter_Comma_Period>Oddělovač čárka 		| Desetinná tečka</ReadableNumbers_SeparatorCharacter_Comma_Period>
-	<ReadableNumbers_SeparatorCharacter_Period_Comma>Oddělovač tečka 		| Desetinná čárka</ReadableNumbers_SeparatorCharacter_Period_Comma>
-	<ReadableNumbers_SeparatorCharacter_Space_Period>Oddělovač mezera 		| Desetinná tečka</ReadableNumbers_SeparatorCharacter_Space_Period>
-	<ReadableNumbers_SeparatorCharacter_Space_Comma>Oddělovač mezera 		| Desetinná čárka</ReadableNumbers_SeparatorCharacter_Space_Comma>
-	<ReadableNumbers_SeparatorCharacter_Apostrophe_Period>Oddělovač apostrof 	| Desetinná tečka</ReadableNumbers_SeparatorCharacter_Apostrophe_Period>
-	<ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>Oddělovač apostrof 	| Desetinná čárka</ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>
-	<ReadableNumbers_SeparatorCharacter_Custom>Vlastní oddělovač 		| Vlastní desetinný oddělovač</ReadableNumbers_SeparatorCharacter_Custom>
-	<ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>Upozornění: Použití vlastních oddělovačů a desetinných znaků může způsobit grafické chyby. Používejte na vlastní riziko.</ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>
+	<ReadableNumbers_SeparatorCharacter_Comma_Period>Čárka jako oddělovač | Tečka jako desetinné místo</ReadableNumbers_SeparatorCharacter_Comma_Period>
+	<ReadableNumbers_SeparatorCharacter_Period_Comma>Tečka jako oddělovač | Čárka jako desetinné místo</ReadableNumbers_SeparatorCharacter_Period_Comma>
+	<ReadableNumbers_SeparatorCharacter_Space_Period>Mezera jako oddělovač | Tečka jako desetinné místo</ReadableNumbers_SeparatorCharacter_Space_Period>
+	<ReadableNumbers_SeparatorCharacter_Space_Comma>Mezera jako oddělovač | Čárka jako desetinné místo</ReadableNumbers_SeparatorCharacter_Space_Comma>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Period>Apostrof jako oddělovač | Tečka jako desetinné místo</ReadableNumbers_SeparatorCharacter_Apostrophe_Period>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>Apostrof jako oddělovač | Čárka jako desetinné místo</ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>
+	<ReadableNumbers_SeparatorCharacter_Custom>Vlastní oddělovač | Vlastní desetinné místo</ReadableNumbers_SeparatorCharacter_Custom>
+	<ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>Upozornění: Použití vlastních oddělovačů a desetinných míst může způsobit vizuální chyby. Používejte na vlastní riziko.</ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>
 	<ReadableNumbers_SeparatorCharacter_Custom_Separator>Vlastní oddělovač:</ReadableNumbers_SeparatorCharacter_Custom_Separator>
-	<ReadableNumbers_SeparatorCharacter_Custom_Decimal>Vlastní desetinný oddělovač:</ReadableNumbers_SeparatorCharacter_Custom_Decimal>
+	<ReadableNumbers_SeparatorCharacter_Custom_Decimal>Vlastní desetinné místo:</ReadableNumbers_SeparatorCharacter_Custom_Decimal>
 
 	<ReadableNumbers_SeparatorGrouping_Heading>Seskupování číslic</ReadableNumbers_SeparatorGrouping_Heading>
-	<ReadableNumbers_SeparatorGrouping_ThreeDigit>Po třech číslicích</ReadableNumbers_SeparatorGrouping_ThreeDigit>
-	<ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>Po dvou a třech číslicích</ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>
-	<ReadableNumbers_SeparatorGrouping_FourDigit>Po čtyřech číslicích</ReadableNumbers_SeparatorGrouping_FourDigit>
+	<ReadableNumbers_SeparatorGrouping_ThreeDigit>Tři číslice</ReadableNumbers_SeparatorGrouping_ThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>Dvě a tři číslice</ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_FourDigit>Čtyři číslice</ReadableNumbers_SeparatorGrouping_FourDigit>
 	<ReadableNumbers_SeparatorGrouping_None>Žádné</ReadableNumbers_SeparatorGrouping_None>
 
-	<ReadableNumbers_Cache_Heading>Mezipaměť</ReadableNumbers_Cache_Heading>
-	<ReadableNumbers_Cache_Label>Mezipaměť:</ReadableNumbers_Cache_Label>
-	<ReadableNumbers_Cache_Desc>Používá se ke zvýšení výkonu ukládáním naformátovaných verzí dříve zobrazených textů\nMezipaměť se po dosažení nastavené kapacity vymaže, aby se zabránilo nadměrnému využití paměti nebo zpomalení při vyhledávání dřívějších textů</ReadableNumbers_Cache_Desc>
-	<ReadableNumbers_Cache_Enable>Povolit mezipaměť</ReadableNumbers_Cache_Enable>
-	<ReadableNumbers_Cache_MaxCapacity_Label>Maximální kapacita mezipaměti (100 - 1,000,000)</ReadableNumbers_Cache_MaxCapacity_Label>
+	<ReadableNumbers_Cache_Heading>Cache</ReadableNumbers_Cache_Heading>
+	<ReadableNumbers_Cache_Label>Cache:</ReadableNumbers_Cache_Label>
+	<ReadableNumbers_Cache_Desc>Slouží ke zlepšení výkonu uložením formátovaných verzí dříve nalezených textů.\nThe Cache je vymazána, když dosáhne nastavené kapacity, aby se zabránilo používání paměti nebo zpoždění vyhledávání předchozího textu</ReadableNumbers_Cache_Desc>
+	<ReadableNumbers_Cache_Enable>Povolit cache</ReadableNumbers_Cache_Enable>
+	<ReadableNumbers_Cache_MaxCapacity_Label>Maximální kapacita cache (100 - 1 000 000)</ReadableNumbers_Cache_MaxCapacity_Label>
 
 	<ReadableNumbers_BlackList_Heading>Černá listina</ReadableNumbers_BlackList_Heading>
-	<ReadableNumbers_Blacklist_Label>Text na černé listině:</ReadableNumbers_Blacklist_Label>
-	<ReadableNumbers_Blacklist_Desc>Text ve hře obsahující kterýkoli z těchto řetězců znaků zůstane v původním stavu</ReadableNumbers_Blacklist_Desc>
-	<ReadableNumbers_Blacklist_TextField>Přidejte vzor zde:</ReadableNumbers_Blacklist_TextField>
+	<ReadableNumbers_Blacklist_Label>Zakázaný text:</ReadableNumbers_Blacklist_Label>
+	<ReadableNumbers_Blacklist_Desc>Text ve hře obsahující některý z těchto znaků zůstane v původní podobě</ReadableNumbers_Blacklist_Desc>
+	<ReadableNumbers_Blacklist_TextField>Přidat vzor zde:</ReadableNumbers_Blacklist_TextField>
 	<ReadableNumbers_Blacklist_Add>Přidat</ReadableNumbers_Blacklist_Add>
 	
 </LanguageData>

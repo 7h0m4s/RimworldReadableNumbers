@@ -2,44 +2,45 @@
 <LanguageData>
 
 	
-	<ReadableNumbers_Option_Mod_Name>Удобочитаемые числа</ReadableNumbers_Option_Mod_Name>
+	<ReadableNumbers_Option_Mod_Name>Читаемые числа</ReadableNumbers_Option_Mod_Name>
 	
 	
 	<ReadableNumbers_Option_Heading>Общие настройки</ReadableNumbers_Option_Heading>
-	<ReadableNumbers_Option_Enable>Включить удобочитаемые числа</ReadableNumbers_Option_Enable>
+	<ReadableNumbers_Option_Enable>Включить читаемые числа</ReadableNumbers_Option_Enable>
 	<ReadableNumbers_Option_RestoreDefault>Восстановить настройки по умолчанию</ReadableNumbers_Option_RestoreDefault>
 	<ReadableNumbers_Option_Debug>Режим отладки</ReadableNumbers_Option_Debug>
-	<ReadableNumbers_Option_FormatAllNumbers>Форматировать числа меньше 1000</ReadableNumbers_Option_FormatAllNumbers>
+	<ReadableNumbers_Option_FormatAllNumbers>Применить десятичный формат ко всем числам</ReadableNumbers_Option_FormatAllNumbers>
+	<ReadableNumbers_Option_MinimumDigitsForSeparatorFormatting>Минимальное количество цифр для применения разделителей: {0}</ReadableNumbers_Option_MinimumDigitsForSeparatorFormatting>
 
 	<ReadableNumbers_SeparatorCharacter_Heading>Разделители и десятичные знаки</ReadableNumbers_SeparatorCharacter_Heading>
-	<ReadableNumbers_SeparatorCharacter_Label>Выберите желаемый формат чисел:</ReadableNumbers_SeparatorCharacter_Label>
-	<ReadableNumbers_SeparatorCharacter_Comma_Period>Разделитель — запятая 		| Десятичный знак — точка</ReadableNumbers_SeparatorCharacter_Comma_Period>
-	<ReadableNumbers_SeparatorCharacter_Period_Comma>Разделитель — точка 		| Десятичный знак — запятая</ReadableNumbers_SeparatorCharacter_Period_Comma>
-	<ReadableNumbers_SeparatorCharacter_Space_Period>Разделитель — пробел 		| Десятичный знак — точка</ReadableNumbers_SeparatorCharacter_Space_Period>
-	<ReadableNumbers_SeparatorCharacter_Space_Comma>Разделитель — пробел 		| Десятичный знак — запятая</ReadableNumbers_SeparatorCharacter_Space_Comma>
-	<ReadableNumbers_SeparatorCharacter_Apostrophe_Period>Разделитель — апостроф 	| Десятичный знак — точка</ReadableNumbers_SeparatorCharacter_Apostrophe_Period>
-	<ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>Разделитель — апостроф 	| Десятичный знак — запятая</ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>
-	<ReadableNumbers_SeparatorCharacter_Custom>Пользовательский разделитель 		| Пользовательский десятичный знак</ReadableNumbers_SeparatorCharacter_Custom>
-	<ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>Предупреждение: использование пользовательских разделителей и десятичных знаков может вызвать ошибки отображения. Используйте на свой страх и риск.</ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>
+	<ReadableNumbers_SeparatorCharacter_Label>Выберите желаемый формат:</ReadableNumbers_SeparatorCharacter_Label>
+	<ReadableNumbers_SeparatorCharacter_Comma_Period>Запятая в качестве разделителя | Точка в качестве десятичного знака</ReadableNumbers_SeparatorCharacter_Comma_Period>
+	<ReadableNumbers_SeparatorCharacter_Period_Comma>Точка в качестве разделителя | Запятая в качестве десятичного знака</ReadableNumbers_SeparatorCharacter_Period_Comma>
+	<ReadableNumbers_SeparatorCharacter_Space_Period>Пробел в качестве разделителя | Точка в качестве десятичного знака</ReadableNumbers_SeparatorCharacter_Space_Period>
+	<ReadableNumbers_SeparatorCharacter_Space_Comma>Пробел в качестве разделителя | Запятая в качестве десятичного знака</ReadableNumbers_SeparatorCharacter_Space_Comma>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Period>Апостроф в качестве разделителя | Точка в качестве десятичного знака</ReadableNumbers_SeparatorCharacter_Apostrophe_Period>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>Апостроф в качестве разделителя | Запятая в качестве десятичного знака</ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>
+	<ReadableNumbers_SeparatorCharacter_Custom>Пользовательский разделитель | Пользовательский десятичный знак</ReadableNumbers_SeparatorCharacter_Custom>
+	<ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>Предупреждение: Использование пользовательских разделителей и десятичных знаков может привести к визуальным ошибкам. Используйте на свой страх и риск.</ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>
 	<ReadableNumbers_SeparatorCharacter_Custom_Separator>Пользовательский разделитель:</ReadableNumbers_SeparatorCharacter_Custom_Separator>
 	<ReadableNumbers_SeparatorCharacter_Custom_Decimal>Пользовательский десятичный знак:</ReadableNumbers_SeparatorCharacter_Custom_Decimal>
 
 	<ReadableNumbers_SeparatorGrouping_Heading>Группировка цифр</ReadableNumbers_SeparatorGrouping_Heading>
-	<ReadableNumbers_SeparatorGrouping_ThreeDigit>По три цифры</ReadableNumbers_SeparatorGrouping_ThreeDigit>
-	<ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>По две и три цифры</ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>
-	<ReadableNumbers_SeparatorGrouping_FourDigit>По четыре цифры</ReadableNumbers_SeparatorGrouping_FourDigit>
-	<ReadableNumbers_SeparatorGrouping_None>Без группировки</ReadableNumbers_SeparatorGrouping_None>
+	<ReadableNumbers_SeparatorGrouping_ThreeDigit>Три цифры</ReadableNumbers_SeparatorGrouping_ThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>Две и три цифры</ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_FourDigit>Четыре цифры</ReadableNumbers_SeparatorGrouping_FourDigit>
+	<ReadableNumbers_SeparatorGrouping_None>Нет</ReadableNumbers_SeparatorGrouping_None>
 
 	<ReadableNumbers_Cache_Heading>Кэш</ReadableNumbers_Cache_Heading>
 	<ReadableNumbers_Cache_Label>Кэш:</ReadableNumbers_Cache_Label>
-	<ReadableNumbers_Cache_Desc>Используется для повышения производительности за счёт хранения отформатированных версий ранее встречавшегося текста\nКэш очищается при достижении заданной ёмкости, чтобы предотвратить чрезмерное использование памяти или задержки при поиске ранее обработанного текста</ReadableNumbers_Cache_Desc>
+	<ReadableNumbers_Cache_Desc>Используется для повышения производительности путем хранения отформатированных версий ранее встречавшихся текстов.\n Кэш очищается, когда достигает установленного размера, чтобы избежать чрезмерного использования памяти или задержки поиска предыдущего текста</ReadableNumbers_Cache_Desc>
 	<ReadableNumbers_Cache_Enable>Включить кэш</ReadableNumbers_Cache_Enable>
-	<ReadableNumbers_Cache_MaxCapacity_Label>Максимальный размер кэша (100 - 1,000,000)</ReadableNumbers_Cache_MaxCapacity_Label>
+	<ReadableNumbers_Cache_MaxCapacity_Label>Максимальный размер кэша (100 - 1 000 000)</ReadableNumbers_Cache_MaxCapacity_Label>
 
-	<ReadableNumbers_BlackList_Heading>Чёрный список</ReadableNumbers_BlackList_Heading>
-	<ReadableNumbers_Blacklist_Label>Текст в чёрном списке:</ReadableNumbers_Blacklist_Label>
-	<ReadableNumbers_Blacklist_Desc>Игровой текст, содержащий любую из этих строк символов, останется без изменений</ReadableNumbers_Blacklist_Desc>
-	<ReadableNumbers_Blacklist_TextField>Добавьте шаблон здесь:</ReadableNumbers_Blacklist_TextField>
+	<ReadableNumbers_BlackList_Heading>Черный список</ReadableNumbers_BlackList_Heading>
+	<ReadableNumbers_Blacklist_Label>Текст в черном списке:</ReadableNumbers_Blacklist_Label>
+	<ReadableNumbers_Blacklist_Desc>Текст в игре, содержащий любую из этих последовательностей символов, останется в своем исходном состоянии</ReadableNumbers_Blacklist_Desc>
+	<ReadableNumbers_Blacklist_TextField>Добавить шаблон здесь:</ReadableNumbers_Blacklist_TextField>
 	<ReadableNumbers_Blacklist_Add>Добавить</ReadableNumbers_Blacklist_Add>
 	
 </LanguageData>

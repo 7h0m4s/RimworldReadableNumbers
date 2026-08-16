@@ -2,44 +2,45 @@
 <LanguageData>
 
 	
-	<ReadableNumbers_Option_Mod_Name>Readable Numbers</ReadableNumbers_Option_Mod_Name>
+	<ReadableNumbers_Option_Mod_Name>Läsbara Tal</ReadableNumbers_Option_Mod_Name>
 	
 	
-	<ReadableNumbers_Option_Heading>Configuración General</ReadableNumbers_Option_Heading>
-	<ReadableNumbers_Option_Enable>Habilitar Readable Numbers</ReadableNumbers_Option_Enable>
-	<ReadableNumbers_Option_RestoreDefault>Restaurar Valores Predeterminados</ReadableNumbers_Option_RestoreDefault>
-	<ReadableNumbers_Option_Debug>Modo Depuración</ReadableNumbers_Option_Debug>
-	<ReadableNumbers_Option_FormatAllNumbers>Formatear Números Menores a 1000</ReadableNumbers_Option_FormatAllNumbers>
+	<ReadableNumbers_Option_Heading>Allmänna Inställningar</ReadableNumbers_Option_Heading>
+	<ReadableNumbers_Option_Enable>Aktivera läsbara tal</ReadableNumbers_Option_Enable>
+	<ReadableNumbers_Option_RestoreDefault>Återställ standard</ReadableNumbers_Option_RestoreDefault>
+	<ReadableNumbers_Option_Debug>Debugläge</ReadableNumbers_Option_Debug>
+	<ReadableNumbers_Option_FormatAllNumbers>Tillämpa decimalformat på alla tal</ReadableNumbers_Option_FormatAllNumbers>
+	<ReadableNumbers_Option_MinimumDigitsForSeparatorFormatting>Minimiantal siffror för att tillämpa separatorer: {0}</ReadableNumbers_Option_MinimumDigitsForSeparatorFormatting>
 
-	<ReadableNumbers_SeparatorCharacter_Heading>Separadores y Decimales</ReadableNumbers_SeparatorCharacter_Heading>
-	<ReadableNumbers_SeparatorCharacter_Label>Seleccionar Formato Deseado:</ReadableNumbers_SeparatorCharacter_Label>
-	<ReadableNumbers_SeparatorCharacter_Comma_Period>Separador de coma        | Decimal de punto</ReadableNumbers_SeparatorCharacter_Comma_Period>
-	<ReadableNumbers_SeparatorCharacter_Period_Comma>Separador de punto       | Decimal de coma</ReadableNumbers_SeparatorCharacter_Period_Comma>
-	<ReadableNumbers_SeparatorCharacter_Space_Period>Separador de espacio     | Decimal de punto</ReadableNumbers_SeparatorCharacter_Space_Period>
-	<ReadableNumbers_SeparatorCharacter_Space_Comma>Separador de espacio     | Decimal de coma</ReadableNumbers_SeparatorCharacter_Space_Comma>
-	<ReadableNumbers_SeparatorCharacter_Apostrophe_Period>Separador de apóstrofe   | Decimal de punto</ReadableNumbers_SeparatorCharacter_Apostrophe_Period>
-	<ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>Separador de apóstrofe   | Decimal de coma</ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>
-	<ReadableNumbers_SeparatorCharacter_Custom>Separador personalizado  | Decimal personalizado</ReadableNumbers_SeparatorCharacter_Custom>
-	<ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>Advertencia: El uso de separadores y decimales personalizados puede causar errores visuales. Úselo bajo su propio riesgo.</ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>
-	<ReadableNumbers_SeparatorCharacter_Custom_Separator>Separador Personalizado:</ReadableNumbers_SeparatorCharacter_Custom_Separator>
-	<ReadableNumbers_SeparatorCharacter_Custom_Decimal>Decimal Personalizado:</ReadableNumbers_SeparatorCharacter_Custom_Decimal>
+	<ReadableNumbers_SeparatorCharacter_Heading>Separatorer och Decimaltecken</ReadableNumbers_SeparatorCharacter_Heading>
+	<ReadableNumbers_SeparatorCharacter_Label>Välj önskat format:</ReadableNumbers_SeparatorCharacter_Label>
+	<ReadableNumbers_SeparatorCharacter_Comma_Period>Komma som separator | Punkt som decimaltecken</ReadableNumbers_SeparatorCharacter_Comma_Period>
+	<ReadableNumbers_SeparatorCharacter_Period_Comma>Punkt som separator | Komma som decimaltecken</ReadableNumbers_SeparatorCharacter_Period_Comma>
+	<ReadableNumbers_SeparatorCharacter_Space_Period>Utrymme som separator | Punkt som decimaltecken</ReadableNumbers_SeparatorCharacter_Space_Period>
+	<ReadableNumbers_SeparatorCharacter_Space_Comma>Utrymme som separator | Komma som decimaltecken</ReadableNumbers_SeparatorCharacter_Space_Comma>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Period>Apostrof som separator | Punkt som decimaltecken</ReadableNumbers_SeparatorCharacter_Apostrophe_Period>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>Apostrof som separator | Komma som decimaltecken</ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>
+	<ReadableNumbers_SeparatorCharacter_Custom>Anpassad separator | Anpassat decimaltecken</ReadableNumbers_SeparatorCharacter_Custom>
+	<ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>Varning: Att använda anpassade separatorer och decimaltecken kan orsaka visuella fel. Använd på egen risk.</ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>
+	<ReadableNumbers_SeparatorCharacter_Custom_Separator>Anpassad separator:</ReadableNumbers_SeparatorCharacter_Custom_Separator>
+	<ReadableNumbers_SeparatorCharacter_Custom_Decimal>Anpassat decimaltecken:</ReadableNumbers_SeparatorCharacter_Custom_Decimal>
 
-	<ReadableNumbers_SeparatorGrouping_Heading>Agrupación de Dígitos</ReadableNumbers_SeparatorGrouping_Heading>
-	<ReadableNumbers_SeparatorGrouping_ThreeDigit>Tres Dígitos</ReadableNumbers_SeparatorGrouping_ThreeDigit>
-	<ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>Dos y Tres Dígitos</ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>
-	<ReadableNumbers_SeparatorGrouping_FourDigit>Cuatro Dígitos</ReadableNumbers_SeparatorGrouping_FourDigit>
-	<ReadableNumbers_SeparatorGrouping_None>Ninguno</ReadableNumbers_SeparatorGrouping_None>
+	<ReadableNumbers_SeparatorGrouping_Heading>Siffrgruppering</ReadableNumbers_SeparatorGrouping_Heading>
+	<ReadableNumbers_SeparatorGrouping_ThreeDigit>Tre siffror</ReadableNumbers_SeparatorGrouping_ThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>Två och tre siffror</ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_FourDigit>Fyra siffror</ReadableNumbers_SeparatorGrouping_FourDigit>
+	<ReadableNumbers_SeparatorGrouping_None>Inga</ReadableNumbers_SeparatorGrouping_None>
 
-	<ReadableNumbers_Cache_Heading>Caché</ReadableNumbers_Cache_Heading>
-	<ReadableNumbers_Cache_Label>Caché:</ReadableNumbers_Cache_Label>
-	<ReadableNumbers_Cache_Desc>Se utiliza para mejorar el rendimiento almacenando las versiones formateadas del texto encontrado anteriormente\nLa caché se borra cada vez que alcanza la capacidad establecida, para evitar el uso excesivo de memoria o retrasos al buscar texto anterior</ReadableNumbers_Cache_Desc>
-	<ReadableNumbers_Cache_Enable>Habilitar Caché</ReadableNumbers_Cache_Enable>
-	<ReadableNumbers_Cache_MaxCapacity_Label>Capacidad Máxima de la Caché (100 - 1,000,000)</ReadableNumbers_Cache_MaxCapacity_Label>
+	<ReadableNumbers_Cache_Heading>Cache</ReadableNumbers_Cache_Heading>
+	<ReadableNumbers_Cache_Label>Cache:</ReadableNumbers_Cache_Label>
+	<ReadableNumbers_Cache_Desc>Används för att förbättra prestandan genom att lagra formaterade versioner av tidigare påträffad text.\n Cache minns när den når den angivna kapaciteten för att undvika överdriven minnesanvändning eller fördröjning av sökning efter tidigare text</ReadableNumbers_Cache_Desc>
+	<ReadableNumbers_Cache_Enable>Aktivera cache</ReadableNumbers_Cache_Enable>
+	<ReadableNumbers_Cache_MaxCapacity_Label>Maximal cachekapacitet (100 - 1 000 000)</ReadableNumbers_Cache_MaxCapacity_Label>
 
-	<ReadableNumbers_BlackList_Heading>Lista Negra</ReadableNumbers_BlackList_Heading>
-	<ReadableNumbers_Blacklist_Label>Texto en Lista Negra:</ReadableNumbers_Blacklist_Label>
-	<ReadableNumbers_Blacklist_Desc>El texto dentro del juego que contenga cualquiera de estas cadenas de caracteres se dejará en su estado original</ReadableNumbers_Blacklist_Desc>
-	<ReadableNumbers_Blacklist_TextField>Añadir patrón aquí:</ReadableNumbers_Blacklist_TextField>
-	<ReadableNumbers_Blacklist_Add>Añadir</ReadableNumbers_Blacklist_Add>
+	<ReadableNumbers_BlackList_Heading>Svartlista</ReadableNumbers_BlackList_Heading>
+	<ReadableNumbers_Blacklist_Label>Text på svartlista:</ReadableNumbers_Blacklist_Label>
+	<ReadableNumbers_Blacklist_Desc>Text i spelet som innehåller någon av dessa teckenkombinationer kommer att förbli i sitt ursprungliga tillstånd</ReadableNumbers_Blacklist_Desc>
+	<ReadableNumbers_Blacklist_TextField>Lägg till mönster här:</ReadableNumbers_Blacklist_TextField>
+	<ReadableNumbers_Blacklist_Add>Lägg till</ReadableNumbers_Blacklist_Add>
 	
 </LanguageData>

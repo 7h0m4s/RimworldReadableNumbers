@@ -5,40 +5,41 @@
 	<ReadableNumbers_Option_Mod_Name>Loetavad numbrid</ReadableNumbers_Option_Mod_Name>
 	
 	
-	<ReadableNumbers_Option_Heading>Üldsätted</ReadableNumbers_Option_Heading>
-	<ReadableNumbers_Option_Enable>Luba loetavad numbrid</ReadableNumbers_Option_Enable>
-	<ReadableNumbers_Option_RestoreDefault>Taasta vaikeseaded</ReadableNumbers_Option_RestoreDefault>
-	<ReadableNumbers_Option_Debug>Silumisrežiim</ReadableNumbers_Option_Debug>
-	<ReadableNumbers_Option_FormatAllNumbers>Vorminda arvud, mis on väiksemad kui 1000</ReadableNumbers_Option_FormatAllNumbers>
+	<ReadableNumbers_Option_Heading>Üldseaded</ReadableNumbers_Option_Heading>
+	<ReadableNumbers_Option_Enable>Lubada loetavad numbrid</ReadableNumbers_Option_Enable>
+	<ReadableNumbers_Option_RestoreDefault>Taasta vaikimisi seadistused</ReadableNumbers_Option_RestoreDefault>
+	<ReadableNumbers_Option_Debug>Debug režiim</ReadableNumbers_Option_Debug>
+	<ReadableNumbers_Option_FormatAllNumbers>Rakenda kümnendformati kõigile numbritele</ReadableNumbers_Option_FormatAllNumbers>
+	<ReadableNumbers_Option_MinimumDigitsForSeparatorFormatting>Minimaalne numbrite arv vahesona kasutamiseks: {0}</ReadableNumbers_Option_MinimumDigitsForSeparatorFormatting>
 
-	<ReadableNumbers_SeparatorCharacter_Heading>Eraldajad ja kümnendkohad</ReadableNumbers_SeparatorCharacter_Heading>
-	<ReadableNumbers_SeparatorCharacter_Label>Vali soovitud numbrivorming:</ReadableNumbers_SeparatorCharacter_Label>
-	<ReadableNumbers_SeparatorCharacter_Comma_Period>Koma eraldaja 		| Punkt kümnendmärgina</ReadableNumbers_SeparatorCharacter_Comma_Period>
-	<ReadableNumbers_SeparatorCharacter_Period_Comma>Punkt eraldajana 		| Koma kümnendmärgina</ReadableNumbers_SeparatorCharacter_Period_Comma>
-	<ReadableNumbers_SeparatorCharacter_Space_Period>Tühik eraldajana 		| Punkt kümnendmärgina</ReadableNumbers_SeparatorCharacter_Space_Period>
-	<ReadableNumbers_SeparatorCharacter_Space_Comma>Tühik eraldajana 		| Koma kümnendmärgina</ReadableNumbers_SeparatorCharacter_Space_Comma>
-	<ReadableNumbers_SeparatorCharacter_Apostrophe_Period>Apostroof eraldajana 	| Punkt kümnendmärgina</ReadableNumbers_SeparatorCharacter_Apostrophe_Period>
-	<ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>Apostroof eraldajana 	| Koma kümnendmärgina</ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>
-	<ReadableNumbers_SeparatorCharacter_Custom>Kohandatud eraldaja 		| Kohandatud kümnendmärk</ReadableNumbers_SeparatorCharacter_Custom>
-	<ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>Hoiatus: Kohandatud eraldajate ja kümnendmärkide kasutamine võib põhjustada kuvamisvigu. Kasuta omal vastutusel.</ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>
-	<ReadableNumbers_SeparatorCharacter_Custom_Separator>Kohandatud eraldaja:</ReadableNumbers_SeparatorCharacter_Custom_Separator>
-	<ReadableNumbers_SeparatorCharacter_Custom_Decimal>Kohandatud kümnendmärk:</ReadableNumbers_SeparatorCharacter_Custom_Decimal>
+	<ReadableNumbers_SeparatorCharacter_Heading>Vahesonad ja Kümnendkohad</ReadableNumbers_SeparatorCharacter_Heading>
+	<ReadableNumbers_SeparatorCharacter_Label>Valige soovitud vorming:</ReadableNumbers_SeparatorCharacter_Label>
+	<ReadableNumbers_SeparatorCharacter_Comma_Period>Koma vahesonana | Punkt kümnendkohana</ReadableNumbers_SeparatorCharacter_Comma_Period>
+	<ReadableNumbers_SeparatorCharacter_Period_Comma>Punkte vahesonana | Koma kümnendkohana</ReadableNumbers_SeparatorCharacter_Period_Comma>
+	<ReadableNumbers_SeparatorCharacter_Space_Period>Tühik vahesonana | Punkt kümnendkohana</ReadableNumbers_SeparatorCharacter_Space_Period>
+	<ReadableNumbers_SeparatorCharacter_Space_Comma>Tühik vahesonana | Koma kümnendkohana</ReadableNumbers_SeparatorCharacter_Space_Comma>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Period>Sulg vahesonana | Punkt kümnendkohana</ReadableNumbers_SeparatorCharacter_Apostrophe_Period>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>Sulg vahesonana | Koma kümnendkohana</ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>
+	<ReadableNumbers_SeparatorCharacter_Custom>Kohandatud vahesona | Kohandatud kümnendkoht</ReadableNumbers_SeparatorCharacter_Custom>
+	<ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>Hoiatus: Kohandatud vahesona ja kümnendkoha kasutamine võib põhjustada visuaalseid vigu. Kasutage vastavalt enda riskile.</ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>
+	<ReadableNumbers_SeparatorCharacter_Custom_Separator>Kohandatud vahesona:</ReadableNumbers_SeparatorCharacter_Custom_Separator>
+	<ReadableNumbers_SeparatorCharacter_Custom_Decimal>Kohandatud kümnendkoht:</ReadableNumbers_SeparatorCharacter_Custom_Decimal>
 
-	<ReadableNumbers_SeparatorGrouping_Heading>Numbrite rühmitamine</ReadableNumbers_SeparatorGrouping_Heading>
-	<ReadableNumbers_SeparatorGrouping_ThreeDigit>Kolmekohaline rühmitus</ReadableNumbers_SeparatorGrouping_ThreeDigit>
-	<ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>Kahe- ja kolmekohaline rühmitus</ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>
-	<ReadableNumbers_SeparatorGrouping_FourDigit>Neljakohaline rühmitus</ReadableNumbers_SeparatorGrouping_FourDigit>
+	<ReadableNumbers_SeparatorGrouping_Heading>Numbrite rühitamine</ReadableNumbers_SeparatorGrouping_Heading>
+	<ReadableNumbers_SeparatorGrouping_ThreeDigit>Kolm numbrit</ReadableNumbers_SeparatorGrouping_ThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>Kaks ja kolm numbrit</ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_FourDigit>Neli numbrit</ReadableNumbers_SeparatorGrouping_FourDigit>
 	<ReadableNumbers_SeparatorGrouping_None>Puudub</ReadableNumbers_SeparatorGrouping_None>
 
 	<ReadableNumbers_Cache_Heading>Vahemälu</ReadableNumbers_Cache_Heading>
 	<ReadableNumbers_Cache_Label>Vahemälu:</ReadableNumbers_Cache_Label>
-	<ReadableNumbers_Cache_Desc>Kasutatakse jõudluse parandamiseks, salvestades varem kohatud tekstide vormindatud versioonid\nVahemälu tühjendatakse automaatselt, kui see saavutab määratud mahu, et vältida liigset mälukasutust või viivitusi varasemate tekstide otsimisel</ReadableNumbers_Cache_Desc>
-	<ReadableNumbers_Cache_Enable>Luba vahemälu</ReadableNumbers_Cache_Enable>
-	<ReadableNumbers_Cache_MaxCapacity_Label>Vahemälu maksimaalne maht (100 - 1,000,000)</ReadableNumbers_Cache_MaxCapacity_Label>
+	<ReadableNumbers_Cache_Desc>Käidab kasutajakogemust parandades, salvestades varem esinenud teksti vormistatud versioone.\nThe Vahemälu tühjendatakse, kui see jõuab seatud mahuni, et vältida mälu kasutamist või eelmise teksti otsingute viivitusi</ReadableNumbers_Cache_Desc>
+	<ReadableNumbers_Cache_Enable>Lubada vahemälu</ReadableNumbers_Cache_Enable>
+	<ReadableNumbers_Cache_MaxCapacity_Label>Vahemälu maksimaalne maht (100 - 1 000 000)</ReadableNumbers_Cache_MaxCapacity_Label>
 
-	<ReadableNumbers_BlackList_Heading>Must nimekiri</ReadableNumbers_BlackList_Heading>
+	<ReadableNumbers_BlackList_Heading>Musta nimekirja</ReadableNumbers_BlackList_Heading>
 	<ReadableNumbers_Blacklist_Label>Musta nimekirja tekst:</ReadableNumbers_Blacklist_Label>
-	<ReadableNumbers_Blacklist_Desc>Mängus olev tekst, mis sisaldab mõnda neist märgijadadest, jäetakse muutmata</ReadableNumbers_Blacklist_Desc>
+	<ReadableNumbers_Blacklist_Desc>Mängus olevat tekste, mis sisaldavad ühtegi neist tähemärkide jadadest, jäetakse originaalses olekus</ReadableNumbers_Blacklist_Desc>
 	<ReadableNumbers_Blacklist_TextField>Lisa muster siia:</ReadableNumbers_Blacklist_TextField>
 	<ReadableNumbers_Blacklist_Add>Lisa</ReadableNumbers_Blacklist_Add>
 	

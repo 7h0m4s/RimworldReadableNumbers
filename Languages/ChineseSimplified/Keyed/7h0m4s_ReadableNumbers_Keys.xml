@@ -2,44 +2,45 @@
 <LanguageData>
 
 	
-	<ReadableNumbers_Option_Mod_Name>易读数字</ReadableNumbers_Option_Mod_Name>
+	<ReadableNumbers_Option_Mod_Name>可读数字</ReadableNumbers_Option_Mod_Name>
 	
 	
 	<ReadableNumbers_Option_Heading>常规设置</ReadableNumbers_Option_Heading>
-	<ReadableNumbers_Option_Enable>启用易读数字</ReadableNumbers_Option_Enable>
+	<ReadableNumbers_Option_Enable>启用可读数字</ReadableNumbers_Option_Enable>
 	<ReadableNumbers_Option_RestoreDefault>恢复默认设置</ReadableNumbers_Option_RestoreDefault>
 	<ReadableNumbers_Option_Debug>调试模式</ReadableNumbers_Option_Debug>
-	<ReadableNumbers_Option_FormatAllNumbers>格式化小于 1000 的数字</ReadableNumbers_Option_FormatAllNumbers>
+	<ReadableNumbers_Option_FormatAllNumbers>将小数格式应用于所有数字</ReadableNumbers_Option_FormatAllNumbers>
+	<ReadableNumbers_Option_MinimumDigitsForSeparatorFormatting>应用分隔符格式的最小数字长度：{0}</ReadableNumbers_Option_MinimumDigitsForSeparatorFormatting>
 
-	<ReadableNumbers_SeparatorCharacter_Heading>分隔符和小数点</ReadableNumbers_SeparatorCharacter_Heading>
-	<ReadableNumbers_SeparatorCharacter_Label>选择所需的数字格式：</ReadableNumbers_SeparatorCharacter_Label>
-	<ReadableNumbers_SeparatorCharacter_Comma_Period>逗号分隔符 		| 句点小数点</ReadableNumbers_SeparatorCharacter_Comma_Period>
-	<ReadableNumbers_SeparatorCharacter_Period_Comma>句点分隔符 		| 逗号小数点</ReadableNumbers_SeparatorCharacter_Period_Comma>
-	<ReadableNumbers_SeparatorCharacter_Space_Period>空格分隔符 		| 句点小数点</ReadableNumbers_SeparatorCharacter_Space_Period>
-	<ReadableNumbers_SeparatorCharacter_Space_Comma>空格分隔符 		| 逗号小数点</ReadableNumbers_SeparatorCharacter_Space_Comma>
-	<ReadableNumbers_SeparatorCharacter_Apostrophe_Period>撇号分隔符 	| 句点小数点</ReadableNumbers_SeparatorCharacter_Apostrophe_Period>
-	<ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>撇号分隔符 	| 逗号小数点</ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>
-	<ReadableNumbers_SeparatorCharacter_Custom>自定义分隔符 		| 自定义小数点</ReadableNumbers_SeparatorCharacter_Custom>
-	<ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>警告：使用自定义分隔符和小数点可能会导致显示异常。请自行承担使用风险。</ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>
+	<ReadableNumbers_SeparatorCharacter_Heading>分隔符和十进制</ReadableNumbers_SeparatorCharacter_Heading>
+	<ReadableNumbers_SeparatorCharacter_Label>选择所需格式：</ReadableNumbers_SeparatorCharacter_Label>
+	<ReadableNumbers_SeparatorCharacter_Comma_Period>逗号分隔符 | 小数点</ReadableNumbers_SeparatorCharacter_Comma_Period>
+	<ReadableNumbers_SeparatorCharacter_Period_Comma>点分隔符 | 逗号</ReadableNumbers_SeparatorCharacter_Period_Comma>
+	<ReadableNumbers_SeparatorCharacter_Space_Period>空格分隔符 | 小数点</ReadableNumbers_SeparatorCharacter_Space_Period>
+	<ReadableNumbers_SeparatorCharacter_Space_Comma>空格分隔符 | 逗号</ReadableNumbers_SeparatorCharacter_Space_Comma>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Period>撇号分隔符 | 小数点</ReadableNumbers_SeparatorCharacter_Apostrophe_Period>
+	<ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>撇号分隔符 | 逗号</ReadableNumbers_SeparatorCharacter_Apostrophe_Comma>
+	<ReadableNumbers_SeparatorCharacter_Custom>自定义分隔符 | 自定义小数</ReadableNumbers_SeparatorCharacter_Custom>
+	<ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>警告：使用自定义分隔符和十进制可能导致视觉错误。请自行承担风险。</ReadableNumbers_SeparatorCharacter_Custom_Warning_Label>
 	<ReadableNumbers_SeparatorCharacter_Custom_Separator>自定义分隔符：</ReadableNumbers_SeparatorCharacter_Custom_Separator>
-	<ReadableNumbers_SeparatorCharacter_Custom_Decimal>自定义小数点：</ReadableNumbers_SeparatorCharacter_Custom_Decimal>
+	<ReadableNumbers_SeparatorCharacter_Custom_Decimal>自定义小数：</ReadableNumbers_SeparatorCharacter_Custom_Decimal>
 
 	<ReadableNumbers_SeparatorGrouping_Heading>数字分组</ReadableNumbers_SeparatorGrouping_Heading>
-	<ReadableNumbers_SeparatorGrouping_ThreeDigit>每三位分组</ReadableNumbers_SeparatorGrouping_ThreeDigit>
-	<ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>两位和三位分组</ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>
-	<ReadableNumbers_SeparatorGrouping_FourDigit>每四位分组</ReadableNumbers_SeparatorGrouping_FourDigit>
+	<ReadableNumbers_SeparatorGrouping_ThreeDigit>三位数</ReadableNumbers_SeparatorGrouping_ThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>两和三位数</ReadableNumbers_SeparatorGrouping_TwoAndThreeDigit>
+	<ReadableNumbers_SeparatorGrouping_FourDigit>四位数</ReadableNumbers_SeparatorGrouping_FourDigit>
 	<ReadableNumbers_SeparatorGrouping_None>无</ReadableNumbers_SeparatorGrouping_None>
 
 	<ReadableNumbers_Cache_Heading>缓存</ReadableNumbers_Cache_Heading>
 	<ReadableNumbers_Cache_Label>缓存：</ReadableNumbers_Cache_Label>
-	<ReadableNumbers_Cache_Desc>通过存储之前遇到的文本的格式化版本来提高性能\n当缓存达到设定容量时会自动清空，以防止内存占用过高或查找旧文本时产生延迟</ReadableNumbers_Cache_Desc>
+	<ReadableNumbers_Cache_Desc>用于通过存储先前遇到的文本的格式化版本来提高性能\nThe当缓存达到设置容量时清除，以防止内存使用或延迟查找以前的文本</ReadableNumbers_Cache_Desc>
 	<ReadableNumbers_Cache_Enable>启用缓存</ReadableNumbers_Cache_Enable>
-	<ReadableNumbers_Cache_MaxCapacity_Label>缓存最大容量 (100 - 1,000,000)</ReadableNumbers_Cache_MaxCapacity_Label>
+	<ReadableNumbers_Cache_MaxCapacity_Label>最大缓存容量（100 - 1,000,000）</ReadableNumbers_Cache_MaxCapacity_Label>
 
 	<ReadableNumbers_BlackList_Heading>黑名单</ReadableNumbers_BlackList_Heading>
 	<ReadableNumbers_Blacklist_Label>黑名单文本：</ReadableNumbers_Blacklist_Label>
-	<ReadableNumbers_Blacklist_Desc>游戏中包含以下任意字符字符串的文本将保持原样，不会被修改</ReadableNumbers_Blacklist_Desc>
-	<ReadableNumbers_Blacklist_TextField>在此添加匹配模式：</ReadableNumbers_Blacklist_TextField>
+	<ReadableNumbers_Blacklist_Desc>游戏中包含任何这些字符序列的文本将保持其原始状态</ReadableNumbers_Blacklist_Desc>
+	<ReadableNumbers_Blacklist_TextField>在此处添加模式：</ReadableNumbers_Blacklist_TextField>
 	<ReadableNumbers_Blacklist_Add>添加</ReadableNumbers_Blacklist_Add>
 	
 </LanguageData>
