@@ -43,6 +43,7 @@ namespace RimworldReadableNumbers.Utility
         /// <returns></returns>
         public static bool ProcessLabel(ref string label)
         {
+            if(label == null) return false;
             int labelLength = label.Length;
             if (labelLength <= 2 // skip if result string is too short to need a separator
                 || labelLength > short.MaxValue - 1 // skip if string is too big

@@ -81,6 +81,7 @@ namespace RimworldReadableNumbers.Patches.Rimworld
         }
         
         [HarmonyTranspiler]
+        [HarmonyPriority(Priority.Last)]
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions, MethodBase currentMethodBase)
         {
             MethodInfo verseTaggedStringMethod = AccessTools.GetDeclaredMethods(typeof(global::Verse.Translator)).First(a=> a.Name == nameof(global::Verse.Translator.Translate) && a.ReturnType == typeof(TaggedString));
