@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using HarmonyLib;
 using RimworldReadableNumbers.Utility;
 using UnityEngine;
@@ -20,6 +20,13 @@ namespace RimworldReadableNumbers.Patches.Verse.Widgets
             return true;
         }
 
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(global::Verse.Widgets), "Label", new Type[] { typeof(Rect), typeof(string) })]
+        public static void Postfix()
+        {
+            Utility.Patching.IsAlreadyReadableNumberFormatted = false;
+        }
+
 
         [HarmonyPrefix]
         [HarmonyPatch(typeof(global::Verse.Widgets), "Label", new Type[] { typeof(Rect), typeof(GUIContent) })]
@@ -30,6 +37,13 @@ namespace RimworldReadableNumbers.Patches.Verse.Widgets
             Patching.FormatGuiContentText(ref content);
             Utility.Patching.IsAlreadyReadableNumberFormatted = true;
             return true;
+        }
+
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(global::Verse.Widgets), "Label", new Type[] { typeof(Rect), typeof(GUIContent) })]
+        public static void PostfixContent()
+        {
+            Utility.Patching.IsAlreadyReadableNumberFormatted = false;
         }
 
 
@@ -44,7 +58,7 @@ namespace RimworldReadableNumbers.Patches.Verse.Widgets
                 ArgumentType.Normal,
                 ArgumentType.Normal,
             })]
-        public static bool Prefix(float x, ref float curY, float width, string text,
+        public static bool Prefix(float x, ref float curY, float width, ref string text,
             TipSignal tip = default(TipSignal))
         {
             if (Patching.DisableReadableNumberFormatting ||
@@ -55,6 +69,22 @@ namespace RimworldReadableNumbers.Patches.Verse.Widgets
             Processing.ProcessLabel(ref text);
             Patching.IsAlreadyReadableNumberFormatted = true;
             return true;
+        }
+
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(global::Verse.Widgets), "Label",
+            new Type[] { typeof(float), typeof(float), typeof(float), typeof(string), typeof(TipSignal) },
+            new ArgumentType[]
+            {
+                ArgumentType.Normal,
+                ArgumentType.Ref,
+                ArgumentType.Normal,
+                ArgumentType.Normal,
+                ArgumentType.Normal,
+            })]
+        public static void PostfixFloat()
+        {
+            Patching.IsAlreadyReadableNumberFormatted = false;
         }
 
 

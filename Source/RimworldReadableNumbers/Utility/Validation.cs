@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace RimworldReadableNumbers.Utility
 {
@@ -32,8 +32,8 @@ namespace RimworldReadableNumbers.Utility
 
             short numDigitsInSequence = 0;
             bool hasDecimalPlace = false;
-            char lastChar='A';
-            char secondLastChar ='A';
+            char lastChar = 'A';
+            char secondLastChar = 'A';
             for (short i = 0; i < label.Length; i++)
             {
                 char currentChar = label[i];
@@ -92,13 +92,13 @@ namespace RimworldReadableNumbers.Utility
             // or
             // RnSetting.FormatAllNumbers is true
             //      and RnSetting.DecimalSeparator is not a period
-            //      and there is a number with a decimal value e.g. "1.2" 
+            //      and there is a number with a decimal value e.g. "1.2"
             return isEnoughDigits || (RnSetting.FormatAllNumbers && RnSetting.DecimalSeparator != '.' && hasDecimalPlace);
         }
 
         public static ValidationResult IsValidNumberToFormat(ref ReadOnlySpan<char> value)
         {
-            if (value == null) return new ValidationResult(false);
+            if (value.Length == 0) return new ValidationResult(false);
             if (value.Length > short.MaxValue) return new ValidationResult(false);
             short index = 0;
             char decimalSeparator = '.'; // Hardcoded since Rimworld is Culture Insensitive and will always use '.'

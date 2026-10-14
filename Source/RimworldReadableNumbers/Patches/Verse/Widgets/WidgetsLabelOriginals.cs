@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using LudeonTK;
 using RimworldReadableNumbers.Patches.Unity.Gui;
 using UnityEngine;
@@ -10,7 +10,15 @@ namespace RimworldReadableNumbers.Patches.Verse.Widgets
     {
         public static void LabelWidgetOriginal(Rect rect, GUIContent content)
         {
-            GuiLabelReversePatch.LabelOriginal(rect, content, Text.CurFontStyle);
+            Utility.Patching.DisableReadableNumberFormatting = true;
+            try
+            {
+                GuiLabelReversePatch.LabelOriginal(rect, content, Text.CurFontStyle);
+            }
+            finally
+            {
+                Utility.Patching.DisableReadableNumberFormatting = false;
+            }
         }
 
         public static void LabelWidgetOriginal(Rect rect, string label)
@@ -24,7 +32,15 @@ namespace RimworldReadableNumbers.Patches.Verse.Widgets
                 position.xMax = UIScaling.AdjustCoordToUIScalingCeil(rect.xMax + 1E-05f);
                 position.yMax = UIScaling.AdjustCoordToUIScalingCeil(rect.yMax + 1E-05f);
             }
-            GuiLabelReversePatch.LabelOriginal(position, new GUIContent(label), Text.CurFontStyle); // edited to use GUIContent
+            Utility.Patching.DisableReadableNumberFormatting = true;
+            try
+            {
+                GuiLabelReversePatch.LabelOriginal(position, label, Text.CurFontStyle);
+            }
+            finally
+            {
+                Utility.Patching.DisableReadableNumberFormatting = false;
+            }
         }
 
         public static void LabelWidgetOriginal(Rect rect, TaggedString label)

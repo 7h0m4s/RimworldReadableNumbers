@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using HarmonyLib;
 using UnityEngine;
 
@@ -21,6 +21,24 @@ namespace RimworldReadableNumbers.Patches.Unity.Gui
         [HarmonyPatch(typeof(UnityEngine.GUI), nameof(UnityEngine.GUI.Label),
             new Type[] { typeof(Rect), typeof(GUIContent), typeof(GUIStyle) })]
         public static void LabelOriginal(Rect position, GUIContent content, GUIStyle style)
+        {
+            // Harmony replaces this body with the original IL at runtime
+            throw new NotImplementedException("Harmony reverse patch stub");
+        }
+
+        [HarmonyReversePatch]
+        [HarmonyPatch(typeof(UnityEngine.GUI), nameof(UnityEngine.GUI.Label),
+            new Type[] { typeof(Rect), typeof(string), typeof(GUIStyle) })]
+        public static void LabelOriginal(Rect position, string text, GUIStyle style)
+        {
+            // Harmony replaces this body with the original IL at runtime
+            throw new NotImplementedException("Harmony reverse patch stub");
+        }
+
+        [HarmonyReversePatch]
+        [HarmonyPatch(typeof(UnityEngine.GUI), nameof(UnityEngine.GUI.Label),
+            new Type[] { typeof(Rect), typeof(string) })]
+        public static void LabelOriginal(Rect position, string text)
         {
             // Harmony replaces this body with the original IL at runtime
             throw new NotImplementedException("Harmony reverse patch stub");
