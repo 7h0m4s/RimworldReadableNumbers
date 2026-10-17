@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityStubs.Gui;
 using Verse;
 
 namespace RimworldReadableNumbers
@@ -12,6 +13,9 @@ namespace RimworldReadableNumbers
             : base(content)
         {
             _rnSettings = base.GetSettings<RnSetting>();
+            
+            // I reject your gui backend and substitute my own!
+            GuiBackend.Current = new RnGuiBackend(GuiBackend.Current);
         }
 
         /// <summary>

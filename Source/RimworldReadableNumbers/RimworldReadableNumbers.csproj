@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -9,15 +8,19 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RimworldReadableNumbers</RootNamespace>
     <AssemblyName>RimworldReadableNumbers</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <LangVersion>default</LangVersion>
+    <TargetFramework>net10.0</TargetFramework>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
   </PropertyGroup>
+
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\1.6\Assemblies\</OutputPath>
+    <OutputPath>.bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -25,71 +28,35 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>.bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <Target Name="CopyToRimworldAssemblies" AfterTargets="Build">
+    <Copy
+            SourceFiles="$(TargetDir)$(AssemblyName).dll;$(TargetDir)$(AssemblyName).pdb"
+            DestinationFolder="$(MSBuildProjectDirectory)..\..\..\1.7\Assemblies"
+            SkipUnchangedFiles="false" />
+  </Target>
   <ItemGroup>
-    <Reference Include="0Harmony">
-      <HintPath>..\..\..\..\..\workshop\content\294100\2009463077\Current\Assemblies\0Harmony.dll</HintPath>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\Assembly-CSharp.dll</HintPath>
       <CopyLocal>false</CopyLocal>
     </Reference>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
-      <Private>false</Private>
+    <Reference Include="UnityStubs">
+      <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\UnityStubs.dll</HintPath>
+      <CopyLocal>false</CopyLocal>
     </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Caching" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
-    <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\..\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="Waylith">
+      <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\Waylith.dll</HintPath>
+      <CopyLocal>false</CopyLocal>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Patches\DawnOfANewDay\DawnOfANewDayDrawTextPatch.cs" />
-    <Compile Include="Patches\DubsPerformanceAnalyzer\DubsPerformanceAnalyzerPatch.cs" />
-    <Compile Include="Patches\RimHud\RimHudTextExtensionsToDecimalStringPatch.cs" />
-    <Compile Include="Patches\Rimworld\DateReadout\DateReadoutPatch.cs" />
-    <Compile Include="Patches\Rimworld\DevGui\DevGuiLabelPatch.cs" />
-    <Compile Include="Patches\Rimworld\DialogFileList\DialogFileListDoWindowContentsPatch.cs" />
-    <Compile Include="Patches\Rimworld\DialogFileList\DialogFileListDrawDateAndVersionPatch.cs" />
-    <Compile Include="Patches\Rimworld\DialogModSettings\DialogModSettingsDoWindowContentsPatch.cs" />
-    <Compile Include="Patches\Rimworld\ExcludeStaticTextLabelsPatch.cs" />
-    <Compile Include="Patches\Rimworld\MainTabWindowHistory\MainTabWindowHistoryDoArchivableRowPatch.cs" />
-    <Compile Include="Patches\Rimworld\MainTabWindowQuests\MainTabWindowQuestsDoRewardsPatch.cs" />
-    <Compile Include="Patches\Rimworld\QuestPartUtility\QuestPartUtilityGetRewardStackElementsForThingsPatch.cs" />
-    <Compile Include="Patches\Rimworld\VersionControl\VersionControlDrawInfoInCornerPatch.cs" />
-    <Compile Include="Patches\ToggleableReadouts\ToggleableReadoutsReadoutCachePatch.cs" />
-    <Compile Include="Patches\Unity\GuiStyle\GuiStyleCalcHeightPatch.cs" />
-    <Compile Include="Patches\Unity\GuiStyle\GuiStyleCalcMinMaxWidthPatch.cs" />
-    <Compile Include="Patches\Unity\GuiStyle\GuiStyleCalcSizePatch.cs" />
-    <Compile Include="Patches\Unity\Gui\GuiLabelPatch.cs" />
-    <Compile Include="Patches\Unity\Gui\GuiLabelReversePatch.cs" />
-    <Compile Include="Patches\Verse\GenMapUI\GenMapUIDrawPawnLabelPatch.cs" />
-    <Compile Include="Patches\Verse\GenMapUI\GenMapUIDrawTextPatch.cs" />
-    <Compile Include="Patches\Verse\GenMapUI\GenMapUIDrawThingLabelPatch.cs" />
-    <Compile Include="Patches\Verse\GenMapUI\GenMapUIGetPawnLabelPatch.cs" />
-    <Compile Include="Patches\Verse\Widgets\WidgetsLabelOriginals.cs" />
-    <Compile Include="Patches\Verse\Widgets\WidgetsLabelPatch.cs" />
-    <Compile Include="RnMod.cs" />
-    <Compile Include="RnPatcher.cs" />
-    <Compile Include="RnSetting.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utility\Patching.cs" />
-    <Compile Include="Utility\Processing.cs" />
-    <Compile Include="Utility\Text.cs" />
-    <Compile Include="Utility\Validation.cs" />
+    <PackageReference Include="Lib.Harmony" Version="3.0.0-rc.2">
+      <CopyLocal>false</CopyLocal>
+    </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <ReferencePathWithRefAssemblies Update="C:\Users\Thomas\.nuget\packages\lib.harmony\2.3.6\lib\net472\0Harmony.dll" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+
 </Project>

@@ -4,6 +4,7 @@
 	<name>Readable Numbers</name>
 	<author>7h0m4s</author>
 	<supportedVersions>
+		<li>1.7</li>
 		<li>1.6</li>
 	</supportedVersions>
 	<modDependencies>
@@ -22,8 +23,6 @@
 		<li>ludeon.rimworld.biotech</li>
 		<li>ludeon.rimworld.anomaly</li>
 		<li>ludeon.rimworld.odyssey</li>
-		<li>Dubwise.DubsPerformanceAnalyzer.steam</li>
-		<li>Jaxe.RimHUD</li>
 	</loadAfter>
 <description>
 [h2]What does the mod do?[/h2]Makes numbers in Rimworld easier to read by adding digit separators.

@@ -34,29 +34,31 @@ namespace RimworldReadableNumbers.Utility
             bool hasDecimalPlace = false;
             char lastChar='A';
             char secondLastChar ='A';
+            bool hasBlacklistEntries = blacklist.Length > 0;
             for (short i = 0; i < label.Length; i++)
             {
                 char currentChar = label[i];
 
                 // Check if the label is on the blacklist
-                if (blacklist.Length > 0)
+                if (hasBlacklistEntries)
                 {
                     for (short j = 0; j < blacklist.Length; j++)
                     {
                         var blacklistItem = blacklist[j];
-                        var blacklistPattern = blacklistItem.Pattern.AsSpan();
+                        var blacklistPattern = blacklistItem.Pattern;
+                        var blacklistPatternLength = blacklistPattern.Length;
                         if (i == 0) blacklistItem.SearchIndex = 0; // Reset blacklist search positions for new validation.
 
                         // skip if pattern is too big to match anymore
-                        if (blacklistPattern.Length > label.Length
-                            || blacklistPattern.Length - blacklistItem.SearchIndex > label.Length - i
-                            || blacklistItem.SearchIndex > blacklistPattern.Length - 1) continue;
+                        if (blacklistPatternLength > label.Length
+                            || blacklistPatternLength - blacklistItem.SearchIndex > label.Length - i
+                            || blacklistItem.SearchIndex > blacklistPatternLength - 1) continue;
 
 
                         char currentPatternChar = blacklistPattern[blacklistItem.SearchIndex];
                         if (currentPatternChar == currentChar)
                         {
-                            if (blacklistPattern.Length - 1 == blacklistItem.SearchIndex)
+                            if (blacklistPatternLength - 1 == blacklistItem.SearchIndex)
                             {
                                 // if a whole pattern has been matched then return failure
                                 return false;
@@ -74,7 +76,18 @@ namespace RimworldReadableNumbers.Utility
                 if (char.IsNumber(currentChar))
                 {
                     numDigitsInSequence++;
-                    if (numDigitsInSequence >= RnSetting.MinimumDigitsForSeparatorFormatting) isEnoughDigits = true;
+                    if (numDigitsInSequence >= RnSetting.MinimumDigitsForSeparatorFormatting)
+                    {
+                        isEnoughDigits = true;
+                        // Return early if 
+                        // - Empty Blacklist
+                        // - Confirmed enough Digits
+                        // - Decimal doesn't matter if above 2 are true
+                        if (hasBlacklistEntries == false && isEnoughDigits)
+                        {
+                            return true;
+                        }
+                    }
                     if (lastChar == '.' && char.IsNumber(secondLastChar))
                     {
                         hasDecimalPlace = true;
@@ -98,8 +111,7 @@ namespace RimworldReadableNumbers.Utility
 
         public static ValidationResult IsValidNumberToFormat(ref ReadOnlySpan<char> value)
         {
-            if (value == null) return new ValidationResult(false);
-            if (value.Length > short.MaxValue) return new ValidationResult(false);
+            if (value.IsEmpty || value.Length > short.MaxValue) return new ValidationResult(false);
             short index = 0;
             char decimalSeparator = '.'; // Hardcoded since Rimworld is Culture Insensitive and will always use '.'
             var digitsWithoutPeriod = 0;

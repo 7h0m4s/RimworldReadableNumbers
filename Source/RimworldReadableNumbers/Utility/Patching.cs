@@ -12,11 +12,9 @@ namespace RimworldReadableNumbers.Utility
 {
     public static class Patching
     {
-        [ThreadStatic] 
+        //[ThreadStatic] IMGUI is still single thread so ThreadStatic not needed
         public static bool DisableReadableNumberFormatting;
         
-        [ThreadStatic]
-        public static bool IsAlreadyReadableNumberFormatted;
         
         public static IEnumerable<CodeInstruction> TranspileTranslatorFormattedStringExtensionsTranslate(IEnumerable<CodeInstruction> instructions)
         {
