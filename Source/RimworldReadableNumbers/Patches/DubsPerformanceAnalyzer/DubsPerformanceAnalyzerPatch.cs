@@ -76,30 +76,31 @@ namespace RimworldReadableNumbers.Patches.DubsPerformanceAnalyzer
             {
                 if (hasOverloads)
                 {
-                    methodList.AddRange(DubsAnalyserAssembly.GetType(type).GetMethods(
-                            BindingFlags.Public
-                            | BindingFlags.NonPublic
-                            | BindingFlags.Instance
-                            | BindingFlags.Static
-                            | BindingFlags.DeclaredOnly
-                        ).Where(a => a.Name == method)
-                    );
+                    var overloadDetailsList = DubsAnalyserAssembly.GetType(type)?.GetMethods(
+                        BindingFlags.Public
+                        | BindingFlags.NonPublic
+                        | BindingFlags.Instance
+                        | BindingFlags.Static
+                        | BindingFlags.DeclaredOnly
+                    ).Where(a => a.Name == method).ToList();
+                    if (overloadDetailsList != null && overloadDetailsList.Count > 0) methodList.AddRange(overloadDetailsList);
+                    
                 }
                 else
                 {
-                    methodList.Add(DubsAnalyserAssembly.GetType(type).GetMethod(method,
-                            BindingFlags.Public
-                            | BindingFlags.NonPublic
-                            | BindingFlags.Instance
-                            | BindingFlags.Static
-                            | BindingFlags.DeclaredOnly
-                        )
+                    var methodDetails = DubsAnalyserAssembly.GetType(type)?.GetMethod(method,
+                        BindingFlags.Public
+                        | BindingFlags.NonPublic
+                        | BindingFlags.Instance
+                        | BindingFlags.Static
+                        | BindingFlags.DeclaredOnly
                     );
+                    if(methodDetails != null) methodList.Add(methodDetails);
                 }
             }
             catch (Exception e)
             {
-                Log.Error($"Error Encountered Patching DubsPerformanceAnalyzer.{type}:{method} \n-----> {e.Message}");
+                Log.Warning($"[Readable Numbers] Unable To Patch DubsPerformanceAnalyzer.{type}:{method} \n-----> {e.Message}");
                 return;
             }
         }
