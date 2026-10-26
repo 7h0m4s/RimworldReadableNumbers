@@ -169,6 +169,11 @@ public class RnGuiBackend : IGuiBackend
         return _guiBackendImplementation.GuiToScreenPoint(guiPoint);
     }
 
+    public Vector2 GuiToDevicePoint(Vector2 guiPoint)
+    {
+        return _guiBackendImplementation.GuiToDevicePoint(guiPoint);
+    }
+
     public bool MouseOutsideHitClip => _guiBackendImplementation.MouseOutsideHitClip;
 
     public int GroupCount => _guiBackendImplementation.GroupCount;
