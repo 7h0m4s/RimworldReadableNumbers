@@ -40,6 +40,11 @@ public class RnGuiBackend : IGuiBackend
         return _guiBackendImplementation.RegisterFont(name, fontData, importSize, renderingMode);
     }
 
+    public void UnregisterFont(int fontIndex)
+    {
+        _guiBackendImplementation.UnregisterFont(fontIndex);
+    }
+
     public int TextIndexAt(int fontIndex, float fontSize, FontStyle fontStyle, string text, float wrapWidth, Vector2 local,
         bool richText = true)
     {
