@@ -44,6 +44,10 @@
       <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\Assembly-CSharp.dll</HintPath>
       <CopyLocal>false</CopyLocal>
     </Reference>
+    <Reference Include="RimWorld">
+      <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorld.dll</HintPath>
+      <CopyLocal>false</CopyLocal>
+    </Reference>
     <Reference Include="UnityStubs">
       <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\UnityStubs.dll</HintPath>
       <CopyLocal>false</CopyLocal>

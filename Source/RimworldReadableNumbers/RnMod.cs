@@ -8,14 +8,18 @@ namespace RimworldReadableNumbers
     public class RnMod : Mod
     {
         private readonly RnSetting _rnSettings;
+        //public RnGuiBackend RnGuiBackendInstance;
+        public static RnMod Instance;
 
         public RnMod(ModContentPack content)
             : base(content)
         {
+            Instance = this;
             _rnSettings = base.GetSettings<RnSetting>();
-            
-            // I reject your gui backend and substitute my own!
-            GuiBackend.Current = new RnGuiBackend(GuiBackend.Current);
+
+            // Commented out below code, as GuiBackend.Current seems to now be getting reset every frame.
+            //RnGuiBackendInstance = new RnGuiBackend(GuiBackend.Current);
+            //GuiBackend.Current = RnGuiBackendInstance;
         }
 
         /// <summary>
